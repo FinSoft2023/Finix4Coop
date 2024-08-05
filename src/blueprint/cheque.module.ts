@@ -1,35 +1,46 @@
-import { bigPlatformBuilder, withdraw } from './dataspace';
+import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('cheque', 'Cheque', {
+export const moduleBlueprint = defineModule('cheques', 'Cheque(s)', {
   list: {
-    root: withdraw, // ดำเนินการปริ้นเช็ค
-    active: withdraw, // ดำเนินการบันทึกรูปเช็ค
-    completed: withdraw, // เสร็จสิ้นบันทึกรูปขั่วเช็ค
+    root: accTransactions, // ดำเนินการปริ้นเช็ค
+    active: accTransactions, // ดำเนินการบันทึกรูปเช็ค
+    deliver: accTransactions, // จ่ายเช็ค
+    completed: accTransactions, // เสร็จสิ้นบันทึกรูปขั่วเช็ค
   },
   create: {
     root: {
-      entity: withdraw,
+      entity: accTransactions,
+      post: true,
+    },
+    close: {
+      entity: accTransactions,
       post: true,
     },
   },
   each: {
-    root: withdraw,
+    root: accTransactions,
     print: { // ปริ้นเช็ค
-      entity: withdraw,
+      entity: accTransactions,
+      post: true,
       role: 'print',
     },
-    scan: withdraw, // แสกนสั่งจ่ายเช็ค
-    takePhoto: { // บันทึกรูปเช็ค
-      entity: withdraw,
+    scan: {  // แสกนสั่งจ่ายเช็ค
+      entity: accTransactions,
       post: true,
     },
-    scan2: withdraw, // แสกนจ่ายเช็ค
-    takePhoto2: { // บันทึกรูปขั่วเช็ค
-      entity: withdraw,
+    takePhoto: { // บันทึกรูปเช็ค
+      entity: accTransactions,
+      post: true,
+    },
+    scan2deliver: {  // แสกนจ่ายเช็ค
+      entity: accTransactions,
+      post: true,
+    },
+    takePhotoDeliver: { // บันทึกรูปขั่วเช็ค
+      entity: accTransactions,
       post: true,
     },
   },
-}
-);
+});

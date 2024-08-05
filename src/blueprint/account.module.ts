@@ -1,32 +1,33 @@
-import { bigPlatformBuilder, withdraw } from './dataspace';
+import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('accounts', 'Account', {
+export const moduleBlueprint = defineModule('accounting', 'Accounting', {
   list: {
-    root: withdraw, // รายวัน
-    month: withdraw, // รายเดือน
-    year: withdraw, // รายปี
+    root: accTransactions,
+    daily: accTransactions, // รายวัน
+    monthly: accTransactions, // รายเดือน
+    yearly: accTransactions, // รายปี
     printDay: {
-      entity: withdraw,
+      entity: accTransactions,
       role: 'print',
     },
     printMonth: {
-      entity: withdraw,
+      entity: accTransactions,
       role: 'print',
     },
     printYear: {
-      entity: withdraw,
+      entity: accTransactions,
       role: 'print',
     },
   },
   create: {
     root: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
     },
   },
   each: {
-    root: withdraw,
+    root: accTransactions,
   },
 });

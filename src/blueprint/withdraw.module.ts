@@ -1,46 +1,46 @@
-import { bigPlatformBuilder, withdraw } from './dataspace';
+import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('withdraws', 'Withdraw', {
+export const moduleBlueprint = defineModule('withdrawals', 'accTransactions', {
   list: {
-    root: withdraw,
-    completed: withdraw,
-    closed: withdraw,
+    root: accTransactions,
+    completed: accTransactions,
+    closed: accTransactions,
   },
   create: {
     root: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
       role: 'stepedit',
     },
     confirm: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
       role: 'stepconfirm',
     },
     steps: {
-      entity: withdraw,
+      entity: accTransactions,
       role: 'steps',
     },
     close: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
     },
   },
   each: {
-    root: withdraw,
+    root: accTransactions,
     print: {
-      entity: withdraw,
+      entity: accTransactions,
       role: 'print',
     },
-    scan: withdraw,
+    scan: accTransactions,
     takePhoto: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
     },
     cancel: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
       role: 'confirm',
     },

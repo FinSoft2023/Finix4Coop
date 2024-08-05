@@ -1,34 +1,36 @@
-import { bigPlatformBuilder, withdraw } from './dataspace';
+import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
 export const moduleBlueprint = defineModule('finances', 'Finance', {
   list: {
-    root: withdraw, // รายการคำอนุมัติ
-    active: withdraw, // รายการทำรายการโอนเงิน
-    completed: withdraw, // รายการโอนเงินเสร็จสิ้น
-    closed: withdraw, // รายการปิดยอด
+    root: accTransactions, // รายการคำอนุมัติ
+    active: accTransactions, // รายการทำรายการโอนเงิน
+    completed: accTransactions, // รายการโอนเงินเสร็จสิ้น
+    closed: accTransactions, // รายการปิดยอด
     printDoc: { // ปริ้นเอกสารใบประหน้า
-      entity: withdraw,
+      entity: accTransactions,
+      post: true,
       role: 'print',
     },
-    scan: withdraw, // สแกน Qr Code โอนเงิน
+    scan: accTransactions, // สแกน Qr Code โอนเงิน
     printReport: { // ปริ้น รายงาน ฝาก - ถอน ประจำวัน
-      entity: withdraw,
+      entity: accTransactions,
+      post: true,
       role: 'print',
     },
   },
   create: {
     root: {
-      entity: withdraw,
+      entity: accTransactions,
       post: true,
     },
     close: { // ส่งรายงานบัญชี (ปิดยอด)
-      entity: withdraw, 
+      entity: accTransactions, 
       post: true,
     },
   },
   each: {
-    root: withdraw,
+    root: accTransactions,
   },
 });
