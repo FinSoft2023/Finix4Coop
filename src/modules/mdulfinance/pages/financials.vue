@@ -18,12 +18,20 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'รายการคำอนุมัติ',
     to: '/financials',
   },
   {
-    label: 'Closed',
-    to: '/financials/closed',
+    label: 'รายการเตรียมรอจ่าย',
+    to: '/financials/active',
   },
+  // {
+  //   label: 'จ่ายเช็ค - โอนเงินเสร็จสิ้น',
+  //   to: '/financials/completed',
+  // },
+  // {
+  //   label: 'รายการเตรียมรอจ่าย',
+  //   to: '/financials/closed',
+  // },
 ]);
 </script>

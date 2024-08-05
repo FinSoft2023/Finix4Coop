@@ -21,7 +21,7 @@
       <DGallery :photos="photos"></DGallery>
     </BPartPageBody>
 
-    <template #side>      
+    <template #side>
       <DSubLinks />
     </template>
   </BFullPage>
