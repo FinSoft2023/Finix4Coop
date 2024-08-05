@@ -132,3 +132,82 @@ export const category = defineEntity({
     },
   ],
 });
+
+
+export const accountTypes = defineChoicesList('account-types', {
+  savings: 'ออมทรัพย์พิเศษ',
+});
+export const transactionCodes = defineChoicesList('codes-tx-operation', {
+  svadps: 'ฝาก',
+  svadol: 'ฝาก online',
+  svawtd: 'ถอน',
+});
+export const transferChannels = defineChoicesList('transfer-channels', {
+  online: 'โอน online',
+  cheque: 'เช็ค',
+});
+
+export const accTransactions = defineEntity({
+  name: 'ธุรกรรม',
+  root: [
+    {
+      model: 'txcode',
+      label: 'ประเภทธุรกรรม',
+      spec: {},
+      component: 'select',
+      choices: transactionCodes,
+    },
+    {
+      model: 'transferChannel',
+      label: 'ช่องทางการรับเงิน',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+    {
+      model: 'amount',
+      label: 'จำนวนเงิน (บาท)',
+      spec: {},
+      component: 'number',
+    },
+  ],
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memberid',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+});
