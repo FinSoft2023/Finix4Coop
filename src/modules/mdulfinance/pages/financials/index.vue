@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/finances/create" icon="i-heroicons-plus-circle"
+        <UButton to="/financials/create" icon="i-heroicons-plus-circle"
           >New</UButton
         >
         <template #next>
@@ -27,6 +27,6 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
 function selectItem(item: any) {
-  navigateTo(`/finances/${item.id}`);
+  navigateTo(`/financials/${item.id}`);
 }
 </script>

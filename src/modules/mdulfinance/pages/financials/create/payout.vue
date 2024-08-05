@@ -36,6 +36,6 @@ const { postResult, executePost } = apiPost();
 const handleSubmit = async () => {
   await executePost(data.value);
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/finances${redirectPath}`);
+  navigateTo(`/financials${redirectPath}`);
 };
 </script>

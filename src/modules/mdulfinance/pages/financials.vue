@@ -13,17 +13,17 @@ setModulePageRoot([
   {
     label: 'Finances',
     icon: 'i-heroicons-square-3-stack-3d',
-    to: '/finances',
+    to: '/financials',
   },
 ]);
 useSmartTabs([
   {
     label: 'Active',
-    to: '/finances',
+    to: '/financials',
   },
   {
     label: 'Closed',
-    to: '/finances/closed',
+    to: '/financials/closed',
   },
 ]);
 </script>
