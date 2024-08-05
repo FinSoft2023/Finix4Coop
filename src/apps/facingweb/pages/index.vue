@@ -14,21 +14,21 @@
 
 <script setup lang="ts">
 setNavLinks([{
-  label: 'Documentation',
+  label: 'Withdrawals',
   icon: 'i-heroicons-book-open',
-  to: '/getting-started'
+  to: '/withdrawals'
 }, {
-  label: 'Playground',
+  label: 'Cheque(s)',
   icon: 'i-mdi-face-recognition',
-  to: '/playground'
+  to: '/cheques'
 }, {
-  label: 'Roadmap',
+  label: 'Financials',
   icon: 'i-heroicons-map',
-  to: '/roadmap'
+  to: '/financials'
 }, {
-  label: 'Pro',
+  label: 'Accounting',
   icon: 'i-heroicons-square-3-stack-3d',
-  to: '/pro'
+  to: '/accounting'
 }, {
   label: 'Releases',
   icon: 'i-heroicons-rocket-launch',
