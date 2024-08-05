@@ -147,7 +147,7 @@ export function useHostApi(item: ModuleRealmItemBlueprint) {
           headers: {
             'Content-Type': 'application/json',
           },
-          query,
+          query: query.value,
           body,
         });
       },

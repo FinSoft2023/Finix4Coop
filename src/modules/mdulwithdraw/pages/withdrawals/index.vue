@@ -4,9 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/withdrawals/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+        <UButton to="/withdrawals/create"
+          icon="i-heroicons-plus-circle">New</UButton>
+        <UButton to="/withdrawals/create/close"
+          icon="i-heroicons-plus-circle">Close Counter</UButton>
         <template #next>
           <DSmartTabs />
         </template>
@@ -14,7 +15,9 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <DTable @selection-changed="selectItem" :data :pending />
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
