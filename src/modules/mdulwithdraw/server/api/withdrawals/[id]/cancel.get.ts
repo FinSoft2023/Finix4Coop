@@ -1,3 +1,3 @@
 export default defineEventHandler(async (event) => {
-  return await callGetToServer(event, '/api/withdrawals');
+  return await callGetToServer(event, '/api/savingacctxs');
 });

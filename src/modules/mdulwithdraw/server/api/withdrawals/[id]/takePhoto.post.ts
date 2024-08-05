@@ -1,3 +1,3 @@
 export default defineEventHandler(async (event) => {
-  return await callPutToServer(event, '/api/withdrawals');
+  return await callPutToServer(event, '/api/savingacctxs');
 });
