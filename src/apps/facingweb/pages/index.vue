@@ -30,18 +30,18 @@
     label: 'Cheque(s)',
     icon: 'i-mdi-face-recognition',
     to: '/cheques'
-  },{
+  }, {
     label: 'Financials',
     icon: 'i-heroicons-map',
     to: '/financials'
-  },{
+  }, {
     label: 'PrintReport',
     icon: 'i-heroicons-map',
     to: '/financials/rptPaid'
-  },{
+  }, {
     label: 'Accounting',
     icon: 'i-heroicons-square-3-stack-3d',
-    to: '/accounting'
+    to: '/accounting/daily'
   }, {
     label: 'Releases',
     icon: 'i-heroicons-rocket-launch',
