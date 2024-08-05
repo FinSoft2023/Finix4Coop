@@ -6,7 +6,7 @@
       <BPartButtonsBand>
         <UButton to="/financials/printReport"
           icon="i-heroicons-printer">ปริ้นรายงาน</UButton>
-        <UButton to="/financials/closed"
+        <UButton to="/financials/create/close"
           icon="i-mdi-invoice-text-send-outline">ส่งเรื่องให้บัญชี</UButton>
         <template #next>
           <DSmartTabs />
