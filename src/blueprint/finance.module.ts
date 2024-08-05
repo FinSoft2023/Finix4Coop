@@ -8,12 +8,13 @@ export const moduleBlueprint = defineModule('finances', 'Finance', {
     active: accTransactions, // รายการทำรายการโอนเงิน
     completed: accTransactions, // รายการโอนเงินเสร็จสิ้น
     closed: accTransactions, // รายการปิดยอด
+    rptPaid: accTransactions, // รายงานการจ่ายเงิน
+    rptDaily: accTransactions, // รายงานประจำวัน
     printDoc: { // ปริ้นเอกสารใบประหน้า
       entity: accTransactions,
       post: true,
       role: 'print',
     },
-    scan: accTransactions, // สแกน Qr Code โอนเงิน
     printReport: { // ปริ้น รายงาน ฝาก - ถอน ประจำวัน
       entity: accTransactions,
       post: true,
@@ -23,6 +24,10 @@ export const moduleBlueprint = defineModule('finances', 'Finance', {
   create: {
     root: {
       entity: accTransactions,
+      post: true,
+    },
+    payout: { // สแกน Qr Code โอนเงิน
+      entity: accTransactions, 
       post: true,
     },
     close: { // ส่งรายงานบัญชี (ปิดยอด)
