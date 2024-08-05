@@ -41,7 +41,7 @@
   }, {
     label: 'Accounting',
     icon: 'i-heroicons-square-3-stack-3d',
-    to: '/accounting/daily'
+    to: '/accounting'
   }, {
     label: 'Releases',
     icon: 'i-heroicons-rocket-launch',
