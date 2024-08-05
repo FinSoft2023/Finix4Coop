@@ -11,9 +11,8 @@
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
-
+      <FTableOfTxs @selection-changed="selectItem" :data :pending />
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
-
       <DTable @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
