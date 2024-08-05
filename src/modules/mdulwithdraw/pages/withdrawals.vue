@@ -18,12 +18,12 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'กำลังดำเนินการ',
     to: '/withdrawals',
   },
   {
-    label: 'Closed',
-    to: '/withdrawals/closed',
+    label: 'เสร็จสิ้น',
+    to: '/withdrawals/completed',
   },
 ]);
 </script>

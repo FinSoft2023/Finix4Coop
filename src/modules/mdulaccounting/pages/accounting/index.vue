@@ -4,8 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/accounting/create"
+        <UButton to="/accounting/printDay"
           icon="i-heroicons-printer">ปริ้นรายงาน</UButton>
+          <UButton to="/accounting/create"
+          icon="i-heroicons-x-circle">ปิดยอดรายวัน</UButton>
         <template #next>
           <DSmartTabs />
         </template>

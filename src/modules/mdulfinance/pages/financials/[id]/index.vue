@@ -22,7 +22,7 @@
     </BPartPageBody>
 
     <template #side>      
-      <DSubLinks />
+      <!-- <DSubLinks /> -->
     </template>
   </BFullPage>
 </template>

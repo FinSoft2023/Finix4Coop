@@ -3,10 +3,7 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton to="/withdrawals/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+      <BPartButtonsBand>        
         <template #next>
           <DSmartTabs />
         </template>
