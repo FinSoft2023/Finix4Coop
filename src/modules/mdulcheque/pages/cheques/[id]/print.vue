@@ -2,25 +2,24 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <DocPaper />
-        <DocPaper :more="true" />
-        <DocChequePrinting />
+        <FDocChequePrinting></FDocChequePrinting>
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('each.print');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('each.print');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet, apiPost } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
-const { postResult, executePost } = apiPost();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet, apiPost } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
+  const { postResult, executePost } = apiPost();
 
-const handleConfirmation = ()=> {
-  executePost({ state: 'active', tstmp: { active: new Date().toISOString() } });
-}
+  const handleConfirmation = () => {
+    executePost({ state: 'active', tstmp: { active: new Date().toISOString() } });
+  }
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>

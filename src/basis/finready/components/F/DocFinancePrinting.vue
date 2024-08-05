@@ -1,81 +1,75 @@
 <template>
-  <BFullPage>
-    <BPartPageBody>
-      <DocPrintContainer title="Printing Sample Page">
-        <DocPaper>
+  <DocPaper>
 
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport"
-              content="width=device-width, initial-scale=1.0">
-            <title>รายงานการถอนเงินประจำวัน</title>
-          </head>
-          <div class="text-center">
-            <h1 class="text-md font-bold mb-2text-center">รายงานถอนประจำวัน(ออมทรัพย์พิเศษ)</h1>
-            <p class="mb-4 text-center">วันที่ {{ currentDate }}</p>
-          </div>
-          <table class="min-w-full bg-white">
-            <thead>
-              <tr class="border-t">
-                <th class="py-2">ลำดับ</th>
-                <th class="py-2">เลขที่บัญชี</th>
-                <th class="py-2 text-start">ชื่อบัญชี</th>
-                <th class="py-2 text-start">ประเภทรายการ</th>
-                <th class="py-2 text-end">จำนวนเงินถอน</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in cheque"
-                :key="item.id">
-                <td class="py-2">{{ item.id }}</td>
-                <td class="py-2">{{ item.number }}</td>
-                <td class="py-2">{{ item.name }}</td>
-                <td class="py-2">
-                  <span>{{ item.type }}</span>
-                </td>
-                <td class="py-2 text-end">
-                  <MoneyAmount :amount="item.amount"
-                    class="min-w-28" />{{ item.amount }}
-                </td>
-                <td class="py-2 text-end">
-                  <MoneyAmount :amount="row?.officer.depositAmount"
-                    class="min-w-28" />
-                </td>
-              </tr>
-              <tr v-for="item in onlDeposit"
-                :key="item.id">
-                <td class="py-2">{{ item.id }}</td>
-                <td class="py-2">{{ item.number }}</td>
-                <td class="py-2">{{ item.name }}</td>
-                <td class="py-2">
-                  <span>{{ item.type }}</span>
-                </td>
-                <td class="py-2 text-end">
-                  <MoneyAmount :amount="item.amount"
-                    class="min-w-28" />{{ item.amount }}
-                </td>
-                <td class="py-2 text-end">
-                  <MoneyAmount :amount="row?.officer.depositAmount"
-                    class="min-w-28" />
-                </td>
-              </tr>
-              <tr class="font-bold">
-                <td colspan="2"
-                  class="py-2"></td>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+      <title>รายงานการถอนเงินประจำวัน</title>
+    </head>
+    <div class="text-center">
+      <h1 class="text-md font-bold mb-2text-center">รายงานถอนประจำวัน(ออมทรัพย์พิเศษ)</h1>
+      <p class="mb-4 text-center">วันที่ {{ currentDate }}</p>
+    </div>
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr class="border-t">
+          <th class="py-2">ลำดับ</th>
+          <th class="py-2">เลขที่บัญชี</th>
+          <th class="py-2 text-start">ชื่อบัญชี</th>
+          <th class="py-2 text-start">ประเภทรายการ</th>
+          <th class="py-2 text-end">จำนวนเงินถอน</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in cheque"
+          :key="item.id">
+          <td class="py-2">{{ item.id }}</td>
+          <td class="py-2">{{ item.number }}</td>
+          <td class="py-2">{{ item.name }}</td>
+          <td class="py-2">
+            <span>{{ item.type }}</span>
+          </td>
+          <td class="py-2 text-end">
+            <MoneyAmount :amount="item.amount"
+              class="min-w-28" />{{ item.amount }}
+          </td>
+          <td class="py-2 text-end">
+            <MoneyAmount :amount="row?.officer.depositAmount"
+              class="min-w-28" />
+          </td>
+        </tr>
+        <tr v-for="item in onlDeposit"
+          :key="item.id">
+          <td class="py-2">{{ item.id }}</td>
+          <td class="py-2">{{ item.number }}</td>
+          <td class="py-2">{{ item.name }}</td>
+          <td class="py-2">
+            <span>{{ item.type }}</span>
+          </td>
+          <td class="py-2 text-end">
+            <MoneyAmount :amount="item.amount"
+              class="min-w-28" />{{ item.amount }}
+          </td>
+          <td class="py-2 text-end">
+            <MoneyAmount :amount="row?.officer.depositAmount"
+              class="min-w-28" />
+          </td>
+        </tr>
+        <tr class="font-bold">
+          <td colspan="2"
+            class="py-2"></td>
 
-                <td colspan="2"
-                  class="py-2">****รวมยอดทั้งหมด</td>
-                <td class="py-2 text-end  border-b">
-                  <MoneyAmount :amount="totalAmount"
-                    class="min-w-28" />9000
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </DocPaper>
-      </DocPrintContainer>
-    </BPartPageBody>
-  </BFullPage>
+          <td colspan="2"
+            class="py-2">****รวมยอดทั้งหมด</td>
+          <td class="py-2 text-end  border-b">
+            <MoneyAmount :amount="totalAmount"
+              class="min-w-28" />9000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </DocPaper>
 </template>
 
 <script setup

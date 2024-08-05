@@ -2,20 +2,19 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <DocPaper />
-        <DocPaper :more="true" />
-        <DocChequePrinting />
+        <FReportPrinting></FReportPrinting>
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('list.printDay');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('list.printDay');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>

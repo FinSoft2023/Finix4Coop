@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <FDocFinancePrinting></FDocFinancePrinting>
+        <FDocDepositsPrinting></FDocDepositsPrinting>
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
@@ -10,7 +10,7 @@
 
 <script setup
   lang="ts">
-  const pageDef = useActiveModulePage('list.printDoc');
+  const pageDef = useActiveModulePage('each.print');
 
   const { entries } = getEntrySchema(pageDef);
   const { apiGet } = useHostApi(pageDef);

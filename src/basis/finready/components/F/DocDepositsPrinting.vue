@@ -1,7 +1,4 @@
-<template>
-  <BFullPage>
-    <BPartPageBody>
-      <DocPrintContainer title="Printing Sample Page">
+<template> 
         <FPaperSize>
           <div class="col-span-2 font-bold text-gray-900 dark:text-gray-900">
             <p class="mt-[2mm] ml-[8cm] ">โรงพยาบาลศรีสะเกษ</p>
@@ -32,10 +29,7 @@
               <p class="mt-[4cm] ml-[13cm] text-gray-900 dark:text-gray-90">{{ item.amount }}</p>
             </div>
           </div>
-        </FPaperSize>
-      </DocPrintContainer>
-    </BPartPageBody>
-  </BFullPage>
+        </FPaperSize>     
 </template>
 
 <script setup

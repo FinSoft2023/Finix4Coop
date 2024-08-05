@@ -2,9 +2,7 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <DocPaper />
-        <DocPaper :more="true" />
-        <DocChequePrinting />
+        <FReportPrinting></FReportPrinting>
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
