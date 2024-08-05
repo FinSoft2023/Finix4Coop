@@ -30,8 +30,9 @@
   </section>
 </template>
 
-<script setup lang="ts">
-const photos = [{
+<script setup
+  lang="ts">
+  const photos = [{
 
-}]
+  }]
 </script>

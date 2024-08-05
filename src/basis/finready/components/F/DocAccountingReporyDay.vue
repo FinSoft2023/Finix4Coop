@@ -7,7 +7,7 @@
           <head>
             <meta charset="UTF-8">
             <meta name="viewport"
-                  content="width=device-width, initial-scale=1.0">
+              content="width=device-width, initial-scale=1.0">
             <title>รายงานการถอนเงินประจำวัน</title>
           </head>
           <div class="text-center">
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
               <tr v-for="item in cashWithdraw"
-                  :key="item.id">
+                :key="item.id">
                 <td class="py-2 px-4 text-center">{{ item.id }}</td>
                 <td class="py-2 px-4 text-center">{{ item.number }}</td>
                 <td class="py-2 px-4">{{ item.name }}</td>
@@ -39,16 +39,16 @@
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4 ">รวม ONL</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b text-end">
                   <MoneyAmount />900
                 </td>
               </tr>
               <tr v-for="item in onlWithdraw"
-                  :key="item.id">
+                :key="item.id">
                 <td class="py-2 px-4 text-center">{{ item.id }}</td>
                 <td class="py-2 px-4 text-center">{{ item.number }}</td>
                 <td class="py-2 px-4">{{ item.name }}</td>
@@ -59,20 +59,20 @@
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">รวมเงินสด</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b text-end">
                   <MoneyAmount />90
                 </td>
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">รวมยอดฝากเงิน</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b border-double text-end">
                   <MoneyAmount />20
                 </td>
@@ -92,7 +92,7 @@
             </thead>
             <tbody>
               <tr v-for="item in cheque"
-                  :key="item.id">
+                :key="item.id">
                 <td class="py-2 px-4 text-center">{{ item.id }}</td>
                 <td class="py-2 px-4 text-center">{{ item.number }}</td>
                 <td class="py-2 px-4">{{ item.name }}</td>
@@ -103,16 +103,16 @@
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">รวมโอน</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b text-end">
                   <MoneyAmount />90
                 </td>
               </tr>
               <tr v-for="item in onlDeposit"
-                  :key="item.id">
+                :key="item.id">
                 <td class="py-2 px-4 text-center">{{ item.id }}</td>
                 <td class="py-2 px-4 text-center">{{ item.number }}</td>
                 <td class="py-2 px-4">{{ item.name }}</td>
@@ -123,30 +123,30 @@
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">รวมโอน</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b text-end">
                   <MoneyAmount />90
                 </td>
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">รวมยอดถอนเงิน</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b border-double text-end">
                   <MoneyAmount />20
                 </td>
               </tr>
               <tr class="font-bold">
                 <td colspan="2"
-                    class="py-2 px-4 text-end "></td>
+                  class="py-2 px-4 text-end "></td>
                 <td class="py-2 px-4">****รวม</td>
                 <td colspan=""
-                    class="py-2 px-4"></td>
+                  class="py-2 px-4"></td>
                 <td class="py-2 px-4 border-b border-double text-end">
                   <MoneyAmount />5678
                 </td>
@@ -160,22 +160,22 @@
 </template>
 
 <script setup
-        lang="ts">
-        const cheque = ref([
-          { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เช็ค', amount: '15,000.00' },
-          { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เช็ค', amount: '15,000.00' },
-        ]);
-        const onlDeposit = ref([
-          { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-          { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-          { id: 3, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-        ]);
-        const onlWithdraw = ref([
-          { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
-          { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
-        ]);
-        const cashWithdraw = ref([
-          { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
-          { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
-        ]);           
+  lang="ts">
+  const cheque = ref([
+    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เช็ค', amount: '15,000.00' },
+    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เช็ค', amount: '15,000.00' },
+  ]);
+  const onlDeposit = ref([
+    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
+    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
+    { id: 3, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
+  ]);
+  const onlWithdraw = ref([
+    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
+    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
+  ]);
+  const cashWithdraw = ref([
+    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
+    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
+  ]);           
 </script>

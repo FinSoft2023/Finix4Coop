@@ -52,4 +52,3 @@
     </BPartPageBody>
   </BFullPage>
 </template>
-
