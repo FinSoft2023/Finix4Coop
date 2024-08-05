@@ -1,0 +1,12 @@
+local contract = {}
+
+function contract:on_execute()
+  local array = {
+    { id = 'root', label = '1', description = 'Info' },
+    { id = 'confirm', label = '2', description = 'Confirm' }
+  }
+  
+  return array
+end
+
+return contract

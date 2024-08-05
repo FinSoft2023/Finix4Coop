@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Smc",
+  "title": "Smart Contract List",
+  "type": "object",
+  "properties": {
+  }
+}

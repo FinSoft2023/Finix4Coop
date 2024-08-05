@@ -1,0 +1,5 @@
+<template>
+  <div>
+    <h1>Module <%= name %> Content</h1>
+  </div>
+</template>

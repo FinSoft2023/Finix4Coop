@@ -1,0 +1,54 @@
+{
+  "generators": {
+    "pkg": {
+      "factory": "./src/generators/pkg/generator",
+      "schema": "./src/generators/pkg/schema.json",
+      "description": "pkg generator"
+    },
+    "module": {
+      "factory": "./src/generators/module/generator",
+      "schema": "./src/generators/module/schema.json",
+      "description": "module generator"
+    },
+    "nuxto": {
+      "factory": "./src/generators/nuxto/generator",
+      "schema": "./src/generators/nuxto/schema.json",
+      "description": "nuxto generator"
+    },
+    "modapi": {
+      "factory": "./src/generators/modapi/generator",
+      "schema": "./src/generators/modapi/schema.json",
+      "description": "modapi generator"
+    },
+    "list": {
+      "factory": "./src/generators/list/generator",
+      "schema": "./src/generators/list/schema.json",
+      "description": "list generator"
+    },
+    "each": {
+      "factory": "./src/generators/each/generator",
+      "schema": "./src/generators/each/schema.json",
+      "description": "each generator"
+    },
+    "create": {
+      "factory": "./src/generators/create/generator",
+      "schema": "./src/generators/create/schema.json",
+      "description": "create generator"
+    },
+    "pages": {
+      "factory": "./src/generators/pages/generator",
+      "schema": "./src/generators/pages/schema.json",
+      "description": "pages generator"
+    },
+    "fullmodule": {
+      "factory": "./src/generators/fullmodule/generator",
+      "schema": "./src/generators/fullmodule/schema.json",
+      "description": "fullmodule generator"
+    },
+    "smc": {
+      "factory": "./src/generators/smc/generator",
+      "schema": "./src/generators/smc/schema.json",
+      "description": "smc generator"
+    }
+  }
+}

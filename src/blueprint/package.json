@@ -1,0 +1,13 @@
+{
+  "name": "blueprint",
+  "version": "0.0.1",
+  "description": "The app blueprint definition for the project",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bigplatdefibp": "workspace:^"
+  }
+}

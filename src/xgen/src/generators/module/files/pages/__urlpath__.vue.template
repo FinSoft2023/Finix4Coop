@@ -1,0 +1,26 @@
+<template>
+  <NuxtPage />
+</template>
+
+<script setup lang="ts">
+const moduleRef = use<%= pascalName %>Module();
+setModulePageRoot([{
+  label: 'Home',
+  icon: 'i-heroicons-home',
+  to: '/'
+}, {
+  label: '<%= pascalName %>',
+  icon: 'i-heroicons-square-3-stack-3d',
+  to: '/<%= urlpath %>'
+}]);
+useSmartTabs([
+  {
+    label: 'Active',
+    to: '/<%= urlpath %>'
+  },
+  {
+    label: 'Closed',
+    to: '/<%= urlpath %>/closed',
+  },
+]);
+</script>

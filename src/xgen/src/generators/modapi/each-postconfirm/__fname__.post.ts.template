@@ -1,0 +1,7 @@
+export default defineEventHandler(async (event) => {
+<% if (subName) { %>
+  return await callPutToServer(event, '/api/<%= urlpath %>', '<%= subName %>');
+<% } else { %>
+  return await callPutToServer(event, '/api/<%= urlpath %>');
+<% } %>
+});

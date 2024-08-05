@@ -1,0 +1,45 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+
+services:
+  bigdataserver:
+    image: ghcr.io/finsoft2023/bigdataserver:latest
+    container_name: bigdataserver
+    ports:
+      - "3086:3086"
+    volumes:
+      - ./smc.project_structure.json:/smc/smc.project_structure.json
+      - ./smc_contracts:/smc/smc_contracts
+    environment:
+      - OTEL_HOST=jaeger
+      - TSDB_HOST=questdb
+      - SMC_PATH=/smc/smc.project_structure.json
+
+# Running the jaeger
+  jeager:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+      - "14250:14250"
+      - "9411:9411"
+      - "4317:4317"
+      - "4318:4318"
+      - "14269:14269"
+      - "6831:6831"
+      - "6832:6832"
+      - "5778:5778"
+    environment:
+      - COLLECTOR_ZIPKIN_HOST_PORT=9411
+      - COLLECTOR_OTLP_ENABLED=true
+
+# Running the QuestDB
+  questdb:
+    image: questdb/questdb
+    container_name: questdb
+    ports:
+      - "9000:9000"
+      - "9009:9009"
+      - "8812:8812"

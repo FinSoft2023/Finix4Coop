@@ -1,0 +1,28 @@
+<template>
+  <BFullPage>
+    <BPartPageTitle>Children of {{ pageDef.label }}</BPartPageTitle>
+
+    <BPartPageBody>
+      <DItemGrid col="x4">
+        <UCard v-for="(item, idx) in fakeData" :key="idx">
+          <DEntitySection v-model="data"
+            :entries
+            :pending />
+        </UCard>
+      </DItemGrid>
+    </BPartPageBody>
+  </BFullPage>
+</template>
+
+<script setup lang="ts">
+const pageDef = useActiveModulePage('<%= realmName %>.<%= itemName %>');
+
+const { entries } = getEntrySchema(pageDef);
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
+
+const fakeData = Array(10).fill({});
+
+// TODO: How to go back to order?
+useBreadcrumb({ label: pageDef.label, to: '.' });
+</script>

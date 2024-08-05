@@ -1,0 +1,7 @@
+[
+  {
+    "handler": "/smc/smc_contracts/categories/create/steps.get.smc",
+    "route": "/categories/create/steps",
+    "method": "get"
+  }
+]

@@ -1,0 +1,6 @@
+<template>
+  <div>
+    <h1>(<%= name %>) Index Page</h1>
+    <NuxtLink to="/<%= urlpath %>"><%= urlpath %></NuxtLink>
+  </div>
+</template>

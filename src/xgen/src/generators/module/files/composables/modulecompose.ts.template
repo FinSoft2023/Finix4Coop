@@ -1,0 +1,9 @@
+import { registerModule } from 'bigplatdefibp';
+import { moduleBlueprint } from '../../../blueprint/<%= name %>.module';
+
+const moduleRoot = registerModule(moduleBlueprint);
+
+export const use<%= pascalName %>Module = () => {
+  setActiveModule(moduleRoot);
+  return moduleRoot;
+};

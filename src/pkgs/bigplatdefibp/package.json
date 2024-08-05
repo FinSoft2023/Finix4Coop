@@ -1,0 +1,31 @@
+{
+  "name": "bigplatdefibp",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/bigplatdefibp.es.js",
+      "require": "./dist/bigplatdefibp.cjs",
+      "umd": "./dist/bigplatdefibp.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "preview": "vite preview",
+    "postinstall": "pnpm build"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}

@@ -1,0 +1,1 @@
+export const SAMPLE_VAR_PKG_<%= name %> = 'pkg sample value';

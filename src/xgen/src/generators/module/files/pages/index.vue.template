@@ -1,0 +1,14 @@
+<template>
+  <div>
+    <h1>(<%= pascalName %>) Index Page</h1>
+    <NuxtLink to="/<%= urlpath %>"><%= urlpath %></NuxtLink>
+  </div>
+</template>
+
+<script setup lang="ts">
+const { setNavLinks } = useThemeSettings();
+setNavLinks([
+  { label: '<%= pascalName %>', to: '/<%= urlpath %>' },
+  { label: 'Create', to: '/<%= urlpath %>/create' },
+]);
+</script>
