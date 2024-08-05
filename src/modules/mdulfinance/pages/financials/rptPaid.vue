@@ -4,9 +4,9 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/financials/create" icon="i-heroicons-plus-circle"
+        <!-- <UButton to="/financials/create" icon="i-heroicons-plus-circle"
           >New</UButton
-        >
+        > -->
         <template #next>
           <DSmartTabs />
         </template>
@@ -14,19 +14,32 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <DTable @selection-changed="selectItem" :data :pending />
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('list.rptPaid');
-useBreadcrumb('List');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('list.rptPaid');
+  useBreadcrumb('List');
 
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-function selectItem(item: any) {
-  navigateTo(`/financials/${item.id}`);
-}
+  function selectItem(item: any) {
+    navigateTo(`/financials/${item.id}`);
+  }
+  useSmartTabs([
+    {
+      label: 'จ่ายเช็ค - โอนเงินเสร็จสิ้น',
+      to: '/financials/rptPaid',
+    },
+    {
+      label: 'รายงาน ณ สิ้นวัน',
+      to: '/financials/rptDaily',
+    },
+  ]);
 </script>
