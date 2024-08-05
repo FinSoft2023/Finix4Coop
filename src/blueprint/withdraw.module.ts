@@ -17,7 +17,7 @@ export const moduleBlueprint = defineModule('withdraws', 'Withdraw', {
     confirm: {
       entity: withdraw,
       post: true,
-      role: 'stepfinal',
+      role: 'stepconfirm',
     },
     steps: {
       entity: withdraw,
