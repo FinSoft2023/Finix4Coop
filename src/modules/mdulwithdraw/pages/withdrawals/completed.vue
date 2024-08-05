@@ -5,9 +5,9 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/withdrawals/create"
-          icon="i-heroicons-plus-circle">New</UButton>
+          icon="i-heroicons-plus-circle">รับคิว</UButton>
         <UButton to="/withdrawals/create/close"
-          icon="i-heroicons-plus-circle">Close Counter</UButton>
+          icon="i-heroicons-x-circle">ปิดยอดเคาน์เตอร์</UButton>
         <template #next>
           <DSmartTabs />
         </template>

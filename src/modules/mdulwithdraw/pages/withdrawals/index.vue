@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/withdrawals/create"
-          icon="i-heroicons-plus-circle">New</UButton>
+          icon="i-heroicons-plus-circle">รับคิว</UButton>
         
         <template #next>
           <DSmartTabs />
