@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <UButton @click="handleConfirmation">ปิด</UButton>
       </UCard>
     </BPartPageBody>
 
@@ -18,8 +18,13 @@
 const pageDef = useActiveModulePage('each.scan');
 
 const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
+const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
+const { postResult, executePost } = apiPost();
+
+const handleConfirmation = ()=> {
+  executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+}
 
 useBreadcrumb(pageDef.label);
 </script>

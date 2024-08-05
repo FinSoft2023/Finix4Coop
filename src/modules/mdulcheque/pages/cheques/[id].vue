@@ -9,7 +9,9 @@ useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
     { label: 'Info', to: '/' },
-    { label: 'Edit', to: '/edit' },
+    { label: 'ปริ้นเช็ค', to: '/print' },
+    { label: 'สั่งจ่ายเช็ค', to: '/scan' },
+    { label: 'จ่ายเช็ค', to: '/scan2deliver' },
   ],
   pageDef,
 );

@@ -24,7 +24,7 @@ const pageDef = useActiveModulePage('list.completed');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { data, error, pending } = apiGet({ 'fltr-val': 'completed' });
 
 function selectItem(item: any) {
   navigateTo(`/cheques/${item.id}`);
