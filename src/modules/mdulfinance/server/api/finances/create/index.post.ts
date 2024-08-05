@@ -1,3 +1,3 @@
 export default defineEventHandler(async (event) => {
-  return await callPostToServer(event, '/api/finances');
+  return await callPostToServer(event, '/api/savingacctxs');
 });
