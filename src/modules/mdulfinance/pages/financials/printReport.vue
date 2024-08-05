@@ -10,12 +10,13 @@
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('list.printReport');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('list.printReport');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>
