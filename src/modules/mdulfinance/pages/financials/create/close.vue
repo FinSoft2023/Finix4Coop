@@ -3,19 +3,12 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
-        :state="data"
-        :schema="schema"
-        :pending="pending"
-        class="space-y-4"
-      >
-        <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
-        </UCard>
+      <UButton @click="handleClose">Close</UButton>
 
-        <UButton type="submit">Save</UButton>
-      </UForm>
+      <UCard>
+        <FTableOfTxs :data
+          :pending />
+      </UCard>
     </BPartPageBody>
   </BFullPage>
 </template>
@@ -31,11 +24,21 @@ const { entries, schema } = getEntrySchema(pageDef);
 
 const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
-const { postResult, executePost } = apiPost();
+const query = ref({ txid: '' });
+const { postResult, executePost } = apiPost(query);
 
-const handleSubmit = async () => {
-  await executePost(data.value);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/financials${redirectPath}`);
+const handleClose = async () => {
+  const txdata = data.value as any[];
+  for await (const item of txdata) {
+    const txid = item.id;
+    query.value = { txid };
+    await executePost({
+      state: 'account',
+      tstmp: {
+        closefinance: new Date().toISOString(),
+      }
+    });
+  }
+  navigateTo(`/financials/rptPaid`);
 };
 </script>
