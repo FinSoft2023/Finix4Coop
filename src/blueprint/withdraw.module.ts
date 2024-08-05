@@ -32,9 +32,13 @@ export const moduleBlueprint = defineModule('withdrawals', 'accTransactions', {
     root: accTransactions,
     print: {
       entity: accTransactions,
+      post: true,
       role: 'print',
     },
-    scan: accTransactions,
+    scan: {
+      entity: accTransactions,
+      post: true,
+    },
     takePhoto: {
       entity: accTransactions,
       post: true,
