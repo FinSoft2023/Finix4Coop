@@ -183,7 +183,7 @@ export const accTransactions = defineEntity({
           component: 'text',
         },
         {
-          model: 'memberid',
+          model: 'memcode',
           label: 'รหัสสมาชิก',
           spec: {},
           component: 'text',
