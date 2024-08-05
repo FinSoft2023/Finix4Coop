@@ -11,7 +11,7 @@
               <p class="mt-[1mm] ml-[3cm] ">สหกรณ์ออมทรัพย์ </p>
               <p class="mt-[1mm] ml-[3cm] text-gray-900 font-bold dark:text-gray-90">01/03/2567</p>
               <div v-for="item in Details"
-                   :key="item.id">
+                :key="item.id">
                 <div class="flex items-center">
                   <p class="mt-[1mm] ml-[6cm] text-gray-900 dark:text-gray-90">{{ item.name }}</p>
                   <p class="mt-[1mm] ml-[9cm] text-gray-900 dark:text-gray-90">{{ item.nember }}</p>
@@ -33,8 +33,8 @@
 </template>
 
 <script setup
-        lang="ts">
-        const Details = ref([
-          { name: 'นายสมใจ ดีใจ', nember: '094756375', amountcash: '800', amount: '800', total: '800' },
-        ])
+  lang="ts">
+  const Details = ref([
+    { name: 'นายสมใจ ดีใจ', nember: '094756375', amountcash: '800', amount: '800', total: '800' },
+  ])
 </script>
