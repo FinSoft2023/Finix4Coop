@@ -132,3 +132,59 @@ export const category = defineEntity({
     },
   ],
 });
+
+export const methodStates = defineChoicesList('method-states', {
+  transfer: 'เงินโอน',
+  cheque: 'เช็ค',
+});
+
+export const withdraw = defineEntity({
+  name: 'withdraw',
+  root: [
+    {
+      model: 'method',
+      label: 'ช่องทาง',
+      spec: {},
+      component: 'radio',
+      choices: methodStates,
+    },
+    {
+      model: 'amount',
+      label: 'จำนวนเงิน (บาท)',
+      spec: {},
+      component: 'number',
+    },
+  ],
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memberid',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'account',
+          label: 'เลขบัญชีธนาคาร',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+});
