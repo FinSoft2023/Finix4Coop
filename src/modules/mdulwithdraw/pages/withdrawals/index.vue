@@ -26,7 +26,7 @@ const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet({ 'fltr-val': '' });
+const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
 
 function selectItem(item: any) {
