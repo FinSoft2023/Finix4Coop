@@ -18,11 +18,11 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'ฝาก',
     to: '/transferonline',
   },
   {
-    label: 'Closed',
+    label: 'ถอน',
     to: '/transferonline/closed',
   },
 ]);

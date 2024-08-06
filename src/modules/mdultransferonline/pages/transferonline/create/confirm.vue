@@ -4,36 +4,28 @@
 
     <DSmartSubStepper />
 
-    <UAlert
-      icon="i-heroicons-document-check"
-      description="ระบุรายละเอียดขั้นตอนการทำงาน"
-      :title="pageDef.label"
-    />
+    <UAlert icon="i-heroicons-document-check"
+      description="ยืนยันจำนวนเงินฝาก"
+      :title="pageDef.label" />
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
+      <UForm @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4"
-      >
-        <DItemGrid col="x3">
-          <UCard class="col-span-2">
-            <DEntitySection v-model="data" :entries :pending />
-          </UCard>
-          <UCard> Your content here </UCard>
-        </DItemGrid>
+        class="space-y-4">
+        <UCard >
+          <DEntitySection v-model="data"
+            :entries
+            :pending />
+        </UCard>        
 
         <BPartButtonsBand>
-          <UButton
-            @click="$router.back"
+          <UButton @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
-            variant="outline"
-            >Back</UButton
-          >
+            variant="outline">Back</UButton>
           <template #next>
-            <UButton type="submit">Save</UButton>
+            <UButton type="submit">comfirm</UButton>
           </template>
         </BPartButtonsBand>
       </UForm>
@@ -41,27 +33,28 @@
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-// import type { z } from 'zod';
+<script setup
+  lang="ts">
+  // import type { z } from 'zod';
 
-const pageDef = useActiveModulePage('create.confirm');
-useSmartStepper(pageDef);
-useBreadcrumb('Create');
+  const pageDef = useActiveModulePage('create.confirm');
+  useSmartStepper(pageDef);
+  useBreadcrumb('Create');
 
-const { entries, schema } = getEntrySchema(pageDef);
-// type TSchema = z.output<typeof schema>;
+  const { entries, schema } = getEntrySchema(pageDef);
+  // type TSchema = z.output<typeof schema>;
 
-// const { apiGet, apiPost } = useHostApi(pageDef);
-const { apiGet } = useLocalStage(pageDef);
-const { apiPost } = useHostApi(pageDef);
-const { data, pending } = apiGet();
-const { postResult, error, executePost } = apiPost();
+  // const { apiGet, apiPost } = useHostApi(pageDef);
+  const { apiGet } = useLocalStage(pageDef);
+  const { apiPost } = useHostApi(pageDef);
+  const { data, pending } = apiGet();
+  const { postResult, error, executePost } = apiPost();
 
-useComponentResolver(defaultViewResolvers);
+  useComponentResolver(defaultViewResolvers);
 
-const handleSubmit = async () => {
-  await executePost(data.value);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/transferonline${redirectPath}`);
-};
+  const handleSubmit = async () => {
+    await executePost(data.value);
+    const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
+    navigateTo(`/transferonline${redirectPath}`);
+  };
 </script>
