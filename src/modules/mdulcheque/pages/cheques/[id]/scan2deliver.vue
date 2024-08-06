@@ -3,6 +3,9 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
+      <UCard>
+        <UButton @click="handleConfirmation">จ่ายเช็ค</UButton>
+      </UCard>
       <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
 
@@ -16,11 +19,21 @@
   lang="ts">
   import * as Ably from 'ably';
 
-  // For the full code sample see here: https://github.com/ably/quickstart-js
+const { entries } = getEntrySchema(pageDef);
+const { apiGet, apiPost } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
+const { postResult, executePost } = apiPost();
+
+const route = useRoute();
+  async function handleConfirmation() {
+  await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+  navigateTo(`/cheques/${route.params.id}`);
+}
+
+// For the full code sample see here: https://github.com/ably/quickstart-js
   const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
   await ably.connection.once('connected');
   console.log('Connected to Ably!');
-
 
   // get the channel to subscribe to
   const channel = ably.channels.get('linkup');
@@ -32,7 +45,7 @@
   */
   await channel.subscribe('photo', (message) => {
     console.log('Received a greeting message in realtime: ', message.data)
-    navigateTo('/');
+    handleConfirmation('/');
   });
 
   const pageDef = useActiveModulePage('each.scan2deliver');

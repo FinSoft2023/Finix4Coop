@@ -3,6 +3,9 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
+      <UCard>
+        <UButton @click="handleConfirmation">สั่งจ่าย</UButton>
+      </UCard>
       <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
 
@@ -21,6 +24,11 @@
   await ably.connection.once('connected');
   console.log('Connected to Ably!');
 
+const route = useRoute();
+  async function handleConfirmation() {
+  await executePost({ state: 'deliver', tstmp: { deliver: new Date().toISOString() } });
+  navigateTo(`/cheques/${route.params.id}`);
+}
 
   // get the channel to subscribe to
   const channel = ably.channels.get('linkup');
