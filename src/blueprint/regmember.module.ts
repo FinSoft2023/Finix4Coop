@@ -7,6 +7,7 @@ export const moduleBlueprint = defineModule('regmembers', 'ผูกสมาช
     root: accTransactions,
     completed: accTransactions,
     closed: accTransactions,
+    txmonitor: accTransactions,
   },
   create: {
     root: {
@@ -38,6 +39,19 @@ export const moduleBlueprint = defineModule('regmembers', 'ผูกสมาช
     takePhoto: {
       entity: accTransactions,
       post: true,
+    },
+    deposit: {
+      entity: accTransactions,
+      post: true,
+    },
+    depositing: {
+      entity: accTransactions,
+      post: true,
+    },
+    depositResult: {
+      entity: accTransactions,
+      post: true,
+      role: 'confirm',
     },
     cancel: {
       entity: accTransactions,
