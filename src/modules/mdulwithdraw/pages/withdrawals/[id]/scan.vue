@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <UButton @click="handleConfirmation">บันทึกใบฝาก</UButton>
       </UCard>
     </BPartPageBody>
 
@@ -39,8 +39,15 @@ await channel.subscribe('photo', (message) => {
 const pageDef = useActiveModulePage('each.scan');
 
 const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
+const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
+const { postResult, executePost } = apiPost();
+
+const route = useRoute();
+async function handleConfirmation() {
+  await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+  navigateTo(`/withdrawals/${route.params.id}`);
+}
 
 useBreadcrumb(pageDef.label);
 </script>

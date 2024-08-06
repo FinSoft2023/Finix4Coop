@@ -26,7 +26,8 @@ const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
+
 
 function selectItem(item: any) {
   navigateTo(`/withdrawals/${item.id}`);

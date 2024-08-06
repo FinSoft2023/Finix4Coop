@@ -4,14 +4,14 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <DEntitySection v-model="data"
+          :entries
+          :pending />
       </UCard>
 
-      <BOnPageModal
-        label="Please confirm"
+      <BOnPageModal label="Please confirm"
         actionText="ตกลง"
-        @action="handleConfirmation"
-      >
+        @action="handleConfirmation">
         แน่ใจแล้วใช่หรือไม่
       </BOnPageModal>
     </BPartPageBody>
@@ -28,7 +28,7 @@ const { postResult, executePost } = apiPost();
 
 const route = useRoute();
 async function handleConfirmation() {
-  await executePost({ deletedAt: new Date().toISOString() });
+  await executePost({ state: 'cancel', tstmp: { cancel: new Date().toISOString() } });
   navigateTo(`/withdrawals/${route.params.id}`);
 }
 
