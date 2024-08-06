@@ -33,7 +33,15 @@ useBreadcrumb('List');
 
 const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
-const { postResult, executePost } = apiPost();
+// const { postResult, executePost } = apiPost();
+const postingData = ref<any>();
+const { data: postResult, execute: executePost } = useFetch('/api/regmembers/create', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: postingData.value,
+  immediate: false,
+  watch: false,
+});
 
 // For the full code sample see here: https://github.com/ably/quickstart-js
 const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
@@ -42,7 +50,8 @@ console.log('Connected to Ably!');
 
 const route = useRoute();
 async function handleIncomingTx(txdata: any) {
-  executePost(txdata);
+  postingData.value = txdata;
+  await executePost();
 }
 
 // get the channel to subscribe to
