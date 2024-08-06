@@ -4,11 +4,15 @@
 
     <BPartPageBody>
       <UCard>
-        <UButton @click="handleConfirmation">สั่งจ่าย</UButton>
+        <UButton to="/cheques/"
+          icon="i-heroicons-arrow-right"
+          @click="handleConfirmation">ดำเนินการต่อ</UButton>
+
+        <img alt=""
+          :src="imageUrl">
       </UCard>
       <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
-
     <template #side>
       <DSubLinks />
     </template>
@@ -23,9 +27,17 @@ const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvI
 await ably.connection.once('connected');
 console.log('Connected to Ably!');
 
+const imageUrl = ref('');
 const route = useRoute();
 async function handleConfirmation() {
   await executePost({ state: 'deliver', tstmp: { deliver: new Date().toISOString() } });
+  await $fetch(`/api/cheques/${route.params.id}/images`, {
+    method: 'POST',
+    body: {
+      src: imageUrl.value,
+      alt: 'รูปเช็ค',
+    },
+  });
   navigateTo(`/cheques/${route.params.id}`);
 }
 
@@ -37,10 +49,13 @@ const channel = ably.channels.get('linkup');
   The promise resolves when the channel is attached
   (and resolves synchronously if the channel is already attached).
 */
+
 await channel.subscribe('photo', (message) => {
+  imageUrl.value = message.data.imageUrl;
   console.log('Received a greeting message in realtime: ', message.data);
-  handleConfirmation();
+
 });
+
 
 const pageDef = useActiveModulePage('each.scan');
 
@@ -49,11 +64,6 @@ const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 const { postResult, executePost } = apiPost();
 
-// const route = useRoute();
-// async function handleConfirmation() {
-//   await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
-//   navigateTo(`/withdrawals/${route.params.id}`);
-// }
 
 useBreadcrumb(pageDef.label);
 </script>

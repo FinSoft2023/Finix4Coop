@@ -4,7 +4,12 @@
 
     <BPartPageBody>
       <UCard>
-        <UButton @click="handleConfirmation">จ่ายเช็ค</UButton>
+        <UButton to="/cheques/"
+          icon="i-heroicons-arrow-right"
+          @click="handleConfirmation">ดำเนินการต่อ</UButton>
+
+        <img alt=""
+          :src="imageUrl">
       </UCard>
       <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
@@ -15,51 +20,58 @@
   </BFullPage>
 </template>
 
-<script setup
-  lang="ts">
-  import * as Ably from 'ably';
+<script setup lang="ts">
+import * as Ably from 'ably';
 
 // const { entries } = getEntrySchema(pageDef);
 // const { apiGet, apiPost } = useHostApi(pageDef);
 // const { data, error, pending } = apiGet();
 // const { postResult, executePost } = apiPost();
 
+const imageUrl = ref('');
 const route = useRoute();
-  async function handleConfirmation() {
+async function handleConfirmation() {
   await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+  await $fetch(`/api/cheques/${route.params.id}/images`, {
+    method: 'POST',
+    body: {
+      src: imageUrl.value,
+      alt: 'ขั่วเช็ค',
+    },
+  });
   navigateTo(`/cheques/${route.params.id}`);
 }
 
 // For the full code sample see here: https://github.com/ably/quickstart-js
-  const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
-  await ably.connection.once('connected');
-  console.log('Connected to Ably!');
+const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
+await ably.connection.once('connected');
+console.log('Connected to Ably!');
 
-  // get the channel to subscribe to
-  const channel = ably.channels.get('linkup');
+// get the channel to subscribe to
+const channel = ably.channels.get('linkup');
 
-  /*
-    Subscribe to a channel.
-    The promise resolves when the channel is attached
-    (and resolves synchronously if the channel is already attached).
-  */
-  await channel.subscribe('photo', (message) => {
-    console.log('Received a greeting message in realtime: ', message.data)
-    handleConfirmation();
-  });
+/*
+  Subscribe to a channel.
+  The promise resolves when the channel is attached
+  (and resolves synchronously if the channel is already attached).
+*/
+await channel.subscribe('photo', (message) => {
+  imageUrl.value = message.data.imageUrl;
+  console.log('Received a greeting message in realtime: ', message.data)
+});
 
-  const pageDef = useActiveModulePage('each.scan2deliver');
+const pageDef = useActiveModulePage('each.scan2deliver');
 
-  const { entries } = getEntrySchema(pageDef);
-  const { apiGet, apiPost } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
-  const { postResult, executePost } = apiPost();
+const { entries } = getEntrySchema(pageDef);
+const { apiGet, apiPost } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
+const { postResult, executePost } = apiPost();
 
-  // const route = useRoute();
-  // async function handleConfirmation() {
-  //   await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
-  //   navigateTo(`/withdrawals/${route.params.id}`);
-  // }
+// const route = useRoute();
+// async function handleConfirmation() {
+//   await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+//   navigateTo(`/withdrawals/${route.params.id}`);
+// }
 
-  useBreadcrumb(pageDef.label);
+useBreadcrumb(pageDef.label);
 </script>
