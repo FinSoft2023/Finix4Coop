@@ -8,7 +8,7 @@
 <script setup lang="ts">
 const { setNavLinks } = useThemeSettings();
 setNavLinks([
-  { label: 'Regmembers', to: '/regmembers' },
-  { label: 'Create', to: '/regmembers/create' },
+  { label: 'ลงทะเบียนผูกบัญชี', to: '/regmembers' },
+  { label: 'ผูกบัญชี (ชั่วคราว)', to: '/regmembers/create' },
 ]);
 </script>
