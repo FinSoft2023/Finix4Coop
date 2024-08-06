@@ -4,7 +4,11 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <img alt="QR Code"
+          :src="qrPayment" />
+        <DEntitySection v-model="data"
+          :entries
+          :pending />
       </UCard>
     </BPartPageBody>
 
@@ -15,9 +19,16 @@
 </template>
 
 <script setup lang="ts">
+import { useQRCode } from '@vueuse/integrations/useQRCode';
+
 const pageDef = useActiveModulePage('each.depositing');
 
-const { entries } = getEntrySchema(pageDef);
+const qrsto = useQrStore();
+const { qrCode } = storeToRefs(qrsto);
+
+const qrPayment = useQRCode(qrCode);
+
+const { entries } = getEntrySchema(pageDef, 'account');
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
