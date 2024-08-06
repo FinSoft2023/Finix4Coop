@@ -72,7 +72,7 @@ await channel.subscribe('paid', (message) => {
   handleIncomingTx({
     amount: txdata.amount,
     memcode: txdata.memberCode,
-    timestamp: txdata.timestamp,
+    // timestamp: txdata.timestamp,
   });
 });
 
