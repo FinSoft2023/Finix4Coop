@@ -9,7 +9,7 @@
           :class="[stepClassM(it.id)]">
           <span :class="[borderClassM(it.id)]"
             class="flex items-center justify-center w-8 h-8 border-2 rounded-full shrink-0">
-            {{ it.id }}
+            {{ it.label }}
           </span>
           <span>
             <h3 class="font-medium leading-tight">
