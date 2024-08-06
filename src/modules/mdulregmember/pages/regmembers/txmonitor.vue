@@ -6,7 +6,8 @@
       <BPartButtonsBand>
         <UButton to="/regmembers/create"
           icon="i-heroicons-plus-circle">New</UButton>
-        <a href="/api/regmembers/_by/txmonitor" target="_blank">
+        <a href="/api/regmembers/_by/txmonitor"
+          target="_blank">
           <UButton icon="i-heroicons-inbox-arrow-down-20-solid"
             variant="outline">Download</UButton>
         </a>
