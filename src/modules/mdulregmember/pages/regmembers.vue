@@ -11,7 +11,7 @@ setModulePageRoot([
     to: '/',
   },
   {
-    label: 'Regmembers',
+    label: 'ลงทะเบียนผูกบัญชี',
     icon: 'i-heroicons-square-3-stack-3d',
     to: '/regmembers',
   },
