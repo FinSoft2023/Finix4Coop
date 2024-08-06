@@ -4,12 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/withdrawals/"
-          icon="i-mdi-file-document-delete-outline">ลบเอกสาร</UButton>
-        <UButton to="/withdrawals/"
+        <UButton to="/cheques/"
           icon="i-heroicons-arrow-right">ดำเนินการต่อ</UButton>
       </BPartButtonsBand>
-      <FPhotoPreview></FPhotoPreview>
+      <DGallery :photos="[{src:data.imageUrl, alt:''}]" />
     </BPartPageBody>
 
   </BFullPage>
