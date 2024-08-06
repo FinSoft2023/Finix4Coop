@@ -1,3 +1,3 @@
 export default defineEventHandler(async (event) => {
-  return {};
+  return await callGetListToServer(event, { url: '/api/savingacctxs' });
 });

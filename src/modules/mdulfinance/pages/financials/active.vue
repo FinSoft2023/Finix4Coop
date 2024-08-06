@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/financials/completed"
+        <UButton to="/financials/create/payout"
           icon="i-mdi-auto-pay">QR Code โอนเงิน</UButton>
         <template #next>
           <DSmartTabs />
