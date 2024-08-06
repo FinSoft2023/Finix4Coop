@@ -3,23 +3,25 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-      </UCard>
+      <BPartButtonsBand>
+        <UButton to="/withdrawals/"
+          icon="i-mdi-file-document-delete-outline">ลบเอกสาร</UButton>
+        <UButton to="/withdrawals/"
+          icon="i-heroicons-arrow-right">ดำเนินการต่อ</UButton>
+      </BPartButtonsBand>
+      <FPhotoPreview></FPhotoPreview>
     </BPartPageBody>
 
-    <template #side>
-      <DSubLinks />
-    </template>
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('each.takePhotoDeliver');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('each.takePhotoDeliver');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>

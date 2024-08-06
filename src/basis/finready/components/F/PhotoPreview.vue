@@ -1,38 +1,51 @@
 <template>
-  <section class="bg-white dark:bg-gray-900">
-    <div class="flex justify-center">
-      <h3 class=" text-4xl font-bold dark:text-white">เอกสาร ถอนเงิน</h3>
-    </div>
-    <div class="py-8 px-4 mx-auto max-w-screen-xl ">
-      <section>
-        <div class="p-4 font-bold">ใบถอนเงิน Withdrewal SLIP</div>
-        <UCard>
-          <div class=" flex justify-center text-center items-center">
-            <DGallery :photos=""></DGallery>
-          </div>
-        </UCard>
-      </section>
-      <div class="mt-4 mx-auto max-w-screen-sm text-center">
-        <UButton class="mr-5"
-          size="xl"
-          variant="solid"
-          icon="i-mdi-file-document-delete-outline">
-          ลบเอกสาร
-        </UButton>
-        <UButton size="xl"
-          variant="solid"
-          icon="i-heroicons-arrow-right"
-          to="/flow5/step5">
-          ดำเนินการต่อ
-        </UButton>
+  <div>
+    <div class="flex flex-wrap justify-center gap-4">
+      <div v-for="(image, index) in photos"
+        :key="index">
+        <img class="h-auto max-w-[500px] rounded-lg cursor-pointer"
+          :src="image.src"
+          :alt="image.alt"
+          @click="showImage(image)">
       </div>
     </div>
-  </section>
+
+    <div v-if="selectedImage"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+      @click="closeImage">
+      <img class="max-w-full max-h-full"
+        :src="selectedImage.src"
+        :alt="selectedImage.alt">
+    </div>
+  </div>
 </template>
 
 <script setup
   lang="ts">
-  const photos = [{
+  interface Image {
+    src: string;
+    alt: string;
+  }
 
-  }]
+  const props = defineProps<{ photos: Image[] }>();
+
+  const selectedImage = ref<Image | null>(null);
+
+  function showImage(image: Image) {
+    selectedImage.value = image;
+  }
+
+  function closeImage() {
+    selectedImage.value = null;
+  }
+  const photos = ref([
+    { src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg', alt: 'Image 1' },
+    // Add more images here
+  ]);
 </script>
+
+<style scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>
