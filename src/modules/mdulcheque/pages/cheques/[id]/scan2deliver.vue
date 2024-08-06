@@ -19,10 +19,10 @@
   lang="ts">
   import * as Ably from 'ably';
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet, apiPost } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
-const { postResult, executePost } = apiPost();
+// const { entries } = getEntrySchema(pageDef);
+// const { apiGet, apiPost } = useHostApi(pageDef);
+// const { data, error, pending } = apiGet();
+// const { postResult, executePost } = apiPost();
 
 const route = useRoute();
   async function handleConfirmation() {
@@ -50,10 +50,10 @@ const route = useRoute();
 
   const pageDef = useActiveModulePage('each.scan2deliver');
 
-  // const { entries } = getEntrySchema(pageDef);
-  // const { apiGet, apiPost } = useHostApi(pageDef);
-  // const { data, error, pending } = apiGet();
-  // const { postResult, executePost } = apiPost();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet, apiPost } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
+  const { postResult, executePost } = apiPost();
 
   // const route = useRoute();
   // async function handleConfirmation() {
