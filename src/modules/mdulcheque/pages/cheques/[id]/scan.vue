@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <UCard>
-        <UButton @click="handleConfirmation">ปิด</UButton>
+        <UButton @click="handleConfirmation">สั่งจ่าย</UButton>
       </UCard>
     </BPartPageBody>
 
@@ -22,8 +22,10 @@ const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 const { postResult, executePost } = apiPost();
 
-const handleConfirmation = ()=> {
-  executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+const route = useRoute();
+  async function handleConfirmation() {
+  await executePost({ state: 'deliver', tstmp: { deliver: new Date().toISOString() } });
+  navigateTo(`/cheques/${route.params.id}`);
 }
 
 useBreadcrumb(pageDef.label);

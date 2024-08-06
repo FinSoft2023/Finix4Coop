@@ -24,7 +24,7 @@
   useBreadcrumb('List');
 
   const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
+  const { data, error, pending } = apiGet({ 'fltr-val': 'deliver' });
 
   function selectItem(item: any) {
     navigateTo(`/cheques/${item.id}`);
