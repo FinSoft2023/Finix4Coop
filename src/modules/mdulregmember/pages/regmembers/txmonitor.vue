@@ -34,14 +34,13 @@ useBreadcrumb('List');
 const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 // const { postResult, executePost } = apiPost();
-const postingData = ref<any>();
-const { data: postResult, execute: executePost } = useFetch('/api/regmembers/create', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: postingData.value,
-  immediate: false,
-  watch: false,
-});
+// const postingData = ref<any>();
+// const { data: postResult, execute: executePost } = useFetch('/api/regmembers/create', {
+//   method: 'POST',
+//   body: postingData.value,
+//   immediate: false,
+//   watch: false,
+// });
 
 // For the full code sample see here: https://github.com/ably/quickstart-js
 const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
@@ -50,8 +49,12 @@ console.log('Connected to Ably!');
 
 const route = useRoute();
 async function handleIncomingTx(txdata: any) {
-  postingData.value = txdata;
-  await executePost();
+  // postingData.value = txdata;
+  const rsp = await $fetch('/api/regmembers/create', {
+    method: 'POST',
+    body: txdata,
+  });
+  console.log('Posted txdata:', txdata, 'Response:', rsp);
 }
 
 // get the channel to subscribe to
@@ -64,8 +67,13 @@ const channel = ably.channels.get('payment');
 */
 await channel.subscribe('paid', (message) => {
   const txdata = message.data;
-  console.log('Received a greeting message in realtime: ', message.data);
-  handleIncomingTx(txdata);
+  console.log('Received a greeting message in realtime: ', txdata);
+
+  handleIncomingTx({
+    amount: txdata.amount,
+    memcode: txdata.memberCode,
+    timestamp: txdata.timestamp,
+  });
 });
 
 function selectItem(item: any) {

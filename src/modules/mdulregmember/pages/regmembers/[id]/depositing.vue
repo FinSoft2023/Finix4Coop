@@ -14,7 +14,7 @@
           <div class="p-4">
             <div class="flex justify-between items-center mb-2">
               <span class="text-gray-700 font-medium">จำนวนเงินฝาก (บาท)</span>
-              <span class="text-gray-900 font-bold">23</span>
+              <span class="text-gray-900 font-bold">{{ reqAmount }}</span>
             </div>
             <div class="flex justify-between items-center mb-2">
               <span class="text-gray-700 font-medium">ค่าธรรมเนียม (บาท)</span>
@@ -22,7 +22,7 @@
             </div>
             <div class="flex justify-between items-center">
               <span class="text-gray-700 font-medium">รวมจ่าย (บาท)</span>
-              <span class="text-gray-900 font-bold">31</span>
+              <span class="text-gray-900 font-bold">{{ reqAmount + 8 }}</span>
             </div>
           </div>
         </UCard>
@@ -65,7 +65,7 @@ await channel.subscribe('paid', (message) => {
 const pageDef = useActiveModulePage('each.depositing');
 
 const qrsto = useQrStore();
-const { qrCode } = storeToRefs(qrsto);
+const { qrCode, reqAmount } = storeToRefs(qrsto);
 
 const qrPayment = useQRCode(qrCode);
 

@@ -52,12 +52,13 @@ const amount = ref<number>();
 const memcode = computed(() => data.value?.memcode);
 
 const qrSto = useQrStore();
-const { qrCode } = storeToRefs(qrSto);
+const { qrCode, reqAmount } = storeToRefs(qrSto);
 async function handleContinue() {
   await executePost({ amount: amount.value, memcode: memcode.value });
   const qrResultText = postResult.value;
   const qrResult = JSON.parse(qrResultText);
   qrCode.value = qrResult.QrText;
+  reqAmount.value = amount.value;
   navigateTo('./depositing');
 }
 
