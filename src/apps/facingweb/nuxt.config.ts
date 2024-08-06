@@ -7,5 +7,6 @@ export default defineNuxtConfig({
     '../../modules/mdulcheque',
     '../../modules/mdulfinance',
     '../../modules/mdulaccounting',
+    '../../modules/mdulregmember',
   ],
 });

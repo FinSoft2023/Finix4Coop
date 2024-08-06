@@ -44,8 +44,7 @@
   }, {
     label: 'Releases',
     icon: 'i-heroicons-rocket-launch',
-    to: 'https://github.com/nuxt/ui/releases',
-    target: '_blank'
+    to: '/regmembers'
   }]);
 
 const modules = [{
