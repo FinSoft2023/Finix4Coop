@@ -3,13 +3,30 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <img alt="QR Code"
-          :src="qrPayment" />
-        <DEntitySection v-model="data"
-          :entries
-          :pending />
-      </UCard>
+      <DItemGrid col="x2">
+        <UCard>
+          <div class="flex justify-center items-center">
+            <img alt="QR Code"
+              :src="qrPayment" />
+          </div>
+        </UCard>
+        <UCard>
+          <div class="p-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-gray-700 font-medium">จำนวนเงินฝาก (บาท)</span>
+              <span class="text-gray-900 font-bold">23</span>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-gray-700 font-medium">ค่าธรรมเนียม (บาท)</span>
+              <span class="text-gray-900 font-bold">8</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 font-medium">รวมจ่าย (บาท)</span>
+              <span class="text-gray-900 font-bold">31</span>
+            </div>
+          </div>
+        </UCard>
+      </DItemGrid>
     </BPartPageBody>
 
     <template #side>
