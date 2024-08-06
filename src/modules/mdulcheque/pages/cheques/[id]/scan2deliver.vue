@@ -45,21 +45,21 @@ const route = useRoute();
   */
   await channel.subscribe('photo', (message) => {
     console.log('Received a greeting message in realtime: ', message.data)
-    handleConfirmation('/');
+    handleConfirmation();
   });
 
   const pageDef = useActiveModulePage('each.scan2deliver');
 
-  const { entries } = getEntrySchema(pageDef);
-  const { apiGet, apiPost } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
-  const { postResult, executePost } = apiPost();
+  // const { entries } = getEntrySchema(pageDef);
+  // const { apiGet, apiPost } = useHostApi(pageDef);
+  // const { data, error, pending } = apiGet();
+  // const { postResult, executePost } = apiPost();
 
-  const route = useRoute();
-  async function handleConfirmation() {
-    await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
-    navigateTo(`/withdrawals/${route.params.id}`);
-  }
+  // const route = useRoute();
+  // async function handleConfirmation() {
+  //   await executePost({ state: 'completed', tstmp: { completed: new Date().toISOString() } });
+  //   navigateTo(`/withdrawals/${route.params.id}`);
+  // }
 
   useBreadcrumb(pageDef.label);
 </script>
