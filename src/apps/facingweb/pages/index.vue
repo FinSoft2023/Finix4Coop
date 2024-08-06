@@ -45,6 +45,11 @@
     label: 'Releases',
     icon: 'i-heroicons-rocket-launch',
     to: '/regmembers'
+  }, {
+    label: 'Monitoring',
+    icon: 'i-heroicons-rocket-launch',
+    to: '/regmembers/txmonitor',
+    target: '_blank'
   }]);
 
 const modules = [{

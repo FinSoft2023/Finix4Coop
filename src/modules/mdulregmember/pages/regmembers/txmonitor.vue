@@ -4,9 +4,12 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/regmembers/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+        <UButton to="/regmembers/create"
+          icon="i-heroicons-plus-circle">New</UButton>
+        <a href="/api/regmembers/_by/txmonitor" target="_blank">
+          <UButton icon="i-heroicons-inbox-arrow-down-20-solid"
+            variant="outline">Download</UButton>
+        </a>
         <template #next>
           <DSmartTabs />
         </template>
@@ -14,7 +17,9 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <DTable @selection-changed="selectItem" :data :pending />
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
