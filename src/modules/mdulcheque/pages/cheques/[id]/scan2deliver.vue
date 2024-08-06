@@ -35,7 +35,7 @@
     navigateTo('/');
   });
 
-  const pageDef = useActiveModulePage('each.scan');
+  const pageDef = useActiveModulePage('each.scan2deliver');
 
   const { entries } = getEntrySchema(pageDef);
   const { apiGet, apiPost } = useHostApi(pageDef);
