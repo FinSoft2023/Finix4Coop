@@ -44,10 +44,18 @@
   const { data, pending } = apiGet();
   const { postResult, error, executePost } = apiPost();
 
+  const memStore = useLinkMemberStore();
+  const { memcode, qrcode } = storeToRefs(memStore);
   // If this is the first step, you can initialize the data value like this:
-  // data.value = {};
+  data.value = { memcode: memcode.value };
 
   const handleSubmit = async () => {
+    const result = await $fetch<any>('/api/transferonline/create', {
+      method: 'POST',
+      body: data.value,
+    });
+    const qrResult = JSON.parse(result);
+    qrcode.value = qrResult.QrText;
     await executePost(data.value);
     const redirectPath = getNextStep(pageDef);
     navigateTo(`/transferonline/create/${redirectPath}`);
