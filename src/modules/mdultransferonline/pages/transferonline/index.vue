@@ -7,6 +7,12 @@
         icon="i-mdi-instant-deposit"
         block>ฝากเงิน</UButton>
 
+      <UCard>
+        สมาชิกเลขที่ {{ memcode }}
+        ยอดเงินฝาก (บาท)
+        <p>{{ amount }}</p>
+      </UCard>
+
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
@@ -17,20 +23,25 @@
   </BFullPage>
 </template>
 
-<script setup
-  lang="ts">
-  const pageDef = useActiveModulePage('list.root');
-  useBreadcrumb('List');
+<script setup lang="ts">
+const pageDef = useActiveModulePage('list.root');
+useBreadcrumb('List');
 
-  const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
+const memSto = useLinkMemberStore();
+const { memcode, amount } = storeToRefs(memSto);
 
-  function selectItem(item: any) {
-    navigateTo(`/transferonline/${item.id}`);
-  }
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet({ 'fltr-val': memcode.value });
 
-  const columns = [{
-    key: 'amount',
-    label: 'ยอดเงินฝาก'
-  },];
+function selectItem(item: any) {
+  navigateTo(`/transferonline/${item.id}`);
+}
+
+const columns = [{
+  key: 'amount',
+  label: 'ยอดเงินฝาก'
+}, {
+  key: 'txat',
+  label: 'เวลาทำรายการ'
+},];
 </script>
