@@ -3,18 +3,15 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UPageCard v-for="(module, index) in modules"
-        :key="index"
-        v-bind="module">
-        <template #description>
-          <span class="line-clamp-2">{{ module.description }}</span>
-        </template>
-      </UPageCard>
+      <UButton to="/transferonline/create"
+        icon="i-mdi-instant-deposit"
+        block>ฝากเงิน</UButton>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data
+        :columns
         :pending />
     </BPartPageBody>
   </BFullPage>
@@ -32,10 +29,8 @@
     navigateTo(`/transferonline/${item.id}`);
   }
 
-  const modules = [{
-    title: 'ฝากเงิน',
-    description: 'โอนเสร็จ รู้ยอดเงินได้ทันที',
-    to: '/transferonline/create',
-    icon: 'i-mdi-instant-deposit'
-  },]
+  const columns = [{
+    key: 'amount',
+    label: 'ยอดเงินฝาก'
+  },];
 </script>
