@@ -12,7 +12,6 @@ const props = defineProps<{
   data: T[],
   pending?: boolean,
 }>();
-const emits = defineEmits(['selectionChanged']);
 
 const columns = [{
   key: 'id',
@@ -27,7 +26,7 @@ const columns = [{
   key: 'txcode',
   label: 'ฝาก/ถอน'
 }, {
-  key: 'method',
+  key: 'transferChannel',
   label: 'ช่องทาง'
 }, {
   key: 'amount',

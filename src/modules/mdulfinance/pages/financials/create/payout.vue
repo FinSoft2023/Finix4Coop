@@ -3,12 +3,10 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UButton @click="handleClose">Close</UButton>
+      <UButton @click="handleClose">โอน</UButton>
 
-      <UCard>
         <FTableOfTxs :data
           :pending />
-      </UCard>
     </BPartPageBody>
   </BFullPage>
 </template>
