@@ -1,5 +1,6 @@
 <template>
   <DocPaper>
+    <!-- <pre>{{data}}</pre> -->
 
     <head>
       <meta charset="UTF-8">
@@ -23,17 +24,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in cheque"
-          :key="item.id">
-          <td class="py-2">{{ item.id }}</td>
-          <td class="py-2">{{ item.number }}</td>
-          <td class="py-2">{{ item.name }}</td>
+        <tr v-for="(data, index) in withdrawalscheque" :key="item.id">
+          <td class="py-2"></td>
+          <td class="py-2">{{ data.accNo }}</td>
+          <td class="py-2">{{ data.name }}</td>
           <td class="py-2">
-            <span>{{ item.type }}</span>
+            <span>{{ data.txcode }}</span>
           </td>
           <td class="py-2 text-end">
-            <MoneyAmount :amount="item.amount"
-              class="min-w-28" />{{ item.amount }}
+            <MoneyAmount :amount="data.amount"
+              class="min-w-28" />{{ data.amount }}
           </td>
           <td class="py-2 text-end">
             <MoneyAmount :amount="row?.officer.depositAmount"
@@ -50,7 +50,7 @@
           <td colspan="1"
             class="py-2 text-end border-b">
             <MoneyAmount :amount="total"
-              class="min-w-28" />15,000.00
+              class="min-w-28" />{{totalcheque}}
           </td>
           <td colspan="1"
             class="py-2 text-end">
@@ -58,17 +58,16 @@
               class="min-w-28" />
           </td>
         </tr>
-        <tr v-for="item in onlDeposit"
-          :key="item.id">
-          <td class="py-2">{{ item.id }}</td>
-          <td class="py-2">{{ item.number }}</td>
-          <td class="py-2">{{ item.name }}</td>
+        <tr v-for="(data, index) in withdrawalsonline" :key="item.id">
+          <td class="py-2"></td>
+          <td class="py-2">{{ data.accNo }}</td>
+          <td class="py-2">{{ data.name }}</td>
           <td class="py-2">
-            <span>{{ item.type }}</span>
+            <span>{{ data.txcode }}</span>
           </td>
           <td class="py-2 text-end">
-            <MoneyAmount :amount="item.amount"
-              class="min-w-28" />{{ item.amount }}
+            <MoneyAmount :amount="data.amount"
+              class="min-w-28" />{{ data.amount }}
           </td>
           <td class="py-2 text-end">
             <MoneyAmount :amount="row?.officer.depositAmount"
@@ -85,7 +84,7 @@
           <td colspan="1"
             class="py-2 text-end border-b">
             <MoneyAmount :amount="total2"
-              class="min-w-28" />9000
+              class="min-w-28" />{{totalwithdrawalsonline}}
           </td>
           <td colspan="1"
             class="py-2 text-end">
@@ -95,7 +94,7 @@
         </tr>
         <tr v-for="item in onlWithdraw"
           :key="item.id">
-          <td class="py-2">{{ item.id }}</td>
+          <td class="py-2"></td>
           <td class="py-2">{{ item.numer }}</td>
           <td class="py-2">{{ item.name }}</td>
           <td class="py-2">
@@ -125,24 +124,23 @@
           <td colspan="1"
             class="py-2 border-b  text-end">
             <MoneyAmount :amount="total5"
-              class="min-w-28" />9000
+              class="min-w-28" />
           </td>
         </tr>
-        <tr v-for="item in cashWithdraw"
-          :key="item.id">
-          <td class="py-2">{{ item.id }}</td>
-          <td class="py-2">{{ item.number }}</td>
-          <td class="py-2">{{ item.name }}</td>
+        <tr v-for="(data, index) in depositsonline" :key="data.id">
+          <td class="py-2"></td>
+          <td class="py-2">{{ data.accNo }}</td>
+          <td class="py-2">{{ data.name }}</td>
           <td class="py-2">
-            <span>{{ item.type }}</span>
+            <span>{{ data.txcode }}</span>
           </td>
           <td class="py-2 text-end">
-            <MoneyAmount :amount="item.amount"
+            <MoneyAmount :amount="data.amount"
               class="min-w-28" />
           </td>
           <td class="py-2 text-end">
             <MoneyAmount :amount="row?.officer.depositAmount"
-              class="min-w-28" />{{ item.amount }}
+              class="min-w-28" />{{ data.amount }}
           </td>
         </tr>
         <tr class="font-bold">
@@ -160,7 +158,7 @@
           <td colspan="1"
             class="py-2 text-end border-b">
             <MoneyAmount :amount="total6"
-              class="min-w-28" />900
+              class="min-w-28" />{{totaldepositsonline}}
           </td>
         </tr>
         <tr class="font-bold">
@@ -171,11 +169,11 @@
             class="py-2">****รวมยอดทั้งหมด</td>
           <td class="py-2 text-end">
             <MoneyAmount :amount="totalAmount"
-              class="min-w-28" />
+              class="min-w-28" />{{ totalSum }}
           </td>
           <td class="py-2 text-end border-b">
             <MoneyAmount :amount="totalAmount2"
-              class="min-w-28" />9000
+              class="min-w-28" />{{totaldepositsonline}}
           </td>
         </tr>
       </tbody>
@@ -185,27 +183,46 @@
 
 <script setup
   lang="ts">
-  // const pageDef = useActiveModulePage('list.printReport');
+const pageDef = useActiveModulePage('list.printReport');
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
-  // const { entries } = getEntrySchema(pageDef);
-  // const { apiGet } = useHostApi(pageDef);
-  // const { data, error, pending } = apiGet();
+const filteredWithdrawals = computed(() => {
+  return data.value ? data.value.filter(item => item.txcode === 'svawtd') : [];
+});
 
-  // useBreadcrumb(pageDef.label);
-  const cheque = ref([
-    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เช็ค', amount: '15,000.00' },
-  ]);
-  const onlDeposit = ref([
-    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-    { id: 3, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'โอน', amount: '15,000.00' },
-  ]);
-  const onlWithdraw = ref([
-    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
-    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'เงินสด', amount: '15,000.00' },
-  ]);
-  const cashWithdraw = ref([
-    { id: 1, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
-    { id: 2, number: '0003765', name: 'สมจิตร	บุญประวัติ', type: 'ONL', amount: '15,000.00' },
-  ]);  
+const filteredDeposits = computed(() => {
+  return data.value ? data.value.filter(item => item.txcode === 'svadps') : [];
+});
+
+const withdrawalscheque = computed(() => {
+  return filteredWithdrawals.value ? filteredWithdrawals.value.filter(item => item.transferChannel === 'cheque') : [];
+});
+
+
+const withdrawalsonline = computed(() => {
+  return filteredWithdrawals.value ? filteredWithdrawals.value.filter(item => item.transferChannel === 'online') : [];
+});
+
+
+const depositsonline = computed(() => {
+  return filteredDeposits.value ? filteredDeposits.value.filter(item => item.transferChannel === 'online') : [];
+});
+
+const totalcheque = computed(() => {
+  return withdrawalscheque.value.reduce((total, item) => total + item.amount, 0);
+});
+
+const totalwithdrawalsonline = computed(() => {
+  return withdrawalsonline.value.reduce((total, item) => total + item.amount, 0);
+});
+
+const totalSum = computed(() => {
+  return totalcheque.value + totalwithdrawalsonline.value;
+});
+
+
+const totaldepositsonline = computed(() => {
+  return depositsonline.value.reduce((total, item) => total + item.amount, 0);
+});
 </script>
