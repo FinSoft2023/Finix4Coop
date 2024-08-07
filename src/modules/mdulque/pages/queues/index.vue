@@ -13,7 +13,7 @@
         <UPageCard icon="i-heroicons-user-plus-16-solid"
           title="เรียกคิว"
           description="เรียกคิวลูกค้าเพื่อให้บริการ"
-          to="/queues/create" />
+          @click="handleQueue" />
         <UPageCard icon="i-heroicons-forward-16-solid"
           title="ข้ามคิว"
           description="ข้ามคิวลูกค้าคนถัดไป"
@@ -66,6 +66,23 @@ await channel.subscribe('greeting', (message) => {
   handleConfirmation();
 });
 
+const qsto = useQueStore();
+const { queue } = storeToRefs(qsto);
+async function handleQueue() {
+  const qs = data.value;
+  if (qs && qs.length) {
+    const q = qs[0];
+    console.log('Calling queue:', q);
+    queue.value = q;
+    // const rsp = $fetch('/api/queues/call', {
+    //   method: 'POST',
+    //   body: {
+    //     id: q.id,
+    //   },
+    // });
+    navigateTo('/queues/create/confirm');
+  }
+}
 // function selectItem(item: any) {
 //   navigateTo(`/queues/${item.id}`);
 // }
