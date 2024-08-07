@@ -13,6 +13,7 @@
         <UPageCard icon="i-heroicons-user-plus-16-solid"
           title="เรียกคิว"
           description="เรียกคิวลูกค้าเพื่อให้บริการ"
+          to="."
           @click="handleQueue" />
         <UPageCard icon="i-heroicons-forward-16-solid"
           title="ข้ามคิว"

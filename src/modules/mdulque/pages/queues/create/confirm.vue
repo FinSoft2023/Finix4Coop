@@ -5,20 +5,20 @@
     <DSmartSubStepper />
 
     <UAlert icon="i-heroicons-document-check"
-      description="ระบุรายละเอียดขั้นตอนการทำงาน"
+      description="ระบุรข้อมูลของสมาชิกผู้เข้ารับบริการ"
       :title="pageDef.label" />
 
     <BPartPageBody>
       <UForm @submit="handleSubmit"
         :state="data"
-        :schema="schema"
         :pending="pending"
         class="space-y-4">
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data"
-              :entries
-              :pending />
+            <UFormGroup label="เลขสมาชิก">
+              <UInput required
+                v-model="memcode" />
+            </UFormGroup>
           </UCard>
           <UCard>
             <img alt="Queue Image"
@@ -44,11 +44,13 @@
 const qsto = useQueStore();
 const { queue } = storeToRefs(qsto);
 
+const memcode = ref('');
+
 const pageDef = useActiveModulePage('create.confirm');
 useSmartStepper(pageDef);
 useBreadcrumb('Create');
 
-const { entries, schema } = getEntrySchema(pageDef);
+// const { entries, schema } = getEntrySchema(pageDef);
 // type TSchema = z.output<typeof schema>;
 
 // const { apiGet, apiPost } = useHostApi(pageDef);
@@ -58,7 +60,7 @@ const { data, pending } = apiGet();
 const { postResult, error, executePost } = apiPost();
 
 const handleSubmit = async () => {
-  await executePost(data.value);
+  // await executePost(data.value);
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/queues${redirectPath}`);
 };
