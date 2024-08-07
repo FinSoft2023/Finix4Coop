@@ -22,32 +22,32 @@
 
 <script setup lang="ts">
   setNavLinks([{
-    label: 'เรียก Queue',
+    label: 'เรียกคิว',
     icon: 'i-heroicons-square-3-stack-3d-20-solid',
     to: '/queues'
   }, {
-    label: 'Withdrawals',
+    label: 'รายการคำขอ ฝาก-ถอน',
     icon: 'i-heroicons-book-open',
     to: '/withdrawals'
   }, {
-    label: 'Cheque(s)',
-    icon: 'i-mdi-face-recognition',
+    label: 'เช็คเงินสด',
+    icon: 'i-heroicons-map',
     to: '/cheques'
   }, {
-    label: 'Financials',
+    label: 'การเงิน',
     icon: 'i-heroicons-map',
     to: '/financials'
   }, {
-    label: 'PrintReport',
+    label: 'ปริ้นรายงาน',
     icon: 'i-heroicons-map',
     to: '/financials/rptPaid'
   }, {
-    label: 'Accounting',
+    label: 'บัญชี',
     icon: 'i-heroicons-square-3-stack-3d',
     to: '/accounting'
   }, {
-    label: 'Releases',
-    icon: 'i-heroicons-rocket-launch',
+    label: 'สมัครสมาชิก',
+    icon: 'i-mdi-face-recognition',
     to: '/regmembers'
   }, {
     label: 'Monitoring',
