@@ -39,7 +39,7 @@ async function handleConfirmation() {
       alt: 'รูปเช็ค',
     },
   });
-  navigateTo(`/cheques/${route.params.id}`);
+  navigateTo(`/withdrawals/${route.params.id}`);
 }
 
 // get the channel to subscribe to

@@ -18,7 +18,8 @@
         <FMemberInfo></FMemberInfo>
       </DItemGrid>
 
-      <DGallery :photos="photos"></DGallery>
+      <DGallery :photos="data?.images"></DGallery>
+
     </BPartPageBody>
 
     <template #side>
