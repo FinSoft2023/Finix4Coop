@@ -44,10 +44,6 @@
           <UButton @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
             variant="outline">Back</UButton>
-          <template #next>
-            <UButton class="hidden"
-              type="submit">comfirm</UButton>
-          </template>
         </BPartButtonsBand>
       </UForm>
     </BPartPageBody>
@@ -56,6 +52,7 @@
 
 <script setup lang="ts">
 import { useQRCode } from '@vueuse/integrations/useQRCode';
+import * as Ably from 'ably';
 // import type { z } from 'zod';
 
 const pageDef = useActiveModulePage('create.confirm');
@@ -79,10 +76,35 @@ const qrCode = useQRCode(qrcode.value);
 
 useComponentResolver(defaultViewResolvers);
 
-const handleSubmit = async () => {
-  amount.value = amount.value + data.value.amount;
-  await executePost(Object.assign(data.value, { memcode: memcode.value, txat: new Date().toISOString() }));
+const handleSubmit = async (txd: any) => {
+  amount.value = amount.value + txd.amount;
+  await executePost(Object.assign(data.value, { memcode: memcode.value, txat: txd.txat }));
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/transferonline${redirectPath}`);
 };
+
+
+// For the full code sample see here: https://github.com/ably/quickstart-js
+const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvIT6a0fhG_s');
+await ably.connection.once('connected');
+console.log('Connected to Ably!');
+
+// get the channel to subscribe to
+const channel = ably.channels.get('payment');
+
+/*
+  Subscribe to a channel.
+  The promise resolves when the channel is attached
+  (and resolves synchronously if the channel is already attached).
+*/
+await channel.subscribe('paid', (message) => {
+  console.log('Received a greeting message in realtime: ', message.data);
+  const md = message.data;
+  handleSubmit({
+    amount: md.amount,
+    memcode: md.memberCode,
+    txat: new Date().toISOString(),
+  });
+});
+
 </script>
