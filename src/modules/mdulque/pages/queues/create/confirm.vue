@@ -56,17 +56,17 @@ const { apiGet } = useLocalStage(pageDef);
 const { apiPost } = useHostApi(pageDef);
 const { data, pending } = apiGet();
 const query = ref<any>({});
-const { postResult, error, executePost } = apiPost();
+const { postResult, error, executePost } = apiPost(query);
 
 useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
-  query.value = { memcode: data.value?.memcode};
+  query.value = { id: queue.value.id };
   member.value = data.value;
+
   await executePost({
     status: 'called',
   });
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/queues${redirectPath}`);
+  navigateTo(`/withdrawals/create`);
 };
 </script>

@@ -28,8 +28,6 @@
           </UCard>
         </DItemGrid>
 
-        <pre>{{ dataMember }}</pre>
-
         <BPartButtonsBand>
           <UButton @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
