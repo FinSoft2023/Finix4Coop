@@ -5,7 +5,7 @@
         <p class="mt-[2mm] ml-[14mm]">25 สิงหาคม </p>
         <p class="ml-[14mm]">{{data.name}}</p>
         <p class="ml-[14mm]">{{data.amount}}</p>
-        <p class="mt-[29mm] ml-[25mm]">{{data.amount}}</p>
+        <p class="mt-[29mm] ml-[25mm]"><FMoneyAmount :amount="data.amount" /></p>
       </div>
       <div class="bg-white">
         <div class="grid grid-cols-2">
@@ -33,12 +33,12 @@
         </div>
         <div>
           <p class="mt-[7mm] ml-[45mm] mr-[6mm]">
-            -<MoneyText></MoneyText>จำนวนเงินตัวหนังสือ-
+            <FMoneyText :amount="data.amount" />
           </p>
         </div>
         <div class="flex justify-end mr-[6mm]">
           <div class="border-2 border-white w-[77mm] h-[9mm] flex items-center justify-center">
-            <p class="text-center mt-2">{{data.amount}}</p>
+            <p class="text-center mt-2"><FMoneyAmount :amount="data.amount" /></p>
           </div>
         </div>
       </div>
