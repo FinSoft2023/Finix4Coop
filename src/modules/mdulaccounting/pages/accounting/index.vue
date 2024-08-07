@@ -28,7 +28,8 @@
   useBreadcrumb('List');
 
   const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
+  const { data, error, pending } = apiGet({ 'fltr-val': 'account' });
+
 
   function selectItem(item: any) {
     navigateTo(`/accounting/${item.id}`);
