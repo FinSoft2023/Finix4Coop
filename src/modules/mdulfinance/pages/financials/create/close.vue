@@ -39,6 +39,6 @@ const handleClose = async () => {
       }
     });
   }
-  navigateTo(`/financials/rptPaid`);
+  navigateTo(`/financials/rptDaily`);
 };
 </script>

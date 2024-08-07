@@ -8,9 +8,6 @@
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
-      <FTableOfTxs @selection-changed="selectItem"
-        :data
-        :pending />
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
       <DTable @selection-changed="selectItem"
         :data
@@ -25,7 +22,7 @@
   useBreadcrumb('List');
 
   const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet({ 'fltr-val': 'closecounter' });
+  const { data, error, pending } = apiGet({ 'fltr-val': 'finance' });
 
   function selectItem(item: any) {
     navigateTo(`/cheques/${item.id}`);
