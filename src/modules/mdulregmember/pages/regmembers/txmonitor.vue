@@ -56,7 +56,6 @@ async function handleIncomingTx(txdata: any) {
       body: txdata,
     });
   }
-  console.log('Posted txdata:', txdata, 'Response:', rsp);
 }
 
 // get the channel to subscribe to
@@ -74,6 +73,7 @@ await channel.subscribe('paid', (message) => {
   handleIncomingTx({
     amount: txdata.amount,
     memcode: txdata.memberCode,
+    txat: new Date().toISOString(),
     // timestamp: txdata.timestamp,
   });
 });

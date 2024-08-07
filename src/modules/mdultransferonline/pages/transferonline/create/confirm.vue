@@ -50,10 +50,14 @@
   const { data, pending } = apiGet();
   const { postResult, error, executePost } = apiPost();
 
+  const memSto = useLinkMemberStore();
+  const { memcode, amount } = storeToRefs(memSto);
+
   useComponentResolver(defaultViewResolvers);
 
   const handleSubmit = async () => {
-    await executePost(data.value);
+    amount.value = amount.value + data.value.amount;
+    await executePost(Object.assign(data.value, { memcode: memcode.value, txat: new Date().toISOString() }));
     const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
     navigateTo(`/transferonline${redirectPath}`);
   };
