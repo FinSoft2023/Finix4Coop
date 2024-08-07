@@ -6,10 +6,8 @@
 
       <UButton @click="handleClose">Close</UButton>
 
-      <UCard>
-        <FTableOfTxs :data
-          :pending />
-      </UCard>
+      <FTableOfTxs :data
+        :pending />
 
     </BPartPageBody>
   </BFullPage>
