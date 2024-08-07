@@ -5,20 +5,20 @@
     <DSmartSubStepper />
 
     <UAlert icon="i-heroicons-document-check"
-      description="ระบุรข้อมูลของสมาชิกผู้เข้ารับบริการ"
+      description="ตรวจสอบข้อมูลของสมาชิกผู้เข้ารับบริการ"
       :title="pageDef.label" />
 
     <BPartPageBody>
       <UForm @submit="handleSubmit"
+        :schema="schema"
         :state="data"
         :pending="pending"
         class="space-y-4">
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <UFormGroup label="เลขสมาชิก">
-              <UInput required
-                v-model="memcode" />
-            </UFormGroup>
+            <DEntitySection v-model="data"
+              :entries
+              :pending />
           </UCard>
           <UCard>
             <img alt="Queue Image"
@@ -42,25 +42,30 @@
 <script setup lang="ts">
 // import type { z } from 'zod';
 const qsto = useQueStore();
-const { queue } = storeToRefs(qsto);
-
-const memcode = ref('');
+const { queue, member } = storeToRefs(qsto);
 
 const pageDef = useActiveModulePage('create.confirm');
 useSmartStepper(pageDef);
 useBreadcrumb('Create');
 
-// const { entries, schema } = getEntrySchema(pageDef);
+const { entries, schema } = getEntrySchema(pageDef);
 // type TSchema = z.output<typeof schema>;
 
 // const { apiGet, apiPost } = useHostApi(pageDef);
 const { apiGet } = useLocalStage(pageDef);
 const { apiPost } = useHostApi(pageDef);
 const { data, pending } = apiGet();
+const query = ref<any>({});
 const { postResult, error, executePost } = apiPost();
 
+useComponentResolver(defaultViewResolvers);
+
 const handleSubmit = async () => {
-  // await executePost(data.value);
+  query.value = { memcode: data.value?.memcode};
+  member.value = data.value;
+  await executePost({
+    status: 'called',
+  });
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/queues${redirectPath}`);
 };

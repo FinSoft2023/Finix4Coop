@@ -1,3 +1,7 @@
 export default defineEventHandler(async (event) => {
-  return {};
+  return await callGetListToServer(event, {
+    url: '/api/regmembers', 
+    // filterBy: 'memcode',
+    // filterOp: 'xis',
+  });
 });

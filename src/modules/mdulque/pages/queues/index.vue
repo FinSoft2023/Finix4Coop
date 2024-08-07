@@ -81,7 +81,7 @@ async function handleQueue() {
     //     id: q.id,
     //   },
     // });
-    navigateTo('/queues/create/confirm');
+    navigateTo('/queues/create');
   }
 }
 // function selectItem(item: any) {
