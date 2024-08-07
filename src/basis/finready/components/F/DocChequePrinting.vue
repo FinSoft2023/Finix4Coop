@@ -2,7 +2,7 @@
   <DocChequePrinting>
     <div class="grid grid-cols-[62mm_188mm]">
       <div class="bg-white">
-        <p class="mt-[2mm] ml-[14mm]">24 สิงหาคม </p>
+        <p class="mt-[2mm] ml-[14mm]">25 สิงหาคม </p>
         <p class="ml-[14mm]">{{data.name}}</p>
         <p class="ml-[14mm]">{{data.amount}}</p>
         <p class="mt-[29mm] ml-[25mm]">{{data.amount}}</p>
