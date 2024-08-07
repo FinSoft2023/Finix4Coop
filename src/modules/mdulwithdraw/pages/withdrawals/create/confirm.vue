@@ -22,7 +22,7 @@
           <UCard class="col-span-2">
             <DEntitySection v-model="data" :entries :pending />
           </UCard>
-          <UCard> Your content here </UCard>
+          <FMemberInfo />
         </DItemGrid>
 
         <BPartButtonsBand>
