@@ -4,34 +4,32 @@
 
     <DSmartSubStepper />
 
-    <UAlert
-      icon="i-heroicons-document-check"
-      description="ระบุรายละเอียดขั้นตอนการทำงาน"
-      :title="pageDef.label"
-    />
+    <UAlert icon="i-heroicons-document-check"
+      description="ตรวจสอบข้อมูลของสมาชิกผู้เข้ารับบริการ"
+      :title="pageDef.label" />
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
-        :state="data"
+      <UForm @submit="handleSubmit"
         :schema="schema"
+        :state="data"
         :pending="pending"
-        class="space-y-4"
-      >
+        class="space-y-4">
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data" :entries :pending />
+            <DEntitySection v-model="data"
+              :entries
+              :pending />
           </UCard>
-          <UCard> Your content here </UCard>
+          <UCard>
+            <img alt="Queue Image"
+              :src="queue.imageUrl" />
+          </UCard>
         </DItemGrid>
 
         <BPartButtonsBand>
-          <UButton
-            @click="$router.back"
+          <UButton @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
-            variant="outline"
-            >Back</UButton
-          >
+            variant="outline">Back</UButton>
           <template #next>
             <UButton type="submit">Save</UButton>
           </template>
@@ -43,6 +41,8 @@
 
 <script setup lang="ts">
 // import type { z } from 'zod';
+const qsto = useQueStore();
+const { queue, member } = storeToRefs(qsto);
 
 const pageDef = useActiveModulePage('create.confirm');
 useSmartStepper(pageDef);
@@ -55,12 +55,17 @@ const { entries, schema } = getEntrySchema(pageDef);
 const { apiGet } = useLocalStage(pageDef);
 const { apiPost } = useHostApi(pageDef);
 const { data, pending } = apiGet();
+const query = ref<any>({});
 const { postResult, error, executePost } = apiPost();
 
 useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
-  await executePost(data.value);
+  query.value = { memcode: data.value?.memcode};
+  member.value = data.value;
+  await executePost({
+    status: 'called',
+  });
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/queues${redirectPath}`);
 };

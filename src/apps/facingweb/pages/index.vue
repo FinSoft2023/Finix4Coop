@@ -22,6 +22,10 @@
 
 <script setup lang="ts">
   setNavLinks([{
+    label: 'เรียก Queue',
+    icon: 'i-heroicons-square-3-stack-3d-20-solid',
+    to: '/queues'
+  }, {
     label: 'Withdrawals',
     icon: 'i-heroicons-book-open',
     to: '/withdrawals'

@@ -126,6 +126,9 @@ importers:
       mdulfinance:
         specifier: workspace:^
         version: link:../../modules/mdulfinance
+      mdulque:
+        specifier: workspace:^
+        version: link:../../modules/mdulque
       mdulregmember:
         specifier: workspace:^
         version: link:../../modules/mdulregmember

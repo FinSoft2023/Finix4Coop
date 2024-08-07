@@ -50,10 +50,12 @@ console.log('Connected to Ably!');
 const route = useRoute();
 async function handleIncomingTx(txdata: any) {
   // postingData.value = txdata;
-  const rsp = await $fetch('/api/regmembers/create', {
-    method: 'POST',
-    body: txdata,
-  });
+  if (window) {
+    const rsp = await $fetch('/api/regmembers/create', {
+      method: 'POST',
+      body: txdata,
+    });
+  }
   console.log('Posted txdata:', txdata, 'Response:', rsp);
 }
 
