@@ -18,13 +18,13 @@ const columns = [{
   key: 'id',
   label: 'ลำดับที่'
 }, {
-  key: 'accountNumber',
+  key: 'accNo',
   label: 'เลขบัญชี'
 }, {
-  key: 'accountName',
+  key: 'name',
   label: 'ชื่อบัญชี'
 }, {
-  key: 'transactionType',
+  key: 'txcode',
   label: 'ฝาก/ถอน'
 }, {
   key: 'method',
