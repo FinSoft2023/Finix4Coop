@@ -9,7 +9,7 @@
         <template #description>
           <span class="line-clamp-2">{{ module.description }}</span>
         </template>
-      </UPageCard>     
+      </UPageCard>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 

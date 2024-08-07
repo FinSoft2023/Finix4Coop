@@ -3,7 +3,6 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <DSmartSubStepper />
-
     <UAlert icon="i-heroicons-book-open"
       description="ระบุจำนวนเงินที่ต้องการฝาก"
       :title="pageDef.label" />
@@ -18,7 +17,7 @@
           <DEntitySection v-model="data"
             :entries
             :pending />
-        </UCard>      
+        </UCard>
 
         <BPartButtonsBand>
           <template #next>
