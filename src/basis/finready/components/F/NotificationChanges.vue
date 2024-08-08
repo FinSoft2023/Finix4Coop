@@ -29,8 +29,8 @@
     id="next"
     label="ข้อมูลคำขอได้เข้าสู่ระบบแล้ว"
     description="สามารถกดที่ปุ่ม 'ปริ้นใบถอน' ได้หากต้องการปริ้นใบคำขอถอน."
-    actionText="ปริ้นใบถอน" />
-{{ state }}
+    actionText="ปริ้นใบถอน"
+    @action="navigateTo(`/withdrawals/${route.params.id}/print`)" />
 </template>
 
 <script setup lang="ts">
@@ -43,6 +43,7 @@ const { data, error, pending } = apiGet();
 const state = computed(() => data.value?.state);
 
 
+const route = useRoute();
 
 
 useBreadcrumb(pageDef.label);
