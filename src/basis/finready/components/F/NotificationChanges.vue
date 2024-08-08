@@ -2,33 +2,38 @@
 
   <BOnPageNotification v-if="state === 'completed'"
     id="next1"
-    label="บันทึกใบถอนเรียบร้อยเเล้ว"
+    label="ทำรายการเรียบร้อยเเล้ว"
     description="สามารถกดที่ปุ่ม 'ทำรายการถัดไป' ได้หากต้องการทำรายการคำขอถัดไป."
-    actionText="ทำรายการถัดไป" />
+    actionText="ทำรายการถัดไป" 
+    @action="navigateTo(`/queues`)" />
   <BOnPageNotification v-else-if="state === 'finance'"
     id="next2"
     label="ปริ้นเช็ค"
     description="สามารถกดที่ปุ่ม 'ปริ้นเช็ค' ได้หากต้องการทำรายการคำขอถัดไป."
-    actionText="ปริ้นเช็ค" />
+    actionText="ปริ้นเช็ค" 
+    @action="navigateTo(`/cheques/${route.params.id}/print`)" />
   <BOnPageNotification v-else-if="state === 'active'"
     id="next3"
     label="บันทึกเช็ค"
     description="สามารถกดที่ปุ่ม 'บันทึกเช็ค' ได้หากต้องการทำรายการคำขอถัดไป."
-    actionText="บันทึกเช็ค" />
+    actionText="บันทึกเช็ค" 
+    @action="navigateTo(`/cheques/${route.params.id}/scan`)" />
   <BOnPageNotification v-else-if="state === 'deliver'"
     id="next4"
     label="บันทึกขั่วเช็ค"
     description="สามารถกดที่ปุ่ม 'บันทึกขั่วเช็ค' ได้หากต้องการทำรายการคำขอถัดไป."
-    actionText="บันทึกขั่วเช็ค" />
+    actionText="บันทึกขั่วเช็ค" 
+    @action="navigateTo(`/cheques/${route.params.id}/scan2deliver`)" />
   <BOnPageNotification v-else-if="state === 'account'"
     id="next5"
     label="ปิดยอด"
     description="สามารถกดที่ปุ่ม 'ปิดยอด' ได้หากต้องการทำรายการคำขอถัดไป."
-    actionText="ปิดยอด" />
+    actionText="ปิดยอด" 
+    @action="navigateTo(`/accounting`)" />
   <BOnPageNotification v-else
     id="next"
     label="ข้อมูลคำขอได้เข้าสู่ระบบแล้ว"
-    description="สามารถกดที่ปุ่ม 'ปริ้นใบถอน' ได้หากต้องการปริ้นใบคำขอถอน."
+    description="ท่านสามารถกดที่ปุ่ม 'ปริ้นใบถอน' หลังจากปริ้นใบถอนเรียบร้อยแล้ว ท่านสามารถบันทึกใบขอถอนกลับเข้าสู่ระบบ เพื่อดำเนินการต่อไป."
     actionText="ปริ้นใบถอน"
     @action="navigateTo(`/withdrawals/${route.params.id}/print`)" />
 </template>
