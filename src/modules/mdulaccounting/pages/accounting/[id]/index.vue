@@ -12,10 +12,10 @@
             :pending />
         </UCard>
 
-        <FMemberInfo></FMemberInfo>
+        <FMemberInfo :account="data?.account"></FMemberInfo>
       </DItemGrid>
 
-      <DGallery :photos="photos"></DGallery>
+      <DGallery :photos="data?.images"></DGallery>
     </BPartPageBody>
 
     <template #side>    
@@ -32,10 +32,4 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
-
-const photos = ref([
-    { src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg', alt: 'Image 1' },
-    { src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg', alt: 'Image 2' },
-    // Add more images here
-  ]);
 </script>

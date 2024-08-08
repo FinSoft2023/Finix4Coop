@@ -20,7 +20,7 @@
               :entries
               :pending />
           </UCard>
-          <FMemberInfo />
+          <FMemInfoQ />
         </DItemGrid>
 
         <BPartButtonsBand>
