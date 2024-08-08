@@ -1,5 +1,6 @@
 <template>
   <DocPaper>
+    <!-- <pre>{{ data }}</pre> -->
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,40 +14,29 @@
       <thead>
         <tr class="border-t">
           <th class="py-2">ลำดับ</th>
-          <th class="py-2">เลขที่บัญชี</th>
+          <th class="py-2 text-start">เลขที่บัญชี</th>
           <th class="py-2 text-start">ชื่อบัญชี</th>
           <th class="py-2 text-start">ประเภทรายการ</th>
           <th class="py-2 text-end">จำนวนเงินถอน</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="data in data" :key="data.id">
-          <td class="py-2">{{ data.id }}</td>
-          <td class="py-2">{{ data.accNo }}</td>
-          <td class="py-2">{{ data.name }}</td>
+        <tr v-for="(item, index) in data" :key="item.id">
+          <td class="py-2 text-center">{{ index + 1 }}</td>
+          <td class="py-2">{{ item.accNo }}</td>
+          <td class="py-2">{{ item.name }}</td>
           <td class="py-2">
-            <span>{{ data.transferChannel }}</span>
+            <span>{{ getTransactionLabel(item) }}</span>
           </td>
           <td class="py-2 text-end">
-            <MoneyAmount :amount="data.amount" class="min-w-28" />{{ data.amount }}
-          </td>
-        </tr>
-        <tr v-for="data in onlDeposit" :key="data.id">
-          <td class="py-2">{{ data.id }}</td>
-          <td class="py-2">{{ data.number }}</td>
-          <td class="py-2">{{ data.name }}</td>
-          <td class="py-2">
-            <span>{{ data.type }}</span>
-          </td>
-          <td class="py-2 text-end">
-            <MoneyAmount :amount="data.amount" class="min-w-28" />{{ data.amount }}
+            <FMoneyAmount :amount="item.amount" class="min-w-28" />
           </td>
         </tr>
         <tr class="font-bold">
           <td colspan="2" class="py-2"></td>
           <td colspan="2" class="py-2">****รวมยอดทั้งหมด</td>
           <td class="py-2 text-end border-b">
-            <MoneyAmount :amount="totalAmount" class="min-w-28" />{{ totalAmount }}
+            <FMoneyAmount :amount="totalAmount" class="min-w-28" />
           </td>
         </tr>
       </tbody>
@@ -60,6 +50,24 @@ import { computed } from 'vue';
 const pageDef = useActiveModulePage('list.printDoc');
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
+
+const transactionTypes: Record<string, string> = {
+  svadps: 'ฝาก',
+  svadol: 'ฝาก online',
+  svawtd: 'ถอน'
+};
+
+const transferChannels: Record<string, string> = {
+  online: 'โอน online',
+  cheque: 'เช็ค'
+};
+
+const getTransactionLabel = (item: any) => {
+  if (item.txcode === 'svawtd') {
+    return transferChannels[item.transferChannel] || transactionTypes[item.txcode];
+  }
+  return transactionTypes[item.txcode] || item.txcode;
+};
 
 const totalAmount = computed(() => {
   return data.value.reduce((acc, curr) => acc + curr.amount, 0);
