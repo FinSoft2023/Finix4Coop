@@ -17,7 +17,7 @@
 <script setup lang="ts">
 const pageDef = useActiveModulePage('each.scan');
 
-const host = 'http://localhost:3000';
+const host = 'https://onlinesavingdemo.web.app';
 const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
