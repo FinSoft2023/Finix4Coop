@@ -21,15 +21,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in data" :key="item.id">
+        <tr v-for="(item, index) in data" :key="item?.id">
           <td class="py-2 text-center">{{ index + 1 }}</td>
-          <td class="py-2">{{ item.accNo }}</td>
-          <td class="py-2">{{ item.name }}</td>
+          <td class="py-2">{{ item?.accNo }}</td>
+          <td class="py-2">{{ item?.name }}</td>
           <td class="py-2">
             <span>{{ getTransactionLabel(item) }}</span>
           </td>
           <td class="py-2 text-end">
-            <FMoneyAmount :amount="item.amount" class="min-w-28" />
+            <FMoneyAmount :amount="item?.amount" class="min-w-28" />
           </td>
         </tr>
         <tr class="font-bold">
@@ -52,21 +52,21 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
 const transactionTypes: Record<string, string> = {
-  svadps: 'ฝาก',
-  svadol: 'ฝาก online',
-  svawtd: 'ถอน'
-};
+    svadps: 'ฝาก',
+    svadol: 'ฝาก online',
+    svawtd: 'ถอน'
+  };
 
-const transferChannels: Record<string, string> = {
-  online: 'โอน online',
-  cheque: 'เช็ค'
-};
+  const transferChannels: Record<string, string> = {
+    online: 'โอน online',
+    cheque: 'ถอนเช็ค'
+  };
 
 const getTransactionLabel = (item: any) => {
-  if (item.txcode === 'svawtd') {
-    return transferChannels[item.transferChannel] || transactionTypes[item.txcode];
+  if (item?.txcode === 'svawtd') {
+    return transferChannels[item?.transferChannel] || transactionTypes[item?.txcode];
   }
-  return transactionTypes[item.txcode] || item.txcode;
+  return transactionTypes[item?.txcode] || item?.txcode;
 };
 
 const totalAmount = computed(() => {

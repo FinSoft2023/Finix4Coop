@@ -1,6 +1,5 @@
 <template>
   <DocPaper>
-    <!-- <pre>{{data}}</pre> -->
 
     <head>
       <meta charset="UTF-8">
@@ -9,7 +8,7 @@
       <title>รายงานการถอนเงินประจำวัน</title>
     </head>
     <div class="text-center">
-      <h1 class="text-md font-bold mb-2text-center">รายงานฝาก - ถอนประจำวัน(ออมทรัพย์พิเศษ)</h1>
+      <h1 class="text-md font-bold mb-2 text-center">รายงานฝาก - ถอนประจำวัน(ออมทรัพย์พิเศษ)</h1>
       <p class="mb-4 text-center">วันที่ {{ currentDate }}</p>
     </div>
     <table class="min-w-full bg-white">
@@ -25,8 +24,8 @@
       </thead>
       <tbody>
         <tr v-for="(data, index) in withdrawalscheque"
-          :key="item?.id">
-          <td class="py-2">{{ index + 1 }}</td>
+          :key="data?.id">
+          <td class="py-2 text-center">{{ index + 1 }}</td>
           <td class="py-2">{{ data?.accNo }}</td>
           <td class="py-2">{{ data?.name }}</td>
           <td class="py-2">
@@ -55,13 +54,13 @@
           </td>
           <td colspan="1"
             class="py-2 text-end">
-            <FMoneyAmount :amount="totaldepositsonline"
+            <FMoneyAmount :amount="total7"
               class="min-w-28" />
           </td>
         </tr>
         <tr v-for="(data, index) in withdrawalsonline"
-          :key="item?.id">
-          <td class="py-2">{{ index + 1 }}</td>
+          :key="data?.id">
+          <td class="py-2 text-center">{{ index + 1 }}</td>
           <td class="py-2">{{ data?.accNo }}</td>
           <td class="py-2">{{ data?.name }}</td>
           <td class="py-2">
@@ -90,12 +89,13 @@
           </td>
           <td colspan="1"
             class="py-2 text-end">
-            <FMoneyAmount :amount="totaldepositsonline"
+            <FMoneyAmount :amount="total7"
               class="min-w-28" />
           </td>
         </tr>
-        <!-- <tr v-for="(data, index) in depositsonline" :key="data?.id">
-          <td class="py-2"></td>
+        <tr v-for="(data, index) in filteredDeposits"
+          :key="data?.id">
+          <td class="py-2 text-center">{{ index + 1 }}</td>
           <td class="py-2">{{ data?.accNo }}</td>
           <td class="py-2">{{ data?.name }}</td>
           <td class="py-2">
@@ -106,10 +106,10 @@
               class="min-w-28" />
           </td>
           <td class="py-2 text-end">
-            <FMoneyAmount :amount=" data?.totaldepositsonline"
+            <FMoneyAmount :amount="data?.amount"
               class="min-w-28" />
           </td>
-        </tr> -->
+        </tr>
         <tr class="font-bold">
           <td colspan="2"
             class="py-2"></td>
@@ -123,27 +123,28 @@
               class="min-w-28" />
           </td>
           <td colspan="1"
-            class="py-2 border-b  text-end">
-            <FMoneyAmount :amount="totaldepositsonline"
+            class="py-2 border-b text-end">
+            <FMoneyAmount :amount="totaldeposits"
               class="min-w-28" />
           </td>
         </tr>
-        <!-- <tr v-for="(data, index) in depositsonline" :key="data.id">
-          <td class="py-2"></td>
-          <td class="py-2">{{ data.accNo }}</td>
-          <td class="py-2">{{ data.name }}</td>
+        <tr v-for="(data, index) in filteredDepositsonline"
+          :key="data?.id">
+          <td class="py-2 text-center">{{ index + 1 }}</td>
+          <td class="py-2">{{ data?.accNo }}</td>
+          <td class="py-2">{{ data?.name }}</td>
           <td class="py-2">
             <span>{{ getTransactionLabel(data) }}</span>
           </td>
           <td class="py-2 text-end">
-            <FMoneyAmount :amount="data.amount"
+            <FMoneyAmount :amount="data?.totaldepositsonline"
               class="min-w-28" />
           </td>
           <td class="py-2 text-end">
-            <FMoneyAmount :amount=" data.amount"
+            <FMoneyAmount :amount="data?.amount"
               class="min-w-28" />
           </td>
-        </tr> -->
+        </tr>
         <tr class="font-bold">
           <td colspan="2"
             class="py-2"></td>
@@ -153,7 +154,7 @@
             class="py-2">รวมฝากเงินโอน</td>
           <td colspan="1"
             class="py-2 text-end">
-            <FMoneyAmount :amount="totaldepositsonline"
+            <FMoneyAmount :amount="total7"
               class="min-w-28" />
           </td>
           <td colspan="1"
@@ -165,15 +166,14 @@
         <tr class="font-bold">
           <td colspan="2"
             class="py-2"></td>
-
           <td colspan="2"
-            class="py-2">****รวมยอดทั้งหมด</td>
+            class="py-2 text-end">****รวมยอดทั้งหมด</td>
           <td class="py-2 text-end">
             <FMoneyAmount :amount="totalSum"
               class="min-w-28" />
           </td>
           <td class="py-2 text-end border-b">
-            <FMoneyAmount :amount="totaldepositsonline"
+            <FMoneyAmount :amount="totalSumdeposits"
               class="min-w-28" />
           </td>
         </tr>
@@ -184,48 +184,29 @@
 
 <script setup
   lang="ts">
+  import { ref, computed } from 'vue';
+  // import { useActiveModulePage, useHostApi } from 'some-api-package';
+  // import FMoneyAmount from 'path/to/FMoneyAmount';
+
   const pageDef = useActiveModulePage('list.printReport');
   const { apiGet } = useHostApi(pageDef);
   const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
-  const filteredWithdrawals = computed(() => {
-    return data.value ? data.value.filter(item => item.txcode === 'svawtd') : [];
-  });
+  const filteredWithdrawals = computed(() => data.value?.filter(item => item.txcode === 'svawtd') || []);//ถอน
+  const filteredDeposits = computed(() => data.value?.filter(item => item.txcode === 'svadps') || []);//ฝาก
+  const filteredDepositsonline = computed(() => data.value?.filter(item => item.txcode === 'svadol') || []);//ฝาก online
 
-  const filteredDeposits = computed(() => {
-    return data.value ? data.value.filter(item => item.txcode === 'svadps') : [];
-  });
+  const withdrawalscheque = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'cheque') || []);
+  const withdrawalsonline = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'online') || []);
+  const depositsonline = computed(() => filteredDeposits.value?.filter(item => item.transferChannel === 'online') || []);
+  const deposits = computed(() => filteredDepositsonline.value?.filter(item => item.transferChannel === 'cash') || []);
 
-  const withdrawalscheque = computed(() => {
-    return filteredWithdrawals.value ? filteredWithdrawals.value.filter(item => item.transferChannel === 'cheque') : [];
-  });
-
-
-  const withdrawalsonline = computed(() => {
-    return filteredWithdrawals.value ? filteredWithdrawals.value.filter(item => item.transferChannel === 'online') : [];
-  });
-
-
-  const depositsonline = computed(() => {
-    return filteredDeposits.value ? filteredDeposits.value.filter(item => item.transferChannel === 'online') : [];
-  });
-
-  const totalcheque = computed(() => {
-    return withdrawalscheque.value.reduce((total, item) => total + item.amount, 0);
-  });
-
-  const totalwithdrawalsonline = computed(() => {
-    return withdrawalsonline.value.reduce((total, item) => total + item.amount, 0);
-  });
-
-  const totalSum = computed(() => {
-    return totalcheque.value + totalwithdrawalsonline.value;
-  });
-
-
-  const totaldepositsonline = computed(() => {
-    return depositsonline.value.reduce((total, item) => total + item.amount, 0);
-  });
+  const totalcheque = computed(() => withdrawalscheque.value.reduce((total, item) => total + item.amount, 0));
+  const totalwithdrawalsonline = computed(() => withdrawalsonline.value.reduce((total, item) => total + item.amount, 0));
+  const totalSum = computed(() => totalcheque.value + totalwithdrawalsonline.value);
+  const totaldepositsonline = computed(() => filteredDepositsonline.value.reduce((total, item) => total + item.amount, 0));
+  const totaldeposits = computed(() => filteredDeposits.value.reduce((total, item) => total + item.amount, 0));
+  const totalSumdeposits = computed(() => totaldepositsonline.value + totaldeposits.value);
 
 
   const transactionTypes: Record<string, string> = {
@@ -236,7 +217,7 @@
 
   const transferChannels: Record<string, string> = {
     online: 'โอน online',
-    cheque: 'เช็ค'
+    cheque: 'ถอนเช็ค'
   };
 
   const getTransactionLabel = (item: any) => {
