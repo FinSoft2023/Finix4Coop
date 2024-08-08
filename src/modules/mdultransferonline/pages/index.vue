@@ -35,6 +35,10 @@
     to: '/',
     icon: 'i-mdi-file-document'
   }, {
+    title: 'ลงทะเบียน',
+    to: '/regqr',
+    icon: 'i-mdi-file-document'
+  }, {
     title: 'ฌาปนกิจ',
     to: '/',
     icon: 'i-mdi-account-child'
