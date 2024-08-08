@@ -2,10 +2,7 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <BOnPageNotification id="next"
-      label="ข้อมูลคำขอได้เข้าสู่ระบบแล้ว"
-      description="สามารถกดที่ปุ่ม 'ทำรายการถัดไป' ได้หากต้องการทำรายการคำขอถัดไป."
-      actionText="ทำรายการถัดไป" />
+    <FNotificationChanges />
 
     <BPartPageBody>
       <DItemGrid col="x3">
