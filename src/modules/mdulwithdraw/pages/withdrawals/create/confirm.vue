@@ -22,7 +22,7 @@
           <UCard class="col-span-2">
             <DEntitySection v-model="data" :entries :pending />
           </UCard>
-          <FMemberInfo />
+          <FMemInfoQ />
         </DItemGrid>
 
         <BPartButtonsBand>
@@ -59,8 +59,11 @@ const { postResult, error, executePost } = apiPost();
 
 useComponentResolver(defaultViewResolvers);
 
+const qsto = useQueStore();
+const {  member } = storeToRefs(qsto);
+
 const handleSubmit = async () => {
-  await executePost(data.value);
+  await executePost(Object.assign(data.value, { account: member.value }));
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/withdrawals${redirectPath}`);
 };

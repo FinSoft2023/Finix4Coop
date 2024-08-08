@@ -7,12 +7,11 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ account: any }>();
 const pageDef = useActiveModulePage('each.root');
 const { entries, schema } = getEntrySchema(pageDef, 'account');
 
-const pending = ref(false);
-const member = computed(() => props.account);
+const qsto = useQueStore();
+const { member } = storeToRefs(qsto);
 
 useComponentResolver(defaultViewResolvers);
 </script>

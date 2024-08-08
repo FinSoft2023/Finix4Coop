@@ -10,10 +10,10 @@
             :pending />
         </UCard>
 
-        <FMemberInfo></FMemberInfo>
+        <FMemberInfo :account="data?.account"></FMemberInfo>
       </DItemGrid>
 
-      <DGallery :photos="photos"></DGallery>
+      <DGallery :photos="data?.images"></DGallery>
 
       <BOnPageModal label="Please confirm"
         actionText="ตกลง"
