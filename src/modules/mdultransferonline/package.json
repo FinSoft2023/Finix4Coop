@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@firebase/app-types": "^0.9.2",
     "@line/liff": "^2.24.0",
     "finready": "workspace:^",
     "nuxt": "^3.11.2",

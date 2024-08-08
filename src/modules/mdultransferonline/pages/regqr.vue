@@ -1,6 +1,6 @@
 <template>
   <UButton @click="handleScan">Start Scan</UButton>
-  <p>Result will goes here: {{ result }}</p>
+  <a v-if="result" :href="result" target="_blank">Start Demo App</a>
 </template>
 
 <script setup lang="ts">

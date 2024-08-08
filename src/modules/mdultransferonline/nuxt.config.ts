@@ -2,4 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['../../basis/finready'],
+
+  nitro: {
+    firebase: {
+      gen: 2,
+    },
+  },
 });
