@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <FReportPrinting></FReportPrinting>
+        <FReportPrintingDay></FReportPrintingDay>
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
