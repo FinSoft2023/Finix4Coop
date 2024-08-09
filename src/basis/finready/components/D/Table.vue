@@ -8,6 +8,11 @@
         {{ index + 1 }}
       </slot>
     </template>
+    <template #row-amount-data="{ row, index }">
+      <slot>
+        <FMoneyAmount :amount="row?.amount" />
+      </slot>
+    </template>
     <template #row-actions-data="{ row }">
       <slot>
         <UIcon name="i-heroicons-arrow-top-right-on-square-16-solid" />

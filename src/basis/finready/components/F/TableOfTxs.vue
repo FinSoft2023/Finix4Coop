@@ -29,7 +29,7 @@ const columns = [{
   key: 'transferChannel',
   label: 'ช่องทาง'
 }, {
-  key: 'amount',
+  key: 'row-amount',
   label: 'จำนวนเงิน'
 }, {
   key: 'counter',
