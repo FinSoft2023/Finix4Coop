@@ -3,7 +3,7 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UButton @click="handleClose">โอน</UButton>
+      <UButton @click="handleClose">โอนเงินรายการทั้งหมด</UButton>
 
         <FTableOfTxs :data
           :pending />

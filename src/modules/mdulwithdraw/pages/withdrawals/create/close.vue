@@ -4,7 +4,7 @@
 
     <BPartPageBody>
 
-      <UButton @click="handleClose">Close</UButton>
+      <UButton @click="handleClose">ปิดยอดทั้งหมด</UButton>
 
       <FTableOfTxs :data
         :pending />
