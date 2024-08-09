@@ -10,7 +10,9 @@
     </template>
     <template #row-amount-data="{ row, index }">
       <slot>
+        <div class="text-right">
         <FMoneyAmount :amount="row?.amount" />
+      </div>
       </slot>
     </template>
     <template #row-actions-data="{ row }">
