@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/withdrawals/create"
-          icon="i-heroicons-plus-circle">รับคิว</UButton>
+        <!-- <UButton to="/withdrawals/create"
+          icon="i-heroicons-plus-circle">รับคิว</UButton> -->
         <UButton to="/withdrawals/create/close"
           icon="i-heroicons-x-circle">ปิดยอดเคาน์เตอร์</UButton>
         <template #next>
