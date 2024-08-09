@@ -11,8 +11,8 @@
     <template #row-amount-data="{ row, index }">
       <slot>
         <div class="text-right">
-        <FMoneyAmount :amount="row?.amount" />
-      </div>
+          <FMoneyAmount :amount="row?.amount" />
+        </div>
       </slot>
     </template>
     <template #row-actions-data="{ row }">
@@ -20,6 +20,7 @@
         <UIcon name="i-heroicons-arrow-top-right-on-square-16-solid" />
       </slot>
     </template>
+
   </UTable>
   <UTable v-else
     v-model="selected"
@@ -58,4 +59,16 @@ function select(row: T) {
   }
   emits('selectionChanged', row);
 }
+
+const txcodeLabels = {
+  svadps: 'ฝาก',
+  svadol: 'ฝาก online',
+  svawtd: 'ถอน',
+};
+
+const transferChannelLabels = {
+  online: 'โอน online',
+  cheque: 'เช็ค',
+};
+
 </script>
