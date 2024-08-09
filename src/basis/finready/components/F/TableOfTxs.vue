@@ -14,7 +14,7 @@ const props = defineProps<{
 }>();
 
 const columns = [{
-  key: 'id',
+  key: 'row-id',
   label: 'ลำดับที่'
 }, {
   key: 'accNo',

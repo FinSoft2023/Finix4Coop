@@ -3,7 +3,12 @@
     :rows="data ?? []"
     :loading="pending"
     @select="select">
-    <template #row-actions-data="{row}">
+    <template #row-id-data="{ row, index }">
+      <slot>
+        {{ index + 1 }}
+      </slot>
+    </template>
+    <template #row-actions-data="{ row }">
       <slot>
         <UIcon name="i-heroicons-arrow-top-right-on-square-16-solid" />
       </slot>
@@ -13,8 +18,8 @@
     v-model="selected"
     :rows="data ?? []"
     :loading="pending"
-    @select="select" >
-    <template #row-actions-data="{row}">
+    @select="select">
+    <template #row-actions-data="{ row }">
       <slot>
         <UIcon name="i-heroicons-arrow-top-right-on-square-16-solid" />
       </slot>
