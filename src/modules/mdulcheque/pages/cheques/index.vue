@@ -9,6 +9,7 @@
         </template>
       </BPartButtonsBand>
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      
       <FTableOfTxs @selection-changed="selectItem"
         :data
         :pending />

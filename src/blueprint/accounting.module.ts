@@ -2,7 +2,7 @@ import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('accounting', 'Accounting', {
+export const moduleBlueprint = defineModule('accounting', 'บัญชี', {
   list: {
     root: accTransactions,
     daily: accTransactions, // รายวัน

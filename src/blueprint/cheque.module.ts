@@ -2,7 +2,7 @@ import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('cheques', 'Cheque(s)', {
+export const moduleBlueprint = defineModule('cheques', 'ใบเช็ค', {
   list: {
     root: accTransactions, // ดำเนินการปริ้นเช็ค
     active: accTransactions, // ดำเนินการบันทึกรูปเช็ค

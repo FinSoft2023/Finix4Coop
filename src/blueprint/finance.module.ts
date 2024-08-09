@@ -2,7 +2,7 @@ import { bigPlatformBuilder, accTransactions } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('financials', 'Finance', {
+export const moduleBlueprint = defineModule('financials', 'การเงิน', {
   list: {
     root: accTransactions, // รายการคำอนุมัติ
     active: accTransactions, // รายการทำรายการโอนเงิน

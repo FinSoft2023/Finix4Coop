@@ -1,7 +1,7 @@
 <template>
   <UNotification v-if="showNotification"
     :icon
-    :actions="[{ variant: 'solid', color: 'primary', label: actionText, click: handleAction }, { variant: 'outline', color: 'primary', label: 'Close' }]"
+    :actions="[{ variant: 'solid', color: 'primary', label: actionText, click: handleAction }, { variant: 'outline', color: 'primary', label: 'ปิด' }]"
     :id
     :title="label"
     :description
