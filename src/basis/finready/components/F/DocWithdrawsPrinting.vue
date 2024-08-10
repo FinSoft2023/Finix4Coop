@@ -7,7 +7,7 @@
           <p class="mt-[14mm] ml-[8cm]">โรงพยาบาลศรีสะเกษ</p>
         </div>
         <p class="mt-[4mm] ml-[3cm] ">สหกรณ์ออมทรัพย์ </p>
-        <p class="mt-[2mm] ml-[3cm] text-gray-900 font-bold dark:text-gray-90">08/08/2567</p>
+        <p class="mt-[2mm] ml-[3cm] text-gray-900 font-bold dark:text-gray-90">09/08/2567</p>
         <div class="grid grid-cols-3 gap-4">          
           <div class="col-span-2">
             <p class="mt-[3mm] ml-[5cm] text-gray-900 dark:text-gray-90">{{ data?.name }} </p>
