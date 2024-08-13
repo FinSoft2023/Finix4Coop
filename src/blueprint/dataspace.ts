@@ -213,6 +213,7 @@ export const accTransactions = defineEntity({
 });
 
 
+
 export const queue = defineEntity({
   name: 'เรียกคิว',
   root: [
@@ -314,3 +315,107 @@ export const transferonline = defineEntity({
     },
   ]
 })
+
+
+export const bankAccount = defineChoicesList('transfer-channels', {
+  bank1: 'กรุงไทย',
+  bank2: 'กสิกร',
+});
+export const purpose = defineChoicesList('codes-tx-operation', {
+  option1: 'เพื่อการอันจำเป็น',
+  option2: 'จัดหาสิ่งจำเป็นสำหรับครอบครัว',
+  option3: 'อุปการะเลี้ยงดูบุคคลในครอบครัว',
+  option4: 'ปลดเปลื้องหนี้สิ้นของครัวเรือน',
+  option5: 'รักษาพยาบาลบุคคลในครอบครัว',
+});
+
+export const installments = defineChoicesList('installments', {
+  option1: '16 งวด',
+  option2: '24 งวด',
+  option3: '240 งวด',
+});
+
+
+export const loanfast = defineEntity({
+  name: 'กู้ฉุกเฉิน',
+  root: [
+ 
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: purpose,
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'forperson',
+      label: 'ผู้รับอำนาจรับเงินแทน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'amount',
+      label: 'กรอกจำนวนที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'number',
+    },
+  ],
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+});
+
+
+
+
+
