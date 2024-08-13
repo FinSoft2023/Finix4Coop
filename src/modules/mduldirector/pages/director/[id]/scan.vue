@@ -3,9 +3,8 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-      </UCard>
+      <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
+
     </BPartPageBody>
 
     <template #side>

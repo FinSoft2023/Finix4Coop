@@ -18,12 +18,12 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'กรรมการเงินกู้',
     to: '/director',
   },
   {
-    label: 'Closed',
-    to: '/director/closed',
+    label: 'อนุมัติแล้ว',
+    to: '/director/completed',
   },
 ]);
 </script>
