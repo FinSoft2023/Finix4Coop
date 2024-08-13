@@ -1,21 +1,17 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
-
     <BPartPageBody>
-      <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-      </UCard>
+      <DocPrintContainer title="Printing Sample Page">
+        <DocPaper />
+        <DocPaper :more="true" />
+        <DocChequePrinting />
+      </DocPrintContainer>
     </BPartPageBody>
-
-    <template #side>
-      <DSubLinks />
-    </template>
   </BFullPage>
 </template>
 
 <script setup lang="ts">
-const pageDef = useActiveModulePage('each.scan');
+const pageDef = useActiveModulePage('each.printsheet');
 
 const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);

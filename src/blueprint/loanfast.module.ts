@@ -22,7 +22,6 @@ export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเ�
     check: {
       entity: loanfast,
       post: true,
-      role: 'edit',
       subName: 'fillinInformation',
     },
     steps: {
@@ -37,6 +36,11 @@ export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเ�
   each: {
     root: loanfast,
     print: {
+      entity: loanfast,
+      post: true,
+      role: 'print',
+    },
+    printsheet: {
       entity: loanfast,
       post: true,
       role: 'print',
