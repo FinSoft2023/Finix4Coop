@@ -65,7 +65,7 @@
 
 <script setup
   lang="ts">
-const pageDef = useActiveModulePage('each.printsheet');
+const pageDef = useActiveModulePage('list.printsheet');
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
