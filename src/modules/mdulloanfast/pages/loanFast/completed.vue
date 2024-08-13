@@ -4,10 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/loanFast/create/close" 
-        icon="i-heroicons-plus-circle">ส่งเรื่อง</UButton>
+        <UButton to="/loanFast/create/close"
+          icon="i-heroicons-plus-circle">ส่งเรื่อง</UButton>
         <UButton to="/loanFast/printsheet"
-        icon="i-heroicons-printer">ปริ้นใบปะหน้า</UButton>
+          icon="i-heroicons-printer">ปริ้นใบปะหน้า</UButton>
         <template #next>
           <DSmartTabs />
         </template>
@@ -15,19 +15,22 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxsLoan @selection-changed="selectItem"
+        :data
+        :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('list.completed');
-useBreadcrumb('List');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('list.completed');
+  useBreadcrumb('List');
 
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-function selectItem(item: any) {
-  navigateTo(`/loanFast/${item.id}`);
-}
+  function selectItem(item: any) {
+    navigateTo(`/loanFast/${item.id}`);
+  }
 </script>

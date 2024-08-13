@@ -1,6 +1,6 @@
 <template>
-  <DTable :data="data"
-    :columns
+  <DTable :data="formattedData"
+    :columns="columns"
     :pending="pending" />
 </template>
 
@@ -19,20 +19,17 @@
     key: 'id',
     label: 'ลำดับที่'
   }, {
-    key: 'txcode',
+    key: 'type',
     label: 'ประเภท'
   }, {
     key: 'name',
     label: 'ชื่อ-สกุล'
   }, {
     key: 'amount',
-    label: 'ขอกู้'
+    label: 'ยอดขอกู้'
   }, {
-    key: 'amount',
+    key: 'installments',
     label: 'งวด'
-  },{
-    key: 'amount',
-    label: 'ยอดผ่อน'
   }, {
     key: 'bankAccount',
     label: 'บัญชีธนาคาร'
@@ -45,4 +42,30 @@
   }, {
     key: 'row-actions',
   }];
+
+  const formatInstallments = (installments: string) => {
+    const options: Record<string, string> = {
+      option1: '16 งวด',
+      option2: '24 งวด',
+      option3: '240 งวด'
+    };
+    return options[installments] || installments;
+  };
+
+  const formatBankAccount = (bankAccount: string) => {
+    const bankOptions: Record<string, string> = {
+      bank1: 'กรุงไทย',
+      bank2: 'กสิกร'
+    };
+    return bankOptions[bankAccount] || bankAccount;
+  };
+
+  const formattedData = computed(() => {
+    return props.data.map((item, index) => ({
+      ...item,
+      id: index + 1, // Start id from 1
+      installments: formatInstallments(item.installments),
+      bankAccount: formatBankAccount(item.bankAccount),
+    }));
+  });
 </script>
