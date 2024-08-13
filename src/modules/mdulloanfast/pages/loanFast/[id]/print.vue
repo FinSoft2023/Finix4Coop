@@ -2,9 +2,8 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <DocPaper />
-        <DocPaper :more="true" />
-        <DocChequePrinting />
+        <FDocloanFastPrinting />
+       
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
