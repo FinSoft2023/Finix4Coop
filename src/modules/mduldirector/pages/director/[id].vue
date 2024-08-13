@@ -8,8 +8,8 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'Info', to: '/' },
-    { label: 'Edit', to: '/edit' },
+    { label: 'บันทึกใบประหน้า', to: '/scan' },
+    { label: 'ยกเลิก', to: '/cancel' },
   ],
   pageDef,
 );
