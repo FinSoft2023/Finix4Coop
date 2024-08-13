@@ -362,7 +362,7 @@ export const loanfast = defineEntity({
       choices: installments,
     },
     {
-      model: 'forperson ',
+      model: 'forperson',
       label: 'ผู้รับอำนาจรับเงินแทน',
       spec: {},
       component: 'text',
