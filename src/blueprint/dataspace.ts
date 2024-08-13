@@ -356,7 +356,7 @@ export const loanfast = defineEntity({
       component: 'text',
     },
     {
-      model: 'txcode',
+      model: 'amount',
       label: 'กรอกจำนวนที่ต้องการกู้ (บาท)',
       spec: {},
       component: 'number',
@@ -402,3 +402,8 @@ export const loanfast = defineEntity({
     },
   ]
 });
+
+
+
+
+
