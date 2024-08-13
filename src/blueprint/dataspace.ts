@@ -321,7 +321,7 @@ export const bankAccount = defineChoicesList('transfer-channels', {
   bank1: 'กรุงไทย',
   bank2: 'กสิกร',
 });
-export const installments = defineChoicesList('codes-tx-operation', {
+export const purpose = defineChoicesList('codes-tx-operation', {
   option1: 'เพื่อการอันจำเป็น',
   option2: 'จัดหาสิ่งจำเป็นสำหรับครอบครัว',
   option3: 'อุปการะเลี้ยงดูบุคคลในครอบครัว',
@@ -329,6 +329,11 @@ export const installments = defineChoicesList('codes-tx-operation', {
   option5: 'รักษาพยาบาลบุคคลในครอบครัว',
 });
 
+export const installments = defineChoicesList('installments', {
+  option1: '16 งวด',
+  option2: '24 งวด',
+  option3: '240 งวด',
+});
 
 
 export const loanfast = defineEntity({
@@ -336,11 +341,11 @@ export const loanfast = defineEntity({
   root: [
  
     {
-      model: 'installments',
+      model: 'purpose',
       label: 'เพื่อวัตถุประสงค์',
       spec: {},
       component: 'select',
-      choices: installments,
+      choices: purpose,
     },
     {
       model: 'bankAccount',
@@ -348,6 +353,13 @@ export const loanfast = defineEntity({
       spec: {},
       component: 'radio',
       choices: transferChannels,
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
     },
     {
       model: 'forperson ',

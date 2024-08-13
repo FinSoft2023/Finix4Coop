@@ -4,9 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/loanFast/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+        <UButton to="/loanFast/create/close" 
+        icon="i-heroicons-plus-circle">ส่งเรื่อง</UButton>
+        <UButton to="/loanFast/printsheet"
+        icon="i-heroicons-printer">ปริ้นใบปะหน้า</UButton>
         <template #next>
           <DSmartTabs />
         </template>

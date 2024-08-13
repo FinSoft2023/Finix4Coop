@@ -18,12 +18,12 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'กำลังดำเนินการ',
     to: '/loanFast',
   },
   {
-    label: 'Closed',
-    to: '/loanFast/closed',
+    label: 'เสร็จสิ้น',
+    to: '/loanFast/completed',
   },
 ]);
 </script>

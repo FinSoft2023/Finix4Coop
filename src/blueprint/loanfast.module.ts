@@ -7,6 +7,11 @@ export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเ�
     root: loanfast,
     completed: loanfast,
     closed: loanfast,
+    printsheet: { // ปริ้นเอกสารใบประหน้า
+      entity: loanfast,
+      post: true,
+      role: 'print',
+    },
   },
   create: {
     root: {

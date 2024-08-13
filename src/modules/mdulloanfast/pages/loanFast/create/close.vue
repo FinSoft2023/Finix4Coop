@@ -3,19 +3,10 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
-        :state="data"
-        :schema="schema"
-        :pending="pending"
-        class="space-y-4"
-      >
-        <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
-        </UCard>
+      <UButton @click="handleClose">ส่งรายการทั้งหมด</UButton>
 
-        <UButton type="submit">Save</UButton>
-      </UForm>
+<FTableOfTxs :data
+  :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

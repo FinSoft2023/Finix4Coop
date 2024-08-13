@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/loanFast/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+          >รับเรื่อง</UButton
         >
         <template #next>
           <DSmartTabs />
