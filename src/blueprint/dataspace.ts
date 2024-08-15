@@ -314,3 +314,61 @@ export const transferonline = defineEntity({
     },
   ]
 })
+
+
+export const bindaccount = defineEntity({
+  name: 'ผูกบัญชี',
+  root: [
+    {
+      model: 'idcard',
+      label: 'เลขบัตรประชาชน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phone',
+      label: 'กรอกเบอร์โทรศัทพ์',
+      spec: {},
+      component: 'text',
+    },
+  ],
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+});
