@@ -317,7 +317,7 @@ export const transferonline = defineEntity({
 
 
 export const register = defineEntity({
-  name: 'ฝากเงิน',
+  name: 'สมัครสมาชิกใหม่',
   root: [   
     {
       model: 'amount',
