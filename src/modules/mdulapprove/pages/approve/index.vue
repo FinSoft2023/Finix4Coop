@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+        <UButton to="/approve/create/check" icon="i-heroicons-plus-circle"
+          >ตรวจสอบข้อมูล</UButton
         >
         <template #next>
           <DSmartTabs />

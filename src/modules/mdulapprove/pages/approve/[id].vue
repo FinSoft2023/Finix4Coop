@@ -8,8 +8,9 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'Info', to: '/' },
-    { label: 'Edit', to: '/edit' },
+    { label: 'บันทึกชุดใบสมัคร', to: '/' },
+    { label: 'บันทึกใบยินยอมหักเงิน', to: '/edit' },
+    { label: 'ยกเลิกรายการ', to: '/edit' },
   ],
   pageDef,
 );

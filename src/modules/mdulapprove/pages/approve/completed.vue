@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+        <UButton to="/approve/create/deduction" icon="i-heroicons-plus-circle"
+          >ส่งหักเงินค่าหุ้น</UButton
         >
         <template #next>
           <DSmartTabs />

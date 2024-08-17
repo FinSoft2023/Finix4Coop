@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+        <UButton to="/approve/printReport" icon="i-heroicons-plus-circle"
+          >ปริ้นใบรายงาน</UButton
         >
         <template #next>
           <DSmartTabs />

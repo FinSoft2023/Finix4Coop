@@ -15,7 +15,7 @@ export const moduleBlueprint = defineModule('approve', 'อนุมัติร
       post: true,
       role: 'print',
     },
-    printReport: { // สร้างใบประหน้า
+    printReport: { // สร้างใบรายงาน
       entity: register,
       post: true,
       role: 'print',
