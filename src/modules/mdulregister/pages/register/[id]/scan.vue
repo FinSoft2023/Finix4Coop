@@ -4,7 +4,8 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <UButton to="/register/create"
+          icon="">สแกนเอกสาร</UButton>
       </UCard>
     </BPartPageBody>
 
@@ -14,12 +15,13 @@
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('each.scan');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('each.scan');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>
