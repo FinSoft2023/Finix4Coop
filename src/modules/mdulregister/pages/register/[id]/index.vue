@@ -1,11 +1,15 @@
 <template>
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <FNotificationChanges />
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <DEntitySection v-model="data"
+          :entries
+          :pending />
       </UCard>
+      <DGallery :photos="data?.images"></DGallery>
     </BPartPageBody>
 
     <template #side>
@@ -14,12 +18,13 @@
   </BFullPage>
 </template>
 
-<script setup lang="ts">
-const pageDef = useActiveModulePage('each.root');
+<script setup
+  lang="ts">
+  const pageDef = useActiveModulePage('each.root');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+  const { entries } = getEntrySchema(pageDef);
+  const { apiGet } = useHostApi(pageDef);
+  const { data, error, pending } = apiGet();
 
-useBreadcrumb(pageDef.label);
+  useBreadcrumb(pageDef.label);
 </script>
