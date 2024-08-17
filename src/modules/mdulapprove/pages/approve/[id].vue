@@ -8,9 +8,9 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'บันทึกชุดใบสมัคร', to: '/' },
-    { label: 'บันทึกใบยินยอมหักเงิน', to: '/edit' },
-    { label: 'ยกเลิกรายการ', to: '/edit' },
+    { label: 'บันทึกชุดใบสมัคร', to: '/scan1' },
+    { label: 'บันทึกใบยินยอมหักเงิน', to: '/scan2' },
+    { label: 'ยกเลิกรายการ', to: '/cancel' },
   ],
   pageDef,
 );
