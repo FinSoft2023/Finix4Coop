@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/approve/create/reportDoc" icon="i-heroicons-plus-circle"
-          >ส่งเรื่องหักเงินค่าหุ้น</UButton
+        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
+          >New</UButton
         >
         <template #next>
           <DSmartTabs />

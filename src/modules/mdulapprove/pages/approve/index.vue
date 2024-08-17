@@ -7,9 +7,6 @@
         <UButton to="/approve/create" icon="i-heroicons-plus-circle"
           >New</UButton
         >
-        <UButton to="/approve/printDoc" icon="i-heroicons-plus-circle"
-          >สร้างรายงาน</UButton
-        >
         <template #next>
           <DSmartTabs />
         </template>

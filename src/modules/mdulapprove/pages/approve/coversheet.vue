@@ -4,6 +4,9 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
+        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
+          >New</UButton
+        >
         <template #next>
           <DSmartTabs />
         </template>

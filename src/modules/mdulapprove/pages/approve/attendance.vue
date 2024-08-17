@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/approve/create/approval" icon="i-heroicons-plus-circle"
-          >อนุมัติรายการคำขอ</UButton
+        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
+          >New</UButton
         >
         <template #next>
           <DSmartTabs />

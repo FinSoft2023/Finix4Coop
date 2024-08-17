@@ -23,7 +23,7 @@
 <script setup lang="ts">
 // import type { z } from 'zod';
 
-const pageDef = useActiveModulePage('create.approval');
+const pageDef = useActiveModulePage('create.check');
 useBreadcrumb('Create');
 
 const { entries, schema } = getEntrySchema(pageDef);
