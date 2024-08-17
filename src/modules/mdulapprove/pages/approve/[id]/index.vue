@@ -1,6 +1,7 @@
 <template>
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <FNotificationChanges />
 
     <BPartPageBody>
       <UCard>
