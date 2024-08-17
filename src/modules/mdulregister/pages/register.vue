@@ -18,12 +18,12 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'กำลังดำเนินการ',
+    label: 'Active',
     to: '/register',
   },
   {
-    label: 'เสร็จสิ้น',
-    to: '/register/completed',
+    label: 'Closed',
+    to: '/register/closed',
   },
 ]);
 </script>

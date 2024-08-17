@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/register/create/closed" icon="i-heroicons-plus-circle"
-          >ส่งรายการไปตรวจสอบ</UButton
+        <UButton to="/register/create" icon="i-heroicons-plus-circle"
+          >New</UButton
         >
         <template #next>
           <DSmartTabs />

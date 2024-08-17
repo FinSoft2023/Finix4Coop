@@ -4,32 +4,30 @@ const { defineModule } = bigPlatformBuilder;
 
 export const moduleBlueprint = defineModule('approve', 'อนุมัติรายการคำขอ', {
   list: {
-    root: register, // รับเรื่อง
-    attendance: register, // เข้าที่ประชุม
+    root: register, // ตรวจสอบข้อมูล
+    attendance: register, // สร้างรายงาน
     coversheet: register, // ใบปะหน้า
     approval: register, // เซ็นอนุมัติคำขอ
     completed: register, // เสร็จสิ้น
-    closed: register, 
+    closed: register,
     printDoc: { // ปริ้นเอกสารใบประหน้า
       entity: register,
       post: true,
       role: 'print',
     },
-
+    printReport: { // สร้างใบประหน้า
+      entity: register,
+      post: true,
+      role: 'print',
+    },
   },
   create: {
     root: {
-      entity: register, //เจ้าหน้าที่รับคิว (แสดงข้อมูลที่สมาชิกกรอก)
+      entity: register,
       post: true,
-      role: 'stepedit',
     },
-    confirm: {
-      entity: register, //ยืนยันข้อมูล
-      post: true,
-      role: 'stepconfirm',
-    },
-    reportDoc: {
-      entity: register, //print รายงานเข้าที่ประชุมประจำเดือน
+    check: {
+      entity: register, // ตรวจสอบข้อมูล (เงินเดือน)
       post: true,
     },
     approval: {
@@ -40,10 +38,6 @@ export const moduleBlueprint = defineModule('approve', 'อนุมัติร
       entity: register, // ส่งหักเงินค่าหุ้น ให้การเงิน
       post: true,
     },
-    steps: {
-      entity: register,
-      role: 'steps',
-    },
     closed: {
       entity: register,
       post: true,
@@ -51,17 +45,20 @@ export const moduleBlueprint = defineModule('approve', 'อนุมัติร
   },
   each: {
     root: register,
-    printReport: {
-      entity: register, //print สรุปใบรายงานเช็นอนุมัติ (ใบประหน้า)
-      post: true,
-      role: 'print',
-    },
-    scan: {
-      entity: register, //Scan ส่งแบบฟอร์มเอกสารทั้งหมด (รายเซ็น)
+    scan1: {
+      entity: register, //บันทึกชุดใบสมัคร ที่ผ่านการอนุมัติแล้ว
       post: true,
     },
-    takePhoto: {
-      entity: register, //ดูรูปถ่าย
+    scan2: {
+      entity: register, //บันทึกใบยินยอมให้หักเงินเดือน
+      post: true,
+    },
+    previewPhoto1: {
+      entity: register, //ดูรูปถ่าย 1
+      post: true,
+    },
+    previewPhoto2: {
+      entity: register, //ดูรูปถ่าย 2
       post: true,
     },
     cancel: {

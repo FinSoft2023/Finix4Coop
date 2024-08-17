@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/register/create" icon="i-heroicons-plus-circle"
-          >สมัครสมาชิก</UButton
+          >New</UButton
         >
         <template #next>
           <DSmartTabs />
