@@ -12,6 +12,7 @@
       { label: 'ปริ้นใบสมัคร', to: '/print' },
       { label: 'สแกนเอกสาร', to: '/scan' },
       { label: 'ลายเซ็น', to: '/takePhoto' },
+      { label: 'ถ่ายรูป', to: '/previewPhoto' },
       { label: 'ยกเลิก', to: '/cancel' },
     ],
     pageDef,
