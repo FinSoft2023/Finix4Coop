@@ -4,8 +4,7 @@
 
     <BPartPageBody>
       <UCard>
-        <UButton to="/register/create"
-          icon="">สแกนเอกสาร</UButton>
+        <FTakePhoto />
       </UCard>
     </BPartPageBody>
 
