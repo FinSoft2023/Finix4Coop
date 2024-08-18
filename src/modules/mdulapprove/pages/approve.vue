@@ -18,11 +18,15 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'รายการทั้งหมด',
     to: '/approve',
   },
   {
-    label: 'Closed',
+    label: 'เก็บเอกสารที่อนุมัติ',
+    to: '/approve/',
+  },
+  {
+    label: 'เสร็จสิ้น',
     to: '/approve/closed',
   },
 ]);

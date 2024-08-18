@@ -5,7 +5,10 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/approve/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+          >ปริ้นใบรายงาน</UButton
+        >
+        <UButton to="/approve/create" icon="i-heroicons-plus-circle"
+          >ปริ้นใบปะหน้า</UButton
         >
         <template #next>
           <DSmartTabs />
