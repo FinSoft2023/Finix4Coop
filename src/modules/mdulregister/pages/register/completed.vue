@@ -3,11 +3,9 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton to="/register/create"
-          icon="i-heroicons-plus-circle">รับเรื่อง</UButton>
+      <BPartButtonsBand>       
         <UButton to="/register/closed"
-          icon="i-heroicons-plus-circle">ปิดรับสมคร</UButton>
+        icon="i-heroicons-plus-circle">ส่งตรวจสอบข้อมูล</UButton>
         <template #next>
           <DSmartTabs />
         </template>

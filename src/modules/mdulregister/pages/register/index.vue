@@ -5,9 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/register/create"
-          icon="i-heroicons-plus-circle">รับเรื่อง</UButton>
-        <UButton to="/register/closed"
-          icon="i-heroicons-plus-circle">ปิดรับสมคร</UButton>
+          icon="i-heroicons-plus-circle">รับเรื่อง</UButton>       
         <template #next>
           <DSmartTabs />
         </template>

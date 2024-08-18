@@ -17,10 +17,17 @@ setModulePageRoot([
   },
 ]);
 useSmartTabs([
-  { label: 'ตรวจสอบข้อมูล', to: '/approve' },
-  { label: 'ใบรายงาน', to: '/approve/attendance' },
-  { label: 'ใบปะหน้า', to: '/approve/coversheet' },
-  { label: 'เซ็นอนุมัติคำขอ', to: '/approve/approval' },
-  { label: 'เสร็จสิ้น', to: '/approve/completed' },
+  {
+    label: 'รายการทั้งหมด',
+    to: '/approve',
+  },
+  {
+    label: 'เก็บเอกสารที่อนุมัติ',
+    to: '/approve/',
+  },
+  {
+    label: 'เสร็จสิ้น',
+    to: '/approve/closed',
+  },
 ]);
 </script>
