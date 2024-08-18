@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/approve/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+          >ส่งรายงานหักหนี้</UButton
         >
         <template #next>
           <DSmartTabs />
