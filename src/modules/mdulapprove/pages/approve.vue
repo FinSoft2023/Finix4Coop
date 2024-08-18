@@ -23,7 +23,7 @@ useSmartTabs([
   },
   {
     label: 'เก็บเอกสารที่อนุมัติ',
-    to: '/approve/',
+    to: '/approve/completed',
   },
   {
     label: 'เสร็จสิ้น',

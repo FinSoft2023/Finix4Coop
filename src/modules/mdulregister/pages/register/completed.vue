@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>       
-        <UButton to="/register/closed"
-        icon="i-heroicons-plus-circle">ส่งตรวจสอบข้อมูล</UButton>
+        <!-- <UButton to="/register/closed"
+        icon="i-heroicons-plus-circle">ส่งตรวจสอบข้อมูล</UButton> -->
         <template #next>
           <DSmartTabs />
         </template>
