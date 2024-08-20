@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <UCard>
-        <FTakePhoto />
+        <NScanPaper></NScanPaper>
       </UCard>
     </BPartPageBody>
 

@@ -3,7 +3,7 @@
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
         <DocPaper />
-        <DocPaper :more="true" />
+        <NDocRegisterPrinting></NDocRegisterPrinting>
         <DocChequePrinting />
       </DocPrintContainer>
     </BPartPageBody>

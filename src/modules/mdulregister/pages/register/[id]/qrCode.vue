@@ -4,8 +4,14 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <UButton to="/cheques/"
+          icon="i-heroicons-arrow-right"
+          @click="handleConfirmation">ดำเนินการต่อ</UButton>
+
+        <img alt=""
+          :src="imageUrl">
       </UCard>
+      <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
 
     <template #side>
