@@ -3,9 +3,7 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <FTakePhoto />
-      </UCard>
+      <NScanPaper />
     </BPartPageBody>
 
     <template #side>
