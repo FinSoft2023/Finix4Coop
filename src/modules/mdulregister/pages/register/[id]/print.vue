@@ -2,9 +2,7 @@
   <BFullPage>
     <BPartPageBody>
       <DocPrintContainer title="Printing Sample Page">
-        <DocPaper />
         <NDocRegisterPrinting></NDocRegisterPrinting>
-        <DocChequePrinting />
       </DocPrintContainer>
     </BPartPageBody>
   </BFullPage>
