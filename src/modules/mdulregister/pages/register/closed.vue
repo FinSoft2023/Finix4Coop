@@ -4,19 +4,21 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/register/create"
-          icon="i-heroicons-plus-circle">รับเรื่อง</UButton>
+        <!-- <UButton to="/register/create"
+          icon="i-heroicons-plus-circle">รับเรื่อง</UButton> -->
         <UButton to="/register/closed"
-          icon="i-heroicons-plus-circle">ปิดรับสมคร</UButton>
+          icon="i-heroicons-plus-circle">ยืนยันส่งเรื่องให้กับ รพ</UButton>
+        <UButton to="/register/closed"
+          icon="i-heroicons-plus-circle">Export เอกสาร</UButton>
 
-        <template #next>
+        <!-- <template #next>
           <DSmartTabs />
-        </template>
+        </template> -->
       </BPartButtonsBand>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem"
+      <NTableOfTxsListName @selection-changed="selectItem"
         :data
         :pending />
     </BPartPageBody>

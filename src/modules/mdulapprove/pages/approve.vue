@@ -18,7 +18,7 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'รายการทั้งหมด',
+    label: 'ข้อมูลตรวสอบแล้ว',
     to: '/approve',
   },
   {
