@@ -44,5 +44,11 @@ export const moduleBlueprint = defineModule('inspection', 'ตรวจสอบ
       post: true,
       role: 'confirm',
     },
+    edit: {
+      entity: register, //แก้ไข
+      post: true,
+      role: 'edit',
+      subName: 'edit',
+    },
   },
 });

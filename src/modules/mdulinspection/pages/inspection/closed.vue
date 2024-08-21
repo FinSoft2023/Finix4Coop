@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/inspection/create/reportDoc" icon="i-heroicons-plus-circle"
-          >ส่งข้อมูลเข้าที่ประชุม</UButton
+        <UButton to="/inspection/create" icon="i-heroicons-plus-circle"
+          >New</UButton
         >
         <template #next>
           <DSmartTabs />

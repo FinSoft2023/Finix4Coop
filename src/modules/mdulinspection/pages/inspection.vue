@@ -18,11 +18,11 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'ตรวจสอบข้อมูล',
+    label: 'รอตรวจสอบ',
     to: '/inspection',
   },
   {
-    label: 'เสร็จสื้น',
+    label: 'ตรวจแล้ว',
     to: '/inspection/closed',
   },
 ]);

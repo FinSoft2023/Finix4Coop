@@ -320,10 +320,22 @@ export const register = defineEntity({
   name: 'สมัครสมาชิกใหม่',
   root: [   
     {
+      model: 'name',
+      label: 'ชื่อ-สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
       model: 'amount',
-      label: 'จำนวนเงิน (บาท)',
+      label: 'เงินดือน',
       spec: {},
       component: 'number',
+    },
+    {
+      model: 'position',
+      label: 'ตำแน่ง',
+      spec: {},
+      component: 'text',
     },
   ], 
   sub: [
@@ -361,6 +373,24 @@ export const register = defineEntity({
           label: 'จำนวนเงินในบัญชี',
           spec: {},
           component: 'number',
+        },
+      ],
+    },
+    {
+      name: 'edit',
+      component: 'entry',
+      fields: [
+        {
+          model: 'amount',
+          label: 'เงินดือน',
+          spec: {},
+          component: 'number',
+        },
+        {
+          model: 'position',
+          label: 'ตำแน่ง',
+          spec: {},
+          component: 'text',
         },
       ],
     },
