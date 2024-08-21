@@ -314,3 +314,73 @@ export const transferonline = defineEntity({
     },
   ]
 })
+
+
+export const checkloanfast = defineEntity({
+  name: 'ตรวจสอบขอกู้ฉุกเฉิน',
+  root: [   
+    {
+      model: 'Agency',
+      label: 'หน่วยงาน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phonenumber',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'income',
+      label: 'รายได้',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
