@@ -22,14 +22,18 @@
     { label: 'Create', to: '/transferonline/create' },
   ]);
 
-  const modules = [{
-    title: 'ข้อมูลสมาชิก',
-    to: '/',
-    icon: 'i-mdi-user-card-details-outline'
+  const modules = [ {
+    title: 'ผูกบัญชี',
+    to: '/transferonline/create/scan',
+    icon: 'i-mdi-account-lock-outline'
   }, {
     title: 'เงินฝาก',
     to: '/transferonline',
     icon: 'i-heroicons-wallet'
+  },{
+    title: 'ข้อมูลสมาชิก',
+    to: '/',
+    icon: 'i-mdi-user-card-details-outline'
   }, {
     title: 'สัญญากู้',
     to: '/',

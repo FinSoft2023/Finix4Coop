@@ -8,24 +8,16 @@
           name="line-md:confirm-circle"></Icon>
       </div>
       <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white">
-        ทำรายการฝากเงินเสร็จสิ้น
+        ผูกบัญชีเรียบร้อยแล้ว
       </h2>
       <h3 class="text-center text-gray-500 dark:text-gray-300 ">
-        กลับไปยังหน้าแรกเพื่อตรวจสอบยอดเงิน
+        คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้แล้ว
       </h3>
       <div class="flex justify-center">
         <UButton to="/transferonline/">Home</UButton>
-      </div>
-      <!-- <UCard>
-        <DEntitySection v-model="data"
-          :entries
-          :pending />
-      </UCard> -->
+      </div>    
     </BPartPageBody>
-
-    <!-- <template #side>
-      <DSubLinks />
-    </template> -->
+   
   </BFullPage>
 </template>
 
