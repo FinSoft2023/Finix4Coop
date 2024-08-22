@@ -315,6 +315,25 @@ export const transferonline = defineEntity({
   ]
 })
 
+export const bankAccount = defineChoicesList('transfer-channels', {
+  bank1: 'กรุงไทย',
+  bank2: 'กสิกร',
+});
+export const purpose = defineChoicesList('codes-tx-operation', {
+  option1: 'เพื่อการอันจำเป็น',
+  option2: 'จัดหาสิ่งจำเป็นสำหรับครอบครัว',
+  option3: 'อุปการะเลี้ยงดูบุคคลในครอบครัว',
+  option4: 'ปลดเปลื้องหนี้สิ้นของครัวเรือน',
+  option5: 'รักษาพยาบาลบุคคลในครอบครัว',
+});
+
+export const installments = defineChoicesList('installments', {
+  option1: '16 งวด',
+  option2: '24 งวด',
+  option3: '240 งวด',
+});
+
+
 
 export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
@@ -340,6 +359,128 @@ export const checkloanfast = defineEntity({
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'date',
+      label: 'เริ่มส่งเงินกู้คืน',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
+
+export const loanfastmember = defineEntity({
+  name: 'ขอกู้ฉุกเฉิน',
+  root: [   
+    {
+      model: 'Amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'Amountsent',
+      label: 'ยอดที่ส่ง',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'date',
+      label: 'เริ่มส่งเงินกู้คืน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: purpose,
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+    {
+      model: 'forperson',
+      label: 'ผู้รับอำนาจรับเงินแทน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Jobposition',
+      label: 'ตำแหน่งงาน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Affiliation',
+      label: 'สังกัด',
       spec: {},
       component: 'text',
     },

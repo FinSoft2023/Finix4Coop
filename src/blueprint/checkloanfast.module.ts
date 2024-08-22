@@ -23,9 +23,10 @@ export const moduleBlueprint = defineModule('checkloanfast', 'ตรวจสอ
       entity: checkloanfast,
       role: 'steps',
     },
-    close: {
+    condition: {
       entity: checkloanfast,
       post: true,
+      role: 'stepedit',
     },
   },
   each: {
