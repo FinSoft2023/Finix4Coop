@@ -15,14 +15,19 @@
               :entries
               :pending />
           </UCard>
-          <UCard> <p>รูปภาพประจำตัว</p>
-            <img class="mt-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Daily Dhamma Image" style="width: 100%; height: auto;" />
+          <UCard>
 
-            <p class="mt-3">ลายเซ็น</p>
-            <UCard class="mt-3"> <img src="https://kalyanamitra.org/th/images/dailydhamma/2560/07/600719_07.jpg" alt="Daily Dhamma Image" style="width: 100%; height: auto;" />
-            </UCard>
-           
+            <p>รูปภาพประจำตัว</p>
+            <img class="my-3" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+              alt="Daily Dhamma Image"
+              style="width: 100%; height: auto;" />
+
+            <p>ลายเซ็น</p>
+            <img class="my-3 border" src="https://kalyanamitra.org/th/images/dailydhamma/2560/07/600719_07.jpg"
+              alt="Daily Dhamma Image"
+              style="width: 100%; height: auto;" />
           </UCard>
+
         </DItemGrid>
       </UForm>
     </BPartPageBody>
@@ -33,13 +38,12 @@
   </BFullPage>
 </template>
 
-<script setup
-  lang="ts">
-  const pageDef = useActiveModulePage('each.root');
+<script setup lang="ts">
+const pageDef = useActiveModulePage('each.root');
 
-  const { entries } = getEntrySchema(pageDef);
-  const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet();
+const { entries } = getEntrySchema(pageDef);
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
 
-  useBreadcrumb(pageDef.label);
+useBreadcrumb(pageDef.label);
 </script>
