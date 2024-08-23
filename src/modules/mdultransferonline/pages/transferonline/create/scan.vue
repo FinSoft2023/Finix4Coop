@@ -8,7 +8,9 @@
       </h2>
       <UForm @submit="handleUpdateData"
         :state="setdata" class="space-y-4">
+        <p>เลขสมาชิก</p>
         <UInput v-model="setdata.memberId"></UInput>
+        <p>เลขบัญชีออมทรัพย์พิเศษ</p>
         <UInput v-model="setdata.accountNo"></UInput>
         <UButton type="submit" variant="solid" block>ยืนยัน</UButton>
       </UForm>

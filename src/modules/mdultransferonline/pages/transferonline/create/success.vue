@@ -14,7 +14,7 @@
         คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้แล้ว
       </h3>
       <div class="flex justify-center">
-        <UButton to="/transferonline/">Home</UButton>
+        <UButton to="/">Home</UButton>
       </div>    
     </BPartPageBody>
    
