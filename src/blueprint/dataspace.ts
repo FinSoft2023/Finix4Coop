@@ -133,7 +133,6 @@ export const category = defineEntity({
   ],
 });
 
-
 export const accountTypes = defineChoicesList('account-types', {
   savings: 'ออมทรัพย์พิเศษ',
 });
@@ -209,9 +208,8 @@ export const accTransactions = defineEntity({
         },
       ],
     },
-  ]
+  ],
 });
-
 
 export const queue = defineEntity({
   name: 'เรียกคิว',
@@ -261,19 +259,19 @@ export const queue = defineEntity({
         // },
       ],
     },
-  ]
+  ],
 });
 
 export const transferonline = defineEntity({
   name: 'ฝากเงิน',
-  root: [   
+  root: [
     {
       model: 'amount',
       label: 'จำนวนเงิน (บาท)',
       spec: {},
       component: 'number',
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -312,9 +310,8 @@ export const transferonline = defineEntity({
         },
       ],
     },
-  ]
-})
-
+  ],
+});
 
 export const officer = defineEntity({
   name: 'ผูกบัญชี',
@@ -381,8 +378,7 @@ export const officer = defineEntity({
           spec: {},
           component: 'text',
         },
-
       ],
     },
-  ]
+  ],
 });
