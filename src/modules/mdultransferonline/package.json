@@ -13,6 +13,7 @@
   "dependencies": {
     "@line/liff": "^2.24.0",
     "finready": "workspace:^",
+    "mdulloanfastmember": "workspace:^",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
