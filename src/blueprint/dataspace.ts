@@ -1,4 +1,5 @@
 import { createBigDataDefinitionBuilder } from 'bigplatdefibp';
+import z from 'zod';
 
 export const bigPlatformBuilder = createBigDataDefinitionBuilder('sample');
 
@@ -426,8 +427,8 @@ export const checkloanfast = defineEntity({
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
-      spec: {},
-      component: 'text',
+      spec: z.number().gt(0).lte(20000),
+      component: 'number',
     },
     {
       model: 'bankAccount',
@@ -497,7 +498,7 @@ export const loanfastmember = defineEntity({
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
-      spec: {},
+      spec: z.number().gt(0).lte(20000),
       component: 'number',
     },
     {

@@ -6,7 +6,7 @@
 
     <UAlert
       icon="i-heroicons-book-open"
-      description="ระบุรข้อมูลของสมาชิกผู้เข้ารับบริการ"
+      description="ระบุข้อมูลของสมาชิกผู้เข้ารับบริการ"
       :title="pageDef.label"
     />
 

@@ -4,8 +4,8 @@
       <template #logo>
         <img class="w-auto h-6"
           src="/logo-theme-fin.jpg"
-          alt="Fin Theme Logo" />
-        FIN Theme
+          alt="Finix Logo" />
+        Finix
       </template>
 
       <template #right>
