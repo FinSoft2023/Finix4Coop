@@ -5,7 +5,7 @@
 
         <div>
           <h3 class="text-2xl font-bold dark:text-white">
-            QR Code สำหรับ ผูกบัญชี
+            QR Code สำหรับ เสร็จสิ้นการยืนยันตัวตน
           </h3>
 
           <div class="flex justify-center mt-10 mb-10">

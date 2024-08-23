@@ -22,7 +22,7 @@
 
         <UCard class="col-span-2">
           <h2 class="mt-4 mb-4 text-4xl text-center font-bold dark:text-white">A001</h2>
-          <h2 class="mt-4 mb-4 text-2xl text-center dark:text-white">{{ data[0].txcode == 'svawtd' ? 'ถอน' : 'ฝาก' }}</h2>
+          <h2 class="mt-4 mb-4 text-2xl text-center dark:text-white">{{ data[0].txcode == 'svawtd' ? 'ยืนยันตัวตน' : 'ยืนยันตัวตน' }}</h2>
         </UCard>
       </DItemGrid>
 
