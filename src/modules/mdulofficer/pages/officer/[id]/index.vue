@@ -3,9 +3,7 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-      </UCard>
+      <FMemInfoQ />
     </BPartPageBody>
     <DGallery :photos="data?.images"></DGallery>
     <template #side>
