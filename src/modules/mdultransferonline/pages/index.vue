@@ -34,7 +34,7 @@ const modules = [{
   icon: 'i-heroicons-wallet'
 }, {
   title: 'กู้ฉุกเฉิน',
-  to: setdata.value.memberId === "" ? '/' :  '/loanfast',
+  to: setdata.value.memberId === "" ? '/' :  '/loanfastmember',
   icon: 'i-mdi-cash-fast'
 }, {
   title: 'ข้อมูลสมาชิก',
