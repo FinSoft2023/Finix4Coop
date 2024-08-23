@@ -126,6 +126,9 @@ importers:
       mdulfinance:
         specifier: workspace:^
         version: link:../../modules/mdulfinance
+      mdulofficer:
+        specifier: workspace:^
+        version: link:../../modules/mdulofficer
       mdulque:
         specifier: workspace:^
         version: link:../../modules/mdulque
@@ -238,7 +241,7 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.27(typescript@5.4.5))
 
-  modules/mdulloanfastmember:
+  modules/mdulofficer:
     dependencies:
       finready:
         specifier: workspace:^

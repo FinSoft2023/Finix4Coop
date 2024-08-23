@@ -1,5 +1,5 @@
 {
-  "name": "facingweb",
+  "name": "mdulofficer",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -12,13 +12,6 @@
   },
   "dependencies": {
     "finready": "workspace:^",
-    "mdulaccounting": "workspace:^",
-    "mdulcheque": "workspace:^",
-    "mdulfinance": "workspace:^",
-    "mdulofficer": "workspace:^",
-    "mdulque": "workspace:^",
-    "mdulregmember": "workspace:^",
-    "mdulwithdraw": "workspace:^",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"

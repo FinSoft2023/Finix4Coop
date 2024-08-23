@@ -4,32 +4,34 @@
 
     <DSmartSubStepper />
 
-    <UAlert icon="i-heroicons-document-check"
-      description="ตรวจสอบข้อมูลของสมาชิกผู้เข้ารับบริการ"
-      :title="pageDef.label" />
+    <UAlert
+      icon="i-heroicons-document-check"
+      description="ระบุรายละเอียดขั้นตอนการทำงาน"
+      :title="pageDef.label"
+    />
 
     <BPartPageBody>
-      <UForm @submit="handleSubmit"
-        :schema="schema"
+      <UForm
+        @submit="handleSubmit"
         :state="data"
+        :schema="schema"
         :pending="pending"
-        class="space-y-4">
+        class="space-y-4"
+      >
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data"
-              :entries
-              :pending />
+            <p class="text-2xl font-bold text-center mt-24">เริ่มดำเนินการผูกบัญชี</p>
           </UCard>
-          <UCard>
-            <img alt="Queue Image"
-              :src="queue.imageUrl" />
-          </UCard>
+          <FMemInfoQ />
         </DItemGrid>
 
         <BPartButtonsBand>
-          <UButton @click="$router.back"
+          <UButton
+            @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
-            variant="outline">Back</UButton>
+            variant="outline"
+            >Back</UButton
+          >
           <template #next>
             <UButton type="submit">Save</UButton>
           </template>
@@ -41,8 +43,6 @@
 
 <script setup lang="ts">
 // import type { z } from 'zod';
-const qsto = useQueStore();
-const { queue, member } = storeToRefs(qsto);
 
 const pageDef = useActiveModulePage('create.confirm');
 useSmartStepper(pageDef);
@@ -55,18 +55,13 @@ const { entries, schema } = getEntrySchema(pageDef);
 const { apiGet } = useLocalStage(pageDef);
 const { apiPost } = useHostApi(pageDef);
 const { data, pending } = apiGet();
-const query = ref<any>({});
-const { postResult, error, executePost } = apiPost(query);
+const { postResult, error, executePost } = apiPost();
 
 useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
-  query.value = { id: queue.value.id };
-  member.value = data.value;
-
-  await executePost({
-    status: 'called',
-  });
-  navigateTo(`/officer/confirm`);
+  await executePost(data.value);
+  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
+  navigateTo(`/officer${redirectPath}`);
 };
 </script>

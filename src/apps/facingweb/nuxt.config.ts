@@ -9,5 +9,6 @@ export default defineNuxtConfig({
     '../../modules/mdulaccounting',
     '../../modules/mdulregmember',
     '../../modules/mdulque',
+    '../../modules/mdulofficer',
   ],
 });
