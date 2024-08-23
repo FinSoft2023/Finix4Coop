@@ -10,7 +10,7 @@
         ขอกู้ฉุกเฉินเรียบร้อยแล้ว
       </h2>
       <h3 class="text-center text-gray-500 dark:text-gray-300 ">
-        คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้แล้ว
+        คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้
       </h3>
       <div class="flex justify-center">
         <UButton to="/">Home</UButton>
