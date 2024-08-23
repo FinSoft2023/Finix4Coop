@@ -7,7 +7,7 @@
         <DEntitySection v-model="data" :entries :pending />
       </UCard>
     </BPartPageBody>
-
+    <DGallery :photos="data?.images"></DGallery>
     <template #side>
       <DSubLinks />
     </template>
