@@ -1,4 +1,4 @@
-<template>
+ <template>
   <BFullPage>
     <BPartPageTitle>ผูกบัญชี (ทดสอบ)</BPartPageTitle>
 
