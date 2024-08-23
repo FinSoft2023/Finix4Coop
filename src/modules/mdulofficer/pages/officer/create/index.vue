@@ -20,9 +20,9 @@
       >
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data" :entries :pending />
+            <p class="text-2xl font-bold text-center mt-24">ท่านต้องการจะผูกบัญชีให้กับสมาชิกท่านนี้หรือไม่</p>
           </UCard>
-          <UCard> Your content here </UCard>
+          <FMemInfoQ />
         </DItemGrid>
 
         <BPartButtonsBand>
