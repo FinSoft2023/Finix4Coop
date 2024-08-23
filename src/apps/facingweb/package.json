@@ -15,6 +15,7 @@
     "mdulaccounting": "workspace:^",
     "mdulcheque": "workspace:^",
     "mdulfinance": "workspace:^",
+    "mdulofficer": "workspace:^",
     "mdulque": "workspace:^",
     "mdulregmember": "workspace:^",
     "mdulwithdraw": "workspace:^",
