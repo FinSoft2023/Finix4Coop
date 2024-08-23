@@ -26,7 +26,7 @@ export const moduleBlueprint = defineModule('loanfastmember', 'ขอกู้�
     condition: {
       entity: loanfastmember,
       post: true,
-      role: 'stepedit',
+      role: 'stepconfirm',
     },
   },
   each: {

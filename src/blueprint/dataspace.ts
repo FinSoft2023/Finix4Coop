@@ -429,7 +429,7 @@ export const loanfastmember = defineEntity({
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
       spec: {},
-      component: 'text',
+      component: 'number',
     },
     {
       model: 'installments',
@@ -442,7 +442,7 @@ export const loanfastmember = defineEntity({
       model: 'Amountsent',
       label: 'ยอดที่ส่ง',
       spec: {},
-      component: 'text',
+      component: 'number',
     },
     {
       model: 'date',

@@ -1,20 +1,72 @@
 <template>
   <BFullPage>
-    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
+    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+
+
+
+    <UAlert
+      icon="i-heroicons-document-check"
+      description="ระบุรายละเอียดขั้นตอนการทำงาน"
+      :title="pageDef.label"
+    />
+
     <BPartPageBody>
-      <div class="flex justify-center">
-        <Icon class="w-20 h-20 text-green-400"
-          name="line-md:confirm-circle"></Icon>
-      </div>
-      <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white">
-        ขอกู้ฉุกเฉินเรียบร้อยแล้ว
-      </h2>
-      <h3 class="text-center text-gray-500 dark:text-gray-300 ">
-        คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้แล้ว
-      </h3>
-      <div class="flex justify-center">
-        <UButton to="/">Home</UButton>
-      </div>    
+      <UForm
+        @submit="handleSubmit"
+        :state="data"
+        :schema="schema"
+        :pending="pending"
+        class="space-y-4"
+      >
+        <DItemGrid col="x3">
+          <UCard class="col-span-2">
+            <DEntitySection v-model="data" :entries :pending />
+          </UCard>
+          
+        </DItemGrid>
+        <UCard> 
+          <p>ตรวจสอบข้อมูล ขอกู้ฉุกเฉิน</p>
+          <dl>
+           
+            <dt
+              class="mt-2 font-light leading-none text-gray-500 dark:text-white"
+            >
+            สมาชิกขอกู้เงินเป็นจำนวน
+            <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="inline-block w-4 h-4 ml-1 text-green-500"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+      clip-rule="evenodd"
+    />
+  </svg>
+            </dt>
+            <dd
+              class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
+            >
+            100,000 บาท (หนึ่งแสนบาทถ้วน)
+            </dd>
+   
+           
+    
+          </dl>
+       </UCard>
+        <BPartButtonsBand>
+          <UButton
+            @click="$router.back"
+            icon="i-heroicons-chevron-left-16-solid"
+            variant="outline"
+            >Back</UButton
+          >
+          <template #next>
+            <UButton type="submit">Save</UButton>
+          </template>
+        </BPartButtonsBand>
+      </UForm>
     </BPartPageBody>
   </BFullPage>
 </template>
@@ -39,7 +91,7 @@ useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
   await executePost(data.value);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/loanfastmember${redirectPath}`);
+  const redirectPath = getNextStep(pageDef);
+  navigateTo(`/loanfastmember/create/${redirectPath}`);
 };
 </script>
