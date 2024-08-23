@@ -24,12 +24,12 @@
 </template>
 
 <script setup lang="ts">
-const store = useModuleStore();
-const { setdata } = storeToRefs(store);
+// const store = useModuleStore();
+// const { setdata } = storeToRefs(store);
 
-if (setdata.value.memberId === "") {
-  navigateTo('/');
-}
+// if (setdata.value.memberId === "") {
+//   navigateTo('/');
+// }
 
 const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
