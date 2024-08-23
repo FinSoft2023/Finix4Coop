@@ -4,24 +4,23 @@
 
 
 
-    <UAlert
-      icon="i-heroicons-book-open"
+    <UAlert icon="i-heroicons-book-open"
       description="ระบุรายละเอียดขั้นตอนการทำงาน"
-      :title="pageDef.label"
-    />
+      :title="pageDef.label" />
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
+      <UForm @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4"
-      >
+        class="space-y-4">
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data" :entries :pending />
+            <DEntitySection v-model="data"
+              :entries
+              :pending />
           </UCard>
+          <FMemberInfo :account="data?.account"></FMemberInfo>
 
         </DItemGrid>
 
