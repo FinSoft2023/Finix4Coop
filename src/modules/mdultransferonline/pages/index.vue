@@ -57,7 +57,7 @@ const modules = [{
   to: '',
   icon: 'i-mdi-report-box-outline'
 }, {
-  title: 'เงินผปันผลและเฉลี่ยคืน',
+  title: 'เงินปันผลและเฉลี่ยคืน',
   to: '',
   icon: 'i-heroicons-currency-dollar  '
 }]
