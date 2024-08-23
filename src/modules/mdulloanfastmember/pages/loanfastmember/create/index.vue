@@ -2,29 +2,31 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-
-
-    <UAlert
-      icon="i-heroicons-book-open"
+    <UAlert icon="i-heroicons-book-open"
       description="ระบุรายละเอียดขั้นตอนการทำงาน"
-      :title="pageDef.label"
-    />
+      :title="pageDef.label" />
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
+      <UForm @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4"
-      >
+        class="space-y-4">
         <DItemGrid col="x3">
           <UCard class="col-span-2">
-            <DEntitySection v-model="data" :entries :pending />
+            <DEntitySection v-model="data"
+              :entries
+              :pending />
+            <div class="mt-2 space-y-2">
+              <p class="text-sm">ดอกเบี้ย</p>
+              <FMoneyAmount v-if="data.installments" :amount="(data.Amount / 100) * 5"></FMoneyAmount>
+              <p class="text-sm">ส่งงวด (บาท/งวด)</p>
+              <FMoneyAmount v-if="data.installments" :amount="(data.Amount / 12) + ((data.Amount / 100) * 5)"></FMoneyAmount>
+            </div>
           </UCard>
+          <FMemberInfo :account="data?.account"></FMemberInfo>
 
         </DItemGrid>
-
         <BPartButtonsBand>
           <template #next>
             <UButton type="submit">Save</UButton>
