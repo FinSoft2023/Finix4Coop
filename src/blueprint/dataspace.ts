@@ -381,6 +381,7 @@ export const officer = defineEntity({
           spec: {},
           component: 'text',
         },
+
       ],
     },
   ]
