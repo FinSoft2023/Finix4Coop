@@ -22,7 +22,7 @@
     { label: 'Create', to: '/transferonline/create' },
   ]);
 
-  const modules = [ {
+  const modules = [{
     title: 'ผูกบัญชี',
     to: '/transferonline/create/scan',
     icon: 'i-mdi-account-lock-outline'
@@ -30,7 +30,15 @@
     title: 'เงินฝาก',
     to: '/transferonline',
     icon: 'i-heroicons-wallet'
-  },{
+  }, {
+    title: 'กู้ฉุกเฉิน',
+    to: '/loanfast',
+    icon: 'i-mdi-cash-fast'
+  }, {
+    title: 'เงินฝาก',
+    to: '/transferonline',
+    icon: 'i-heroicons-wallet'
+  }, {
     title: 'ข้อมูลสมาชิก',
     to: '/',
     icon: 'i-mdi-user-card-details-outline'
