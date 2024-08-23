@@ -18,11 +18,11 @@
         <UPageCard icon="i-heroicons-forward-16-solid"
           title="ข้ามคิว"
           description="ข้ามคิวลูกค้าคนถัดไป"
-          to="/queues/create" />
+          @click="nextQueue" />
 
         <UCard class="col-span-2">
           <h2 class="mt-4 mb-4 text-4xl text-center font-bold dark:text-white">A001</h2>
-          <h2 class="mt-4 mb-4 text-2xl text-center dark:text-white">{{ data[0].txcode == 'svawtd' ? 'ยืนยันตัวตน' : 'ยืนยันตัวตน' }}</h2>
+          <h2 class="mt-4 mb-4 text-2xl text-center dark:text-white">{{ data[qIndex].txcode == 'svawtd' ? 'ยืนยันตัวตน' : 'ยืนยันตัวตน' }}</h2>
         </UCard>
       </DItemGrid>
 
@@ -67,12 +67,14 @@ await channel.subscribe('greeting', (message) => {
   handleConfirmation();
 });
 
+const qIndex = ref(0);
+
 const qsto = useQueStore();
 const { queue } = storeToRefs(qsto);
 async function handleQueue() {
   const qs = data.value;
   if (qs && qs.length) {
-    const q = qs[0];
+    const q = qs[qIndex.value];
     console.log('Calling queue:', q);
     queue.value = q;
     // const rsp = $fetch('/api/queues/call', {
@@ -83,6 +85,11 @@ async function handleQueue() {
     // });
     navigateTo('/queues/create');
   }
+}
+
+function nextQueue() {
+  const len = Math.max(0, data.value.length);
+  qIndex.value = (qIndex.value + 1) % len;
 }
 // function selectItem(item: any) {
 //   navigateTo(`/queues/${item.id}`);
