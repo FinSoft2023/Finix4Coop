@@ -80,17 +80,17 @@ const handleSubmit = async () => {
 
 
 const borrow = [
-  { period: 1, month: 'กันยายน', payment: 11000 },
-  { period: 2, month: 'ตุลาคม', payment: 11000 },
-  { period: 3, month: 'พฤศจิกายน', payment: 11000 },
-  { period: 4, month: 'ธันวาคม', payment: 11000 },
-  { period: 5, month: 'มกราคม', payment: 11000 },
-  { period: 6, month: 'กุมภาพันธ์', payment: 11000 },
-  { period: 7, month: 'มีนาคม', payment: 11000 },
-  { period: 8, month: 'เมษายน', payment: 11000 },
-  { period: 9, month: 'พฤษภาคม', payment: 11000 },
-  { period: 10, month: 'มิถุนายน', payment: 11000 },
-  { period: 11, month: 'กรกฎาคม', payment: 11000 },
-  { period: 12, month: 'สิงหาคม', payment: 11000 },
+  { period: 1, month: 'กันยายน', payment: 13333.33 },
+  { period: 2, month: 'ตุลาคม', payment: 13333.33 },
+  { period: 3, month: 'พฤศจิกายน', payment: 13333.33 },
+  { period: 4, month: 'ธันวาคม', payment: 13333.33 },
+  { period: 5, month: 'มกราคม', payment: 13333.33 },
+  { period: 6, month: 'กุมภาพันธ์', payment: 13333.33 },
+  { period: 7, month: 'มีนาคม', payment: 13333.33 },
+  { period: 8, month: 'เมษายน', payment: 13333.33 },
+  { period: 9, month: 'พฤษภาคม', payment: 13333.33 },
+  { period: 10, month: 'มิถุนายน', payment: 13333.33 },
+  { period: 11, month: 'กรกฎาคม', payment: 13333.33 },
+  { period: 12, month: 'สิงหาคม', payment: 13333.33 },
 ];
 </script>
