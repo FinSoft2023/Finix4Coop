@@ -35,10 +35,6 @@
     to: '/loanfast',
     icon: 'i-mdi-cash-fast'
   }, {
-    title: 'เงินฝาก',
-    to: '/transferonline',
-    icon: 'i-heroicons-wallet'
-  }, {
     title: 'ข้อมูลสมาชิก',
     to: '/',
     icon: 'i-mdi-user-card-details-outline'

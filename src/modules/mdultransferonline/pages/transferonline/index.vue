@@ -12,7 +12,7 @@
         ยอดเงินฝาก (บาท)
         <p>{{ amount }}</p>
       </UCard>
-
+      
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
@@ -24,6 +24,13 @@
 </template>
 
 <script setup lang="ts">
+const store = useModuleStore();
+const { setdata } = storeToRefs(store);
+
+if (setdata.value.memberId === "") {
+  navigateTo('/');
+}
+
 const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
 
