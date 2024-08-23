@@ -328,9 +328,7 @@ export const purpose = defineChoicesList('codes-tx-operation', {
 });
 
 export const installments = defineChoicesList('installments', {
-  option1: '16 งวด',
-  option2: '24 งวด',
-  option3: '240 งวด',
+  option1: '12 งวด',
 });
 
 
@@ -465,24 +463,6 @@ export const loanfastmember = defineEntity({
       spec: {},
       component: 'radio',
       choices: transferChannels,
-    },
-    {
-      model: 'forperson',
-      label: 'ผู้รับอำนาจรับเงินแทน',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'Jobposition',
-      label: 'ตำแหน่งงาน',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'Affiliation',
-      label: 'สังกัด',
-      spec: {},
-      component: 'text',
     },
   ], 
   sub: [

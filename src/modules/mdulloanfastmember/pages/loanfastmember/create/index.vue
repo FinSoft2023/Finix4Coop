@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <DSmartSubStepper />
+
 
     <UAlert
       icon="i-heroicons-book-open"
@@ -22,7 +22,7 @@
           <UCard class="col-span-2">
             <DEntitySection v-model="data" :entries :pending />
           </UCard>
-          <UCard> Your content here </UCard>
+
         </DItemGrid>
 
         <BPartButtonsBand>

@@ -32,9 +32,9 @@
     @action="navigateTo(`/accounting`)" />
   <BOnPageNotification v-else
     id="next"
-    label="ข้อมูลคำขอได้เข้าสู่ระบบแล้ว"
-    description="ท่านสามารถกดที่ปุ่ม 'ปริ้นใบถอน' หลังจากปริ้นใบถอนเรียบร้อยแล้ว ท่านสามารถบันทึกใบขอถอนกลับเข้าสู่ระบบ เพื่อดำเนินการต่อไป."
-    actionText="ปริ้นใบถอน"
+    label="ท่านได้ขอกู้ฉุกเฉินเรียบร้อยแล้ว"
+    description="ท่านเดินทางไปติดต่อเจ้าหน้าที่ที่สหกรณ์ได้ เพื่อดำเนินการต่อไป."
+    actionText="เสร็จสิ้น"
     @action="navigateTo(`/withdrawals/${route.params.id}/print`)" />
 </template>
 

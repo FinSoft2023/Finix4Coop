@@ -1,7 +1,7 @@
 <template>
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
-
+    <FNotificationChanges />
     <BPartPageBody>
       <UCard>
         <DEntitySection v-model="data" :entries :pending />
