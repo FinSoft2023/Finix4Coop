@@ -67,6 +67,6 @@ const handleSubmit = async () => {
   await executePost({
     status: 'called',
   });
-  navigateTo(`/officer/confirm`);
+  navigateTo(`/officer/create/confirm`);
 };
 </script>
