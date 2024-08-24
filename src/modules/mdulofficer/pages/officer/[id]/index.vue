@@ -21,3 +21,5 @@ const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
 </script>
+
+
