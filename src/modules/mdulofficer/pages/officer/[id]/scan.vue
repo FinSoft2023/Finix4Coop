@@ -6,7 +6,8 @@
       <UCard>
         <div class="flex justify-center">
           <!-- เพิ่ม class "resized-image" ให้กับ img -->
-          <img alt=""
+          <img v-show="imageUrl"
+            alt=""
             :src="imageUrl"
             class="resized-image">
         </div>
@@ -74,3 +75,13 @@
 
   useBreadcrumb(pageDef.label);
 </script>
+<style scoped>
+.resized-image {
+  width: 560px;
+  /* ปรับขนาดความกว้างให้เต็มที่ */
+  height: 400px;
+  /* ให้ความสูงปรับตามอัตราส่วนของรูป */
+  /* object-fit: contain; */
+  /* รูปจะปรับขนาดให้พอดีกับ container โดยยังคงอัตราส่วนไว้ */
+}
+</style>
