@@ -4,12 +4,17 @@
 
     <BPartPageBody>
       <UCard>
-        <UButton to="/cheques/"
-          icon="i-heroicons-arrow-right"
-          @click="handleConfirmation">ดำเนินการต่อ</UButton>
-
-        <img alt=""
-          :src="imageUrl">
+        <div class="flex justify-center">          
+          <!-- เพิ่ม class "resized-image" ให้กับ img -->
+          <img alt=""
+          :src="imageUrl"
+          class="resized-image">
+        </div>
+        <div class="flex justify-end">
+          <UButton to="/cheques/"
+            icon="i-heroicons-arrow-right"
+            @click="handleConfirmation">ดำเนินการต่อ</UButton>
+        </div>
       </UCard>
       <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
     </BPartPageBody>
@@ -36,7 +41,7 @@ async function handleConfirmation() {
     method: 'POST',
     body: {
       src: imageUrl.value,
-      alt: 'ลายเซ็น',
+      alt: 'รูปสมาชิก',
     },
   });
   navigateTo(`/officer/${route.params.id}`);
@@ -68,3 +73,11 @@ const { postResult, executePost } = apiPost();
 
 useBreadcrumb(pageDef.label);
 </script>
+
+<style scoped>
+.resized-image {
+  width: 50%; /* ปรับขนาดความกว้างให้เต็มที่ */
+  height: auto; /* ให้ความสูงปรับตามอัตราส่วนของรูป */
+  object-fit: contain; /* รูปจะปรับขนาดให้พอดีกับ container โดยยังคงอัตราส่วนไว้ */
+}
+</style>

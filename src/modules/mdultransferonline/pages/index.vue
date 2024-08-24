@@ -35,7 +35,7 @@ const modules = [{
   icon: 'i-heroicons-wallet'
 }, {
   title: 'กู้ฉุกเฉิน',
-  to: !memcode.value ? '' :  '/loanfast',
+  to: !memcode.value ? '' :  '/loanfastmember',
   icon: 'i-mdi-cash-fast'
 }, {
   title: 'ข้อมูลสมาชิก',
