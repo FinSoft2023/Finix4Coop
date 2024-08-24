@@ -3,8 +3,6 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <!-- <UCard>
-      </UCard> -->
       <DQrCodeBindAccount :qr-data="qrLink" />
     </BPartPageBody>
 
