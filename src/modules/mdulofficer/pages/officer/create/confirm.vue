@@ -54,10 +54,20 @@ const { entries, schema } = getEntrySchema(pageDef);
 // const { apiGet, apiPost } = useHostApi(pageDef);
 const { apiGet } = useLocalStage(pageDef);
 const { apiPost } = useHostApi(pageDef);
-const { data, pending } = apiGet();
+const { pending } = apiGet();
 const { postResult, error, executePost } = apiPost();
 
+const qsto = useQueStore();
+const { queue, member } = storeToRefs(qsto);
+const data = ref<any>({
+  memcode: member.value.memcode,
+  accNo: member.value.accNo,
+  name: member.value.name,
+  balance: 10000,
+});
+
 useComponentResolver(defaultViewResolvers);
+
 
 const handleSubmit = async () => {
   await executePost(data.value);
