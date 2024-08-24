@@ -22,7 +22,7 @@ const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
-const qrLink = computed(() => `${host}/transferonline/create/linkacc?id=${data.value?.memcode}&amount=${data.value?.balance}`);
+const qrLink = computed(() => JSON.stringify({ memcode: data.value?.memcode, balance: data.value?.balance, accNo: data.value?.accNo }));
 
 useBreadcrumb(pageDef.label);
 </script>
