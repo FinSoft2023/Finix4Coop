@@ -3,6 +3,7 @@
     <DItemGrid col="x3">
       <UPageCard v-for="(module, index) in modules"
         :key="index"
+        class="text-red-500"
         v-bind="module">
         <template #description>
           <span class="line-clamp-2 ">{{ module.description }}</span>
@@ -15,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-const store = useModuleStore();
-const { setdata } = storeToRefs(store);
+const qrstore = useLinkMemberStore();
+const { memcode, amount, accNo } = storeToRefs(qrstore);
 
 const { setNavLinks } = useThemeSettings();
 setNavLinks([
@@ -25,16 +26,16 @@ setNavLinks([
 ]);
 
 const modules = [{
-  title: 'ผูกบัญชี',
-  to: '/transferonline/create/scan',
+  title: 'ยืนยันตัวตน',
+  to: '/transferonline/create/sacncenterque',
   icon: 'i-mdi-account-lock-outline'
 }, {
   title: 'เงินฝาก',
-  to: setdata.value.memberId === "" ? '/' : '/transferonline',
+  to: !accNo.value ? '' : '/transferonline',
   icon: 'i-heroicons-wallet'
 }, {
   title: 'กู้ฉุกเฉิน',
-  to: setdata.value.memberId === "" ? '/' :  '/loanfast',
+  to: !memcode.value ? '' :  '/loanfast',
   icon: 'i-mdi-cash-fast'
 }, {
   title: 'ข้อมูลสมาชิก',
