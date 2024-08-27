@@ -30,6 +30,10 @@ export const moduleBlueprint = defineModule('trainingmembers', 'อบรม', {
       entity: trainingmembers,
       post: true,
     },
+    edit: {
+      entity: trainingmembers,
+      post: true,
+    },
     cancel: {
       entity: trainingmembers,
       post: true,

@@ -581,6 +581,7 @@ export const Trainingtype = defineChoicesList('Trainingtype', {
   option2: 'การสื่อสาร',
   option3: 'การวิเคราะห์ระบบ',
   option4: 'การออกแบบ',
+  option5: 'การตัดต่อวิดีโอ',
 });
 
 
