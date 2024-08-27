@@ -1,0 +1,139 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "paths": {
+      "#imports": [
+        "./types/nitro-imports"
+      ],
+      "~/*": [
+        "../*",
+        "../*"
+      ],
+      "@/*": [
+        "../*",
+        "../*"
+      ],
+      "~~/*": [
+        "../*",
+        "../*"
+      ],
+      "@@/*": [
+        "../*",
+        "../*"
+      ],
+      "nitropack": [
+        "../../../node_modules/.pnpm/nitropack@2.9.6_@opentelemetry+api@1.8.0_encoding@0.1.13_magicast@0.3.4/node_modules/nitropack"
+      ],
+      "defu": [
+        "../../../node_modules/.pnpm/defu@6.1.4/node_modules/defu"
+      ],
+      "h3": [
+        "../../../node_modules/.pnpm/h3@1.11.1/node_modules/h3"
+      ],
+      "consola": [
+        "../../../node_modules/.pnpm/consola@3.2.3/node_modules/consola"
+      ],
+      "ofetch": [
+        "../../../node_modules/.pnpm/ofetch@1.3.4/node_modules/ofetch"
+      ],
+      "@unhead/vue": [
+        "../../../node_modules/.pnpm/@unhead+vue@1.9.10_vue@3.4.27_typescript@5.4.5_/node_modules/@unhead/vue"
+      ],
+      "@vue/runtime-core": [
+        "../../../node_modules/.pnpm/@vue+runtime-core@3.4.27/node_modules/@vue/runtime-core"
+      ],
+      "@vue/compiler-sfc": [
+        "../../../node_modules/.pnpm/@vue+compiler-sfc@3.4.27/node_modules/@vue/compiler-sfc"
+      ],
+      "@vue/runtime-dom": [
+        "../../../node_modules/.pnpm/@vue+runtime-dom@3.4.27/node_modules/@vue/runtime-dom"
+      ],
+      "@nuxt/schema": [
+        "../../../node_modules/.pnpm/@nuxt+schema@3.11.2_rollup@4.17.2/node_modules/@nuxt/schema"
+      ],
+      "nuxt": [
+        "../../../node_modules/.pnpm/nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12.12_@unocss+reset_glezbnorfajjudi66ewcjck7gy/node_modules/nuxt"
+      ],
+      "#internal/nuxt/paths": [
+        "../../../node_modules/.pnpm/nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12.12_@unocss+reset_glezbnorfajjudi66ewcjck7gy/node_modules/nuxt/dist/core/runtime/nitro/paths"
+      ],
+      "~": [
+        "./.."
+      ],
+      "@": [
+        "./.."
+      ],
+      "~~": [
+        "./.."
+      ],
+      "@@": [
+        "./.."
+      ],
+      "assets": [
+        "../assets"
+      ],
+      "public": [
+        "../public"
+      ],
+      "#ui-pro": [
+        "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro"
+      ],
+      "#ui-pro/*": [
+        "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/*"
+      ],
+      "#ui": [
+        "../../../node_modules/.pnpm/@nuxt+ui@2.16.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1._7favkrx3cfdsmi5b7u6pgdjwpi/node_modules/@nuxt/ui/dist/runtime"
+      ],
+      "#ui/*": [
+        "../../../node_modules/.pnpm/@nuxt+ui@2.16.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1._7favkrx3cfdsmi5b7u6pgdjwpi/node_modules/@nuxt/ui/dist/runtime/*"
+      ],
+      "#ui-colors": [
+        "./ui.colors"
+      ],
+      "#icon-collections": [
+        "./icon-collections"
+      ],
+      "#color-mode-options": [
+        "./color-mode-options"
+      ],
+      "pinia": [
+        "../../../node_modules/.pnpm/pinia@2.1.7_typescript@5.4.5_vue@3.4.27_typescript@5.4.5_/node_modules/pinia/dist/pinia"
+      ],
+      "#tailwind-config": [
+        "./tailwind"
+      ]
+    }
+  },
+  "include": [
+    "./types/nitro-nuxt.d.ts",
+    "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/modules/pro/index.ts/runtime/server",
+    "../../../node_modules/.pnpm/nuxt-icon@0.6.10_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@t_iitisxemzmmhgglx5qzxat5wbu/node_modules/nuxt-icon/runtime/server",
+    "../../../node_modules/.pnpm/@nuxtjs+color-mode@3.4.1_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxtjs/color-mode/runtime/server",
+    "../../../node_modules/.pnpm/@nuxtjs+tailwindcss@6.12.0_magicast@0.3.4_rollup@4.17.2_ts-node@10.9.2_@swc+core@1.5.7_@swc+h_x72eavaaaut7kz5kuhp7ojhieu/node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+ui@2.16.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1._7favkrx3cfdsmi5b7u6pgdjwpi/node_modules/@nuxt/ui/runtime/server",
+    "../../../node_modules/.pnpm/@pinia+nuxt@0.5.1_magicast@0.3.4_rollup@4.17.2_typescript@5.4.5_vue@3.4.27_typescript@5.4.5_/node_modules/@pinia/nuxt/runtime/server",
+    "../../../node_modules/.pnpm/@vueuse+nuxt@10.11.0_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._hfgswpkgfninsqswtyaqmxrze4/node_modules/@vueuse/nuxt/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+devtools@1.2.0_@unocss+reset@0.60.2_axios@1.6.8_floating-vue@5.2.2_@nuxt+kit@3.12.4_mag_46dcodydtgg7jc3clb3dg4iy5q/node_modules/@nuxt/devtools/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+telemetry@2.5.4_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxt/telemetry/runtime/server",
+    "./types/nitro.d.ts",
+    "../**/*",
+    "../server/**/*"
+  ],
+  "exclude": [
+    "../node_modules",
+    "../../../../node_modules",
+    "../../../node_modules/.pnpm/nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12.12_@unocss+reset_glezbnorfajjudi66ewcjck7gy/node_modules/nuxt/node_modules",
+    "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/modules/pro/node_modules",
+    "../dist"
+  ]
+}
