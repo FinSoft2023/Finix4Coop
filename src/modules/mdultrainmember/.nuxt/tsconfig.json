@@ -111,7 +111,7 @@
         "./tailwind.config/*"
       ],
       "#app-manifest": [
-        "./manifest/meta/66e87d92-3b88-4ff5-b4e8-eb3f325f783c.json"
+        "./manifest/meta/dev.json"
       ],
       "#build": [
         "."
@@ -151,14 +151,14 @@
     "../../../basis/basencore/**/*",
     "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/**/*",
     "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/modules/pro/runtime",
-    "../nuxt-icon/runtime",
-    "../@nuxtjs/color-mode/runtime",
-    "../@nuxtjs/tailwindcss/runtime",
-    "../@nuxt/ui/runtime",
-    "../@pinia/nuxt/runtime",
+    "../../../node_modules/.pnpm/nuxt-icon@0.6.10_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@t_iitisxemzmmhgglx5qzxat5wbu/node_modules/nuxt-icon/runtime",
+    "../../../node_modules/.pnpm/@nuxtjs+color-mode@3.4.1_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxtjs/color-mode/runtime",
+    "../../../node_modules/.pnpm/@nuxtjs+tailwindcss@6.12.0_magicast@0.3.4_rollup@4.17.2_ts-node@10.9.2_@swc+core@1.5.7_@swc+h_x72eavaaaut7kz5kuhp7ojhieu/node_modules/@nuxtjs/tailwindcss/runtime",
+    "../../../node_modules/.pnpm/@nuxt+ui@2.16.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1._7favkrx3cfdsmi5b7u6pgdjwpi/node_modules/@nuxt/ui/runtime",
+    "../../../node_modules/.pnpm/@pinia+nuxt@0.5.1_magicast@0.3.4_rollup@4.17.2_typescript@5.4.5_vue@3.4.27_typescript@5.4.5_/node_modules/@pinia/nuxt/runtime",
     "../../../node_modules/.pnpm/@vueuse+nuxt@10.11.0_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._hfgswpkgfninsqswtyaqmxrze4/node_modules/@vueuse/nuxt/runtime",
-    "../@nuxt/devtools/runtime",
-    "../@nuxt/telemetry/runtime",
+    "../../../node_modules/.pnpm/@nuxt+devtools@1.2.0_@unocss+reset@0.60.2_axios@1.6.8_floating-vue@5.2.2_@nuxt+kit@3.12.4_mag_46dcodydtgg7jc3clb3dg4iy5q/node_modules/@nuxt/devtools/runtime",
+    "../../../node_modules/.pnpm/@nuxt+telemetry@2.5.4_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxt/telemetry/runtime",
     "..",
     "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro",
     "../../../node_modules/.pnpm/nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12.12_@unocss+reset_glezbnorfajjudi66ewcjck7gy/node_modules/nuxt/dist/app",
@@ -172,14 +172,14 @@
     "../../../node_modules/.pnpm/nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@types+node@20.12.12_@unocss+reset_glezbnorfajjudi66ewcjck7gy/node_modules/nuxt/node_modules",
     "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/modules/pro/node_modules",
     "../../../node_modules/.pnpm/@nuxt+ui-pro@1.2.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api_6v2gmhh5m77jegvtuvk6akqssu/node_modules/@nuxt/ui-pro/modules/pro/runtime/server",
-    "../nuxt-icon/runtime/server",
-    "../@nuxtjs/color-mode/runtime/server",
-    "../@nuxtjs/tailwindcss/runtime/server",
-    "../@nuxt/ui/runtime/server",
-    "../@pinia/nuxt/runtime/server",
+    "../../../node_modules/.pnpm/nuxt-icon@0.6.10_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4.1_@t_iitisxemzmmhgglx5qzxat5wbu/node_modules/nuxt-icon/runtime/server",
+    "../../../node_modules/.pnpm/@nuxtjs+color-mode@3.4.1_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxtjs/color-mode/runtime/server",
+    "../../../node_modules/.pnpm/@nuxtjs+tailwindcss@6.12.0_magicast@0.3.4_rollup@4.17.2_ts-node@10.9.2_@swc+core@1.5.7_@swc+h_x72eavaaaut7kz5kuhp7ojhieu/node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+ui@2.16.0_axios@1.6.8_focus-trap@7.5.4_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1._7favkrx3cfdsmi5b7u6pgdjwpi/node_modules/@nuxt/ui/runtime/server",
+    "../../../node_modules/.pnpm/@pinia+nuxt@0.5.1_magicast@0.3.4_rollup@4.17.2_typescript@5.4.5_vue@3.4.27_typescript@5.4.5_/node_modules/@pinia/nuxt/runtime/server",
     "../../../node_modules/.pnpm/@vueuse+nuxt@10.11.0_magicast@0.3.4_nuxt@3.11.2_@opentelemetry+api@1.8.0_@parcel+watcher@2.4._hfgswpkgfninsqswtyaqmxrze4/node_modules/@vueuse/nuxt/runtime/server",
-    "../@nuxt/devtools/runtime/server",
-    "../@nuxt/telemetry/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+devtools@1.2.0_@unocss+reset@0.60.2_axios@1.6.8_floating-vue@5.2.2_@nuxt+kit@3.12.4_mag_46dcodydtgg7jc3clb3dg4iy5q/node_modules/@nuxt/devtools/runtime/server",
+    "../../../node_modules/.pnpm/@nuxt+telemetry@2.5.4_magicast@0.3.4_rollup@4.17.2/node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
     "../.output"
   ]

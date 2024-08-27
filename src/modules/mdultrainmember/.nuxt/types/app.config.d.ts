@@ -5,7 +5,7 @@ import cfg0 from "D:/workspace/Finix4CoopTest/src/node_modules/.pnpm/@nuxt+ui-pr
 
 declare const inlineConfig = {
   "nuxt": {
-    "buildId": "66e87d92-3b88-4ff5-b4e8-eb3f325f783c"
+    "buildId": "dev"
   },
   "ui": {
     "primary": "green",
