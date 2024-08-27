@@ -575,3 +575,100 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const Trainingtype = defineChoicesList('Trainingtype', {
+  option1: 'การพัฒนาตน',
+  option2: 'การสื่อสาร',
+  option3: 'การวิเคราะห์ระบบ',
+  option4: 'การออกแบบ',
+});
+
+
+
+export const trainingmembers = defineEntity({
+  name: 'อบรม',
+  root: [   
+    {
+      model: 'name',
+      label: 'ชื่อ-สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phone',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'ace',
+      label: 'อายุ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'address',
+      label: 'ที่อยู่',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idcard',
+      label: 'เลขบัตรประชาชน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Trainingtype',
+      label: 'เลือกการอบรม',
+      spec: {},
+      component: 'select',
+      choices: Trainingtype,
+    },
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
