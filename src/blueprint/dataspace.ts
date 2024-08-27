@@ -405,7 +405,7 @@ export const installments = defineChoicesList('installments', {
 
 export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Agency',
       label: 'หน่วยงาน',
@@ -450,7 +450,7 @@ export const checkloanfast = defineEntity({
       spec: {},
       component: 'text',
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -494,7 +494,7 @@ export const checkloanfast = defineEntity({
 
 export const loanfastmember = defineEntity({
   name: 'ขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
@@ -534,7 +534,7 @@ export const loanfastmember = defineEntity({
       component: 'radio',
       choices: transferChannels,
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -570,6 +570,37 @@ export const loanfastmember = defineEntity({
           label: 'จำนวนเงินในบัญชี',
           spec: {},
           component: 'number',
+        },
+      ],
+    },
+  ]
+})
+export const trainmember = defineEntity({
+  name: 'อบรม',
+  root: [
+    {
+      model: 'trainingname',  
+      label: 'คอร์สอบรม',
+      spec: {},
+      component: 'text',
+    },
+  ],
+  sub: [
+    {
+      name: 'member',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
         },
       ],
     },
