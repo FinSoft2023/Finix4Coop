@@ -50,7 +50,7 @@ const { data, pending } = apiGet();
 const { postResult, error, executePost } = apiPost();
 
 // If this is the first step, you can initialize the data value like this:
-// data.value = {};
+data.value = {};
 
 const handleSubmit = async () => {
   await executePost(data.value);

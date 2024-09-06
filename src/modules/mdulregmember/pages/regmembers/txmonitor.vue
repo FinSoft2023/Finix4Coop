@@ -19,7 +19,7 @@
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable
-        :data
+        :data="txdata"
         :pending />
     </BPartPageBody>
   </BFullPage>
@@ -32,7 +32,7 @@ const pageDef = useActiveModulePage('list.txmonitor');
 useBreadcrumb('List');
 
 const { apiGet, apiPost } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { error, pending } = apiGet();
 // const { postResult, executePost } = apiPost();
 // const postingData = ref<any>();
 // const { data: postResult, execute: executePost } = useFetch('/api/regmembers/create', {
@@ -47,14 +47,17 @@ const ably = new Ably.Realtime('9CNytA.ZRMqIg:YpI5Z9A8atb0cjkvlCvvGS8vvx8jg1clvI
 await ably.connection.once('connected');
 console.log('Connected to Ably!');
 
+const txStore = useTxStore();
+const { txdata } = storeToRefs(txStore);
 const route = useRoute();
-async function handleIncomingTx(txdata: any) {
+async function handleIncomingTx(txin: any) {
   // postingData.value = txdata;
   if (window) {
-    const rsp = await $fetch('/api/regmembers/create', {
-      method: 'POST',
-      body: txdata,
-    });
+    txStore.addTx(txin);
+    // const rsp = await $fetch('/api/regmembers/create', {
+    //   method: 'POST',
+    //   body: txdata,
+    // });
   }
 }
 
@@ -67,14 +70,14 @@ const channel = ably.channels.get('payment');
   (and resolves synchronously if the channel is already attached).
 */
 await channel.subscribe('paid', (message) => {
-  const txdata = message.data;
-  console.log('Received a greeting message in realtime: ', txdata);
+  const txin = message.data;
+  console.log('Received a greeting message in realtime: ', txin);
 
   handleIncomingTx({
-    amount: txdata.amount,
-    memcode: txdata.memberCode,
+    amount: txin.amount,
+    memcode: txin.memberCode,
     txat: new Date().toISOString(),
-    // timestamp: txdata.timestamp,
+    // timestamp: txin.timestamp,
   });
 });
 

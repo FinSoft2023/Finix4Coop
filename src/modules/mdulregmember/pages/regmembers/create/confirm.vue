@@ -57,11 +57,16 @@ const { apiPost } = useHostApi(pageDef);
 const { data, pending } = apiGet();
 const { postResult, error, executePost } = apiPost();
 
+const txStore = useTxStore();
+
 useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
-  await executePost(data.value);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
+  const mvalue = txStore.addMember(data.value);
+  const redirectPath = mvalue?.id ? `/${mvalue.id}` : '';
   navigateTo(`/regmembers${redirectPath}`);
+  // await executePost(data.value);
+  // const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
+  // navigateTo(`/regmembers${redirectPath}`);
 };
 </script>

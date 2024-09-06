@@ -14,7 +14,7 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <DTable @selection-changed="selectItem" :data :pending />
+      <DTable @selection-changed="selectItem" :data="members" :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
@@ -24,7 +24,9 @@ const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { error, pending } = apiGet();
+const txStore = useTxStore();
+const { members } = storeToRefs(txStore);
 
 function selectItem(item: any) {
   navigateTo(`/regmembers/${item.id}`);

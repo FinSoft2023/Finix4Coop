@@ -19,7 +19,13 @@ const pageDef = useActiveModulePage('each.root');
 
 const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { error, pending } = apiGet();
+
+const route = useRoute();
+const id = route.params.id;
+const txStore = useTxStore();
+
+const data = txStore.getMember(id);
 
 useBreadcrumb(pageDef.label);
 </script>

@@ -45,11 +45,17 @@ const pageDef = useActiveModulePage('each.deposit');
 
 const { entries } = getEntrySchema(pageDef, 'account');
 const { apiGet, apiPost } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { error, pending } = apiGet();
 const { postResult, executePost } = apiPost();
 
 const amount = ref<number>();
 const memcode = computed(() => data.value?.memcode);
+
+const route = useRoute();
+const id = route.params.id;
+const txStore = useTxStore();
+
+const data = txStore.getMember(id);
 
 const qrSto = useQrStore();
 const { qrCode, reqAmount } = storeToRefs(qrSto);

@@ -20,7 +20,13 @@ const pageDef = useActiveModulePage('each.scan');
 const host = 'http://localhost:3000';
 const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet();
+const { error, pending } = apiGet();
+
+const route = useRoute();
+const id = route.params.id;
+const txStore = useTxStore();
+
+const data = ref(txStore.getMember(id));
 
 const qrLink = computed(() => JSON.stringify({ memcode: data.value?.memcode, balance: data.value?.balance, accNo: data.value?.accNo }));
 
