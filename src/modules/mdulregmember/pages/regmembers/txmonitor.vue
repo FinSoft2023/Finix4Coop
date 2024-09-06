@@ -18,7 +18,7 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem"
+      <DTable
         :data
         :pending />
     </BPartPageBody>
