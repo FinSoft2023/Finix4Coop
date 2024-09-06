@@ -12,4 +12,10 @@ export default defineNuxtConfig({
     '../../modules/mdulque',
     '../../modules/mdulofficer',
   ],
+
+  nitro: {
+    firebase: {
+      gen: 2,
+    },
+  },
 });
