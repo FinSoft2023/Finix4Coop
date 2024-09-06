@@ -35,13 +35,13 @@ const pageDef = useActiveModulePage('list.root');
 useBreadcrumb('List');
 
 const memSto = useLinkMemberStore();
-const { memcode, amount } = storeToRefs(memSto);
+const { memcode, amount, data } = storeToRefs(memSto);
 
 const { apiGet } = useHostApi(pageDef);
-const { data, error, pending } = apiGet({ 'fltr-val': memcode.value });
+const { error, pending } = apiGet({ 'fltr-val': memcode.value });
 
 function selectItem(item: any) {
-  navigateTo(`/transferonline/${item.id}`);
+  // navigateTo(`/transferonline/${item.id}`);
 }
 
 const columns = [{

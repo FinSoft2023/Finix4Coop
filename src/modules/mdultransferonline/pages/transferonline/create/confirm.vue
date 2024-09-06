@@ -69,7 +69,7 @@ const { data, pending } = apiGet();
 const { postResult, error, executePost } = apiPost();
 
 const memSto = useLinkMemberStore();
-const { memcode, amount, qrcode } = storeToRefs(memSto);
+const { memcode, amount, qrcode, data: txdata } = storeToRefs(memSto);
 
 // const 
 const qrCode = useQRCode(qrcode.value);
@@ -78,7 +78,9 @@ useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async (txd: any) => {
   amount.value = amount.value + txd.amount;
-  await executePost(Object.assign(data.value, { memcode: memcode.value, txat: txd.txat }));
+  const data2save = Object.assign(data.value, { memcode: memcode.value, txat: txd.txat });
+  (<any[]>txdata.value).push(data2save);
+  await executePost(data2save);
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/transferonline${redirectPath}`);
 };
