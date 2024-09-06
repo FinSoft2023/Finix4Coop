@@ -15,8 +15,10 @@ export const useTxStore = defineStore('active-tx-store', () => {
   const addTx = (tx2: any) => {
     const tx = { ...tx2 };
     const member = getMember(tx.memcode);
-    if (member)
+    if (member) {
       tx.name = member.name;
+      member.balance += tx.amount;
+    }
     txdata.value.push(tx);
   };
 
