@@ -80,9 +80,10 @@ const handleSubmit = async (txd: any) => {
   amount.value = amount.value + txd.amount;
   const data2save = Object.assign(data.value, { memcode: memcode.value, txat: txd.txat });
   (<any[]>txdata.value).push(data2save);
-  await executePost(data2save);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/transferonline${redirectPath}`);
+  navigateTo(`/transferonline`);
+  // await executePost(data2save);
+  // const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
+  // navigateTo(`/transferonline${redirectPath}`);
 };
 
 
