@@ -24,7 +24,7 @@
               <FMoneyAmount v-if="data.installments" :amount="(data.Amount / 12) + ((data.Amount / 100) * 5)"></FMoneyAmount>
             </div>
           </UCard>
-          <FMemberInfo :account="data?.account"></FMemberInfo>
+          <!-- <FMemberInfo :account="data?.account"></FMemberInfo> -->
 
         </DItemGrid>
         <BPartButtonsBand>

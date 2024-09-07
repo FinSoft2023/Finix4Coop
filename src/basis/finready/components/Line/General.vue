@@ -33,15 +33,13 @@
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">หน่วยงาน</p>
-            <p class="text-md font-bold mx-3">
-              สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ
-            </p>
+            <p class="text-md font-bold mx-3">บริษัท ฟินซอฟต์2023 จำกัด</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ประเภท</p>
-            <p class="text-md font-bold mx-3">สอ.โรงพยาบาลศรีสะเกษ</p>
+            <p class="text-md font-bold mx-3">บจก.ฟินซอฟต์2023</p>
           </div>
         </div>
         <div class="flex items-center">
@@ -65,31 +63,31 @@
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ตำแหน่ง</p>
-            <p class="text-md font-bold mx-3">พยาบาลวิชาชีพ</p>
+            <p class="text-md font-bold mx-3">Design</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">วันเกิด</p>
-            <p class="text-md font-bold mx-3">31/01/2523</p>
+            <p class="text-md font-bold mx-3">31/01/2539</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md font-bold mx-3">วันที่เป็นสมาชิก</p>
-            <p class="text-md mx-3 text-gray-400">31/01/2523</p>
+            <p class="text-md mx-3 text-gray-400">31/01/2554</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">เงินเดือน</p>
-            <p class="text-md font-bold mx-3">44,000.00</p>
+            <p class="text-md font-bold mx-3">15,000</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ค่าหุ้นรายเดือน</p>
-            <p class="text-md font-bold mx-3">4,340.00</p>
+            <p class="text-md font-bold mx-3">1,000</p>
           </div>
         </div>
         <div class="flex items-center">
@@ -101,19 +99,19 @@
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ชำระหุ้นมาเเล้วกี่งวด</p>
-            <p class="text-md font-bold mx-3">940,987</p>
+            <p class="text-md font-bold mx-3">5</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ทุนเรือนหุ้น</p>
-            <p class="text-md font-bold mx-3">164,000</p>
+            <p class="text-md font-bold mx-3">100,000</p>
           </div>
         </div>
         <div class="flex items-center">
           <div>
             <p class="text-md mx-3 text-gray-400">ดอกเบี้ยสะสม</p>
-            <p class="text-md font-bold mx-3">0.0</p>
+            <p class="text-md font-bold mx-3">1,000</p>
           </div>
         </div>
       </div>
