@@ -1,0 +1,3 @@
+<template>
+  <LineCremation></LineCremation>
+</template>

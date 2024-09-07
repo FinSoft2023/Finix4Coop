@@ -1,0 +1,3 @@
+<template>
+  <LineBill></LineBill>
+</template>

@@ -1,0 +1,3 @@
+<template>
+<LineDividend></LineDividend>
+</template>

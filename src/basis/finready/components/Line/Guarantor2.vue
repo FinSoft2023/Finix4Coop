@@ -33,7 +33,7 @@
                     </g>
                   </svg>
                   <p class="flex justify-center text-md mt-0 font-bold mx-3">
-                    กิตติพิชญ์ เสนาบดี
+                    รินดา ดวงนาวาว
                   </p>
                 </div>
                 <div>
@@ -60,13 +60,8 @@
             </div>
           </div>
         </UCard>
-      </div>
-    </div>
-  </div>
-  <P>รายชื่อคนค้ำประกัน</P>
-  <div class="space-y-4 mt-4">
-    <div class="grid grid-cols-1 gap-4 px-4">
-      <div class="flex flex-col gap-5">
+        <P>รายชื่อรวมค้ำประกัน</P>
+
         <UCard>
           <div label="Open">
             <div class="text-gray-600">
@@ -91,7 +86,7 @@
                     </g>
                   </svg>
                   <p class="flex justify-center text-md mt-0 font-bold mx-3">
-                    นพรุจ ชูกุลสิทธิธรรม
+                    กิตติพิชญ์ เสนาบดี
                   </p>
                 </div>
                 <div>
