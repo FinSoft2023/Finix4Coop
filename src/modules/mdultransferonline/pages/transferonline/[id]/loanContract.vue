@@ -1,0 +1,3 @@
+<template>
+    <LineLoan></LineLoan>
+</template>

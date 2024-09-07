@@ -1,0 +1,3 @@
+<template>
+    <LineGuarantor></LineGuarantor>
+</template>

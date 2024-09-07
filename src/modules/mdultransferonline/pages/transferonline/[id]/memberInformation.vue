@@ -1,0 +1,3 @@
+<template>
+ <LineGeneral></LineGeneral>
+</template>
