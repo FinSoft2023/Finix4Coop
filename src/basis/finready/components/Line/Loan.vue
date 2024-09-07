@@ -68,14 +68,14 @@
                       />
                     </svg>
                     <p class="flex justify-center text-md mt-0 font-bold mx-3">
-                      พ 65/665
+                      พ 65/67
                     </p>
                   </div>
                   <div>
                     <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                    <p class="text-md font-bold mx-3">1,000,000</p>
+                    <p class="text-md font-bold mx-3">500,000</p>
                     <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
-                    <p class="text-md font-bold mx-3">01/09/2557</p>
+                    <p class="text-md font-bold mx-3">01/06/2557</p>
                     <p class="text-md mx-3 text-gray-400">สถานภาพสัญญา</p>
                     <p class="text-md font-bold mx-3">ชำระปกติ</p>
                     <p class="text-md text-green-500 mt-2 mx-3">
@@ -115,7 +115,7 @@
                   </div>
                   <div>
                     <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                    <p class="text-md font-bold mx-3">1,000,000</p>
+                    <p class="text-md font-bold mx-3">500,000</p>
                     <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
                     <p class="text-md font-bold mx-3">01/09/2557</p>
                     <p class="text-md mx-3 text-gray-400">สถานภาพสัญญา</p>
@@ -128,7 +128,7 @@
               </div>
             </div>
           </UCard>
-        </NuxtLink>        
+        </NuxtLink>
       </div>
     </div>
   </div>

@@ -95,21 +95,21 @@
                       <div class="col-span-2">
                         <p class="text-md mx-3 text-gray-400">รายการ/สัญญา</p>
                         <p class="text-md font-bold text-gray-700 mx-3">
-                          เงินกู้สามัญ 140/67
+                          เงินกู้สามัญ ส 1652/67
                         </p>
                       </div>
                     </div>
                     <div class="col-span-2">
                       <p class="text-md mx-3 text-gray-400">เงินต้น</p>
-                      <p class="text-md font-bold mx-3">1,600.00 บาท</p>
+                      <p class="text-md font-bold mx-3">2,000.00 บาท</p>
                     </div>
                     <div class="col-span-2">
                       <p class="text-md mx-3 text-gray-400">ดอกเบี้ย</p>
-                      <p class="text-md font-bold mx-3">1,840.47 บาท</p>
+                      <p class="text-md font-bold mx-3">50.00 บาท</p>
                     </div>
                     <div class="col-span-2">
                       <p class="text-md mx-3 text-gray-400">รวมจำนวนเงิน</p>
-                      <p class="text-md font-bold mx-3">3,440.47 บาท</p>
+                      <p class="text-md font-bold mx-3">4,050.00 บาท</p>
                     </div>
                     <hr
                       class="h-px my-0 bg-gray-200 border-0 dark:bg-gray-700"
@@ -120,7 +120,7 @@
                     />
                     <div class="flex justify-between col-span-2">
                       <p class="text-md mx-3 text-gray-400">รวมทั้งหมด</p>
-                      <p class="text-md font-bold mx-3">3,540.47 บาท</p>
+                      <p class="text-md font-bold mx-3">4,150.00 บาท</p>
                     </div>
                   </div>
                 </div>

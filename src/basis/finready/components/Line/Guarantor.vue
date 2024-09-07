@@ -33,16 +33,16 @@
                     </g>
                   </svg>
                   <p class="flex justify-center text-md mt-0 font-bold mx-3">
-                    กิตติพิชญ์ เสนาบดี
+                    ส 1652/67
                   </p>
                 </div>
                 <div>
                   <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                  <p class="text-md font-bold mx-3 mb-2">1,000,000</p>
+                  <p class="text-md font-bold mx-3 mb-2">500,000</p>
                   <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
-                  <p class="text-md font-bold mx-3 mb-2">01/09/2557</p>
+                  <p class="text-md font-bold mx-3 mb-2">20/02/2557</p>
                   <p class="text-md mx-3 text-gray-400">ชื่อผู้ทำสัญญา</p>
-                  <p class="text-md font-bold mx-3 mb-2">01/09/2557</p>
+                  <p class="text-md font-bold mx-3 mb-2">กิตติพิชญ์ เสนาบดี</p>
                   <p class="text-md mx-3 text-gray-400">เลขที่สมาชิก</p>
                   <p class="text-md font-bold mx-3 mb-2">0034</p>
                   <p class="text-md mx-3 text-gray-400">สถานภาพสัญญา</p>
@@ -52,9 +52,9 @@
                   <p class="text-md mx-3 text-gray-400">ชำระแล้วกี่งวด</p>
                   <p class="text-md font-bold mx-3 mb-2">1</p>
                   <p class="text-md mx-3 text-gray-400">ชำระต่องวด</p>
-                  <p class="text-md font-bold mx-3 mb-2">4,200</p>
+                  <p class="text-md font-bold mx-3 mb-2">2,000</p>
                   <p class="text-md mx-3 text-gray-400">ยอดคงเหลือ</p>
-                  <p class="text-md font-bold mx-3 mb-2">45,800</p>
+                  <p class="text-md font-bold mx-3 mb-2">58,000</p>
                 </div>
               </div>
             </div>
@@ -96,20 +96,8 @@
                 </div>
                 <div>
                   <p class="text-md mx-3 text-gray-400">ทะเบียนสัญญาที่ค้ำ</p>
-                  <p class="text-md font-bold mx-3">ส 58/58</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                  <p class="text-md font-bold mx-3">45,000 บาท</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
-                  <p class="text-md font-bold mx-3">03/11/2557</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">ยอดคงเหลือ</p>
-                  <p class="text-md font-bold mx-3">41,000 บาท</p>
-                </div>
+                  <p class="text-md font-bold mx-3">ส 1652/67</p>
+                </div>                
               </div>
             </div>
           </div>
@@ -145,20 +133,8 @@
                 </div>
                 <div>
                   <p class="text-md mx-3 text-gray-400">ทะเบียนสัญญาที่ค้ำ</p>
-                  <p class="text-md font-bold mx-3">ส 58/58</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                  <p class="text-md font-bold mx-3">45,000 บาท</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
-                  <p class="text-md font-bold mx-3">03/11/2557</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">ยอดคงเหลือ</p>
-                  <p class="text-md font-bold mx-3">41,000 บาท</p>
-                </div>
+                  <p class="text-md font-bold mx-3">ส 1652/67</p>
+                </div>                
               </div>
             </div>
           </div>
@@ -194,20 +170,8 @@
                 </div>
                 <div>
                   <p class="text-md mx-3 text-gray-400">ทะเบียนสัญญาที่ค้ำ</p>
-                  <p class="text-md font-bold mx-3">ส 58/58</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-                  <p class="text-md font-bold mx-3">45,000 บาท</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
-                  <p class="text-md font-bold mx-3">03/11/2557</p>
-                </div>
-                <div>
-                  <p class="text-md mx-3 text-gray-400">ยอดคงเหลือ</p>
-                  <p class="text-md font-bold mx-3">41,000 บาท</p>
-                </div>
+                  <p class="text-md font-bold mx-3">ส 1652/67</p>
+                </div>                
               </div>
             </div>
           </div>
