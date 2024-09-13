@@ -22,8 +22,8 @@ useSmartTabs([
     to: '/loanFast',
   },
   {
-    label: 'Closed',
-    to: '/loanFast/closed',
+    label: 'Complete',
+    to: '/loanFast/completed',
   },
 ]);
 </script>

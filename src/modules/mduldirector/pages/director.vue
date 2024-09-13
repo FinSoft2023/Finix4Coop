@@ -22,8 +22,8 @@ useSmartTabs([
     to: '/director',
   },
   {
-    label: 'Closed',
-    to: '/director/closed',
+    label: 'Complete',
+    to: '/director/Completed',
   },
 ]);
 </script>
