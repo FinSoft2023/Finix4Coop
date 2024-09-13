@@ -6,7 +6,12 @@ export const moduleBlueprint = defineModule('director', 'กรรมการ�
   list: {
     root: loanfast,
     completed: loanfast,
-    closed: loanfast,
+    close: loanfast,
+    printsheet: {
+      entity: loanfast,
+      post: true,
+      role: 'print',
+    },
   },
   create: {
     root: {
@@ -22,10 +27,6 @@ export const moduleBlueprint = defineModule('director', 'กรรมการ�
     steps: {
       entity: loanfast,
       role: 'steps',
-    },
-    close: {
-      entity: loanfast,
-      post: true,
     },
   },
   each: {

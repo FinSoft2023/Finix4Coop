@@ -343,64 +343,19 @@ export const loanfast = defineEntity({
       choices: installments,
     },
     {
+      model: 'amount',
+      label: 'กรอกจำนวนที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'number',
+    },
+    {
       model: 'bankAccount',
       label: 'เลือกบัญชีธนาคาร',
       spec: {},
       component: 'radio',
       choices: transferChannels,
     },
-    {
-      model: 'forperson ',
-      label: 'ผู้รับอำนาจรับเงินแทน',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'amount',
-      label: 'กรอกจำนวนที่ต้องการกู้ (บาท)',
-      spec: {},
-      component: 'number',
-    },
   ],
-  sub: [
-    {
-      name: 'account',
-      component: 'entry',
-      fields: [
-        {
-          model: 'name',
-          label: 'ชื่อสมาชิก',
-          spec: {},
-          component: 'text',
-        },
-        {
-          model: 'memcode',
-          label: 'รหัสสมาชิก',
-          spec: {},
-          component: 'text',
-        },
-        {
-          model: 'accType',
-          label: 'บัญชี',
-          spec: {},
-          component: 'select',
-          choices: accountTypes,
-        },
-        {
-          model: 'accNo',
-          label: 'เลขบัญชี',
-          spec: {},
-          component: 'text',
-        },
-        {
-          model: 'balance',
-          label: 'จำนวนเงินในบัญชี',
-          spec: {},
-          component: 'number',
-        },
-      ],
-    },
-  ]
 });
 
 

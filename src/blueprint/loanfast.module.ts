@@ -2,11 +2,12 @@ import { bigPlatformBuilder, loanfast } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเฉิน', {
+export const moduleBlueprint = defineModule('loanFast', 'กู้ฉุกเฉิน', {
   list: {
     root: loanfast,
     completed: loanfast,
-    closed: loanfast,
+    close: loanfast,
+    
   },
   create: {
     root: {
@@ -19,18 +20,9 @@ export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเ�
       post: true,
       role: 'stepconfirm',
     },
-    check: {
-      entity: loanfast,
-      post: true,
-      subName: 'fillinInformation',
-    },
     steps: {
       entity: loanfast,
       role: 'steps',
-    },
-    close: {
-      entity: loanfast,
-      post: true,
     },
   },
   each: {
@@ -40,16 +32,7 @@ export const moduleBlueprint = defineModule('loanFast', 'กู้ ฉุกเ�
       post: true,
       role: 'print',
     },
-    printsheet: {
-      entity: loanfast,
-      post: true,
-      role: 'print',
-    },
     scan: {
-      entity: loanfast,
-      post: true,
-    },
-    takePhoto: {
       entity: loanfast,
       post: true,
     },
