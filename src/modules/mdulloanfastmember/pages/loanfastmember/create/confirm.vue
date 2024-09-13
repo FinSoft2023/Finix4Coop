@@ -13,32 +13,50 @@
         :pending="pending"
         class="space-y-4">
         <DItemGrid col="x3">
+          
           <UCard class="col-span-2">
+            <dl>
+
+<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
+  สมาชิกขอกู้เงินเป็นจำนวน
+  <svg xmlns="http://www.w3.org/2000/svg"
+    class="inline-block w-4 h-4 ml-1 text-green-500"
+    viewBox="0 0 20 20"
+    fill="currentColor">
+    <path fill-rule="evenodd"
+      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+      clip-rule="evenodd" />
+  </svg>
+</dt>
+<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
+  20,000 บาท (สองหมื่นบาทถ้วน)
+</dd>
+
+<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
+  ดอกเบี้ย
+  <svg xmlns="http://www.w3.org/2000/svg"
+    class="inline-block w-4 h-4 ml-1 text-green-500"
+    viewBox="0 0 20 20"
+    fill="currentColor">
+    <path fill-rule="evenodd"
+      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+      clip-rule="evenodd" />
+  </svg>
+</dt>
+<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
+  1,000 บาท (หนึ่งพันบาทถ้วน)
+</dd>
+
+</dl>
             <DEntitySection v-model="data"
               :entries
               :pending />
+              
           </UCard>
-          <FMemberInfo :account="data?.account"></FMemberInfo>
+       
         </DItemGrid>
         <UCard>
-          <p>ตรวจสอบข้อมูล ขอกู้ฉุกเฉิน</p>
-          <dl>
-
-            <dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-              สมาชิกขอกู้เงินเป็นจำนวน
-              <svg xmlns="http://www.w3.org/2000/svg"
-                class="inline-block w-4 h-4 ml-1 text-green-500"
-                viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </dt>
-            <dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-              100,000 บาท (หนึ่งแสนบาทถ้วน)
-            </dd>
-          </dl>
+          <p>ยอดที่ต้องชำระ 12 เดือน ขอกู้ฉุกเฉิน </p>
           <UTable :rows="borrow" />
         </UCard>
         <BPartButtonsBand>
@@ -80,17 +98,17 @@ const handleSubmit = async () => {
 
 
 const borrow = [
-  { period: 1, month: 'กันยายน', payment: 13333.33 },
-  { period: 2, month: 'ตุลาคม', payment: 13333.33 },
-  { period: 3, month: 'พฤศจิกายน', payment: 13333.33 },
-  { period: 4, month: 'ธันวาคม', payment: 13333.33 },
-  { period: 5, month: 'มกราคม', payment: 13333.33 },
-  { period: 6, month: 'กุมภาพันธ์', payment: 13333.33 },
-  { period: 7, month: 'มีนาคม', payment: 13333.33 },
-  { period: 8, month: 'เมษายน', payment: 13333.33 },
-  { period: 9, month: 'พฤษภาคม', payment: 13333.33 },
-  { period: 10, month: 'มิถุนายน', payment: 13333.33 },
-  { period: 11, month: 'กรกฎาคม', payment: 13333.33 },
-  { period: 12, month: 'สิงหาคม', payment: 13333.33 },
+  { period: 1, month: 'กันยายน 67', payment: 1750.00 },
+  { period: 2, month: 'ตุลาคม 67', payment: 1750.00 },
+  { period: 3, month: 'พฤศจิกายน 67', payment: 1750.00 },
+  { period: 4, month: 'ธันวาคม 67', payment: 1750.00 },
+  { period: 5, month: 'มกราคม 68', payment: 1750.00 },
+  { period: 6, month: 'กุมภาพันธ์ 68', payment: 1750.00 },
+  { period: 7, month: 'มีนาคม 68', payment: 1750.00 },
+  { period: 8, month: 'เมษายน 68', payment: 1750.00 },
+  { period: 9, month: 'พฤษภาคม 68', payment: 1750.00 },
+  { period: 10, month: 'มิถุนายน 68', payment: 1750.00 },
+  { period: 11, month: 'กรกฎาคม 68', payment: 1750.00 },
+  { period: 12, month: 'สิงหาคม 68', payment: 1750.00 },
 ];
 </script>

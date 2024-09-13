@@ -407,18 +407,6 @@ export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
   root: [   
     {
-      model: 'Agency',
-      label: 'หน่วยงาน',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'phonenumber',
-      label: 'เบอร์โทร',
-      spec: {},
-      component: 'text',
-    },
-    {
       model: 'income',
       label: 'รายได้',
       spec: {},
@@ -430,13 +418,13 @@ export const checkloanfast = defineEntity({
       spec: z.number().gt(0).lte(20000),
       component: 'number',
     },
-    {
-      model: 'bankAccount',
-      label: 'เลือกบัญชีธนาคาร',
-      spec: {},
-      component: 'radio',
-      choices: transferChannels,
-    },
+    // {
+    //   model: 'bankAccount',
+    //   label: 'เลือกบัญชีธนาคาร',
+    //   spec: {},
+    //   component: 'radio',
+    //   choices: transferChannels,
+    // },
     {
       model: 'installments',
       label: 'เลือกจำนวนงวด',
@@ -444,12 +432,12 @@ export const checkloanfast = defineEntity({
       component: 'select',
       choices: installments,
     },
-    {
-      model: 'date',
-      label: 'เริ่มส่งเงินกู้คืน',
-      spec: {},
-      component: 'text',
-    },
+    // {
+    //   model: 'date',
+    //   label: 'เริ่มส่งเงินกู้คืน',
+    //   spec: {},
+    //   component: 'text',
+    // },
   ], 
   sub: [
     {
@@ -495,31 +483,31 @@ export const checkloanfast = defineEntity({
 export const loanfastmember = defineEntity({
   name: 'ขอกู้ฉุกเฉิน',
   root: [   
-    {
-      model: 'Amount',
-      label: 'ยอดที่ต้องการกู้ (บาท)',
-      spec: z.number().gt(0).lte(20000),
-      component: 'number',
-    },
-    {
-      model: 'installments',
-      label: 'เลือกจำนวนงวด',
-      spec: {},
-      component: 'select',
-      choices: installments,
-    },
-    {
-      model: 'Amountsent',
-      label: 'ยอดที่ส่ง',
-      spec: {},
-      component: 'number',
-    },
-    {
-      model: 'date',
-      label: 'เริ่มส่งเงินกู้คืน',
-      spec: {},
-      component: 'text',
-    },
+    // {
+    //   model: 'Amount',
+    //   label: 'ยอดที่ต้องการกู้ (บาท)',
+    //   spec: z.number().gt(0).lte(20000),
+    //   component: 'number',
+    // },
+    // {
+    //   model: 'installments',
+    //   label: 'เลือกจำนวนงวด',
+    //   spec: {},
+    //   component: 'select',
+    //   choices: installments,
+    // },
+    // {
+    //   model: 'Amountsent',
+    //   label: 'ยอดที่ส่ง',
+    //   spec: {},
+    //   component: 'number',
+    // },
+    // {
+    //   model: 'date',
+    //   label: 'เริ่มส่งเงินกู้คืน',
+    //   spec: {},
+    //   component: 'text',
+    // },
     {
       model: 'purpose',
       label: 'เพื่อวัตถุประสงค์',

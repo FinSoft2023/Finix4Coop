@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <DSmartSubStepper />
+    <!-- <DSmartSubStepper /> -->
 
     <UAlert
       icon="i-heroicons-document-check"
@@ -24,7 +24,7 @@
           </UCard>
         </DItemGrid>
         <UCard> 
-          <p>ตรวจสอบข้อมูล ขอกู้ฉุกเฉิน</p>
+
           <dl>
             <dt
               class="mt-2 font-light leading-none text-gray-500 dark:text-white"
@@ -51,7 +51,7 @@
             <dt
               class="mt-2 font-light leading-none text-gray-500 dark:text-white"
             >
-            สมาชิกขอกู้เงินเป็นจำนวน
+            สมาชิกขอกู้เงินพร้อมดอกเบี้ยเป็นจำนวน
             <svg
     xmlns="http://www.w3.org/2000/svg"
     class="inline-block w-4 h-4 ml-1 text-green-500"
@@ -68,12 +68,12 @@
             <dd
               class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
             >
-            200,000 บาท (สองแสนบาทถ้วน)
+            21,000 บาท (สองหมื่นหนึ่งพันบาทถ้วน)
             </dd>
             <dt
               class="mt-2 font-light leading-none text-gray-500 dark:text-white"
             >
-            เพื่อวัตถุประสงค์
+            รวม 12 เดือน (เงินต้น พร้อมดอกเบี้ย ) / เดือน
             <svg
     xmlns="http://www.w3.org/2000/svg"
     class="inline-block w-4 h-4 ml-1 text-green-500"
@@ -90,62 +90,16 @@
             <dd
               class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
             >
-            เพื่อการอันจำเป็น
-            </dd>
-            <dt
-              class="mt-2 font-light leading-none text-gray-500 dark:text-white"
-            >
-            เริ่มส่งเงินกู้คืน
-            <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path
-      fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd"
-    />
-  </svg>
-            </dt>
-            <dd
-              class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
-            >
-            1 มกราคม 2667
-            </dd>
-            <dt
-              class="mt-2 font-light leading-none text-gray-500 dark:text-white"
-            >
-            รวม (เงินต้น พร้อมดอกเบี้ย ) /เดือน
-            <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path
-      fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd"
-    />
-  </svg>
-            </dt>
-            <dd
-              class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
-            >
-            1,800 บาท
+            1,750 บาท / เดือน
             </dd>
           </dl>
        </UCard>
 
         <BPartButtonsBand>
-          <UButton
-            @click="$router.back"
+          <UButton @click="$router.back"
             icon="i-heroicons-chevron-left-16-solid"
             variant="outline"
-            >Back</UButton
-          >
+            >Back</UButton>
           <template #next>
             <UButton type="submit">Save</UButton>
           </template>
@@ -175,7 +129,7 @@ useComponentResolver(defaultViewResolvers);
 
 const handleSubmit = async () => {
   await executePost(data.value);
-  const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
-  navigateTo(`/checkloanfast${redirectPath}`);
+  const redirectPath = getNextStep(pageDef);
+  navigateTo(`/checkloanfast/create/${redirectPath}`);
 };
 </script>
