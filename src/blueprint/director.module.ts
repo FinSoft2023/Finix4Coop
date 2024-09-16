@@ -5,14 +5,21 @@ const { defineModule } = bigPlatformBuilder;
 export const moduleBlueprint = defineModule('director', 'กรรมการเงินกู้', {
   list: {
     root: loanfast,
+    active: loanfast,
+    meeting: loanfast,
     completed: loanfast,
+    sendpayment: loanfast,
     close: loanfast,
     printsheet: {
       entity: loanfast,
       post: true,
       role: 'print',
     },
-    sendpayment: loanfast,
+    report: {
+      entity: loanfast,
+      post: true,
+      role: 'print',
+    },
   },
   create: {
     root: {

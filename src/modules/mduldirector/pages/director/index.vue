@@ -4,14 +4,15 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/director/printsheet"
-          icon="i-heroicons-plus-circle">ปริ้นใบประหน้า</UButton>
+        <UButton to="/director/sendpayment"
+          icon="i-heroicons-plus-circle">ส่งจ่ายกู้ฉุกเฉิน</UButton>
+        
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>กู้ฉุกเฉิน</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data

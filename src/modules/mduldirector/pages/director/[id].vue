@@ -8,8 +8,8 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'สแกนใบกู้ฉุกเฉิน', to: '/scan' },
-    { label: 'ยกเลิก', to: '/cancel' },
+    { label: 'Info', to: '/' },
+    { label: 'Edit', to: '/edit' },
   ],
   pageDef,
 );

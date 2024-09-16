@@ -18,12 +18,20 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'Active',
+    label: 'สั่งจ่ายกู้ฉุกเฉิน',
     to: '/director',
   },
   {
-    label: 'Complete',
-    to: '/director/Completed',
+    label: 'กรรมการสินชื่อ',
+    to: '/director/active',
+  },
+  {
+    label: 'ประชุมรายเดือน',
+    to: '/director/meeting',
+  },
+  {
+    label: 'เสร็จสิ้น',
+    to: '/director/completed',
   },
 ]);
 </script>

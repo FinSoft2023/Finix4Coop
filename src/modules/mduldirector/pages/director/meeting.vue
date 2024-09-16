@@ -4,12 +4,13 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/director/close"
-          icon="i-heroicons-plus-circle">ส่งการเงิน</UButton>
+        <UButton to="/director/report"
+          icon="i-heroicons-plus-circle">ปริ้นรายงาน</UButton>
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
+
       <BPartSectionTitle>กู้ฉุกเฉิน</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
@@ -32,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-const pageDef = useActiveModulePage('list.completed');
+const pageDef = useActiveModulePage('list.meeting');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);
