@@ -212,6 +212,8 @@ export const accTransactions = defineEntity({
   ],
 });
 
+
+
 export const queue = defineEntity({
   name: 'เรียกคิว',
   root: [
@@ -402,7 +404,6 @@ export const installments = defineChoicesList('installments', {
 });
 
 
-
 export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
   root: [   
@@ -575,3 +576,35 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const loanfast = defineEntity({
+  name: 'กู้ฉุกเฉิน',
+  root: [
+ 
+    {
+      model: 'installments',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'amount',
+      label: 'กรอกจำนวนที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+  ],
+});
+
+
+
+
+
