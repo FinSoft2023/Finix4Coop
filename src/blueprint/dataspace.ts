@@ -575,3 +575,105 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const installmentsOrdinary = defineChoicesList('installmentsOrdinary', {
+  option1: '16 งวด',
+  option2: '24 งวด',
+  option3: '240 งวด',
+});
+
+
+export const loanordinarymember = defineEntity({
+  name: 'ขอกู้สามัญ',
+  root: [   
+    {
+      model: 'Agency',
+      label: 'หน่วยงาน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Salary',
+      label: 'รายได้รายเดือน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: z.number().gt(0).lte(200000),
+      component: 'number',
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installmentsOrdinary,
+    },
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: purpose,
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+    {
+      model: 'idmemberguarantor1',
+      label: 'รหัสสมาชิก ผู้ค้ำประกัน คนที่ 1',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'namememberguarantor1',
+      label: 'ชื่อ-สกุล ผู้ค้ำประกัน คนที่ 1',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idmemberguarantor2',
+      label: 'รหัสสมาชิก ผู้ค้ำประกัน คนที่ 2',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'namememberguarantor2',
+      label: 'ชื่อ-สกุล ผู้ค้ำประกัน คนที่ 2',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'Spouse',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อ-สกุล',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'age',
+          label: 'อายุ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'address',
+          label: 'ที่อยู่',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ]
+})
