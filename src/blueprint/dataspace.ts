@@ -580,12 +580,12 @@ export const loanfastmember = defineEntity({
 export const loansharemember = defineEntity({
   name: 'ขอกู้หุ้น',
   root: [   
-    {
-      model: 'Amount',
-      label: 'ยอดที่ต้องการกู้ (บาท)',
-      spec: z.number().gt(0).lte(30000),
-      component: 'number',
-    },
+    // {
+    //   model: 'Amount',
+    //   label: 'ยอดที่ต้องการกู้ (บาท)',
+    //   spec: z.number().gt(0).lte(30000),
+    //   component: 'number',
+    // },
     {
       model: 'installments',
       label: 'เลือกจำนวนงวด',
@@ -605,6 +605,25 @@ export const loansharemember = defineEntity({
       name: 'loanshare',
       component: 'entry',
       fields: [
+        {
+          model: 'Amount',
+          label: 'ยอดที่ต้องการกู้ (บาท)',
+          spec: z.number().gt(0).lte(30000),
+          component: 'number',
+        },
+        {
+          model: 'installments',
+          label: 'เลือกจำนวนงวด',
+          spec: {},
+          component: 'select',
+          choices: installments,
+        },
+        {
+          model: 'Amountsent',
+          label: 'งวดละ',
+          spec: {},
+          component: 'number',
+        },
         {
           model: 'purpose',
           label: 'เพื่อวัตถุประสงค์',

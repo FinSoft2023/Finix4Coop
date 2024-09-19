@@ -11,6 +11,9 @@
         class="space-y-4"
       >
         <UCard>
+          <p class="text-sm mb-2 text-red-500 dark:text-white">
+              วงเงินที่สามารถกู้ได้ (30,000 บาท สูงสุด)
+            </p>
           <DEntitySection v-model="data" :entries="entries" :pending />
         </UCard>
         <div class="flex justify-end">

@@ -3,69 +3,79 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <dl>
+      <UCard class="col-span-2">
+            <h1 class="text-xl font-bold">
+              คุณสามารถขอกู้ได้
+            </h1>
+            <p class="text-sm text-gray-500 dark:text-white">
+              ระบบได้ทำการตรวจสอบเงื่อนไขตามข้อกำหนดในการขอกู้ของท่านเรียบร้อยแล้ว
+            </p>
+            <dl>
+              <h1 class="text-md font-bold mt-2">
+              เงื่อนไข
+            </h1>
+              <dd
+                class=" text-sm text-gray-900 sm:mb-5 dark:text-gray-400"
+              >
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline-block w-4 h-4 ml-1 text-green-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>   ระยะเวลาการเป็นสมาชิก 
+              </dd>
+             
+              <dd
+                class="text-sm  text-gray-900 sm:mb-5 dark:text-gray-400"
+              >
+                 <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline-block w-4 h-4 ml-1 text-green-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                ตำแหน่งงาน 
+              </dd>
 
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-  คุณมีจำนวนหุ้นอยู่ทั้งหมด
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor">
-    <path fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd" />
-  </svg>
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  100 หุ้น
-</dd>
-
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-  ยอดที่ขอกู้
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor">
-    <path fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd" />
-  </svg>
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  30,000 บาท (สามหมื่นบาทท้วน)
-</dd>
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-  ชำระเป็นจำนวนงวด
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor">
-    <path fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd" />
-  </svg>
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  12 งวด
-</dd>
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
- งวดละ
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="inline-block w-4 h-4 ml-1 text-green-500"
-    viewBox="0 0 20 20"
-    fill="currentColor">
-    <path fill-rule="evenodd"
-      d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
-      clip-rule="evenodd" />
-  </svg>
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  2,500 บาท
-</dd>
-</dl>
-        <!-- <DEntitySection v-model="data" :entries :pending /> -->
-      </UCard>
+             
+              <dd
+                class="mb-2 text-sm text-gray-900 sm:mb-5 dark:text-gray-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline-block w-4 h-4 ml-1 text-green-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 5.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l7-7a1 1 0 000-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg> รายได้ 
+              </dd>
+              
+            </dl>
+            <p class="text-sm text-gray-500 dark:text-white">
+              วงเงินสูงสุดที่ท่านสามารถกู้ได้ 
+            </p>
+            <p class="text-md font-bold text-green-600 dark:text-white">
+ 
+  30,000 บาท (สูงสุด)
+</p>
+          </UCard>
       <div class="flex justify-end">  <UButton :to="`/loansharemember/09sm9o1w63petsuyibz4/loan`">ขอกู้หุ้น</UButton></div>
     
 

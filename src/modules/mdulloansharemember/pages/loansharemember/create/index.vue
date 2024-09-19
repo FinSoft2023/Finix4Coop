@@ -3,7 +3,7 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
     <UAlert
       icon="i-heroicons-book-open"
-      description="ระบุรายละเอียดขั้นตอนการทำงาน"
+      description="ตรวจสอบสิทธิขอกู้"
       :title="pageDef.label"
     />
 
@@ -17,33 +17,45 @@
       >
         <DItemGrid col="x3">
           <UCard class="col-span-2">
+            <h1 class="text-xl font-bold">ตรวจสอบสิทธิขอกู้</h1>
+            <p class="text-sm text-gray-500 dark:text-white">
+              หากคุณต้องการขอกู้สินเชื่อกรุณากดที่ปุ่ม "ตรวจสอบ"
+              เพื่อทำการตรวจสอบข้อมูลในการกู้ก่อน
+            </p>
             <dl>
+              <dt
+                class="mt-2 font-light leading-none text-gray-500 dark:text-white"
+              >
+                ชื่อ-สกุล
+              </dt>
+              <dd
+                class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
+              >
+                นพรุจ ชูธรรมสิทธิกุล
+              </dd>
 
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-  คุณมีจำนวนหุ้นอยู่ทั้งหมด
- 
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  100 หุ้น
-</dd>
-
-<dt class="mt-2 font-light leading-none text-gray-500 dark:text-white">
-  ยอดที่คุณสามารถกู้ได้สูงสุด
-  
-</dt>
-<dd class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400">
-  30,000 บาท (สามหมื่นบาทท้วน)
-</dd>
-</dl>
-
-            <DEntitySection v-model="data" :entries :pending />
+              <dt
+                class="mt-2 font-light leading-none text-gray-500 dark:text-white"
+              >
+                รหัสสมาชิก
+              </dt>
+              <dd
+                class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
+              >
+                00191
+              </dd>
+            </dl>
+            <div class="flex justify-center mt-5">
+              <UButton type="submit">ตรวจสอบ</UButton>
+            </div>
           </UCard>
+
        
         </DItemGrid>
 
         <BPartButtonsBand>
           <template #next>
-            <UButton type="submit">ตรวจสอบขอกู้</UButton>
+            <!-- <UButton type="submit">ตรวจสอบขอกู้</UButton> -->
           </template>
         </BPartButtonsBand>
       </UForm>
