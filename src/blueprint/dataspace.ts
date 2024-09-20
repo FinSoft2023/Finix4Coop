@@ -575,3 +575,54 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const transfermoney = defineEntity({
+  name: 'product',
+  root: [
+    {
+      model: 'name',
+      label: 'Name',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'price',
+      label: 'Price',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'description',
+      label: 'Description',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'categoryId',
+      label: 'Category',
+      spec: {},
+      component: 'category',
+      choices: 'ref:categories',
+    },
+  ],
+  sub: [
+    {
+      name: 'code',
+      component: 'entry',
+      fields: [
+        {
+          model: 'qrCode',
+          label: 'QR Code',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'upcCode',
+          label: 'UPC Code',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ],
+});
