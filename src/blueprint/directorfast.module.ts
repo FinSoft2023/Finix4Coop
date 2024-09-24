@@ -2,7 +2,7 @@ import { bigPlatformBuilder, loanfast } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('director', 'กรรมการเงินกู้', {
+export const moduleBlueprint = defineModule('directorfast', 'กรรมการเงินกู้', {
   list: {
     root: loanfast,
     active: loanfast,
