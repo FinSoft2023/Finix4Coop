@@ -4,21 +4,21 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/director/sendpayment"
-          icon="i-heroicons-plus-circle">ส่งจ่ายการเงิน</UButton>
+        <UButton to="/director/printsheet"
+          icon="i-heroicons-plus-circle">ปริ้นใบประหน้า</UButton>
 
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>กู้ฉุกเฉิน</BPartSectionTitle>
+      <BPartSectionTitle>กู้สามัญ</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data
         :pending />
 
-      <BPartSectionTitle>กู้หุ้น</BPartSectionTitle>
+      <BPartSectionTitle>กู้พิเศษ</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data

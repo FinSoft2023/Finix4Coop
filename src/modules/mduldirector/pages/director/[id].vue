@@ -10,6 +10,7 @@ useSubLinks(
   [
     { label: 'Info', to: '/' },
     { label: 'สแกนเอกสาร', to: '/scan' },
+    { label: 'พิจารณาเงินกู้', to: '/takePhoto' },
   ],
   pageDef,
 );

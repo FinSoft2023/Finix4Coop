@@ -18,11 +18,11 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'สั่งจ่ายกู้ฉุกเฉิน',
+    label: 'กรรมการสินชื่อ',
     to: '/director',
   },
   {
-    label: 'กรรมการสินชื่อ',
+    label: 'กรรมการประจำเดือน',
     to: '/director/active',
   },
   {
