@@ -5,14 +5,20 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton to="/director/sendpayment"
-          icon="i-heroicons-plus-circle">ส่งจ่ายกู้ฉุกเฉิน</UButton>
-        
+          icon="i-heroicons-plus-circle">ส่งจ่ายการเงิน</UButton>
+
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
       <BPartSectionTitle>กู้ฉุกเฉิน</BPartSectionTitle>
+
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
+
+      <BPartSectionTitle>กู้หุ้น</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data

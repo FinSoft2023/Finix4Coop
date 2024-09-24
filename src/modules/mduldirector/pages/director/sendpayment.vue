@@ -2,20 +2,24 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-   
-        <UButton to="/director"
-          icon="i-heroicons-plus-circle">ยืนยันส่งจ่ายกู้ฉุกเฉิน</UButton>
-        <template #next>
-          <DSmartTabs />
-        </template>
 
-        <BPartSectionTitle>ส่งจ่ายกู้ฉุกเฉิน</BPartSectionTitle>
+    <UButton to="/director"
+      icon="i-heroicons-plus-circle">ยืนยันส่งจ่ายการเงิน</UButton>
+    <template #next>
+      <DSmartTabs />
+    </template>
 
-        <DTable @selection-changed="selectItem"
-          :data
-          :pending />
-  
+    <BPartSectionTitle>ส่งจ่ายกู้ฉุกเฉิน</BPartSectionTitle>
 
+    <DTable @selection-changed="selectItem"
+      :data
+      :pending />
+
+    <BPartSectionTitle>กู้หุ้น</BPartSectionTitle>
+
+    <DTable @selection-changed="selectItem"
+      :data
+      :pending />
   </BFullPage>
 </template>
 

@@ -10,19 +10,16 @@
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
-      <BPartSectionTitle>กู้ฉุกเฉิน</BPartSectionTitle>
 
-      <DTable @selection-changed="selectItem"
-        :data
-        :pending />
 
-      <BPartSectionTitle>กู้หุ้น</BPartSectionTitle>
-
-      <DTable @selection-changed="selectItem"
-        :data
-        :pending />
 
       <BPartSectionTitle>กู้สามัญ</BPartSectionTitle>
+
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
+
+      <BPartSectionTitle>กู้พิเศษ</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data

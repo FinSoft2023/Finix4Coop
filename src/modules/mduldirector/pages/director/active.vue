@@ -6,7 +6,7 @@
       <BPartButtonsBand>
         <UButton to="/director/printsheet"
           icon="i-heroicons-plus-circle">ปริ้นใบประหน้า</UButton>
-          <UButton to="/director/report"
+        <UButton to="/director/report"
           icon="i-heroicons-plus-circle">ปริ้นรายงาน</UButton>
         <template #next>
           <DSmartTabs />
@@ -26,6 +26,12 @@
         :pending />
 
       <BPartSectionTitle>กู้สามัญ</BPartSectionTitle>
+
+      <DTable @selection-changed="selectItem"
+        :data
+        :pending />
+        
+      <BPartSectionTitle>กู้พิเศษ</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem"
         :data
