@@ -575,3 +575,127 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+
+export const deduction = defineEntity({
+  name: 'หักหนี้รายเดือน',
+  root: [   
+    {
+      model: 'name',
+      label: 'ชื่อ-สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idmember',
+      label: 'รหัสสมาชิก',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phone',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+       
+      ],
+    },
+  ]
+})
+
+export const deductionResults = defineEntity({
+  name: 'บันทึกการหักเงินจากต้นสังกัด',
+  root: [   
+    {
+      model: 'name',
+      label: 'ชื่อ-สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idmember',
+      label: 'รหัสสมาชิก',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'category',
+      label: 'หมวดหมู่',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'contract',
+      label: 'สัญญา',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'debt',
+      label: 'จำนวนเงินที่ต้องหัก',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+       
+      ],
+    },
+  ]
+})
+
+export const tracking = defineEntity({
+  name: 'ติดตามทวงหนี้',
+  root: [   
+    {
+      model: 'name',
+      label: 'ชื่อ-สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idmember',
+      label: 'รหัสสมาชิก',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'category',
+      label: 'หมวดหมู่',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'contract',
+      label: 'สัญญา',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'debt',
+      label: 'จำนวนเงินที่ต้องหัก',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+       
+      ],
+    },
+  ]
+})
