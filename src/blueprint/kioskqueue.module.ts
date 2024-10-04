@@ -11,31 +11,26 @@ export const moduleBlueprint = defineModule('kiosks', 'คู้คิว', {
       entity: kiosk,
       post: true,
       role: 'stepedit',
-      subName: 'account',
     },
     takephoto: {
       entity: kiosk,
       post: true,
       role: 'stepedit',
-      subName: 'account',
     },
     choice: {
       entity: kiosk,
       post: true,
       role: 'stepedit',
-      subName: 'account',
     },
     scankiosk: {
       entity: kiosk,
       post: true,
       role: 'stepedit',
-      subName: 'account',
     },
     confirm: {
       entity: kiosk,
       post: true,
       role: 'stepconfirm',
-      subName: 'account',
     },
     steps: {
       entity: kiosk,
