@@ -1,20 +1,10 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton to="/kiosks/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
-        <template #next>
-          <DSmartTabs />
-        </template>
-      </BPartButtonsBand>
+     <FWelcome></FWelcome>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
