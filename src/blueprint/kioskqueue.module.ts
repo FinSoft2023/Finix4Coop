@@ -10,14 +10,17 @@ export const moduleBlueprint = defineModule('kiosks', 'คู้คิว', {
     root: {
       entity: kiosk,
       post: true,
+      role: 'stepedit',
     },
     choice: {
       entity: kiosk,
       post: true,
+      role: 'stepedit',
     },
     scankiosk: {
       entity: kiosk,
       post: true,
+      role: 'stepedit',
     },
     confirm: {
       entity: kiosk,
