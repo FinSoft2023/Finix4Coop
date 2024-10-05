@@ -1,6 +1,6 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
       <FChoiceContinue />
