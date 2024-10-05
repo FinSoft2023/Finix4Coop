@@ -1,10 +1,9 @@
 <template>
   <BFullPage>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
-     <FWelcome></FWelcome>
-
-
+     <FWelcome />
     </BPartPageBody>
   </BFullPage>
 </template>
