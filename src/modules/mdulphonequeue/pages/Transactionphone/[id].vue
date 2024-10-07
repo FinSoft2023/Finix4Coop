@@ -9,7 +9,7 @@ useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
     { label: 'Info', to: '/' },
-    { label: 'Edit', to: '/edit' },
+    { label: 'Queue', to: '/queue' },
   ],
   pageDef,
 );

@@ -1,12 +1,10 @@
 <template>
   <BPartPageBody>
     <DItemGrid col="x3">
-      <UPageCard
-        v-for="(module, index) in modules"
+      <UPageCard v-for="(module, index) in modules"
         :key="index"
         class="text-red-500"
-        v-bind="module"
-      >
+        v-bind="module">
         <template #description>
           <span class="line-clamp-2">{{ module.description }}</span>
         </template>
@@ -90,22 +88,22 @@ const modules = [
   },
   {
     title: 'สัญญากู้',
-    to: !accNo.value ? '' :'/transferonline/id/loanContract',
+    to: !accNo.value ? '' : '/transferonline/id/loanContract',
     icon: 'i-mdi-file-document',
   },
   {
     title: 'ฌาปนกิจ',
-    to: !accNo.value ? '' :'/transferonline/id/insurance',
+    to: !accNo.value ? '' : '/transferonline/id/insurance',
     icon: 'i-mdi-account-child',
   },
   {
     title: 'รายการหักเดือนล่าสุด',
-    to: !accNo.value ? '' :'/transferonline/id/debtPaymentReceipt',
+    to: !accNo.value ? '' : '/transferonline/id/debtPaymentReceipt',
     icon: 'i-mdi-report-box-outline',
   },
   {
     title: 'เงินปันผลและเฉลี่ยคืน',
-    to: !accNo.value ? '' :'/transferonline/id/dividend',
+    to: !accNo.value ? '' : '/transferonline/id/dividend',
     icon: 'i-heroicons-currency-dollar  ',
   },
 ];

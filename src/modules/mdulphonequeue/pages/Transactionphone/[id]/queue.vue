@@ -3,10 +3,9 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <!-- <UCard>
+      <UCard>
         <DEntitySection v-model="data" :entries :pending />
-      </UCard> -->
-      <FPrepare />
+      </UCard>
     </BPartPageBody>
 
     <template #side>
@@ -16,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const pageDef = useActiveModulePage('each.root');
+const pageDef = useActiveModulePage('each.queue');
 
 const { entries } = getEntrySchema(pageDef);
 const { apiGet } = useHostApi(pageDef);

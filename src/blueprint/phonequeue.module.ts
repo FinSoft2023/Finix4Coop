@@ -10,24 +10,10 @@ export const moduleBlueprint = defineModule('Transactionphone', 'เลือก
     root: {
       entity: kiosk,
       post: true,
-      role: 'stepedit',
-    },
-    prepare: {
-      entity: kiosk,
-      post: true,
-      role: 'stepedit',
-    },
-    confirm: {
-      entity: kiosk,
-      post: true,
-      role: 'stepconfirm',
-    },
-    steps: {
-      entity: kiosk,
-      role: 'steps',
     },
   },
   each: {
     root: kiosk,
+    queue: kiosk,
   },
 });
