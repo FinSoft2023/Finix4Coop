@@ -575,3 +575,64 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const transaction = defineChoicesList('codes-tx-Transaction', {
+  option1: 'กู้ฉุกเฉิน',
+  option2: 'กู้สามัญ',
+  option3: 'กู้หุ้น',
+  option4: 'กู้พิเศษ',
+  option5: 'ยืนยันตัวตน',
+  option6: 'ฝาก',
+  option7: 'ถอน',
+});
+
+export const counter = defineEntity({
+  name: 'ธุรกรรม',
+  root: [
+    {
+      model: 'txcode',
+      label: 'ประเภทธุรกรรม',
+      spec: {},
+      component: 'select',
+      choices: transaction,
+    },
+    {
+      model: 'name',
+      label: 'ชื่อสมาชิก',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'memcode',
+      label: 'รหัสสมาชิก',
+      spec: {},
+      component: 'text',
+    }
+  ],
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'Amount',
+          label: 'ยอดที่ต้องการกู้',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ],
+});
