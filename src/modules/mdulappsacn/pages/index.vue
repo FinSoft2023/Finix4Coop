@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UButton to="/appsacn/create" block>สแกน QR บนเอกสาร</UButton>
+    <UButton to="/appsacn/create" block>สแกน QR ค้นหาเอกสาร</UButton>
   </div>
 </template>
 
