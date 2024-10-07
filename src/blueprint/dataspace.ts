@@ -626,3 +626,34 @@ export const transfermoney = defineEntity({
     },
   ],
 });
+export const scan = defineEntity({
+  name: 'product',
+  root: [
+    {
+      model: 'name',
+      label: 'Name',
+      spec: {},
+      component: 'text',
+    },   
+  ],
+  sub: [
+    {
+      name: 'code',
+      component: 'entry',
+      fields: [
+        {
+          model: 'qrCode',
+          label: 'QR Code',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'upcCode',
+          label: 'UPC Code',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ],
+});
