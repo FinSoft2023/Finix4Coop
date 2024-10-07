@@ -3,15 +3,16 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
+      <FTransaction />  
+      <UForm @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4"
-      >
+        class="space-y-4">
         <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
+          <DEntitySection v-model="data"
+            :entries="entries"
+            :pending />
         </UCard>
 
         <UButton type="submit">Save</UButton>
@@ -23,7 +24,7 @@
 <script setup lang="ts">
 // import type { z } from 'zod';
 
-const pageDef = useActiveModulePage('create.transaction');
+const pageDef = useActiveModulePage('create.select');
 useBreadcrumb('Create');
 
 const { entries, schema } = getEntrySchema(pageDef);

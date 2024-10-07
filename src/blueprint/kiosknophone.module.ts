@@ -11,7 +11,11 @@ export const moduleBlueprint = defineModule('Transactionkiosk', 'เลือก
       entity: kiosk,
       post: true,
     },
-    Transaction: {
+    transaction: {
+      entity: kiosk,
+      post: true,
+    },
+    select: {
       entity: kiosk,
       post: true,
     },
