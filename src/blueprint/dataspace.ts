@@ -634,5 +634,17 @@ export const counter = defineEntity({
         },
       ],
     },
+    {
+      name: 'approve',
+      component: 'entry',
+      fields: [
+        {
+          model: 'Amount',
+          label: 'ยอดวงเงินที่อนุมัติ',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
   ],
 });

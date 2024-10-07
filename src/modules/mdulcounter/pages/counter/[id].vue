@@ -15,6 +15,7 @@ useSubLinks(
     { label: 'ถ่ายภาพหลักฐาน', to: '/takePhoto' },
     { label: 'Qr Code ยืนยันตัวตน', to: '/qrCode' },
     { label: 'กรอกข้อมูล', to: '/fillData' },
+    { label: 'อนุมัติวงเงิน', to: '/free' },
   ],
   pageDef,
 );

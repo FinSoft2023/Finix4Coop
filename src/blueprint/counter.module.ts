@@ -54,6 +54,8 @@ export const moduleBlueprint = defineModule('counter', 'เคาน์เตอ
     free: {
       entity: counter,
       post: true,
+      role: 'edit',
+      subName: 'approve',
     },
     free1: {
       entity: counter,

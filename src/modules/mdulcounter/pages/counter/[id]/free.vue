@@ -3,9 +3,19 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-      </UCard>
+      <UForm
+        @submit="handleSubmit"
+        :state="data"
+        :schema="schema"
+        :pending="pending"
+        class="space-y-4"
+      >
+        <UCard>
+          <DEntitySection v-model="data" :entries="entries" :pending />
+        </UCard>
+
+        <UButton type="submit">Save</UButton>
+      </UForm>
     </BPartPageBody>
 
     <template #side>
@@ -15,11 +25,22 @@
 </template>
 
 <script setup lang="ts">
+// import type { z } from 'zod';
+
 const pageDef = useActiveModulePage('each.free');
+useBreadcrumb('Edit');
 
-const { entries } = getEntrySchema(pageDef);
-const { apiGet } = useHostApi(pageDef);
+const { entries, schema } = getEntrySchema(pageDef);
+// type TSchema = z.output<typeof schema>;
+
+const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
+const { executePost } = apiPost();
 
-useBreadcrumb(pageDef.label);
+useComponentResolver(defaultEditResolvers);
+
+const handleSubmit = async () => {
+  await executePost(data.value);
+  navigateTo('./');
+};
 </script>
