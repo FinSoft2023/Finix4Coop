@@ -90,22 +90,22 @@ const modules = [
   },
   {
     title: 'สัญญากู้',
-    to: !accNo.value ? '' :'/transferonline/id/loanContract',
+    to: '/transferonline/id/loanContract',
     icon: 'i-mdi-file-document',
   },
   {
     title: 'ฌาปนกิจ',
-    to: !accNo.value ? '' :'/transferonline/id/insurance',
+    to: '/transferonline/id/insurance',
     icon: 'i-mdi-account-child',
   },
   {
     title: 'รายการหักเดือนล่าสุด',
-    to: !accNo.value ? '' :'/transferonline/id/debtPaymentReceipt',
+    to: '/transferonline/id/debtPaymentReceipt',
     icon: 'i-mdi-report-box-outline',
   },
   {
     title: 'เงินปันผลและเฉลี่ยคืน',
-    to: !accNo.value ? '' :'/transferonline/id/dividend',
+    to: '/transferonline/id/dividend',
     icon: 'i-heroicons-currency-dollar  ',
   },
 ];
