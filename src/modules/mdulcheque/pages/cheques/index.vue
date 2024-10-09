@@ -22,7 +22,7 @@
   useBreadcrumb('List');
 
   const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet({ 'fltr-val': 'finance' });
+  const { data, error, pending } = apiGet({ 'fltr-val': 'finance'});
 
   function selectItem(item: any) {
     navigateTo(`/cheques/${item.id}`);

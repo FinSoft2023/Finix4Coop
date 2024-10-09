@@ -21,15 +21,40 @@
 </template>
 
 <script setup lang="ts">
-setNavLinks([{
-  label: 'สมัครสมาชิก',
-  icon: 'i-mdi-face-recognition',
-  to: '/regmembers'
-}, {
-  label: 'Monitoring',
-  icon: 'i-heroicons-rocket-launch',
-  to: '/regmembers/txmonitor'
-}]);
+  setNavLinks([{
+    label: 'เรียกคิว',
+    icon: 'i-heroicons-square-3-stack-3d-20-solid',
+    to: '/queues'
+  }, {
+    label: 'รายการคำขอ ฝาก-ถอน',
+    icon: 'i-heroicons-book-open',
+    to: '/withdrawals'
+  }, {
+    label: 'เช็คเงินสด',
+    icon: 'i-heroicons-map',
+    to: '/cheques'
+  }, {
+    label: 'การเงิน',
+    icon: 'i-heroicons-map',
+    to: '/financials'
+  }, {
+    label: 'ปริ้นรายงาน',
+    icon: 'i-heroicons-map',
+    to: '/financials/rptPaid'
+  }, {
+    label: 'บัญชี',
+    icon: 'i-heroicons-square-3-stack-3d',
+    to: '/accounting'
+  }, {
+    label: 'สมัครสมาชิก',
+    icon: 'i-mdi-face-recognition',
+    to: '/regmembers'
+  }, {
+    label: 'Monitoring',
+    icon: 'i-heroicons-rocket-launch',
+    to: '/regmembers/txmonitor',
+    target: '_blank'
+  }]);
 
 const modules = [{
   title: 'จัดการเช็ค',

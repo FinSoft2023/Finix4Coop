@@ -3,5 +3,6 @@ export default defineEventHandler(async (event) => {
     url: '/api/savingacctxs',
     filterBy: 'state',
     filterOp: '=',
-  });
+  },
+    );
 });

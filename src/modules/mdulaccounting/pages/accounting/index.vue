@@ -6,7 +6,7 @@
       <BPartButtonsBand>
         <UButton to="/accounting/printDay"
           icon="i-heroicons-printer">ปริ้นรายงาน</UButton>
-          <UButton to="/accounting/create"
+          <UButton to="/accounting"
           icon="i-heroicons-x-circle">ปิดยอดรายวัน</UButton>
         <template #next>
           <DSmartTabs />

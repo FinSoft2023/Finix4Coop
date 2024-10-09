@@ -389,7 +389,7 @@ export const bankAccount = defineChoicesList('transfer-channels', {
   bank1: 'กรุงไทย',
   bank2: 'กสิกร',
 });
-export const purpose = defineChoicesList('codes-tx-operation', {
+export const purpose = defineChoicesList('purpose-operation', {
   option1: 'เพื่อการอันจำเป็น',
   option2: 'จัดหาสิ่งจำเป็นสำหรับครอบครัว',
   option3: 'อุปการะเลี้ยงดูบุคคลในครอบครัว',

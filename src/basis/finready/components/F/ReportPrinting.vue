@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(data, index) in withdrawalscheque"
+        <tr v-for="(data, index) in filteredWithdrawals"
           :key="data?.id">
           <td class="py-2 text-center">{{ index + 1 }}</td>
           <td class="py-2">{{ data?.accNo }}</td>
@@ -182,48 +182,51 @@
   </DocPaper>
 </template>
 
-<script setup
-  lang="ts">
-  import { ref, computed } from 'vue';
-  // import { useActiveModulePage, useHostApi } from 'some-api-package';
-  // import FMoneyAmount from 'path/to/FMoneyAmount';
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+// import { useActiveModulePage, useHostApi } from 'some-api-package';
+// import FMoneyAmount from 'path/to/FMoneyAmount';
+const currentDate = new Date().toLocaleDateString('th-TH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+const pageDef = useActiveModulePage('list.printReport');
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
 
-  const pageDef = useActiveModulePage('list.printReport');
-  const { apiGet } = useHostApi(pageDef);
-  const { data, error, pending } = apiGet({ 'fltr-val': 'unuse' });
+const filteredWithdrawals = computed(() => data.value?.filter(item => item.txcode === 'svawtd') || []);//ถอน
+const filteredDeposits = computed(() => data.value?.filter(item => item.txcode === 'svadps') || []);//ฝาก
+const filteredDepositsonline = computed(() => data.value?.filter(item => item.txcode === 'svadol') || []);//ฝาก online
 
-  const filteredWithdrawals = computed(() => data.value?.filter(item => item.txcode === 'svawtd') || []);//ถอน
-  const filteredDeposits = computed(() => data.value?.filter(item => item.txcode === 'svadps') || []);//ฝาก
-  const filteredDepositsonline = computed(() => data.value?.filter(item => item.txcode === 'svadol') || []);//ฝาก online
+const withdrawalscheque = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'cheque') || []);
+const withdrawalsonline = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'online') || []);
+const depositsonline = computed(() => filteredDeposits.value?.filter(item => item.transferChannel === 'online') || []);
+const deposits = computed(() => filteredDepositsonline.value?.filter(item => item.transferChannel === 'cash') || []);
 
-  const withdrawalscheque = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'cheque') || []);
-  const withdrawalsonline = computed(() => filteredWithdrawals.value?.filter(item => item.transferChannel === 'online') || []);
-  const depositsonline = computed(() => filteredDeposits.value?.filter(item => item.transferChannel === 'online') || []);
-  const deposits = computed(() => filteredDepositsonline.value?.filter(item => item.transferChannel === 'cash') || []);
-
-  const totalcheque = computed(() => withdrawalscheque.value.reduce((total, item) => total + item.amount, 0));
-  const totalwithdrawalsonline = computed(() => withdrawalsonline.value.reduce((total, item) => total + item.amount, 0));
-  const totalSum = computed(() => totalcheque.value + totalwithdrawalsonline.value);
-  const totaldepositsonline = computed(() => filteredDepositsonline.value.reduce((total, item) => total + item.amount, 0));
-  const totaldeposits = computed(() => filteredDeposits.value.reduce((total, item) => total + item.amount, 0));
-  const totalSumdeposits = computed(() => totaldepositsonline.value + totaldeposits.value);
+const totalcheque = computed(() => filteredWithdrawals.value.reduce((total, item) => total + item.amount, 0));
+const totalwithdrawalsonline = computed(() => withdrawalsonline.value.reduce((total, item) => total + item.amount, 0));
+const totalSum = computed(() => totalcheque.value + totalwithdrawalsonline.value);
+const totaldepositsonline = computed(() => filteredDepositsonline.value.reduce((total, item) => total + item.amount, 0));
+const totaldeposits = computed(() => filteredDeposits.value.reduce((total, item) => total + item.amount, 0));
+const totalSumdeposits = computed(() => totaldepositsonline.value + totaldeposits.value);
 
 
-  const transactionTypes: Record<string, string> = {
-    svadps: 'ฝาก',
-    svadol: 'ฝาก online',
-    svawtd: 'ถอน'
-  };
+const transactionTypes: Record<string, string> = {
+  svadps: 'ฝาก',
+  svadol: 'ฝาก online',
+  svawtd: 'ถอน'
+};
 
-  const transferChannels: Record<string, string> = {
-    online: 'โอน online',
-    cheque: 'ถอนเช็ค'
-  };
+const transferChannels: Record<string, string> = {
+  online: 'โอน online',
+  cheque: 'ถอนเช็ค'
+};
 
-  const getTransactionLabel = (item: any) => {
-    if (item?.txcode === 'svawtd') {
-      return transferChannels[item?.transferChannel] || transactionTypes[item?.txcode];
-    }
-    return transactionTypes[item?.txcode] || item?.txcode;
-  };
+const getTransactionLabel = (item: any) => {
+  if (item?.txcode === 'svawtd') {
+    return transferChannels[item?.transferChannel] || transactionTypes[item?.txcode];
+  }
+  return transactionTypes[item?.txcode] || item?.txcode;
+};
 </script>
