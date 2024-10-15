@@ -10,7 +10,9 @@
       </BPartButtonsBand>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
-
+      <p class="font-bold text-red-500">ค้างชำระ</p>
+      <DTable @selection-changed="selectItem" :data :pending />
+      <p class="font-bold text-green-500">ชำระแล้ว</p>
       <DTable @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
