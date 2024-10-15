@@ -4,8 +4,8 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton to="/tracking/create" icon="i-heroicons-plus-circle"
-          >New</UButton
+        <UButton to="/tracking/print" icon="i-heroicons-plus-circle"
+          >ปริ้นรายชื่อ</UButton
         >
         <template #next>
           <DSmartTabs />
@@ -14,7 +14,7 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <DTable @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

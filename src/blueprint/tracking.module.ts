@@ -8,6 +8,8 @@ export const moduleBlueprint = defineModule('tracking', 'ติดตามท�
     month1: tracking,
     month2: tracking,
     month3: tracking,
+    print: tracking,
+    import: tracking,
     closed: tracking,
   },
   create: {
@@ -36,6 +38,10 @@ export const moduleBlueprint = defineModule('tracking', 'ติดตามท�
       entity: tracking,
       post: true,
       role: 'print',
+    },
+    history: {
+      entity: tracking,
+      post: true,
     },
     cancel: {
       entity: tracking,

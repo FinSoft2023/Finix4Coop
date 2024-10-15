@@ -8,9 +8,9 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'Info', to: '/' },
-    { label: 'ปริ้นเอกสารติดตามทวงหนี้', to: '/print' },
-    { label: 'ประวัติ', to: '/cancel' },
+    { label: 'หน้าแรก', to: '/' },
+    { label: 'ประวัติ', to: '/history' },
+    { label: 'ปริ้นเอกสาร', to: '/print' },
   ],
   pageDef,
 );

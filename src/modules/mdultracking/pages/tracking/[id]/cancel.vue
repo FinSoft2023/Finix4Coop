@@ -6,15 +6,11 @@
       <UCard>
         <DEntitySection v-model="data" :entries :pending />
       </UCard>
-
-      <BOnPageModal
-        label="Please confirm"
-        actionText="ตกลง"
-        @action="handleConfirmation"
-      >
-        แน่ใจแล้วใช่หรือไม่
-      </BOnPageModal>
     </BPartPageBody>
+
+    <template #side>
+      <DSubLinks />
+    </template>
   </BFullPage>
 </template>
 
@@ -22,15 +18,8 @@
 const pageDef = useActiveModulePage('each.cancel');
 
 const { entries } = getEntrySchema(pageDef);
-const { apiGet, apiPost } = useHostApi(pageDef);
+const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
-const { postResult, executePost } = apiPost();
-
-const route = useRoute();
-async function handleConfirmation() {
-  await executePost({ deletedAt: new Date().toISOString() });
-  navigateTo(`/tracking/${route.params.id}`);
-}
 
 useBreadcrumb(pageDef.label);
 </script>

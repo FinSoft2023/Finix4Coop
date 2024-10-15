@@ -4,10 +4,10 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
-        <p class="text-gray-400 mt-2">เบอร์โทร</p>
-        <p class="text-md font-bold">065375749</p>
-      </UCard>
+          <DEntitySection v-model="data"
+            :entries
+            :pending />
+        </UCard>
       <DItemGrid col="x2">
         <UCard class="col-span-1">
           <div class="flex justify-between"> <p class="text-md font-bold">กู้สามัญ</p>

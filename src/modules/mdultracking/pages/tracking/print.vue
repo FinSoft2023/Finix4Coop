@@ -4,9 +4,10 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <template #next>
-          <DSmartTabs />
-        </template>
+        <UButton to="/tracking/import" icon="i-heroicons-plus-circle"
+          >ปริ้นเอกสาร</UButton
+        >
+   
       </BPartButtonsBand>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
@@ -17,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-const pageDef = useActiveModulePage('list.month1');
+const pageDef = useActiveModulePage('list.print');
 useBreadcrumb('List');
 
 const { apiGet } = useHostApi(pageDef);

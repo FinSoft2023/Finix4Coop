@@ -22,16 +22,20 @@ useSmartTabs([
     to: '/tracking',
   },
   {
-    label: 'ค้าง 1 เดือน',
+    label: 'เดือนที่ 1',
     to: '/tracking/month1',
   },
   {
-    label: 'ค้าง 2 เดือน',
+    label: 'เดือนที่ 2',
     to: '/tracking/month2',
   },
   {
-    label: 'ค้าง 3 เดือน',
+    label: 'เดือนที่ 3',
     to: '/tracking/month3',
   },
+  // {
+  //   label: 'Closed',
+  //   to: '/tracking/closed',
+  // },
 ]);
 </script>
