@@ -7,7 +7,7 @@
         <UButton to="/deduction/create" icon="i-heroicons-plus-circle"
           >New</UButton
         >
-        <UButton to="/deduction/" icon="i-heroicons-plus-circle"
+        <UButton to="/deduction/completed" icon="i-heroicons-plus-circle"
           >Export รายชื่อ</UButton
         >
         <template #next>

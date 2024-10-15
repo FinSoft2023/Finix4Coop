@@ -2,20 +2,11 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton to="/deduction/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
-        <template #next>
-          <DSmartTabs />
-        </template>
-      </BPartButtonsBand>
-
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
-
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
-    </BPartPageBody>
+    <DocPrintContainer title="Printing Sample Page">
+        <DocPaper />
+        <DocPaper :more="true" />
+        <DocChequePrinting />
+      </DocPrintContainer>
   </BFullPage>
 </template>
 
