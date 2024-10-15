@@ -18,7 +18,7 @@
               :entries
               :pending />
           </UCard>
-          <FMemberInfo :account="data?.account"></FMemberInfo>
+          <!-- <FMemberInfo :account="data?.account"></FMemberInfo> -->
         </DItemGrid>
         <UCard>
           <p>ตรวจสอบข้อมูล ขอกู้ฉุกเฉิน</p>

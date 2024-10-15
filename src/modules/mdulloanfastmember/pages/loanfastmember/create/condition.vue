@@ -13,7 +13,7 @@
         คุณสามารถดำเนินการทำธุกรรมออนไลน์ได้
       </h3>
       <div class="flex justify-center">
-        <UButton to="/">Home</UButton>
+        <UButton to="/loanfastmember">กลับ</UButton>
       </div>    
     </BPartPageBody>
   </BFullPage>
