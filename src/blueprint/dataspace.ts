@@ -627,4 +627,82 @@ export const bindanaccount = defineEntity({
  
 })
 
-
+export const registermember = defineEntity({
+  name: 'สมัครสมาชิก',
+  root: [   
+    {
+      model: 'fname',
+      label: 'ชื่อ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lname',
+      label: 'สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'Salary',
+      label: 'วันเดือนปีเกิด',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idcard',
+      label: 'เลขประจำตัวประชาชน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phone',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'fnameguarantor1',
+      label: 'ชื่อ (ผู้รับผลประโยชน์)',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lnameguarantor1',
+      label: 'สกุล (ผู้รับผลประโยชน์)',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phoneguarantor1',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'Spouse',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อ-สกุล',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'age',
+          label: 'อายุ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'address',
+          label: 'ที่อยู่',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ]
+})
