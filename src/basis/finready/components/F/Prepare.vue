@@ -11,11 +11,23 @@
     <h1 class="text-lg font-bold ">{{ module.title }}</h1>
     <div class="flex space-x-2 items-center">
       <UIcon :name="module.check"
-        class="w-5 h-5 text-primary"></UIcon>
+        class="w-5 h-5"></UIcon>
       <p>เตรียมข้อมูลเเล้ว</p>
     </div>
     <UButton type="submit" :to="module.to" color="primary"
       block>รับคิว</UButton>
+  </UCard>
+  <UCard v-for="(module, index) in modules2">
+    <UIcon :name="module.icon"
+      class="w-10 h-10 text-primary" />
+    <h1 class="text-lg font-bold ">{{ module.title }}</h1>
+    <div class="flex space-x-2 items-center">
+      <UIcon :name="module.check"
+        class="w-5 h-5"></UIcon>
+      <p>ยังไม่ได้เตรียมข้อมูล</p>
+    </div>
+    <UButton type="submit" :to="module.to" color="red"
+      block>เตรียมข้อมูล</UButton>
   </UCard>
 
 </template>
@@ -46,13 +58,6 @@ const modules = [
 
   },
   {
-    title: 'กู้ฉุกเฉิน',
-    to: '',
-    icon: 'i-mdi-cash-fast',
-    check: 'i-mdi-check-circle'
-
-  },
-  {
     title: 'สมัครฌาปนกิจ',
     to: '',
     icon: 'i-mdi-account-child',
@@ -71,6 +76,14 @@ const modules = [
     to: '',
     icon: 'i-mdi-document',
     check: 'i-mdi-check-circle'
+
+  },
+];
+const modules2 = [{
+    title: 'กู้ฉุกเฉิน',
+    to: '',
+    icon: 'i-mdi-cash-fast',
+    check: 'i-mdi-close-circle'
 
   },
 ];
