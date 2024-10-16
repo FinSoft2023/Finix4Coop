@@ -13,10 +13,10 @@
         เสร็จสิ้น
       </h2>
       <h3 class="text-center text-gray-500 dark:text-gray-300">
-        กดปุ่มด้านล่างเพื่อรับคิว
+        กดปุ่มด้านล่างเพื่อเลือกธุรกรรมและรับคิว
       </h3>
       <div class="flex justify-center">
-        <UButton to="/">รับคิว</UButton>
+        <UButton to="/">ดำเนินการต่อ</UButton>
       </div>
     </BPartPageBody>
 
