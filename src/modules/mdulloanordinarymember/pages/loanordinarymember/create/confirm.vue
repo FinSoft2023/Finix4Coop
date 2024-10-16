@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <DSmartSubStepper />
+    <!-- <DSmartSubStepper /> -->
 
     <UAlert
       icon="i-heroicons-document-check"
