@@ -16,11 +16,9 @@
         กดปุ่มด้านล่างเพื่อเลือกธุรกรรมและรับคิว
       </h3>
       <div class="flex justify-center">
-        <UButton to="/">ดำเนินการต่อ</UButton>
+        <UButton  @click="navigateToLocalhost">ดำเนินการต่อ</UButton>
       </div>
     </BPartPageBody>
-
-   
   </BFullPage>
 </template>
 
@@ -32,4 +30,7 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
+const navigateToLocalhost = () => {
+  window.location.href = 'http://localhost:3002/Transactionkiosk/create/select';
+};
 </script>
