@@ -588,3 +588,43 @@ export const kiosk = defineEntity({
   ],
 })
 
+export const bindanaccount = defineEntity({
+  name: 'ผูกบัญชี',
+  root: [   
+    {
+      model: 'idcard',
+      label: 'เลข ปปช',
+      spec: {},
+      component: 'number',
+    },      
+  ], 
+  sub: [
+    {
+      name: 'numberphone',
+      component: 'entry',
+      fields: [
+        {
+          model: 'numberphone',
+          label: 'เบอร์โทร',
+          spec: {},
+          component: 'number',
+        },       
+      ],
+    },
+    {
+      name: 'otp',
+      component: 'entry',
+      fields: [       
+        {
+          model: 'otp',
+          label: 'OTP',
+          spec: {},
+          component: 'number',
+        }, 
+      ],
+    },
+  ]
+ 
+})
+
+
