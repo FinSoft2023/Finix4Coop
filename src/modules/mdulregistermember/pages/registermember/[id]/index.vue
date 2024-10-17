@@ -3,21 +3,22 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
     <BPartPageBody>
       <div class="flex justify-center">
-        <Icon class="w-20 h-20 text-green-400"
-          name="line-md:confirm-circle"></Icon>
+        <Icon
+          class="w-20 h-20 text-green-400"
+          name="line-md:confirm-circle"
+        ></Icon>
       </div>
       <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white">
         ส่งคำขอสมัครสมาชิกแล้ว
       </h2>
-      <h3 class="text-center text-gray-500 dark:text-gray-300 ">
+      <h3 class="text-center text-gray-500 dark:text-gray-300">
         กรุณารอเจ้าหน้าที่ดำเนินการอนุมัติทำขอ
       </h3>
       <div class="flex justify-center">
-        <UButton to="/">Home</UButton>
-      </div>    
+        <!-- <UButton to="/registermember/58uqqe4ihazf3s95dunr/loan">Home</UButton> -->
+        <UButton @click="navigateToLocalhost">รับคิว</UButton>
+      </div>
     </BPartPageBody>
-
-   
   </BFullPage>
 </template>
 
@@ -29,4 +30,8 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
+
+const navigateToLocalhost = () => {
+  window.location.href = "http://localhost:3004/Transactionphone/3mqncdwd2d0cyfxyaj5r/queue";
+};
 </script>

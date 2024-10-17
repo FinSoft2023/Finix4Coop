@@ -31,6 +31,6 @@ const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
 const navigateToLocalhost = () => {
-  window.location.href = 'http://localhost:3002/Transactionkiosk/create/select';
+  window.location.href = 'http://localhost:3004/Transactionphone/create';
 };
 </script>

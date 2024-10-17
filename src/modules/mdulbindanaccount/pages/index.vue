@@ -9,10 +9,10 @@
       ></Icon>
     </div>
     <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white mt-4">
-      สมัครสมาชิกใหม่ใช่หรือไม่?
+      สมัครสมาชิกใหม่ ใช่หรือไม่?
     </h2>
     <h3 class="text-center text-gray-500 dark:text-gray-300 mt-4">
-      ขอเราทำความรู้จักคุณหน่อยได้ไหม
+      เราขอทำความรู้จักคุณหน่อยได้ไหม
     </h3>
     <div class="flex justify-center mt-8">
       <UButton to="/bindanaccount/create">ยินยอม</UButton>

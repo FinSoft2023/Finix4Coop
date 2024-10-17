@@ -27,7 +27,8 @@
 
         <BPartButtonsBand>
           <template #next>
-            <UButton type="submit">Save</UButton>
+            <UButton type="submit" class="mr-4">สมัครใหม่</UButton>
+            <UButton type="submit">ตกลง</UButton>
           </template>
         </BPartButtonsBand>
       </UForm>

@@ -3,24 +3,21 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
-        :state="data"
-        :schema="schema"
-        :pending="pending"
-        class="space-y-4"
-      >
-        <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
-        </UCard>
-
-        <UButton type="submit">Save</UButton>
-      </UForm>
+      <div class="flex justify-center mt-10">
+        <div>
+          <img
+            class="w-[50mm] h-[50mm] max-w-full rounded-lg"
+            src="https://static-00.iconduck.com/assets.00/capture-icon-512x512-kxoj9fna.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="flex justify-center mt-21">
+        <button @click="navigateToLocalhost3001">
+          กรุณาสแกน Qr Code ที่ตู้รับคิว
+        </button>
+      </div>
     </BPartPageBody>
-
-    <template #side>
-      <DSubLinks />
-    </template>
   </BFullPage>
 </template>
 
@@ -42,5 +39,9 @@ useComponentResolver(defaultEditResolvers);
 const handleSubmit = async () => {
   await executePost(data.value);
   navigateTo('./');
+};
+
+const navigateToLocalhost3001 = () => {
+  window.location.href = 'http://localhost:3000';
 };
 </script>

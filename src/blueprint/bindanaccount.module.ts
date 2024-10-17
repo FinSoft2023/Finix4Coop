@@ -18,6 +18,7 @@ export const moduleBlueprint = defineModule('bindanaccount', 'bindanaccount', {
       entity: bindanaccount,
       post: true,
       role: 'stepedit',
+      subName:'idcard',
     },
     numberPhone: {
       entity: bindanaccount,

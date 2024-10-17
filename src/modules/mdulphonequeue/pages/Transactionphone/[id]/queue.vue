@@ -4,7 +4,10 @@
 
     <BPartPageBody>
       <UCard>
-        <DEntitySection v-model="data" :entries :pending />
+        <!-- <DEntitySection v-model="data" :entries :pending /> -->
+        <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white">
+          คิว A1
+        </h2>
       </UCard>
     </BPartPageBody>
 

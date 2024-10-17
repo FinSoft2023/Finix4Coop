@@ -592,13 +592,25 @@ export const bindanaccount = defineEntity({
   name: 'ผูกบัญชี',
   root: [   
     {
-      model: 'idcard',
-      label: 'เลข ปปช',
+      model: 'iduser',
+      label: 'รหัสสมาชิก',
       spec: {},
       component: 'number',
     },      
   ], 
   sub: [
+    {
+      name: 'idcard',
+      component: 'entry',
+      fields: [
+        {
+          model: 'idcard',
+          label: 'เลข ปชช',
+          spec: {},
+          component: 'number',
+        },       
+      ],
+    },
     {
       name: 'numberphone',
       component: 'entry',
