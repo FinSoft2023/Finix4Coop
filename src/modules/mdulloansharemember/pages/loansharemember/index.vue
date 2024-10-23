@@ -46,7 +46,7 @@
           </div>
           <div>
             <p class="text-md mx-3 text-gray-400">วงเงินกู้</p>
-            <p class="text-md font-bold mx-3">50,000</p>
+            <p class="text-md font-bold mx-3">30,000</p>
             <p class="text-md mx-3 text-gray-400">วันที่กู้</p>
             <p class="text-md font-bold mx-3">20/02/2557</p>
             <p class="text-md mx-3 text-gray-400">สถานภาพสัญญา</p>

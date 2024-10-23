@@ -46,7 +46,7 @@
               </dd>
             </dl>
             <div class="flex justify-center mt-5">
-              <UButton type="submit">ตรวจสอบ</UButton>
+              <UButton type="submit">ตรวจสอบขอกู้</UButton>
             </div>
           </UCard>
 

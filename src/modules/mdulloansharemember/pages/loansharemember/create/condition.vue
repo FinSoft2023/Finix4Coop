@@ -19,8 +19,8 @@
         class="space-y-4"
       >
         <DItemGrid col="x3">
-          <UCard class="col-span-2">
-            <h1 class="text-xl font-bold">คุณไม่สามารถขอกู้ได้</h1>
+          <UCard class="col-span-2"> 
+            <h1 class="text-xl font-bold text-red-600">คุณไม่สามารถขอกู้ได้</h1>
             <p class="text-sm text-gray-500 dark:text-white">
               ระบบได้ทำการตรวจสอบเงื่อนไขตามข้อกำหนดในการขอกู้ของท่านเรียบร้อยแล้ว
             </p>
@@ -80,14 +80,18 @@
             <p class="text-sm text-gray-500 dark:text-white mt-1">
               ท่านสามารถกดที่ปุ่ม "เสร็จสิ้น" และทำการตรวจสอบสิทธิได้ใหม่ในครั้งถัดไป.
             </p>
+            <div class="flex justify-center mt-5">
+              
+              <UButton type="submit">เสร็จสิ้น</UButton>
+            </div>
           </UCard>
 
         </DItemGrid>
 
         <BPartButtonsBand>
-          <template #next>
+          <!-- <template #next>
             <UButton type="submit">เสร็จสิ้น</UButton>
-          </template>
+          </template> -->
         </BPartButtonsBand>
       </UForm>
     </BPartPageBody>
