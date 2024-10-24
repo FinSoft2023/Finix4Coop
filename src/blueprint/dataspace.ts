@@ -575,3 +575,46 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+export const registermembercounter = defineEntity({
+  name: 'รับเรื่องสมัครสมาชิก',
+  root: [   
+    {
+      model: 'Amount',
+      label: 'เลขขอทำรายการ',
+      spec: {},
+      component: 'number',
+    },   
+  ], 
+  sub: [
+    {
+      name: 'addInformation',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุล',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },       
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },       
+      ],
+    },
+  ]
+})
