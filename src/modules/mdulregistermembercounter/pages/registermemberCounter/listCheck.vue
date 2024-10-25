@@ -10,13 +10,13 @@
           >ส่งตรวจข้อมูล</UButton
         >
         <template #next>
-          <!-- <DSmartTabs /> -->
+          <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
       <BPartSectionTitle>รายชื่อสมัครทั้งหมด</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

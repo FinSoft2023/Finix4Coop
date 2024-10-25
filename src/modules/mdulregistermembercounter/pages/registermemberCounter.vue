@@ -19,11 +19,11 @@ setModulePageRoot([
 useSmartTabs([
   {
     label: 'รอตรวจสอบ',
-    to: '/registermemberCounter/linkeCheck',
+    to: '/registermemberCounter/listCheck',
   },
   {
     label: 'ตรวจสอบแล้ว',
-    to: '/registermemberCounter/stateCheck',
+    to: '/registermemberCounter/confirm',
   },
 ]);
 </script>

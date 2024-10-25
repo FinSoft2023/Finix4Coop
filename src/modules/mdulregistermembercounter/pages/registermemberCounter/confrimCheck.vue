@@ -5,18 +5,18 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="/registermemberCounter/linkeCheck"
+          to="/registermemberCounter/linkeCheck" target="_blank" rel="noopener noreferrer"
           icon="i-heroicons-plus-circle"
-          >ยืนยัน</UButton
+          >แชร์ลิงค์</UButton
         >
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
       <BPartSectionTitle>รายชื่อที่ต้องการส่ง</BPartSectionTitle>
       <UCard>
-        <FTableOfTxs @selection-changed="selectItem" :data :pending />
+        <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
       </UCard>
     </BPartPageBody>
   </BFullPage>

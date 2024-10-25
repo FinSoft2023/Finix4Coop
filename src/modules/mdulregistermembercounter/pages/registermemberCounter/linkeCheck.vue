@@ -3,20 +3,15 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton
-          to="/registermemberCounter/create"
-          icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+      <BPartButtonsBand>       
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
       <BPartSectionTitle>รายชื่อรอตรวจสอบ</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

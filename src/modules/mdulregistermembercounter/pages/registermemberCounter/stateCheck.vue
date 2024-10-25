@@ -5,9 +5,9 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="/registermemberCounter/create"
+          to="#"
           icon="i-heroicons-plus-circle"
-          >New</UButton
+          >บันทึกข้อมูล</UButton
         >
         <template #next>
           <DSmartTabs />
@@ -16,7 +16,7 @@
 
       <BPartSectionTitle>อนุมัติแล้ว</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
