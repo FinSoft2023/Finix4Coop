@@ -575,3 +575,66 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+export const loanofficer = defineEntity({
+  name: 'กู้สามัญ',
+  root: [   
+    {
+      model: 'Amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'Amountsent',
+      label: 'ยอดที่ส่ง',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'date',
+      label: 'เริ่มส่งเงินกู้คืน',
+      spec: {},
+      component: 'text',
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
