@@ -50,7 +50,7 @@ export const moduleBlueprint = defineModule('registermemberCounter', 'รับ�
     addInformation: {
       entity: registermembercounter,
       post: true,
-      role: 'edit',
+      role: 'addInformation',
     },
     scanPaper: {
       entity: registermembercounter,

@@ -5,16 +5,16 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="/registermemberCounter/create"
+          to="#"
           icon="i-heroicons-plus-circle"
-          >เรียกคิว</UButton
+          >ปิดยอด</UButton
         >
         <template #next>
           <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>รายการธุรกรรมทั้งหมด</BPartSectionTitle>
 
       <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>

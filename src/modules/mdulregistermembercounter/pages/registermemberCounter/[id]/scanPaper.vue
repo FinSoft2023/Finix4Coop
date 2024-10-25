@@ -11,10 +11,11 @@
         class="space-y-4"
       >
         <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
+        <UButton type="submit">สแกน เอกสาร</UButton>
+          <!-- <DEntitySection v-model="data" :entries="entries" :pending /> -->
         </UCard>
 
-        <UButton type="submit">Save</UButton>
+        <!-- <UButton type="submit">Save</UButton> -->
       </UForm>
     </BPartPageBody>
 

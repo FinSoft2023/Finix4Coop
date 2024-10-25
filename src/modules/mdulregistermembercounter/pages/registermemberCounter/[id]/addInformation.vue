@@ -10,6 +10,7 @@
         :pending="pending"
         class="space-y-4"
       >
+        <h1>เพิ่มข้อมูลผู้สมัครสมาชิก</h1>
         <UCard>
           <DEntitySection v-model="data" :entries="entries" :pending />
         </UCard>
