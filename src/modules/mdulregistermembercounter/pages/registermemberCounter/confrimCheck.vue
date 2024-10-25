@@ -5,18 +5,19 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="/registermemberCounter/create"
+          to="/registermemberCounter/linkeCheck"
           icon="i-heroicons-plus-circle"
-          >New</UButton
+          >ยืนยัน</UButton
         >
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
-
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <BPartSectionTitle>รายชื่อที่ต้องการส่ง</BPartSectionTitle>
+      <UCard>
+        <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      </UCard>
     </BPartPageBody>
   </BFullPage>
 </template>

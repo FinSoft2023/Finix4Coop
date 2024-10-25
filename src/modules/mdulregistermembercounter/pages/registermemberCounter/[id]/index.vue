@@ -28,9 +28,9 @@
         </DItemGrid>
       </UForm> -->
     </BPartPageBody>
-    <
+
     <template #side>
-      <DEntitySection v-model="data" :entries :pending />
+      <FPaymentState></FPaymentState>
       <DSubLinks />
     </template>
   </BFullPage>

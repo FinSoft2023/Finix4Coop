@@ -7,16 +7,16 @@
         <UButton
           to="/registermemberCounter/create"
           icon="i-heroicons-plus-circle"
-          >New</UButton
+          >เรียกคิว</UButton
         >
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

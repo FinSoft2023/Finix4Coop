@@ -31,13 +31,13 @@ const modules = [
   {
     title: 'ส่งตรวจข้อมูล',
     description: 'ข้อมูลรอตรวจสอบ',
-    to: '/listCheck',
+    to: '/registermemberCounter/listCheck',
     icon: 'i-mdi-file-report-outline',
   },
   {
     title: 'ปิดยอด',
     description: 'ปิดยอดเคาน์เตอร์',
-    to: '/confirm',
+    to: '/registermemberCounter/confirm',
     icon: 'i-heroicons-printer',
   },
 ];

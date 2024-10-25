@@ -14,7 +14,7 @@
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>อนุมัติแล้ว</BPartSectionTitle>
 
       <FTableOfTxs @selection-changed="selectItem" :data :pending />
     </BPartPageBody>

@@ -5,16 +5,16 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="/registermemberCounter/create"
+          to="/registermemberCounter/confrimCheck"
           icon="i-heroicons-plus-circle"
-          >New</UButton
+          >ส่งตรวจข้อมูล</UButton
         >
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>รายชื่อสมัครทั้งหมด</BPartSectionTitle>
 
       <FTableOfTxs @selection-changed="selectItem" :data :pending />
     </BPartPageBody>

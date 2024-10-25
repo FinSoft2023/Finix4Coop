@@ -13,6 +13,8 @@ useSubLinks(
     { label: 'scan เอกสาร', to: '/scanPaper' },
     { label: 'ปริ้นเอกสาร(เซ็นยืนยัน)', to: '/print' },
     { label: 'ยืนยันตัวตัน ', to: '/edit' },
+    { label: 'อนุมัติ', to: '/edit' },
+    { label: 'ไม่ผ่าน', to: '/cancel' },
   ],
   pageDef,
 );

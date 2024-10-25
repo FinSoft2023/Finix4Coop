@@ -13,17 +13,17 @@ setModulePageRoot([
   {
     label: 'RegistermemberCounter',
     icon: 'i-heroicons-square-3-stack-3d',
-    to: '/registermemberCounter',
+    to: '/registermemberCounter/listCheck',
   },
 ]);
 useSmartTabs([
   {
-    label: 'Active',
-    to: '/registermemberCounter',
+    label: 'รอตรวจสอบ',
+    to: '/registermemberCounter/linkeCheck',
   },
   {
-    label: 'Closed',
-    to: '/registermemberCounter/closed',
+    label: 'ตรวจสอบแล้ว',
+    to: '/registermemberCounter/stateCheck',
   },
 ]);
 </script>
