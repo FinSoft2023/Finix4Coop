@@ -590,7 +590,7 @@ export const registermembercounter = defineEntity({
       name: 'addInformation',
       component: 'entry',
       fields: [
-        {
+        [{
           model: 'name',
           label: 'ชื่อ',
           spec: {},
@@ -601,19 +601,19 @@ export const registermembercounter = defineEntity({
           label: 'สกุล',
           spec: {},
           component: 'text',
-        },
-        {
+        },],
+        [{
           model: 'memcode',
-          label: 'รหัสสมาชิก',
+          label: 'ตำแหน่ง',
           spec: {},
           component: 'text',
         },       
         {
           model: 'accNo',
-          label: 'เลขบัญชี',
+          label: 'เงินเดือน',
           spec: {},
           component: 'text',
-        },       
+        },]       
       ],
     },
   ]

@@ -30,7 +30,7 @@
     </BPartPageBody>
 
     <template #side>
-      <FPaymentState></FPaymentState>
+      <!-- <FPaymentState></FPaymentState> -->
       <DSubLinks />
     </template>
   </BFullPage>

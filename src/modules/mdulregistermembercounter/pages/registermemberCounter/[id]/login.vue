@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageBody>
       <div class="flex justify-center">
-        <UAuthForm
+        <!-- <UAuthForm
           title="เข้าใช้งานระบบ"
           description=""
           align="bottom"
@@ -24,7 +24,22 @@
               // color: 'gray',
             },
           ]"
-        />       
+        />        -->
+        <template>
+          <UAuthForm
+            title="เข้าใช้งานระบบ"
+            align="bottom"
+            icon="i-heroicons-user-circle"
+          />
+          <EInputText label="ชื่อผู้ใช้" 
+          placeholder="กรอกชื่อผู้ใช้"></EInputText>
+          <EInputText label="รหัส" 
+          placeholder="กรอกรหัสผ่าน"></EInputText>
+
+          <UButton to="/registermemberCounter/stateCheck" block
+            >เข้าสู่ระบบ</UButton
+          >
+        </template>
       </div>
     </BPartPageBody>
   </BFullPage>

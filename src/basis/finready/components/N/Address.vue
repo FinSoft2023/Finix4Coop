@@ -53,7 +53,7 @@ const submitForm = () => {
 };
 </script>
 
-<style scoped>
+<style scoped> 
 /* สไตล์เฉพาะสำหรับ component นี้ */
 form {
   max-width: 400px;

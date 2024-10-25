@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton
-          to="#"
+          to="/"
           icon="i-heroicons-plus-circle"
           >ปิดยอด</UButton
         >

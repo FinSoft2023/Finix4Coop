@@ -7,7 +7,7 @@
         <UButton
           to="#"
           icon="i-heroicons-plus-circle"
-          >บันทึกข้อมูล</UButton
+          >ส่งข้อมูลให้สหกรณ์</UButton
         >
         <template #next>
           <DSmartTabs />
@@ -16,7 +16,7 @@
 
       <BPartSectionTitle>อนุมัติแล้ว</BPartSectionTitle>
 
-      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs @selection-changed="addInformation" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
@@ -28,7 +28,7 @@ useBreadcrumb('List');
 const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
-function selectItem(item: any) {
-  navigateTo(`/registermemberCounter/${item.id}`);
+function addInformation(item: any) {
+  navigateTo(`/registermemberCounter/create/addInformation`);
 }
 </script>

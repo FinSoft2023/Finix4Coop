@@ -9,8 +9,9 @@
           icon="i-heroicons-plus-circle"
           >ส่งตรวจข้อมูล</UButton
         >
+
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 

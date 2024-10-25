@@ -40,6 +40,12 @@ const modules = [
     to: '/registermemberCounter/listCheck',
     icon: 'i-mdi-file-report-outline',
   },
+  {
+    title: 'ปริ้นรายงาน',
+    description: 'ปริ้นรายงานสมาชิกใหม่',
+    to: '/registermemberCounter/confirm',
+    icon: 'i-mdi-file-report-outline',
+  },
 ];
 </script>
 

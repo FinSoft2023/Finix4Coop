@@ -1,40 +1,44 @@
 <template>
-  <DTable :data="data"
-    :columns
-    :pending="pending" />
+  <DTablest :data="data" :columns :pending="pending" />
 </template>
 
-<script setup lang="ts" generic="T extends { id: any, [key: string]: any }">
+<script setup lang="ts" generic="T extends { id: any; [key: string]: any }">
 const selected = defineModel<T[] | undefined>({
   // default: [],
 });
 const props = defineProps<{
-  data: T[],
-  pending?: boolean,
+  data: T[];
+  pending?: boolean;
 }>();
 
-const columns = [{
-  key: 'id',
-  label: 'ลำดับที่'
-}, {
-  key: 'accNo',
-  label: 'เลขบัญชี'
-}, {
-  key: 'name',
-  label: 'ชื่อบัญชี'
-}, {
-  key: 'txcode',
-  label: 'ฝาก/ถอน'
-}, {
-  key: 'transferChannel',
-  label: 'ช่องทาง'
-}, {
-  key: 'amount',
-  label: 'จำนวนเงิน'
-}, {
-  key: 'counter',
-  label: 'เคาน์เตอร์'
-},{
-  key: 'row-actions',
-}];
+const columns = [
+  {
+    key: 'id',
+    label: 'ลำดับที่',
+  },
+  {
+    key: 'accNo',
+    label: 'รหัส',
+  },
+  {
+    key: 'name',
+    label: 'ชื่อ',
+  },
+  {
+    key: 'txcode',
+    label: 'สกุล',
+  },
+  {
+    key: 'transferChannel',
+    label: 'ตำแหน่ง',
+  },
+  {
+    key: 'amount',
+    label: 'เงินเดือน',
+  },
+  {
+    key: 'row-actions',
+    label: 'สถานะ',
+  },
+];
 </script>

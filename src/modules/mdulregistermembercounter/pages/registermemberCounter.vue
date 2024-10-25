@@ -17,13 +17,13 @@ setModulePageRoot([
   },
 ]);
 useSmartTabs([
-  {
-    label: 'รอตรวจสอบ',
-    to: '/registermemberCounter/listCheck',
-  },
-  {
-    label: 'ตรวจสอบแล้ว',
-    to: '/registermemberCounter/confirm',
-  },
+  // {
+  //   label: 'รอตรวจสอบ',
+  //   to: '/registermemberCounter/linkeCheck',
+  // },
+  // {
+  //   label: 'ตรวจสอบแล้ว',
+  //   to: '/registermemberCounter/stateCheck',
+  // },
 ]);
 </script>

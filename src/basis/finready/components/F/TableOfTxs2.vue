@@ -1,10 +1,13 @@
 <template>
   <DTable :data="data"
     :columns
-    :pending="pending" />
+    :pending="pending">
+  </DTable>
+    
 </template>
-
 <script setup lang="ts" generic="T extends { id: any, [key: string]: any }">
+
+
 const selected = defineModel<T[] | undefined>({
   // default: [],
 });
@@ -31,5 +34,5 @@ const columns = [{
 }, {
   key: 'amount',
   label: 'เงินเดือน'
-},];
+}];
 </script>

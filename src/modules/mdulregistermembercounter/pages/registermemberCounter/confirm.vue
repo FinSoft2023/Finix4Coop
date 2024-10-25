@@ -9,13 +9,13 @@
           >ปริ้นรายงาน</UButton
         >
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>รายชื่อสมัครใหม่ทั้งหมด</BPartSectionTitle>
 
-      <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
