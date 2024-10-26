@@ -46,6 +46,7 @@ const modules = [
     to: '/registermemberCounter/confirm',
     icon: 'i-mdi-file-report-outline',
   },
+ 
 ];
 </script>
 

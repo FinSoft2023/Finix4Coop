@@ -7,19 +7,14 @@ const pageDef = useActiveModulePage('each.root');
 
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
-  [
-    { label: 'ปริ้นเอกสาร(เซ็นยืนยัน)', to: '/print' },
+  [ 
+    { label: 'ปริ้น QR ทับฟอร์ม', to: '/qrPrint' },
+    { label: 'กรอกฟอร์มสมัคร', to: '/addInformation' },
     { label: 'scan เอกสาร', to: '/scanPaper' },
-    { label: 'ยืนยันตัวตัน ', to: '/edit' },
-  
-    // { label: 'ปริ้น QR ทับฟอร์ม', to: '/qrPrint' },
-    // { label: 'กรอกฟอร์มสมัคร', to: '/addInformation' },
-    // { label: 'scan เอกสาร', to: '/scanPaper' },
-    // { label: 'ปริ้นเอกสาร(เซ็นยืนยัน)', to: '/print' },
-    // { label: 'ยืนยันตัวตัน ', to: '/edit' },
-    
-    // { label: 'scan เอกสาร', to: '/scanPaper' },
-    // { label: 'อนุมัติ', to: '/edit' },
+    { label: 'ปริ้นเอกสาร(เซ็นยืนยัน)', to: '/print' },
+    { label: 'ยืนยันตัวตัน ', to: '/edit' },    
+    { label: 'scan เอกสาร', to: '/linkcheck' },
+    { label: 'เอกสารอนุมัติ', to: '/addInformation' },
     // { label: 'ไม่ผ่าน', to: '/cancel' },
   ],
   pageDef,
