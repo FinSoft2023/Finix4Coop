@@ -10,10 +10,11 @@
         :pending="pending"
         class="space-y-4"
       >
+        <UButton type="submit">บันทึก</UButton>
         <UCard>
           <div class="flex justify-between">
             <div>
-              <UButton>สแกนเอกสารหักเงินเดือน</UButton>
+              <UButton @click="showImage = true">สแกนเอกสารหักเงินเดือน</UButton>
             </div>
             <div class="flex gap-4">
               <p v-if="!selected">ไม่อนุมัติ</p>
@@ -25,8 +26,14 @@
               />
             </div>
           </div>
+          <div class="flex justify-center" v-if="showImage">
+            <img
+              class="h-[500px]"
+              src="http://womenfund.in.th/images/2560/06.2560/2708/2708.jpg"
+              alt="สแกนเอกสารหักเงินเดือน"
+            />
+          </div>
         </UCard>
-        <UButton type="submit">บันทึก</UButton>
       </UForm>
     </BPartPageBody>
 
@@ -37,15 +44,15 @@
 </template>
 
 <script setup lang="ts">
-// import type { z } from 'zod';
+import { ref } from 'vue';
+
 const selected = ref(false);
+const showImage = ref(false);
 
 const pageDef = useActiveModulePage('each.addInformation');
 useBreadcrumb('Edit');
 
 const { entries, schema } = getEntrySchema(pageDef);
-// type TSchema = z.output<typeof schema>;
-
 const { apiGet, apiPost } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 const { executePost } = apiPost();

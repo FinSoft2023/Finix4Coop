@@ -2,11 +2,15 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <BPartPageBody>
+    <BPartPageBody>     
       <BPartButtonsBand>
         <UButton
           to="/registermemberCounter/scan/qrPrint"
           >ปริ้นรายงาน</UButton
+        >
+        <UButton
+          to="/registermemberCounter/scan/qrPrint"
+          >ปริ้นเอกสารหักเงินเดือน</UButton
         >
         <template #next>
           <!-- <DSmartTabs /> -->
@@ -30,4 +34,5 @@ const { data, error, pending } = apiGet();
 function selectItem(item: any) {
   navigateTo(`/registermemberCounter/${item.id}`);
 }
+
 </script>
