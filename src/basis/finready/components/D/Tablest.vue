@@ -10,7 +10,7 @@
         <UBadge
           :ui="{ rounded: 'rounded-full' }"
           size="sm"
-          color="yellow"
+          color="sky"
           variant="solid"
           >รออนุมัติ</UBadge
         >
@@ -29,7 +29,7 @@
         <UBadge
           :ui="{ rounded: 'rounded-full' }"
           size="sm"
-          color="yellow"
+          color="sky"
           variant="solid"
           >รอตรวจสอบ</UBadge
         >      </slot>

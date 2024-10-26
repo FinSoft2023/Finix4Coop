@@ -41,7 +41,7 @@ const modules = [
     icon: 'i-mdi-file-report-outline',
   },
   {
-    title: 'ปริ้นรายงาน',
+    title: 'ปริ้นเอกสาร',
     description: 'ปริ้นรายงานสมาชิกใหม่',
     to: '/registermemberCounter/confirm',
     icon: 'i-mdi-file-report-outline',
