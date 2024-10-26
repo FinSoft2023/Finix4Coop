@@ -20,6 +20,7 @@
       <BPartSectionTitle>รายชื่อสมัครใหม่ทั้งหมด</BPartSectionTitle>
 
       <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FSelectable></FSelectable>
     </BPartPageBody>
   </BFullPage>
 </template>
