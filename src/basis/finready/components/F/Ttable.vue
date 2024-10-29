@@ -1,5 +1,5 @@
 <template>
-  <DTable :data="data"
+  <DTestTable :data="data"
     :columns
     :pending="pending" />
 </template>

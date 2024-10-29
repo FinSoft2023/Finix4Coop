@@ -18,13 +18,13 @@ setModulePageRoot([
 ]);
 useSmartTabs([
   {
-    label: 'เตรียมเอกสาร',
+    label: 'รายการทั้งหมด',
     to: '/loanofficer',
   },
-  {
-    label: 'รายการจากที่ประชุม',
-    to: '/loanofficer/closed',
-  },
+  // {
+  //   label: 'รายการจากที่ประชุม',
+  //   to: '/loanofficer/closed',
+  // },
   // {
   //   label: 'เสร็จสิ้น',
   //   to: '/loanofficer/finished',

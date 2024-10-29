@@ -18,6 +18,8 @@
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTtable @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>

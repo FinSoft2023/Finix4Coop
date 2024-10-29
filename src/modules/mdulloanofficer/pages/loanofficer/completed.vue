@@ -18,6 +18,7 @@
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
       <DTable @selection-changed="selectItem" :data :pending />
+      
     </BPartPageBody>
   </BFullPage>
 </template>
