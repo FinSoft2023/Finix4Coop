@@ -4,22 +4,22 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
+        <div class="flex justify-end gap-8">
+        <UButton to="/registermemberCounter/linkeCheck"
+       >ยืนยันส่งข้อมูล</UButton
+        >
+        <UButton to="/registermemberCounter" color="gray"
+          >ยกเลิก</UButton
+        >
+      </div>
         <template #next>
           <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
       <BPartSectionTitle>รายชื่อที่ต้องการส่ง</BPartSectionTitle>
       <UCard>
-        <FTableOfTxs2 @selection-changed="selectItem" :data :pending />
-      </UCard>
-      <div class="flex justify-end gap-8">
-        <UButton 
-        @click="toggleModal">ยืนยันส่งข้อมูล</UButton
-        >
-        <UButton to="/registermemberCounter/listCheck" color="red"
-          >ยกเลิก</UButton
-        >
-      </div>
+        <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      </UCard>      
       <div
         v-if="isModalOpen"
         class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50"

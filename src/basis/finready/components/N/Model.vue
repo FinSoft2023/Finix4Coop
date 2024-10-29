@@ -6,13 +6,21 @@
       <template #header>
         <div class="text-lg font-semibold">{{ label }}</div>
       </template>
-      <URadioGroup
-        v-model="selected"
-        legend="ผลอนุมัติที่ประชุม"
-        :options="options2"
-      />
       <template #footer>
         <div class="flex justify-end space-x-2">
+          <UCard>
+            <URadioGroup
+              v-model="selected"
+              legend="ผลอนุมัติที่ประชุม"
+              :options="options"
+            />
+            <URadioGroup
+              v-if="selected === 'con'"
+              v-model="selected2"
+              legend="ส่งเอกสารหักเงิน"
+              :options="options2"
+            />
+          </UCard>
           <UButton @click="handleClose" color="darkgray" variant="outline"
             >Cancel</UButton
           >

@@ -12,7 +12,7 @@
           size="sm"
           color="sky"
           variant="solid"
-          >รออนุมัติ</UBadge
+          >รอเอกสารหักเงิน</UBadge
         >
       </slot>
     </template>
@@ -31,7 +31,7 @@
           size="sm"
           color="sky"
           variant="solid"
-          >รอตรวจสอบ</UBadge
+          >รอเอกสารหักเงิน</UBadge
         >      </slot>
     </template>
   </UTable>

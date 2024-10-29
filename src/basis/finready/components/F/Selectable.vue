@@ -99,9 +99,9 @@ const columns = [
     key: 'amount',
     label: 'เงินเดือน',
   },
-  {
-    key: 'row-actions',
-    label: 'สถานะ',
-  },
+  // {
+  //   key: 'row-actions',
+  //   label: 'สถานะ',
+  // },
 ];
 </script>

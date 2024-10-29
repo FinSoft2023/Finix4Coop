@@ -44,4 +44,6 @@ const { apiGet } = useHostApi(pageDef);
 const { data, error, pending } = apiGet();
 
 useBreadcrumb(pageDef.label);
+
+
 </script>
