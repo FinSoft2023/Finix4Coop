@@ -1,5 +1,5 @@
 <template>
-  <DTablest :data="data" :columns :pending="pending" />
+  <DTablesta :data="data" :columns :pending="pending" />
 </template>
 
 <script setup lang="ts" generic="T extends { id: any; [key: string]: any }">

@@ -580,42 +580,15 @@ export const guarantee = defineEntity({
   root: [   
     {
       model: 'Amount',
-      label: 'ยอดที่ต้องการกู้ (บาท)',
-      spec: z.number().gt(0).lte(20000),
-      component: 'number',
-    },
-    {
-      model: 'installments',
-      label: 'เลือกจำนวนงวด',
-      spec: {},
-      component: 'select',
-      choices: installments,
-    },
-    {
-      model: 'Amountsent',
-      label: 'ยอดที่ส่ง',
-      spec: {},
-      component: 'number',
-    },
-    {
-      model: 'date',
-      label: 'เริ่มส่งเงินกู้คืน',
+      label: 'เรื่อง',
       spec: {},
       component: 'text',
     },
     {
-      model: 'purpose',
-      label: 'เพื่อวัตถุประสงค์',
+      model: 'installments',
+      label: 'ข้อความ',
       spec: {},
-      component: 'select',
-      choices: purpose,
-    },
-    {
-      model: 'bankAccount',
-      label: 'เลือกบัญชีธนาคาร',
-      spec: {},
-      component: 'radio',
-      choices: transferChannels,
+      component: 'text',
     },
   ], 
   sub: [

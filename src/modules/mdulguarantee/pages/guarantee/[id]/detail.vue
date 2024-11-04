@@ -14,13 +14,13 @@
           <DEntitySection v-model="data" :entries="entries" :pending />
         </UCard>
 
-        <UButton type="submit">Save</UButton>
+        <UButton to="/guarantee/print2/print2" type="submit">บันทึก</UButton>
       </UForm>
     </BPartPageBody>
 
-    <template #side>
+    <!-- <template #side>
       <DSubLinks />
-    </template>
+    </template> -->
   </BFullPage>
 </template>
 

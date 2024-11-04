@@ -1,10 +1,10 @@
 <template>
   <BSideNavPage>
     <UPageBody>
-      <div>
+      <!-- <div>
         <h1>(Guarantee) Index Page</h1>
         <NuxtLink to="/guarantee">guarantee</NuxtLink>
-      </div>
+      </div> -->
       <UPageGrid>
         <UPageCard
           v-for="(module, index) in modules"

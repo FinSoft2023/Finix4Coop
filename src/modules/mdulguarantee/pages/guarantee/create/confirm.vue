@@ -2,13 +2,13 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <DSmartSubStepper />
+    <!-- <DSmartSubStepper />
 
     <UAlert
       icon="i-heroicons-document-check"
       description="ระบุรายละเอียดขั้นตอนการทำงาน"
       :title="pageDef.label"
-    />
+    /> -->
 
     <BPartPageBody>
       <UForm
@@ -18,11 +18,11 @@
         :pending="pending"
         class="space-y-4"
       >
-        <DItemGrid col="x3">
+        <DItemGrid col="x1">
           <UCard class="col-span-2">
             <DEntitySection v-model="data" :entries :pending />
           </UCard>
-          <UCard> Your content here </UCard>
+          <!-- <UCard> Your content here </UCard> -->
         </DItemGrid>
 
         <BPartButtonsBand>

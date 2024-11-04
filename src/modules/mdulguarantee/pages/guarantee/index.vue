@@ -16,7 +16,7 @@
       </UPageGrid>
       <BPartButtonsBand>
         <template #next>
-          <UButton to="/guarantee/create" icon="i-heroicons-plus-circle"
+          <UButton icon="i-heroicons-plus-circle"
             >ดาวโหลดไฟล์เอกสาร</UButton
           >
           <!-- <DSmartTabs /> -->
@@ -43,15 +43,21 @@ function selectItem(item: any) {
 
 const modules = [
   {
+    title: 'ดาวโหลดไฟล์เอกสาร',
+    description: 'ดาวโหลดไฟล์เอกสาร',
+    to: '/guarantee/print1/print1',
+    icon: 'i-mdi-cheque-book',
+  },
+  {
     title: 'ปริ้นรายงาน',
-    description: 'บริการสมาชิก',
+    description: 'ปริ้นรายงาน',
     to: '/guarantee/print1/print1',
     icon: 'i-mdi-cheque-book',
   },
   {
     title: 'ใบขอเบิก',
-    description: 'ปิดยอดเคาน์เตอร์',
-    to: '/guarantee/print2/print2',
+    description: 'ปริ้นเอกสารขอเบิก',
+    to: '/guarantee/detail/detail',
     icon: 'i-heroicons-printer',
   },
   {
@@ -64,6 +70,12 @@ const modules = [
     title: 'หลักฐานโอนเงิน',
     description: 'สถานะรายการ',
     to: '/guarantee/detail/detail',
+    icon: 'i-mdi-file-report-outline',
+  },
+  {
+    title: 'อนุมัติฌาปนกิจ',
+    description: 'สถานะรายการ',
+    to: '/guarantee/listmenu',
     icon: 'i-mdi-file-report-outline',
   },
 ];
