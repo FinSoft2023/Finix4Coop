@@ -575,3 +575,86 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+export const guarantee = defineEntity({
+  name: 'ฌาปนกิจ',
+  root: [   
+    {
+      model: 'Amount',
+      label: 'ยอดที่ต้องการกู้ (บาท)',
+      spec: z.number().gt(0).lte(20000),
+      component: 'number',
+    },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'Amountsent',
+      label: 'ยอดที่ส่ง',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'date',
+      label: 'เริ่มส่งเงินกู้คืน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'purpose',
+      label: 'เพื่อวัตถุประสงค์',
+      spec: {},
+      component: 'select',
+      choices: purpose,
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลือกบัญชีธนาคาร',
+      spec: {},
+      component: 'radio',
+      choices: transferChannels,
+    },
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
