@@ -5,7 +5,7 @@
     <BPartPageBody>
       <BPartButtonsBand>
         <UButton @click.self="toggleModal" icon="i-heroicons-plus-circle"
-          >ส่งตรวจข้อมูลให้ฝ่ายการเงิน</UButton
+          >ดาวโหลดไฟล์เอกสาร</UButton
         >
         <template #next>
           <DSmartTabs />

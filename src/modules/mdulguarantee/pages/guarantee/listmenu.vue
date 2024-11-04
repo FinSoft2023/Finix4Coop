@@ -4,9 +4,19 @@
 
     <BPartPageBody>
       <BPartButtonsBand>
-        <UButton @click.self="toggleModal" icon="i-heroicons-plus-circle"
-          >ปิดเคาน์เตอร์</UButton
-        >
+        <div>
+          <UButton @click="triggerFileInput" icon="i-heroicons-plus-circle"
+            >นำเข้าไฟล์</UButton
+          >
+          <input
+            ref="fileInput"
+            type="file"
+            @change="handleFileUpload"
+            style="display: none"
+          />
+          <p v-if="fileName">ไฟล์ที่เลือก: {{ fileName }}</p>
+        </div>
+        <UButton @click.self="toggleModal">ตกลง</UButton>
         <template #next>
           <DSmartTabs />
         </template>
@@ -59,6 +69,7 @@
             <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
               ยืนยันปิดเคาน์เตอร์ ?
             </p>
+            <FTableOfTxs3 @selection-changed="selectItem" :data :pending />
             <div class="flex justify-center gap-4">
               <UButton @click="toggleModal" type="button" class="py-2 px-3">
                 ยืนยัน
@@ -100,4 +111,17 @@ function toggleModal() {
     isCopied.value = false; // Reset the copied state when opening the modal
   }
 }
+
+const fileName = ref<string | null>(null);
+const fileInput = ref<HTMLInputElement | null>(null);
+
+const triggerFileInput = () => {
+  fileInput.value?.click();
+};
+const handleFileUpload = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  if (target.files && target.files[0]) {
+    fileName.value = target.files[0].name;
+  }
+};
 </script>

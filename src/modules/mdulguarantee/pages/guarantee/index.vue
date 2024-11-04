@@ -16,9 +16,9 @@
       </UPageGrid>
       <BPartButtonsBand>
         <template #next>
-          <UButton icon="i-heroicons-plus-circle"
+          <!-- <UButton icon="i-heroicons-plus-circle"
             >ดาวโหลดไฟล์เอกสาร</UButton
-          >
+          > -->
           <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
@@ -45,7 +45,7 @@ const modules = [
   {
     title: 'ดาวโหลดไฟล์เอกสาร',
     description: 'ดาวโหลดไฟล์เอกสาร',
-    to: '/guarantee/print1/print1',
+    to: '/guarantee/closed',
     icon: 'i-mdi-cheque-book',
   },
   {

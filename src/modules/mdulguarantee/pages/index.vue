@@ -37,7 +37,7 @@ const modules = [
   {
     title: 'ปิดเคาน์เตอร์',
     description: 'ปิดยอดเคาน์เตอร์',
-    to: '/guarantee/listmenu',
+    to: '/guarantee/closed',
     icon: 'i-heroicons-printer',
   },
   {
@@ -46,11 +46,11 @@ const modules = [
     to: '/guarantee',
     icon: 'i-mdi-file-report-outline',
   },
-  {
-    title: 'ส่งตรวจข้อมูลให้ฝ่ายการเงิน',
-    description: 'สถานะรายการ',
-    to: '/guarantee/closed',
-    icon: 'i-mdi-file-report-outline',
-  },
+  // {
+  //   title: 'ส่งตรวจข้อมูลให้ฝ่ายการเงิน',
+  //   description: 'สถานะรายการ',
+  //   to: '/guarantee/closed',
+  //   icon: 'i-mdi-file-report-outline',
+  // },
 ];
 </script>
