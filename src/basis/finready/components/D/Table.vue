@@ -5,7 +5,7 @@
     @select="select">
     <template #row-actions-data="{row}">
       <slot>
-        <UIcon name="i-heroicons-arrow-top-right-on-square-16-solid" />
+        <UBadge :ui="{ rounded: 'rounded-full' }" size="sm" color="blue" variant="solid">รอตรวจสอบข้อมูล</UBadge>
       </slot>
     </template>
   </UTable>

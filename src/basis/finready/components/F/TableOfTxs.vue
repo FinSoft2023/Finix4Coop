@@ -17,23 +17,14 @@ const columns = [{
   key: 'id',
   label: 'ลำดับที่'
 }, {
-  key: 'accNo',
-  label: 'เลขบัญชี'
-}, {
   key: 'name',
-  label: 'ชื่อบัญชี'
+  label: 'ชื่อ-สกุล'
 }, {
-  key: 'txcode',
-  label: 'ฝาก/ถอน'
-}, {
-  key: 'transferChannel',
-  label: 'ช่องทาง'
-}, {
-  key: 'amount',
-  label: 'จำนวนเงิน'
-}, {
-  key: 'counter',
-  label: 'เคาน์เตอร์'
+  key: 'membercode',
+  label: 'รหัสสมาชิก'
+},{
+  key: 'transaction',
+  label: 'วัตถุประสงค์'
 },{
   key: 'row-actions',
 }];
