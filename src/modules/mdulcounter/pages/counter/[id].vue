@@ -14,7 +14,7 @@ useSubLinks(
     // { label: 'สแกนเก็บลายเซ็น', to: '/scanSignature' },
     // { label: 'ถ่ายภาพหลักฐาน', to: '/takePhoto' },
     // { label: 'Qr Code ยืนยันตัวตน', to: '/qrCode' },
-    // { label: 'กรอกข้อมูล', to: '/fillData' },
+    { label: 'รับเงินค่าฌาปนกิจ', to: '/fillData' },
     // { label: 'อนุมัติวงเงิน', to: '/free' },
   ],
   pageDef,
