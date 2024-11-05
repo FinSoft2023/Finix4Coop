@@ -25,7 +25,7 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs4 @selection-changed="selectItem" :data :pending />
     </BPartPageBody>
   </BFullPage>
 </template>
@@ -67,14 +67,8 @@ const modules = [
     icon: 'i-mdi-file-report-outline',
   },
   {
-    title: 'หลักฐานโอนเงิน',
-    description: 'สถานะรายการ',
-    to: '/guarantee/detail/detail',
-    icon: 'i-mdi-file-report-outline',
-  },
-  {
-    title: 'อนุมัติฌาปนกิจ',
-    description: 'สถานะรายการ',
+    title: 'โอนเงินคืน',
+    description: 'รายชื่อไม่ผ่านการอนุมัติ',
     to: '/guarantee/listmenu',
     icon: 'i-mdi-file-report-outline',
   },

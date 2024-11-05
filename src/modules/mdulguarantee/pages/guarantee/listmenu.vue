@@ -3,8 +3,19 @@
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
     <BPartPageBody>
+      <!-- <UPageGrid>
+        <UPageCard
+          v-for="(module, index) in modules"
+          :key="index"
+          v-bind="module"
+        >
+          <template #description>
+            <span class="line-clamp-2">{{ module.description }}</span>
+          </template>
+        </UPageCard>
+      </UPageGrid> -->
       <BPartButtonsBand>
-        <div>
+        <!-- <div>
           <UButton @click="triggerFileInput" icon="i-heroicons-plus-circle"
             >นำเข้าไฟล์</UButton
           >
@@ -15,16 +26,16 @@
             style="display: none"
           />
           <p v-if="fileName">ไฟล์ที่เลือก: {{ fileName }}</p>
-        </div>
-        <UButton @click.self="toggleModal">ตกลง</UButton>
+        </div> -->
+        <!-- <UButton @click.self="toggleModal">ตกลง</UButton> -->
         <template #next>
           <DSmartTabs />
         </template>
       </BPartButtonsBand>
 
-      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      <BPartSectionTitle>รายชื่อที่ต้องสมัครฌาปนกิจ</BPartSectionTitle>
 
-      <FTableOfTxs3 @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs4 @selection-changed="selectItem" :data :pending />
       <div
         v-if="isModalOpen"
         class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50"
@@ -124,4 +135,37 @@ const handleFileUpload = (event: Event) => {
     fileName.value = target.files[0].name;
   }
 };
+
+// const modules = [
+//   {
+//     title: 'ดาวโหลดไฟล์เอกสาร',
+//     description: 'ดาวโหลดไฟล์เอกสาร',
+//     to: '/guarantee/closed',
+//     icon: 'i-mdi-cheque-book',
+//   },
+//   {
+//     title: 'ปริ้นรายงาน',
+//     description: 'ปริ้นรายงาน',
+//     to: '/guarantee/print1/print1',
+//     icon: 'i-mdi-cheque-book',
+//   },
+//   {
+//     title: 'ใบขอเบิก',
+//     description: 'ปริ้นเอกสารขอเบิก',
+//     to: '/guarantee/detail/detail',
+//     icon: 'i-heroicons-printer',
+//   },
+//   {
+//     title: 'ใบขอโอนเงิน',
+//     description: 'สถานะรายการ',
+//     to: '/guarantee/detail/detail',
+//     icon: 'i-mdi-file-report-outline',
+//   },
+//   {
+//     title: 'หลักฐานโอนเงิน',
+//     description: 'สถานะรายการ',
+//     to: '/guarantee/detail/detail',
+//     icon: 'i-mdi-file-report-outline',
+//   }, 
+// ];
 </script>

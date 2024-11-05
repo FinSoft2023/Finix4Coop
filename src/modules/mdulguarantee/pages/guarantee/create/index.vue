@@ -57,4 +57,5 @@ const handleSubmit = async () => {
   const redirectPath = getNextStep(pageDef);
   navigateTo(`/guarantee/create/${redirectPath}`);
 };
+
 </script>

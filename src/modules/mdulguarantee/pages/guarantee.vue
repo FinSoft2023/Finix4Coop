@@ -16,14 +16,14 @@ setModulePageRoot([
     to: '/guarantee',
   },
 ]);
-// useSmartTabs([
-//   {
-//     label: 'Active',
-//     to: '/guarantee',
-//   },
-//   {
-//     label: 'Closed',
-//     to: '/guarantee/closed',
-//   },
-// ]);
+useSmartTabs([
+  {
+    label: 'ไม่ผ่าน',
+    to: '/guarantee/listmenu',
+  },
+  {
+    label: 'อนุมัติแล้ว',
+    to: '/guarantee',
+  }, 
+]);
 </script>

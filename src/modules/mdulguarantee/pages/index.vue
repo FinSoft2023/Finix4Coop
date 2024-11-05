@@ -41,16 +41,16 @@ const modules = [
     icon: 'i-heroicons-printer',
   },
   {
+    title: 'รายชื่อจากสินเชื่อ',
+    description: 'รายชื่อที่ต้องมาสมัครสมาชิก',
+    to: '/guarantee/listmenu',
+    icon: 'i-mdi-file-report-outline',
+  },
+  {
     title: 'ฌาปนกิจ',
     description: 'สถานะรายการ',
     to: '/guarantee',
     icon: 'i-mdi-file-report-outline',
   },
-  // {
-  //   title: 'ส่งตรวจข้อมูลให้ฝ่ายการเงิน',
-  //   description: 'สถานะรายการ',
-  //   to: '/guarantee/closed',
-  //   icon: 'i-mdi-file-report-outline',
-  // },
 ];
 </script>

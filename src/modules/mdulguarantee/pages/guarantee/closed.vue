@@ -8,7 +8,7 @@
           >ดาวโหลดไฟล์เอกสาร</UButton
         >
         <template #next>
-          <DSmartTabs />
+          <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
 
@@ -57,8 +57,14 @@
               <span class="sr-only">Success</span>
             </div>
             <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
-              ยืนยันส่งเรื่องให้ฝ่ายการเงิน ?
+              ยืนยันการดาวโหลดไฟล์ ?
             </p>
+            <!-- <URadioGroup
+              v-model="selected"
+              legend="เปลี่ยนสถานะ"
+              :options="options"
+            /> -->
+
             <div class="flex justify-center gap-4">
               <UButton @click="toggleModal" type="button" class="py-2 px-3">
                 ยืนยัน
@@ -99,4 +105,14 @@ function toggleModal() {
     isCopied.value = false; // Reset the copied state when opening the modal
   }
 }
+
+const options = [
+  {
+    value: 'email',
+    label: 'ส่งให้สมาคม',
+  }, 
+];
+
+const selected = ref('sms');
+
 </script>

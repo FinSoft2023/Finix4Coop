@@ -8,8 +8,8 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'อนุมัติ', to: '/' },
-    { label: 'ไม่อนุมัติ', to: '/closed' },
+  { label: 'อนุมัติ', to: '/cancel' },
+  { label: 'ไม่ผ่าน', to: '/cancel' },
   ],
   pageDef,
 );
