@@ -29,28 +29,34 @@ setNavLinks([
 
 const modules = [
   {
-    title: 'เรียกคิว',
-    description: 'บริการสมาชิก',
-    to: '/guarantee/create',
-    icon: 'i-mdi-cheque-book',
-  },
-  {
-    title: 'ปิดเคาน์เตอร์',
-    description: 'ปิดยอดเคาน์เตอร์',
+    title: 'ดาวโหลดไฟล์เอกสาร',
+    description: 'ดาวโหลดไฟล์เอกสาร',
     to: '/guarantee/closed',
-    icon: 'i-heroicons-printer',
+    // icon: 'i-mdi-cheque-book',
   },
   {
-    title: 'รายชื่อจากสินเชื่อ',
-    description: 'รายชื่อที่ต้องมาสมัครสมาชิก',
-    to: '/guarantee/listmenu',
-    icon: 'i-mdi-file-report-outline',
+    title: 'ปริ้นรายงาน',
+    description: 'ปริ้นรายงาน',
+    to: '/guarantee/print1/print1',
+    // icon: 'i-mdi-cheque-book',
   },
   {
-    title: 'ฌาปนกิจ',
+    title: 'ใบขอเบิก',
+    description: 'ปริ้นเอกสารขอเบิก',
+    to: '/guarantee/detail/detail',
+    // icon: 'i-heroicons-printer',
+  },
+  {
+    title: 'ใบขอโอนเงิน',
     description: 'สถานะรายการ',
-    to: '/guarantee',
-    icon: 'i-mdi-file-report-outline',
+    to: '/guarantee/detail/detail',
+    // icon: 'i-mdi-file-report-outline',
+  },
+  {
+    title: 'โอนเงินคืน',
+    description: 'รายชื่อไม่ผ่านการอนุมัติ',
+    to: '/guarantee/listmenu',
+    // icon: 'i-mdi-file-report-outline',
   },
 ];
 </script>
