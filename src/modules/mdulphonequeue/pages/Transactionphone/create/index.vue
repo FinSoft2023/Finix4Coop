@@ -1,22 +1,38 @@
 <template>
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
-
     <BPartPageBody>
       <FTransaction />
 
-      <UForm @submit="handleSubmit"
+      <UForm
+        @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4">
-        <UCard>
+        class="space-y-4"
+      >
+        <!-- <UCard>
           <DEntitySection v-model="data"
             :entries="entries"
             :pending />
-        </UCard>
-
-        <UButton type="submit">Save</UButton>
+        </UCard> -->
+        <BPartButtonsBand>
+          <UButton
+            @click="$router.back"
+            icon="i-heroicons-chevron-left-16-solid"
+            variant="outline"
+            >กลับ</UButton
+          >
+          <template #next>
+            <UButton type="submit">
+              ถัดไป
+              <UIcon
+                class="h-4 w-4"
+                name="i-heroicons-chevron-right-16-solid"
+              />
+            </UButton>
+          </template>
+        </BPartButtonsBand>
       </UForm>
     </BPartPageBody>
   </BFullPage>

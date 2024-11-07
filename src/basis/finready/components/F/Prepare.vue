@@ -12,6 +12,40 @@
       >กรอกข้อมูล</UButton
     >
   </UCard>
+  <UCard v-for="(module, index) in modules2">
+    <div class="flex items-center">
+      <UIcon :name="module.icon" class="w-8 h-8 text-primary" />
+      <h1 class="text-lg font-bold ml-4">{{ module.title }}</h1>
+    </div>
+    <div class="flex justify-between">
+      <div class="flex space-x-2 items-center mb-4 mt-2">
+        <UIcon :name="module.check" class="w-5 h-5 text-gray-500"></UIcon>
+        <p>ไม่มีข้อมูล!</p>
+      </div>
+      <div>
+        <UButton type="submit" :to="module.to" color="sky" block
+          >กรอกข้อมูลตอนนี้</UButton
+        >
+      </div>
+    </div>
+  </UCard>
+  <UCard v-for="(module, index) in modules">
+    <div class="flex items-center">
+      <UIcon :name="module.icon" class="w-8 h-8 text-primary" />
+      <h1 class="text-lg font-bold ml-4">{{ module.title }}</h1>
+    </div>
+    <div class="flex justify-between">
+      <div class="flex space-x-2 items-center mb-4 mt-2">
+        <UIcon :name="module.check" class="w-5 h-5 text-green-500"></UIcon>
+        <p>เตรียมข้อมูลเเล้ว</p>
+      </div>
+      <div>      
+        <UButton type="submit" :to="module.to" color="primary" block
+          >พร้อมรับคิว</UButton
+        >
+      </div>
+    </div>
+  </UCard>
   <UCard v-for="(module, index) in modules">
     <div class="flex items-center">
       <UIcon :name="module.icon" class="w-8 h-8 text-primary" />
@@ -43,31 +77,37 @@ const modules = [
   {
     title: 'ถอนเงิน',
     to: '',
-    icon: 'i-heroicons-wallet',
+    icon: 'i-heroicons-banknotes',
     check: 'i-heroicons-check-circle-20-solid',
   },
   {
     title: 'กู้สามัญ',
     to: '',
-    icon: 'i-mdi-cash-fast',
+    icon: 'i-heroicons-newspaper',
+    check: 'i-heroicons-check-circle-20-solid',
+  },
+  {
+    title: 'กู้ฉุกเฉิน',
+    to: '',
+    icon: 'i-heroicons-newspaper',
     check: 'i-heroicons-check-circle-20-solid',
   },
   {
     title: 'สมัครฌาปนกิจ',
     to: '',
-    icon: 'i-mdi-account-child',
+    icon: 'i-mdi-grave-stone',
     check: 'i-heroicons-check-circle-20-solid',
   },
   {
     title: 'สมัครสมาชิก',
     to: '',
-    icon: 'i-mdi-user-add',
+    icon: 'i-heroicons-user-plus',
     check: 'i-heroicons-check-circle-20-solid',
   },
   {
     title: 'สอบถามข้อมูล และอื่นๆ',
     to: '',
-    icon: 'i-mdi-document',
+    icon: 'i-heroicons-chat-bubble-left-ellipsis',
     check: 'i-heroicons-check-circle-20-solid',
   },
 ];
@@ -75,7 +115,7 @@ const modules2 = [
   {
     title: 'กู้ฉุกเฉิน',
     to: '',
-    icon: 'i-mdi-cash-fast',
+    icon: 'i-heroicons-newspaper',
     check: 'i-mdi-close-circle',
   },
 ];
