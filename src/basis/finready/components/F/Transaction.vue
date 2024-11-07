@@ -1,11 +1,13 @@
 <template>
-  <DItemGrid col="x3">
+  <DItemGrid col="x2">   
     <UPageCard v-for="(module, index) in modules"
       :key="index"
-      :class="['cursor-pointer', { 'bg-primary-200 text-white': isSelected(index) }]"
+      :class="['cursor-pointer', { 'border-green-500 border-2': isSelected(index) }]"
+      highlight
       v-bind="module"
       @click="toggleCard(index)">
-    </UPageCard>
+    </UPageCard>    
+
   </DItemGrid>
   <!-- <UButton size="xl"
     color="primary"
@@ -14,7 +16,7 @@
   </UButton> -->
 
   <!-- แสดงข้อมูลของการ์ดที่ถูกเลือก -->
-  <pre>{{ selectedModules }}</pre>
+  <!-- <pre>{{ selectedModules }}</pre> -->
 </template>
 
 <script setup lang="ts">
@@ -53,32 +55,32 @@ const modules = [
   {
     title: 'ถอนเงิน',
     to: '',
-    icon: 'i-heroicons-wallet',
+    icon: 'i-heroicons-banknotes',
   },
   {
     title: 'กู้สามัญ',
     to: '',
-    icon: 'i-mdi-cash-fast',
+    icon: 'i-heroicons-newspaper',
   },
   {
     title: 'กู้ฉุกเฉิน',
     to: '',
-    icon: 'i-mdi-cash-fast',
+    icon: 'i-heroicons-newspaper',
   },
   {
     title: 'สมัครฌาปนกิจ',
     to: '',
-    icon: 'i-mdi-account-child',
+    icon: 'i-mdi-grave-stone',
   },
   {
     title: 'สมัครสมาชิก',
     to: '',
-    icon: 'i-mdi-user-add',
+    icon: 'i-heroicons-user-plus',
   },
   {
     title: 'สอบถามข้อมูล และอื่นๆ',
     to: '',
-    icon: 'i-mdi-document',
+    icon: 'i-heroicons-chat-bubble-left-ellipsis',
   },
 ];
 </script>
