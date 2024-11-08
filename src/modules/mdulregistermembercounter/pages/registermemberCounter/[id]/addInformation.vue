@@ -10,7 +10,6 @@
         :pending="pending"
         class="space-y-4"
       >
-        <UButton type="submit">บันทึก</UButton>
         <!-- <UCard>
           <URadioGroup
             v-model="selected"
@@ -24,22 +23,7 @@
             :options="options2"
           />        
         </UCard> -->
-        <UCard>
-          <div class="flex justify-between">
-            <div>
-              <UButton @click="showImage = true"
-                >สแกนเอกสารหักเงินเดือน</UButton
-              >
-            </div>
-          </div>
-          <div class="flex justify-center" v-if="showImage">
-            <img
-              class="h-[500px]"
-              src="http://womenfund.in.th/images/2560/06.2560/2708/2708.jpg"
-              alt="สแกนเอกสารหักเงินเดือน"
-            />
-          </div>
-        </UCard>
+        <NScannerPaper></NScannerPaper>
       </UForm>
     </BPartPageBody>
 

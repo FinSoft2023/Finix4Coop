@@ -6,15 +6,12 @@
     @select="select"
   >
     <template #row-actions-data="{ row }">
-      <slot>       
-        <UBadge
-          :ui="{ rounded: 'rounded-full' }"
-          size="sm"
-          color="sky"
-          variant="solid"
-          >รอเอกสารหักเงิน</UBadge
-        >
-      </slot>
+      <div class="flex gap-2 items-center">
+        <span
+          class="inline-flex items-center justify-center w-3 h-3 ms-2 text-xs font-semibold text-blue-800 bg-blue-400 rounded-full"
+        />
+        รอเอกสารหักเงิน
+      </div>
     </template>
   </UTable>
   <UTable
@@ -25,14 +22,12 @@
     @select="select"
   >
     <template #row-actions-data="{ row }">
-      <slot>
-        <UBadge
-          :ui="{ rounded: 'rounded-full' }"
-          size="sm"
-          color="sky"
-          variant="solid"
-          >รอเอกสารหักเงิน</UBadge
-        >      </slot>
+      <div class="flex gap-2 items-center">
+        <span
+          class="inline-flex items-center justify-center w-3 h-3 ms-2 text-xs font-semibold text-blue-800 bg-blue-400 rounded-full"
+        />
+        รอเอกสารหักเงิน
+      </div>
     </template>
   </UTable>
 </template>

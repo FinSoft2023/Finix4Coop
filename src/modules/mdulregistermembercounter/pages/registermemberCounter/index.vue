@@ -10,9 +10,9 @@
         </template>
       </BPartButtonsBand>
 
-      <UButton @click.self="toggleModal" icon="i-mdi-send-outline"
+      <UButton @click.self="toggleModal" icon="i-heroicons-paper-airplane"
         >ปิดยอดเคาน์เตอร์</UButton
-      >     
+      >
       <BPartSectionTitle>รายการสมัครสมาชิกใหม่</BPartSectionTitle>
       <FTableOfTxs @selection-changed="selectItem" :data :pending />
       <div

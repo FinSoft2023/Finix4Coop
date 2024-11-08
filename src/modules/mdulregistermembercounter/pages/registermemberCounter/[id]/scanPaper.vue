@@ -10,10 +10,7 @@
         :pending="pending"
         class="space-y-4"
       >
-        <UCard>
-        <UButton type="submit">สแกน เอกสาร</UButton>
-          <!-- <DEntitySection v-model="data" :entries="entries" :pending /> -->
-        </UCard>
+        <NScannerPaper></NScannerPaper>
 
         <!-- <UButton type="submit">Save</UButton> -->
       </UForm>
@@ -44,4 +41,5 @@ const handleSubmit = async () => {
   await executePost(data.value);
   navigateTo('./');
 };
+
 </script>
