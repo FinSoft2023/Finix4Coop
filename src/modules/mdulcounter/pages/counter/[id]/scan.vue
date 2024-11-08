@@ -5,19 +5,20 @@
     <BPartPageBody>
       <!-- First UCard that will toggle the second one -->
       <UCard v-if="!showSecondCard" @click="toggleSecondCard">
-        <p class="text-2xl font-bold text-center">เก็บเข้าเอกสารกลับเข้าระบบ</p>
+        <!-- <p class="text-2xl font-bold text-center">เก็บเข้าเอกสารกลับเข้าระบบ</p>
         <img alt=""
           :src="imageUrl">
-        <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" />
+        <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" /> -->
+        <FScanPaper></FScanPaper>
       </UCard>
 
       <!-- Second UCard that will replace the first one -->
       <UCard v-if="showSecondCard" @click="toggleSecondCard">
-        <p class="text-2xl font-bold text-center">รูปของคุณ</p>
+        <p class="text-2xl font-bold text-center">เอกสารที่สแกนเเล้ว</p>
         <img src="https://rescue1global.org/wp-content/uploads/2015/07/R1.jpg" alt="Your Image" class="mx-auto mt-4" />
         <div class="flex justify-center mt-5">
-          <UButton class="mr-3">ถ่ายใหม่</UButton>
-          <UButton>ยืนยันรูปภาพ</UButton>
+          <UButton class="mr-3">สแกนเอกสารใหม่</UButton>
+          <UButton>ยืนยันการสแกน</UButton>
         </div>
       </UCard>
     </BPartPageBody>
