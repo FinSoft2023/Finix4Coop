@@ -3,8 +3,32 @@
     <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
-     <FKioskQRCode />
+      <FTransaction />
     </BPartPageBody>
+
+    
+    <BPartButtonsBand>
+      <UButton
+        class="mr-5"
+        size="xl"
+        icon="i-heroicons-chevron-left-16-solid"
+        variant="outline"
+        to="/kiosks/index/addline"
+      >
+        ย้อนกลับ
+      </UButton>
+      <template #next>
+        <UButton
+          size="xl"
+          variant="solid"
+          :trailing="true"
+          icon="i-heroicons-chevron-right-16-solid"
+          to="/kiosks/index"
+        >
+          รับคิว
+        </UButton>
+      </template>
+    </BPartButtonsBand>
   </BFullPage>
 </template>
 

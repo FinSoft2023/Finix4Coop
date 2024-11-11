@@ -581,7 +581,7 @@ export const kiosk = defineEntity({
   root: [
     {
       model: 'Queue',
-      label: 'คิว',
+      label: 'รหัสสมาชิก',
       spec: {},
       component: 'text',
     },

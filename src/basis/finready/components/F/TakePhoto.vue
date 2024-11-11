@@ -48,7 +48,7 @@
             variant="solid"
             icon="i-heroicons-arrow-right"
             :trailing="true"
-            to="/kiosks/create/choice">
+            to="/kiosks/index/addline">
             ดำเนินการต่อ
           </UButton>
         </div>
