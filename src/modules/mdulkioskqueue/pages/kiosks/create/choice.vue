@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
+        <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-4 lg:px-6">
           <UForm
             @submit="handleSubmit"
             :state="data"
@@ -37,6 +37,14 @@
           ย้อนกลับ
         </UButton>
         <template #next>
+          <UButton
+            class="mr-4"
+            size="xl"
+            variant="solid"
+            to="/kiosks/create/scankiosk"
+          >
+            ยังไม่มีรหัสสมาชิก
+          </UButton>
           <UButton
             size="xl"
             variant="solid"

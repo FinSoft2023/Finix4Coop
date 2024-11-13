@@ -4,7 +4,7 @@
 
     <BPartPageBody>
       <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
+        <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-4 lg:px-6">
           <h1
             class="mb-8 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white"
           >
@@ -73,7 +73,7 @@ useBreadcrumb(pageDef.label);
 const modules = [
   {
     title: 'โทรศัพท์',
-    to: '/kiosks/create/uiscan',
+    to: '/kiosks/index/uiscan',
     icon: 'i-mdi-cellphone',
   },
   {
