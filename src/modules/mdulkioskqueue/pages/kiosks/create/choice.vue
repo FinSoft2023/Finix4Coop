@@ -20,6 +20,13 @@
             <DEntitySection v-model="data"
               :entries="entries"
               :pending />
+            <div class="mt-8">
+              <ULink to="/components/link"
+                active-class="text-green"
+                inactive-class="mr-5 text-green-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                ยังไม่เป็นสมาชิก
+              </ULink>
+            </div>
           </UForm>
         </div>
       </section>
@@ -39,11 +46,6 @@
           to="/kiosks/create/scankiosk">
           ยังไม่มีรหัสสมาชิก
         </UButton> -->
-        <ULink to="/components/link"
-          active-class="text-green"
-          inactive-class="mr-5 text-green-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
-          ยังไม่เป็นสมาชิก
-        </ULink>
         <UButton size="xl"
           variant="solid"
           icon="i-heroicons-chevron-right-16-solid"
