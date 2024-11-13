@@ -1,6 +1,6 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
       <section class="bg-white dark:bg-gray-900">
@@ -20,43 +20,43 @@
               <h1
                 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white"
               >
-                ถ้ายังไม่มีเลขสมาชิกสามารถกดปุ่ม "ถัดไป" เพื่อดำเนินการต่อ
+                หากยังไม่มีเลขสมาชิกสามารถกดปุ่ม "ยังไม่เป็นสมาชิก" ด้านล่าง
               </h1>
               <DEntitySection v-model="data" :entries="entries" :pending />
           </UForm>
         </div>
       </section>
-      <BPartButtonsBand>
-        <UButton
-          class="mr-5"
-          size="xl"
-          variant="outline"
-          icon="i-heroicons-chevron-left-16-solid"
-          to="/kiosks/index/addline"
-        >
-          ย้อนกลับ
-        </UButton>
-        <template #next>
-          <UButton
-            class="mr-4"
-            size="xl"
-            variant="solid"
-            to="/kiosks/create/scankiosk"
-          >
-            ยังไม่มีรหัสสมาชิก
-          </UButton>
-          <UButton
-            size="xl"
-            variant="solid"
-            icon="i-heroicons-chevron-right-16-solid"
-            :trailing="true"
-            to="/kiosks/create/scankiosk"
-          >
-            ถัดไป
-          </UButton>
-        </template>
-      </BPartButtonsBand>
     </BPartPageBody>
+    <BPartButtonsBand>
+      <UButton
+        class="mr-5"
+        size="xl"
+        variant="outline"
+        icon="i-heroicons-chevron-left-16-solid"
+        to="/kiosks/index/addline"
+      >
+        ย้อนกลับ
+      </UButton>
+      <template #next>
+        <UButton
+          class="mr-4"
+          size="xl"
+          variant="solid"
+          to="/kiosks/create/scankiosk"
+        >
+          ยังไม่มีรหัสสมาชิก
+        </UButton>
+        <UButton
+          size="xl"
+          variant="solid"
+          icon="i-heroicons-chevron-right-16-solid"
+          :trailing="true"
+          to="/kiosks/create/scankiosk"
+        >
+          ถัดไป
+        </UButton>
+      </template>
+    </BPartButtonsBand>
   </BFullPage>
 </template>
 
