@@ -9,16 +9,18 @@
         </h2> -->
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <h1 class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-4xl text-gray-900 dark:text-white">
-            บัตรคิว
+          <h1 class="mb-4 text-center text-3xl tracking-tight  lg:text-4xl text-gray-900 dark:text-white">
+            หมายเลขคิว
           </h1>
           <div class="mx-auto max-w-screen-sm text-center">
             <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
               A-002
-            </h1>
-            <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
+            </h1>           
+            <p class="mt-8 text-lg font-light text-gray-500 dark:text-gray-400">
               กรุณาจดจำหมายเลขคิวของคุณไว้ เพื่อใช้เรียกบริการตามลำดับค่ะ
             </p>
+            <UIcon class="mt-5 w-[80px] h-[80px] text-gray-500"
+              name="i-mdi-note-edit-outline"></UIcon>
           </div>
         </div>
       </section>
