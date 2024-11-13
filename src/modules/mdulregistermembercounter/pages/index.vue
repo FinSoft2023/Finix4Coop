@@ -2,11 +2,9 @@
   <BSideNavPage>
     <UPageBody>
       <UPageGrid>
-        <UPageCard
-          v-for="(module, index) in modules"
+        <UPageCard v-for="(module, index) in modules"
           :key="index"
-          v-bind="module"
-        >
+          v-bind="module">
           <template #description>
             <span class="line-clamp-2">{{ module.description }}</span>
           </template>

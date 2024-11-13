@@ -6,11 +6,9 @@
         <NuxtLink to="/guarantee">guarantee</NuxtLink>
       </div> -->
       <UPageGrid>
-        <UPageCard
-          v-for="(module, index) in modules"
+        <UPageCard v-for="(module, index) in modules"
           :key="index"
-          v-bind="module"
-        >
+          v-bind="module">
           <template #description>
             <span class="line-clamp-2">{{ module.description }}</span>
           </template>
@@ -29,34 +27,29 @@ setNavLinks([
 
 const modules = [
   {
-    title: 'ดาวโหลดไฟล์เอกสาร',
-    description: 'ดาวโหลดไฟล์เอกสาร',
-    to: '/guarantee/closed',
-    // icon: 'i-mdi-cheque-book',
+    title: 'เรียกคิว',
+    description: 'บริการสมาชิก',
+    to: '/registermemberCounter/create',
+    icon: 'i-mdi-cheque-book',
   },
   {
-    title: 'ปริ้นรายงาน',
-    description: 'ปริ้นรายงาน',
-    to: '/guarantee/print1/print1',
-    // icon: 'i-mdi-cheque-book',
+    title: 'ปิดยอดเคาน์เตอร์',
+    description: 'ปิดยอดเคาน์เตอร์',
+    to: '/registermemberCounter',
+    icon: 'i-heroicons-printer',
   },
   {
-    title: 'ใบขอเบิก',
-    description: 'ปริ้นเอกสารขอเบิก',
-    to: '/guarantee/detail/detail',
-    // icon: 'i-heroicons-printer',
-  },
-  {
-    title: 'ใบขอโอนเงิน',
+    title: 'จัดการฌาปนกิจ',
     description: 'สถานะรายการ',
-    to: '/guarantee/detail/detail',
-    // icon: 'i-mdi-file-report-outline',
+    to: '/guarantee',
+    icon: 'i-mdi-file-report-outline',
   },
-  {
-    title: 'โอนเงินคืน',
-    description: 'รายชื่อไม่ผ่านการอนุมัติ',
-    to: '/guarantee/listmenu',
-    // icon: 'i-mdi-file-report-outline',
-  },
+
+  // {
+  //   title: 'กู้พิเศษ',
+  //   description: 'สถานะรายการ',
+  //   to: '/registermemberCounter/linkeCheck',
+  //   icon: 'i-mdi-file-report-outline',
+  // },
 ];
 </script>
