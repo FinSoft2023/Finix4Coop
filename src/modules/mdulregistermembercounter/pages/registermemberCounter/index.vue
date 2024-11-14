@@ -1,6 +1,6 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <BPartPageTitle></BPartPageTitle>
 
     <BPartPageBody>
       <BPartButtonsBand>
@@ -9,66 +9,102 @@
           <!-- <DSmartTabs /> -->
         </template>
       </BPartButtonsBand>
+      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+      
+      <div class="lg:flex lg:items-center lg:justify-between">
+        <div class="min-w-0 flex-1">
+          <!-- <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">ปิดยอดรายวัน
+            </h2> -->
 
-      <UButton @click.self="toggleModal" icon="i-heroicons-paper-airplane"
-        >ปิดยอดเคาน์เตอร์</UButton
-      >
-      <BPartSectionTitle>รายการสมัครสมาชิกใหม่</BPartSectionTitle>
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
-      <div
-        v-if="isModalOpen"
+          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+            <div class="mt-2 flex items-center">
+              <UIcon class="mr-1.5 size-5"
+                name="i-mdi-format-list-bulleted" />
+              20 รายการ
+            </div>
+            <div class="mt-2 flex items-center">
+              <UIcon class="mr-1.5 size-7"
+                name="i-mdi-identifier" />
+              Counter - 01
+            </div>
+            <div class="mt-2 flex items-center">
+              <UIcon class="mr-1.5 size-5"
+                name="i-mdi-date-range" />
+              14-11-2024
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 flex lg:ml-4 lg:mt-0">
+          <span class="sm:ml-3">
+            <UButton @click.self="toggleModal"
+              icon="i-heroicons-paper-airplane">ปิดยอดเคาน์เตอร์</UButton>
+          </span>
+        </div>
+      </div>
+      
+      <!-- <UButton @click.self="toggleModal"
+        icon="i-heroicons-paper-airplane">ปิดยอดเคาน์เตอร์</UButton> -->
+      <!-- <UCard> -->
+      <FTableOfTxs @selection-changed="selectItem"
+        :data
+        :pending />
+      <!-- </UCard> -->
+      <div v-if="isModalOpen"
         class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50"
-        @click.self="toggleModal"
-      >
-        <div
-          class="relative p-4 w-full max-w-lg max-h-full bg-white rounded-lg shadow dark:bg-gray-800"
-        >
+        @click.self="toggleModal">
+        <div class="relative p-4 w-full max-w-lg max-h-full bg-white rounded-lg shadow dark:bg-gray-800">
           <!-- Modal body -->
           <div class="relative p-4 text-center sm:p-5">
-            <button
-              type="button"
+            <button type="button"
               @click="toggleModal"
               class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-              data-modal-toggle="successModal"
-            >
-              <svg
-                aria-hidden="true"
+              data-modal-toggle="successModal">
+              <svg aria-hidden="true"
                 class="w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
+                  clip-rule="evenodd"></path>
               </svg>
               <span class="sr-only">Close modal</span>
             </button>
             <div
-              class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900 p-2 flex items-center justify-center mx-auto mb-3.5"
-            >
-              <Icon
-                class="w-8 h-8 text-yellow-500 dark:text-yellow-400"
-                name="i-mdi-warning-circle-outline"
-              ></Icon>
+              class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900 p-2 flex items-center justify-center mx-auto mb-3.5">
+              <Icon class="w-8 h-8 text-yellow-500 dark:text-yellow-400"
+                name="i-mdi-warning-circle-outline"></Icon>
 
               <span class="sr-only">Success</span>
             </div>
             <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
               ยืนยันปิดเคาน์เตอร์ ?
             </p>
+            <div class="mt-4 mb-4 flex justify-center lg:ml-4 lg:mt-0">
+              <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+
+                <div class="mt-2 flex items-center">
+                  <UIcon class="mr-1.5 size-5"
+                    name="i-mdi-clock-time-three-outline" />
+                  เวลา 16:00 น.
+                </div>
+                <div class="mt-2 flex items-center">
+                  <UIcon class="mr-1.5 size-5"
+                    name="i-mdi-format-list-bulleted" />
+                  20 รายการ
+                </div>
+              </div>
+            </div>
             <div class="flex justify-center gap-4">
-              <UButton @click="toggleModal" type="button" class="py-2 px-3">
+              <UButton @click="toggleModal"
+                type="button"
+                class="py-2 px-3">
                 ยืนยัน
               </UButton>
-              <UButton
-                @click="toggleModal"
+              <UButton @click="toggleModal"
                 type="button"
                 class="py-2 px-3"
-                color="gray"
-              >
+                color="gray">
                 ยกเลิก
               </UButton>
             </div>
