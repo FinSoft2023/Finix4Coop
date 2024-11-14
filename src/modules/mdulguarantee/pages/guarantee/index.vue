@@ -2,7 +2,7 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <BPartPageBody>     
+    <BPartPageBody>
       <!-- Speed Dial button -->
       <div class="flex justify-end">
         <button type="button"
