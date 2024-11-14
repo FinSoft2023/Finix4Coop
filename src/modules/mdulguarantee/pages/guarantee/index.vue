@@ -2,8 +2,28 @@
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
 
-    <BPartPageBody>
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+    <BPartPageBody>     
+      <!-- Speed Dial button -->
+      <div class="flex justify-end">
+        <button type="button"
+          @click="toggleSpeedDial"
+          data-dial-toggle="speed-dial-menu-text-inside-button-square"
+          aria-controls="speed-dial-menu-text-inside-button-square"
+          aria-expanded="false"
+          class="flex items-center justify-center text-gray rounded-lg w-20 h-full ">
+          เมนูอื่น ๆ
+          <svg xmlns="http://www.w3.org/2000/svg"
+            :class="{ 'rotate-5': isSpeedDialOpen }"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+          </svg>
+          <span class="sr-only">Open actions menu</span>
+        </button>
+      </div>
+      <div class="grid grid-cols-3 gap-4 content-start sm:grid-cols-3 xl:grid-cols-3 relative ">
         <UPageCard v-for="(module, index) in modules"
           :key="index"
           v-bind="module">
@@ -11,49 +31,24 @@
             <span class="line-clamp-2">{{ module.description }}</span>
           </template>
         </UPageCard>
-      </div>
 
+        <!-- Speed Dial Menu -->
+      </div>
       <!-- Speed Dial Menu -->
-      <div class="fixed bottom-6 end-24 group">
-        <div v-if="isSpeedDialOpen"
-          class="flex flex-col items-center mb-4 space-y-3">
-          <NuxtLink v-for="(action, idx) in actions"
-            :key="idx"
-            :to="action.to">
-            <button type="button"
-              class="w-[72px] h-[72px] text-gray-500 bg-white rounded-full border border-gray-200 dark:border-gray-600 hover:text-gray-900 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
-              <i :class="['w-6 h-6 mx-auto -mb-2', action.icon]"
-                aria-hidden="true"></i>
-              <span class="block mb-px text-sm font-medium">{{ action.label }}</span>
-            </button>
-          </NuxtLink>
-        </div>
-
-        <button @click="toggleSpeedDial"
-          type="button"
-          class="ml-2 flex items-center justify-center text-white bg-blue-700 rounded-full w-16 h-16 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
-          <svg class="w-6 h-6 transition-transform"
-            :class="{ 'rotate-45': isSpeedDialOpen }"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 1v16M1 9h16" />
-          </svg>
-          <span class="sr-only">Open actions menu</span>
-        </button>
+      <div v-show="isSpeedDialOpen"
+        id="speed-dial-menu-horizontal"
+        class="flex items-center space-x-3 h-30 grid grid-cols-3 gap-4 content-start">
+        <UPageCard v-for="(actions, index) in actions"
+          :key="index"
+          v-bind="actions">
+          <template #description>
+            <span class="line-clamp-2">{{ actions.description }}</span>
+          </template>
+        </UPageCard>
       </div>
-
-
       <BPartButtonsBand>
         <template #next>
-          <!-- <UButton icon="i-heroicons-plus-circle"
-            >ดาวโหลดไฟล์เอกสาร</UButton
-          > -->
-          <!-- <DSmartTabs /> -->
+
 
         </template>
       </BPartButtonsBand>
@@ -130,12 +125,12 @@ const modules = [
     to: '/guarantee/print1/print1',
     // icon: 'i-mdi-cheque-book',
   },
-  // {
-  //   title: 'ใบขอเบิก',
-  //   description: 'ปริ้นเอกสารขอเบิก',
-  //   to: '/guarantee/detail/detail',
-  //   // icon: 'i-heroicons-printer',
-  // },
+  {
+    title: 'ใบขอเบิก',
+    description: 'ปริ้นเอกสารขอเบิก',
+    to: '/guarantee/detail/detail',
+    // icon: 'i-heroicons-printer',
+  },
   // {
   //   title: 'ใบขอโอนเงิน',
   //   description: 'สถานะรายการ',
@@ -154,21 +149,22 @@ const modules = [
 const isSpeedDialOpen = ref(false);
 const actions = [
   {
-    label: 'ใบขอเบิก',
-    icon: 'i-mdi-note-text-outline',
-    to: '/guarantee/detail/detail',
-
+    title: 'ใบขอโอนเงิน',
+    description: 'ดาวโหลดไฟล์เอกสาร',
+    to: '/guarantee/closed',
+    // icon: 'i-mdi-cheque-book',
   },
   {
-    label: 'ใบขอโอนเงิน',
-    icon: 'i-mdi-paper-outline',
-    to: '/guarantee/detail/detail',
-
+    title: 'โอนเงินคืน',
+    description: 'ปริ้นรายงาน',
+    to: '/guarantee/print1/print1',
+    // icon: 'i-mdi-cheque-book',
   },
   {
-    label: 'โอนเงินคืน',
-    icon: 'i-mdi-money-100',
+    title: 'โอนเงินคืน',
+    description: 'ปริ้นเอกสารขอเบิก',
     to: '/guarantee/detail/detail',
+    // icon: 'i-heroicons-printer',
   },
 ];
 
