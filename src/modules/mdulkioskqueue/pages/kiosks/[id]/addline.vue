@@ -5,18 +5,17 @@
     <BPartPageBody>
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-4 lg:px-6">
-          <h1
-            class="mb-8 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white"
-          >
-            คุณต้องการรับคิวจากช่องทางไหน ?
+          <h1 class="mb-8 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
+            คุณได้นำโทรศัพท์มาด้วยไหม ?
+          </h1>
+          <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+            หากไม่มี กรุณาเลือกเมนู "ไม่มีโทรศัพท์" เพื่อรับคิวบนตู้
           </h1>
           <DItemGrid col="x2">
-            <UPageCard
-              v-for="(module, index) in modules"
+            <UPageCard v-for="(module, index) in modules"
               :key="index"
               class="text-red-500"
-              v-bind="module"
-            >
+              v-bind="module">
               <!-- <template #description>
                 <span class="line-clamp-2">{{ module.description }}</span>
               </template> -->
@@ -72,12 +71,12 @@ useBreadcrumb(pageDef.label);
 
 const modules = [
   {
-    title: 'โทรศัพท์',
+    title: 'มีโทรศัพท์ (รับด้วยโทรศัพท์)',
     to: '/kiosks/index/uiscan',
     icon: 'i-mdi-cellphone',
   },
   {
-    title: 'จากตู้ (ไม่มีโทรศัพท์)',
+    title: 'ไม่มีโทรศัพท์ (รับจากตู้คิว)',
     to: '/kiosks/create/choice',
     icon: 'i-mdi-cast-variant',
   },

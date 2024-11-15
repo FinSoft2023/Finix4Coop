@@ -12,7 +12,7 @@
             class="space-y-4">
             <h1
               class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
-              กรุณากรอกรหัสสมาชิกของท่าน
+              กรุณากรอกเลขสมาชิกของท่าน
             </h1>
             <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
               หากยังไม่มีเลขสมาชิกสามารถกดปุ่ม "ยังไม่เป็นสมาชิก" ด้านล่าง

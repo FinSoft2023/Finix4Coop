@@ -18,9 +18,7 @@
             </h1>           
             <p class="mt-8 text-lg font-light text-gray-500 dark:text-gray-400">
               กรุณาจดจำหมายเลขคิวของคุณไว้ เพื่อใช้เรียกบริการตามลำดับค่ะ
-            </p>
-            <UIcon class="mt-5 w-[80px] h-[80px] text-gray-500"
-              name="i-mdi-note-edit-outline"></UIcon>
+            </p>           
           </div>
         </div>
       </section>
