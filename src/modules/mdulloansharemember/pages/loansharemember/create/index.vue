@@ -15,44 +15,37 @@
         :pending="pending"
         class="space-y-4"
       >
-        <DItemGrid col="x3">
-          <UCard class="col-span-2">
-            <h1 class="text-xl font-bold">ตรวจสอบสิทธิขอกู้</h1>
-            <p class="text-sm text-gray-500 dark:text-white">
-              หากคุณต้องการขอกู้สินเชื่อกรุณากดที่ปุ่ม "ตรวจสอบ"
-              เพื่อทำการตรวจสอบข้อมูลในการกู้ก่อน
-            </p>
-            <dl>
-              <dt
-                class="mt-2 font-light leading-none text-gray-500 dark:text-white"
-              >
-                ชื่อ-สกุล
-              </dt>
-              <dd
-                class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
-              >
-                นพรุจ ชูธรรมสิทธิกุล
-              </dd>
-
-              <dt
-                class="mt-2 font-light leading-none text-gray-500 dark:text-white"
-              >
-                รหัสสมาชิก
-              </dt>
-              <dd
-                class="mb-4 font-semibold text-gray-900 sm:mb-5 dark:text-gray-400"
-              >
-                00191
-              </dd>
-            </dl>
-            <div class="flex justify-center mt-5">
-              <UButton type="submit">ตรวจสอบขอกู้</UButton>
-            </div>
-          </UCard>
-
-       
-        </DItemGrid>
-
+        <UCard class="col-span-2">
+          <!-- <h2 class="mt-4 mb-4 text-2xl text-center font-bold dark:text-white">
+          คิว A1
+        </h2> -->
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+  <h1
+    class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-4xl text-gray-900 dark:text-white"
+  >
+    ตรวจสอบขอกู้
+  </h1>
+  <div class="mx-auto max-w-screen-sm text-center">
+    <h1
+      class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500 flex items-center justify-center space-x-4"
+    >
+    <!-- <UIcon name="i-heroicons-clipboard-document-check"
+    class="w-32 h-32 text-green-500 dark:text-green-400"></UIcon> -->
+    <!-- <img src="https://www.saving-sskh.com/images/logo-saving.png" alt="Logo" style="width: 50%; height: auto;" class="mx-auto mb-3 mt-3" /> -->
+    <UIcon name="i-heroicons-document-magnifying-glass"
+    class="w-32 h-32 text-green-500 dark:text-green-500 "></UIcon>
+    </h1>
+    <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
+      กรุณาทำการตรวจสอบขอกู้ก่อนเพื่อตรวจสอบข้อมูลของท่านกับเงื่อนไขของสหกรณ์
+    </p>
+    <div class="flex justify-center mt-5">
+        <UButton type="submit">เริ่มตรวจสอบ</UButton>
+      </div>
+  </div>
+</div>
+      </section>
+        </UCard>
         <BPartButtonsBand>
           <template #next>
             <!-- <UButton type="submit">ตรวจสอบขอกู้</UButton> -->

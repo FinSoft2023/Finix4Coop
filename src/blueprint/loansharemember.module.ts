@@ -2,7 +2,7 @@ import { bigPlatformBuilder, loansharemember } from './dataspace';
 
 const { defineModule } = bigPlatformBuilder;
 
-export const moduleBlueprint = defineModule('loansharemember', 'ขอกู้หุ้น', {
+export const moduleBlueprint = defineModule('loansharemember', 'ขอสินเชื่อ', {
   list: {
     root: loansharemember,
     completed: loansharemember,

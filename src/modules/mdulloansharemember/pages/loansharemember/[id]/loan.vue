@@ -1,7 +1,39 @@
 <template>
   <BFullPage>
     <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
-
+    <UAlert
+      icon="i-heroicons-book-open"
+      description="กรอกข้อมูลขอสินเชื่อสหกรณ์"
+      :title="pageDef.label"
+    />
+    <UCard>
+      <p
+        class="flex justify-center text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white"
+      >
+        วงเงินกู้สูงสุดได้ถึง
+      </p>
+      <div class="flex justify-center">
+        <!-- <UIcon
+          name="i-mdi-currency-thai-baht"
+          class="w-10 h-10 text-green-600 dark:text-green-500 mt-3.5"
+        ></UIcon> -->
+        <p
+          class=" text-4xl font-bold text-green-600 dark:text-white mt-5"
+        >
+          100,000
+        </p>
+        <p
+          class=" text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white ml-2 mt-9"
+        >
+          บาท
+        </p>
+      </div>
+      <p
+        class="flex justify-center text-md font-bold text-gray-500 dark:text-gray-400 dark:text-white mt-5"
+      >
+        กรอกแบบฟอร์มด้านล่าง
+      </p>
+    </UCard>
     <BPartPageBody>
       <UForm
         @submit="handleSubmit"
@@ -11,15 +43,24 @@
         class="space-y-4"
       >
         <UCard>
-          <p class="text-sm mb-2 text-red-500 dark:text-white">
-            วงเงินที่สามารถกู้ได้ (30,000 บาท สูงสุด)
+          <!-- <div class="flex items-center mb-3">
+          <div class="flex-shrink-0">
+            <UIcon name="i-heroicons-building-library"
+            class="w-12 h-12 text-green-500 dark:text-green-500 "></UIcon>
+          </div>
+          <div class="flex-1 min-w-0 ms-4">
+            <p class="text-md font-bold text-green-600 dark:text-white">
+            วงเงินที่กู้ได้ สูงสุด
           </p>
+          <p class="text-md font-bold text-green-600 dark:text-white">
+            100,000 บาท 
+          </p>
+          </div>
+        </div> -->
+
           <DEntitySection v-model="data" :entries="entries" :pending />
         </UCard>
-
         <!-- Trigger Modal -->
-   
-
         <!-- Show selected name inside a UCard after selection with a close icon -->
         <UCard v-if="selectedName" class="mt-2 items-center">
           <div class="flex justify-between">
@@ -34,23 +75,97 @@
             </span>
           </div>
         </UCard>
-        <p class="font-bold">เพิ่มคนค้ำประกัน</p>
-        <UCard class="mt-2" @click="goToScan">
-          <p class="text-center">+ เพิ่มรายชื่อ</p>
-        </UCard>
-        <UCard class="mt-2 items-center">
-        <div class="flex justify-between">
-          <p>สมชาย ใจดี</p>
-          <span
-            @click="removeSelectedName"
-            class="cursor-pointer text-red-500"
+
+        <div
+          class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <h5
+              class="text-md font-bold leading-none text-gray-900 dark:text-white"
+            >
+              เลือกผู้ค้ำประกัน
+            </h5>
+            <a
+              @click="goToScan"
+              class="text-sm font-bold text-green-600 hover:underline dark:text-green-500"
+            >
+              + เลือกรายชื่อ
+            </a>
+          </div>
+
+          <p
+            v-if="guarantorsList.length === 0"
+            class="mt-8 text-gray-400 text-md text-center"
           >
-            &times;
-            <!-- This is the กากะบาท (×) symbol -->
-          </span>
+            คุณยังไม่ได้เลือกผู้ค้ำ
+          </p>
+          <p
+            v-if="guarantorsList.length === 0"
+            class="mb-5 text-gray-400 text-md text-center"
+          >
+            กรุณากดที่ปุ่ม "เลือกรายชื่อ"
+          </p>
+
+          <div class="flow-root">
+            <ul
+              role="list"
+              class="divide-y divide-gray-200 dark:divide-gray-700"
+            >
+              <li
+                v-for="(guarantor, index) in guarantorsList"
+                :key="guarantor.id"
+                class="py-3 sm:py-4"
+              >
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://www.thaimediafund.or.th/wp-content/uploads/2024/07/default-avatar-profile-icon-.jpg"
+                      :alt="`${guarantor.fullName} image`"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0 ms-4">
+                    <p
+                      class="text-md font-medium text-gray-900 truncate dark:text-white"
+                    >
+                      {{ guarantor.id }}
+                    </p>
+                    <p
+                      class="text-md text-gray-500 truncate dark:text-gray-400"
+                    >
+                      {{ guarantor.fullName }}
+                    </p>
+                  </div>
+                  <div
+                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
+                  >
+                    <button
+                      @click="removeGuarantor(index)"
+                      class="text-gray-500"
+                    >
+                      <!-- X Icon -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          d="M18 6L6 18M6 6l12 12"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </UCard>
-    
+
         <div class="flex justify-end">
           <UButton type="submit">ถัดไป</UButton>
         </div>
@@ -182,6 +297,12 @@ const goToScan = () => {
 
 const handleSubmit = async () => {
   await executePost(data.value);
-  navigateTo('./takePhoto');
+  navigateTo('./scan');
+};
+
+const guarantorsList = ref([{ id: '002405', fullName: 'นางสำลี ข้าวสวย' }]);
+
+const removeGuarantor = (index: number) => {
+  guarantorsList.value.splice(index, 1);
 };
 </script>
