@@ -4,21 +4,22 @@
 
     <BPartPageBody>
       <!-- First UCard that will toggle the second one -->
-      <UCard v-if="!showSecondCard" @click="toggleSecondCard">
-        <!-- <p class="text-2xl font-bold text-center">เก็บเข้าเอกสารกลับเข้าระบบ</p>
-        <img alt=""
-          :src="imageUrl">
-        <DShowQrCode qr-data="https://anycounter-428810.web.app/chooseInputCheck" /> -->
+      <UCard v-if="!showSecondCard"
+        >
         <FScanPaper></FScanPaper>
+        <div class="flex items-center justify-center">
+          <UButton @click="toggleSecondCard" icon="i-mdi-scanner">Scan Paper</UButton>
+        </div>
       </UCard>
 
       <!-- Second UCard that will replace the first one -->
-      <UCard v-if="showSecondCard" @click="toggleSecondCard">
-        <p class="text-2xl font-bold text-center">เอกสารที่สแกนเเล้ว</p>
-        <img src="https://rescue1global.org/wp-content/uploads/2015/07/R1.jpg" alt="Your Image" class="mx-auto mt-4" />
+      <UCard v-if="showSecondCard"
+        >
+        <p class="text-2xl font-bold text-center mb-4">เอกสารที่สแกนเเล้ว</p>
+        <DGallery :photos="photos" />
         <div class="flex justify-center mt-5">
-          <UButton class="mr-3">สแกนเอกสารใหม่</UButton>
-          <UButton>ยืนยันการสแกน</UButton>
+          <UButton @click="toggleSecondCard" class="mr-3">สแกนเอกสารใหม่</UButton>
+          <UButton @click="$router.back" >ยืนยันการสแกน</UButton>
         </div>
       </UCard>
     </BPartPageBody>
@@ -46,4 +47,13 @@ const showSecondCard = ref(false);
 const toggleSecondCard = () => {
   showSecondCard.value = !showSecondCard.value;
 };
+
+// Photos array ref for DGallery component
+const photos = ref([
+  { src: 'https://rescue1global.org/wp-content/uploads/2015/07/R1.jpg' },
+  { src: 'https://rescue1global.org/wp-content/uploads/2015/07/R1.jpg' },
+  { src: 'https://rescue1global.org/wp-content/uploads/2015/07/R1.jpg' },
+
+]);
+
 </script>

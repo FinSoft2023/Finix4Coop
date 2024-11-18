@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-4 md:grid-cols-6 gap-4">
       <div v-for="(image, index) in photos"
         :key="index">
-        <img class="h-auto max-w-full rounded-lg cursor-pointer"
+        <img class="h-[40mm] max-w-full rounded-lg cursor-pointer"
           :src="image.src"
           :alt="image.alt"
           @click="showImage(image)">
