@@ -9,18 +9,16 @@
         class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
         หากยังไม่มี กรุณากดปุ่ม แสดง QR Code เพื่อแอดไลน์ก่อนสแกนรับคิว
       </h1>
+
       <h1 v-if="isQRCodeVisible"
         class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
         QR Code สหกรณ์
       </h1>
       <div v-if="!isQRCodeVisible"
         class="mt-8 flex justify-center text-center items-center gap-8">
-        <img class="w-[300px] h-auto"
-          src="https://media.discordapp.net/attachments/789054794223976468/1306161567972327495/5.png?ex=6735a941&is=673457c1&hm=02aae0d6c5ac2cc94acaba04f5542bf9b3ca002440d98da7ce2efb51aa613970&=&format=webp&quality=lossless&width=375&height=468"
-          alt="QR Code" />
-        <!-- <img class="w-[300px] h-auto"
-          src="https://media.discordapp.net/attachments/789054794223976468/1306161568391761933/4.png?ex=6735a941&is=673457c1&hm=758453c1fc975a5fbe02bedb4643475357be57ecc17fb734a893f9b23426555e&=&format=webp&quality=lossless&width=375&height=468"
-          alt="QR Code" /> -->
+       <img class="w-[200px] h-auto"
+            src="../../../../apps/facingweb/public/images/photo1.jpg"
+          alt="photo1" />
       </div>
       <div class="mt-8 flex justify-center text-center items-center gap-8">
         <!-- ปุ่มที่เมื่อคลิกแล้วจะทำให้รูปแสดงและปุ่มหายไป -->
@@ -54,7 +52,7 @@
 
 
       <!-- ปุ่มดำเนินการต่อ -->
-      
+
     </div>
 
     <BPartButtonsBand>
