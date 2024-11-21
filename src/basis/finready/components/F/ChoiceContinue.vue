@@ -16,7 +16,7 @@
       </h1>
       <div v-if="!isQRCodeVisible"
         class="mt-8 flex justify-center text-center items-center gap-8">
-       <img class="w-[200px] h-auto"
+       <img class="w-[300px] h-auto"
             src="../../../../apps/facingweb/public/images/photo1.jpg"
           alt="photo1" />
       </div>
