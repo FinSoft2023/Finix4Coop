@@ -1,4 +1,4 @@
-# finrepo24b
+# finrepo24b [![Netlify Status](https://api.netlify.com/api/v1/badges/25813594-5efd-4ae7-9f2c-0e28c4e9ced4/deploy-status)](https://app.netlify.com/sites/sskhcounter/deploys)
 
 FinSoft monorepository template
 
