@@ -32,7 +32,7 @@
         </button>
         <!-- Clear Button -->
         <button @click="clearNumber"
-          class="p-5 text-2xl font-bold bg-red-500 text-white rounded-lg shadow hover:bg-red-600">
+          class="p-5 text-2xl font-bold bg-red-400 text-white rounded-lg shadow hover:bg-red-600">
           ลบ
         </button>
       </div>
