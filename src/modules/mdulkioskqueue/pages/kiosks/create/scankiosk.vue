@@ -13,7 +13,7 @@
         size="xl"
         icon="i-heroicons-chevron-left-16-solid"
         variant="outline"
-        to="/kiosks/index/addline"
+        to="/kiosks/index/memberinfo"
       >
         ย้อนกลับ
       </UButton>

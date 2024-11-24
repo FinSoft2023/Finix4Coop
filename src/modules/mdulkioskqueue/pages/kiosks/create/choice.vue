@@ -23,7 +23,7 @@
           variant="solid"
           icon="i-heroicons-chevron-right-16-solid"
           :trailing="true"
-          to="/kiosks/create/scankiosk">
+          to="/kiosks/index/memberinfo">
           ถัดไป
         </UButton>
       </template>
