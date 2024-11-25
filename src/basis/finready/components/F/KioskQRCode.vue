@@ -9,8 +9,7 @@
         เข้าไลน์ SAVING SSFH COOP สแกน QR Code
       </h1>
       <div class="mt-8 flex justify-center text-center items-center gap-8">
-
-        <!-- ภาพ QR Code ที่จะแสดงเมื่อปุ่มถูกคลิก -->
+        <!-- ภาพ QR Code -->
         <UCard>
           <div class="flex justify-center text-center items-center gap-8">
             <img class="w-[200px] h-auto"
@@ -19,13 +18,16 @@
           </div>
         </UCard>
       </div>
+      <!-- เวลาแบบนับถอยหลัง -->
       <div class="flex justify-center items-center gap-2">
         <UIcon name="i-mdi-refresh"
-          class="w-8 h-8"></UIcon>
+          class="w-8 h-8 cursor-pointer"
+          @click="resetCountdown" />
         <h1 class="mt-8 mb-8 text-center text-3xl tracking-tight lg:text-3xl text-gray-900 dark:text-white">
-          00:10:56
+          {{ countdown }}
         </h1>
       </div>
+      <!-- ปุ่มดำเนินการต่อ -->
       <div class="flex justify-center items-center gap-2 ml-5">
         <UButton size="xl"
           class="py-2.5 px-20 me-2 mb-2"
@@ -35,47 +37,46 @@
           ตกลง
         </UButton>
       </div>
-
-      <!-- <div class="flex justify-center mt-4 gap-8">
-        <UButton class="py-2.5 px-20 me-2 mb-2"
-          to="/kiosks/index/uiscan"
-          icon="i-heroicons-chevron-left-16-solid"
-          size="sm"
-          color="gray"
-          variant="solid"
-          label="Button"
-          >กลับ</UButton>
-        <UButton class="py-2.5 px-20 me-2 mb-2"
-          icon="i-heroicons-chevron-right-16-solid"
-          size="sm"
-          color="primary"
-          variant="solid"
-          label="Button"
-          :trailing="false"
-          :ui="{ rounded: 'rounded-full' }">ตกลง</UButton>
-      </div> -->
-
-
-      <!-- ปุ่มดำเนินการต่อ -->
     </div>
-    <BPartButtonsBand>
-      <!-- <UButton class="mr-5"
-        size="xl"
-        variant="outline"
-        icon="i-heroicons-chevron-left-16-solid"
-        to="/kiosks/index/uiscan">
-        ย้อนกลับ
-      </UButton> -->
-      <!-- <template #next>
-        <UButton size="xl"
-          class="py-2.5 px-20 me-2 mb-2"
-          variant="solid"
-          :trailing="true"
-          to="/kiosks/index/selsel">
-          ตกลง
-        </UButton>
-      </template> -->
-    </BPartButtonsBand>
-
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+
+const countdown = ref("00:10:00"); // เวลาเริ่มต้น
+let countdownInterval = null;
+
+const startCountdown = () => {
+  let timeRemaining = 10 * 60; // 10 นาทีในรูปแบบวินาที
+
+  countdownInterval = setInterval(() => {
+    if (timeRemaining > 0) {
+      timeRemaining--;
+      const minutes = Math.floor(timeRemaining / 60)
+        .toString()
+        .padStart(2, "0");
+      const seconds = (timeRemaining % 60).toString().padStart(2, "0");
+      countdown.value = `00:${minutes}:${seconds}`;
+    } else {
+      clearInterval(countdownInterval);
+      countdown.value = "00:00:00";
+      // สามารถเพิ่มการทำงานเมื่อเวลาหมดได้
+    }
+  }, 1000);
+};
+
+const resetCountdown = () => {
+  clearInterval(countdownInterval); // หยุดการนับถอยหลังก่อน
+  countdown.value = "00:10:00"; // รีเซ็ตค่าเริ่มต้น
+  startCountdown(); // เริ่มการนับถอยหลังใหม่
+};
+
+onMounted(() => {
+  startCountdown();
+});
+
+onUnmounted(() => {
+  clearInterval(countdownInterval);
+});
+</script>
