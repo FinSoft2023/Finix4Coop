@@ -9,27 +9,50 @@
         </h2> -->
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <h1 class="mb-4 text-center text-3xl tracking-tight  lg:text-4xl text-gray-900 dark:text-white">
-            หมายเลขคิว
-          </h1>
-          <div class="mx-auto max-w-screen-sm text-center">
-            <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
+          <div class="flex justify-center">
+            <h1 class="mb-2 mt-1 text-center text-3xl tracking-tight  lg:text-4xl text-gray-900 dark:text-white">
+              กำลังพิมพ์บัตรคิวของคุณ
+            </h1>
+           
+</div>
+
+            <UCard class="mt-3 max-w-md mx-auto">
+            <div class="text-center mt-8">
+              <h1 class="mb-4 text-center text-xl tracking-tight lg:text-2xl text-gray-900 dark:text-white">
+              หมายเลขคิว
+              </h1> 
+              <h1 class="mb-8 text-5xl tracking-tight font-extrabold lg:text-6xl text-primary-600 dark:text-primary-500">
               A-002
-            </h1>           
-            <p class="mt-8 text-lg font-light text-gray-500 dark:text-gray-400">
-              กรุณาจดจำหมายเลขคิวของคุณไว้ เพื่อใช้เรียกบริการตามลำดับค่ะ
-            </p>           
-          </div>
+              </h1>  
+              <h1 class="mb-4 text-center text-xl tracking-tight lg:text-2xl text-gray-900 dark:text-white">
+              มีคิวก่อนหน้าอยู่ 3 คิว
+              </h1>         
+              <p class="mt-12 text-lg font-light text-gray-500 dark:text-gray-400">
+              </p>           
+            </div>
+            </UCard>
+            <div class="flex justify-center">
+             
+            </div>
+            <div class="mt-10  max-w-md mx-auto rounded-lg">
+              <client-only>
+                <Vue3Lottie
+                animationLink="https://lottie.host/e0cedb3e-4cde-44b2-93fc-60b878a6155d/ej5ii6iTxG.json"
+                 :height="200"
+                  :width="200"
+                 />
+              </client-only>
+            </div>
         </div>
       </section>
       <div class="flex justify-center mt-0">
-        <UButton size="xl"
+        <!-- <UButton size="xl"
           class="py-2.5 px-20 me-2 mb-2"
           variant="solid"
           :trailing="true"
           to="/kiosks">
           ตกลง
-        </UButton>
+        </UButton> -->
         <!-- <UButton size="xl" variant="solid" :trailing="true">
                     ไม่ต้องการ
                   </UButton> -->
@@ -43,6 +66,7 @@
 </template>
 
 <script setup lang="ts">
+import { Vue3Lottie } from 'vue3-lottie';
 const pageDef = useActiveModulePage('each.root');
 
 const { entries } = getEntrySchema(pageDef);
