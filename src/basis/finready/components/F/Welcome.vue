@@ -18,7 +18,7 @@
 
         <UButton size="xl"
           color="blue"
-          to="/kiosks/create">
+          to="/kiosks/preparephoto">
           รับคิว
           ติดต่อสหกรณ์</UButton>
 

@@ -3,21 +3,26 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center">
         <p class="mb-4 text-2xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">
-          เตรียมตัวถ่ายภาพ ยืนยันตัวตน 
+          เตรียมตัว "ถ่ายภาพ" ยืนยันตัวตน
         </p>
         <p class="mb-4 text-lg tracking-tight text-gray-600 dark:text-gray-300">
           กรุณาทำการตั้งค่าและเตรียมตัวให้พร้อมก่อนที่จะทำการยืนยันตัวตน
         </p>
-     
-        <div class="mt-5">
-
-          <UButton 
-          to="/kiosks/create"
+        <div class="flex justify-center mb-8">
+          <client-only>
+                <Vue3Lottie
+               animationLink="https://lottie.host/58c8b5de-64d8-4ce4-af3a-aab5dc38896f/BzAMrKZpao.json"
+                 :height="400"
+                  :width="400"
+                 />
+              </client-only>
+        </div>
+        <div class="mt-8">
+          <UButton to="/kiosks/create"
             size="xl"
             variant="solid">
             เริ่มถ่ายภาพ
           </UButton>
-
         </div>
       </div>
     </div>
@@ -26,6 +31,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { Vue3Lottie } from 'vue3-lottie';
 import { useRouter } from 'vue-router';
 
 const countdown = ref(3);  // 3 วินาที
@@ -46,7 +52,3 @@ const startCountdown = () => {
   }, 1000);
 };
 </script>
-
-<style>
-/* คุณสามารถปรับสไตล์เพิ่มเติมที่นี่ */
-</style>
