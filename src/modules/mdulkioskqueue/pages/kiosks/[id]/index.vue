@@ -25,7 +25,7 @@
               A-002
               </h1>  
               <h1 class="mb-4 text-center text-xl tracking-tight lg:text-2xl text-gray-900 dark:text-white">
-              มีคิวก่อนหน้าอยู่ 3 คิว
+              มีคิวก่อนหน้าอยู่ 4 คิว
               </h1>         
               <p class="mt-12 text-lg font-light text-gray-500 dark:text-gray-400">
               </p>           
