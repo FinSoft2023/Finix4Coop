@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '../../modules/mdulregmember',
     '../../modules/mdulque',
     '../../modules/mdulofficer',
+    '../../modules/mdulkioskqueue',
   ],
 
   nitro: {
