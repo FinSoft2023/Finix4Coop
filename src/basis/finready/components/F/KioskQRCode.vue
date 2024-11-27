@@ -1,7 +1,48 @@
 <template>
+  
   <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
       <!-- ข้อความหัวเรื่อง -->
+      <h1 class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
+        ต้องมีไลน์สหกรณ์เพื่อคิว
+      </h1>
+      <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        กรุณาเปิด QR จากไลน์ แล้วแสดงกับกล้อง kiosk ด้านล่าง
+      </h1>
+      <!-- <h1 class="mt-8 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        เข้าไลน์ SAVING SSFH COOP เลือกเมนู QR Code รับคิว
+      </h1> -->
+      <div class="mt-0 flex justify-center text-center items-center gap-4">
+        <!-- ภาพ QR Code -->
+        <div class="flex justify-center text-center items-center gap-8">
+          <img class="w-[400px] h-auto"
+            src="../../../../apps/facingweb/public/images/shownowqr.png"
+            alt="photo1" />
+        </div>       
+      </div>
+      <!-- เวลาแบบนับถอยหลัง -->
+      <!-- <div class="flex justify-center items-center gap-2">
+        <UIcon name="i-mdi-refresh"
+          class="w-8 h-8 cursor-pointer"
+          @click="resetCountdown" />
+        <h1 class="mt-8 mb-8 text-center text-3xl tracking-tight lg:text-3xl text-gray-900 dark:text-white">
+          {{ countdown }}
+        </h1>
+      </div> -->
+      <!-- ปุ่มดำเนินการต่อ -->
+      <!-- <div class="flex justify-center items-center gap-2 ml-5">
+        <UButton size="xl"
+          class="py-2.5 px-20 me-2 mb-2"
+          variant="solid"
+          :trailing="true"
+          to="/kiosks">
+          ตกลง
+        </UButton>
+      </div> -->
+    </div>
+  </section>
+  <!-- <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
       <h1 class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
         สแกนรับคิวด้วยไลน์สหกรณ์
       </h1>
@@ -9,7 +50,6 @@
         เข้าไลน์ SAVING SSFH COOP สแกน QR Code
       </h1>
       <div class="mt-8 flex justify-center text-center items-center gap-8">
-        <!-- ภาพ QR Code -->
         <UCard>
           <div class="flex justify-center text-center items-center gap-8">
             <img class="w-[200px] h-auto"
@@ -18,7 +58,6 @@
           </div>
         </UCard>
       </div>
-      <!-- เวลาแบบนับถอยหลัง -->
       <div class="flex justify-center items-center gap-2">
         <UIcon name="i-mdi-refresh"
           class="w-8 h-8 cursor-pointer"
@@ -27,7 +66,6 @@
           {{ countdown }}
         </h1>
       </div>
-      <!-- ปุ่มดำเนินการต่อ -->
       <div class="flex justify-center items-center gap-2 ml-5">
         <UButton size="xl"
           class="py-2.5 px-20 me-2 mb-2"
@@ -38,7 +76,7 @@
         </UButton>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script setup>

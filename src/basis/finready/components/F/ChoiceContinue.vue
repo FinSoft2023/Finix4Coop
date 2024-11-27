@@ -3,58 +3,31 @@
     <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
       <!-- ข้อความหัวเรื่อง -->
       <h1 class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
-        ใช้ไลน์สหกรณ์เพื่อรับคิว
+        Line สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ
       </h1>
-      <h1 v-if="!isQRCodeVisible"
-        class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
-        หากยังไม่มี กรุณากดปุ่ม แสดง QR Code เพื่อแอดไลน์ก่อนสแกนรับคิว
+      <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        กรุณาเปิด Line สแกนเพื่อเพิ่มเพื่อนก่อนรับคิว
       </h1>
-
-      <h1 v-if="isQRCodeVisible"
-        class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
-        QR Code สหกรณ์
-      </h1>
-      <div v-if="!isQRCodeVisible"
-        class="mt-8 flex justify-center text-center items-center gap-8">
-       <img class="w-[300px] h-auto"
-            src="../../../../apps/facingweb/public/images/photo1.jpg"
-          alt="photo1" />
-      </div>
-      <div class="mt-8 flex justify-center text-center items-center gap-8">
-        <!-- ปุ่มที่เมื่อคลิกแล้วจะทำให้รูปแสดงและปุ่มหายไป -->
-        <UButton v-if="!isQRCodeVisible"
-          class="ml-2"
-          size="xl"
-          @click="showQRCode">
-          แสดง QR Code
-        </UButton>
-
-        <!-- ภาพ QR Code ที่จะแสดงเมื่อปุ่มถูกคลิก -->
-        <UCard v-if="isQRCodeVisible">
-          <div class="flex justify-center text-center items-center gap-8">
+      <div class="mt-8 flex  justify-center text-center items-center gap-8">
+        <div class="flex flex-col justify-center text-center items-center gap-4">
+          <UCard>
             <img class="w-[200px] h-auto"
               src="https://th.bing.com/th/id/R.dcf4b6e228aef80dd1a58f4c76f07128?rik=Qj2LybacmBALtA&riu=http%3a%2f%2fpngimg.com%2fuploads%2fqr_code%2fqr_code_PNG25.png&ehk=eKH2pdoegouCUxO1rt6BJXt4avVYywmyOS8biIPp5zc%3d&risl=&pid=ImgRaw&r=0"
               alt="QR Code" />
+          </UCard>
+          <div class="flex justify-center text-center items-center gap-8">
+            <p class="mb-0 text-center text-lg font-light text-gray-500 dark:text-gray-400">
+              สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ จำกัด
+            </p>
           </div>
-        </UCard>
+        </div>
+        <img class="w-[300px] h-auto"
+          src="../../../../apps/facingweb/public/images/photo1.jpg"
+          alt="photo1" />
+        <div class="mt-8 justify-center text-center items-center gap-8">
+        </div>
       </div>
-      <div class="mt-8 flex justify-center text-center items-center gap-8">
-
-        <p v-if="!isQRCodeVisible"
-          class="mb-0 text-center text-lg font-light text-gray-500 dark:text-gray-400">
-          ** สามารถกดปุ่ม "ข้าม" ได้ถ้ามีไลน์แล้ว
-        </p>
-        <p v-if="isQRCodeVisible"
-          class="mb-0 text-center text-lg font-light text-gray-500 dark:text-gray-400">
-          สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ จำกัด
-        </p>
-      </div>
-
-
-      <!-- ปุ่มดำเนินการต่อ -->
-
     </div>
-
     <BPartButtonsBand>
       <UButton class="mr-5"
         size="xl"
@@ -69,10 +42,73 @@
           icon="i-heroicons-chevron-right-16-solid"
           :trailing="true"
           to="/kiosks/index/selsel">
-          ข้าม
+          ถัดไป
         </UButton>
       </template>
     </BPartButtonsBand>
+  </section>
+  <section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
+      <!-- ข้อความหัวเรื่อง -->
+      <h1 class="mb-4 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
+        กรุณาเปิดไลน์เพื่อ ADD Line สหกรณ์
+      </h1>
+      <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        กรุณากดปุ่ม แสดง QR Code เพื่อแอดไลน์ก่อนสแกนรับคิว
+      </h1>
+
+      <div class="mt-8 flex flex-col justify-center text-center items-center gap-8">
+        <img class="w-[300px] h-auto"
+          src="../../../../apps/facingweb/public/images/photo1.jpg"
+          alt="photo1" />
+        <div class="mt-8 justify-center text-center items-center gap-8">
+          <!-- ปุ่มที่เมื่อคลิกแล้วจะทำให้รูปแสดงและปุ่มหายไป -->
+          <UButton v-if="!isQRCodeVisible"
+            class="ml-2"
+            size="xl"
+            @click="showQRCode">
+            แสดง QR Code
+          </UButton>
+        </div>
+      </div>
+
+    </div>
+    <!-- ปุ่มดำเนินการต่อ -->
+    <BPartButtonsBand>
+      <UButton class="mr-5"
+        size="xl"
+        variant="outline"
+        icon="i-heroicons-chevron-left-16-solid"
+        to="/kiosks/index/addline">
+        ย้อนกลับ
+      </UButton>
+      <template #next>
+        <UButton size="xl"
+          variant="solid"
+          icon="i-heroicons-chevron-right-16-solid"
+          :trailing="true"
+          to="/kiosks/index/selsel">
+          ถัดไป
+        </UButton>
+      </template>
+    </BPartButtonsBand>
+    <!-- ภาพ QR Code ที่จะแสดงเมื่อปุ่มถูกคลิก -->
+    <div v-if="isQRCodeVisible"
+      class="flex flex-col justify-center text-center items-center gap-4">
+      <h1 class="text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        ADD LINE สหกรณ์
+      </h1>
+      <UCard>
+        <img class="w-[200px] h-auto"
+          src="https://th.bing.com/th/id/R.dcf4b6e228aef80dd1a58f4c76f07128?rik=Qj2LybacmBALtA&riu=http%3a%2f%2fpngimg.com%2fuploads%2fqr_code%2fqr_code_PNG25.png&ehk=eKH2pdoegouCUxO1rt6BJXt4avVYywmyOS8biIPp5zc%3d&risl=&pid=ImgRaw&r=0"
+          alt="QR Code" />
+      </UCard>
+      <div class="flex justify-center text-center items-center gap-8">
+        <p class="mb-0 text-center text-lg font-light text-gray-500 dark:text-gray-400">
+          QR Code สหกรณ์ออมทรัพย์โรงพยาบาลศรีสะเกษ จำกัด
+        </p>
+      </div>
+    </div>
   </section>
 </template>
 <script setup lang="ts">

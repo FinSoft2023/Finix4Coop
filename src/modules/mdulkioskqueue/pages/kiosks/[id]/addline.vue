@@ -1,30 +1,45 @@
 <template>
   <BFullPage>
     <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
-
     <BPartPageBody>
-      <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-4 lg:px-6">
-          <h1 class="mb-8 text-center text-3xl tracking-tight font-extrabold lg:text-3xl text-gray-900 dark:text-white">
-            คุณได้นำโทรศัพท์มาด้วยไหม ?
-          </h1>
-          <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
-            หากไม่มี กรุณาเลือกเมนู "ไม่มีโทรศัพท์" เพื่อรับคิวบนตู้
-          </h1>
-          <DItemGrid col="x2">
-            <UPageCard v-for="(module, index) in modules"
-              :key="index"
-              class="text-red-500"
-              v-bind="module">
-            </UPageCard>
-          </DItemGrid>
-        </div>
-      </section>
+      <FKioskQRCode></FKioskQRCode>
+      <div class="flex justify-center">
+        <UButton class="mr-5"
+          size="xl"
+          variant="outline"
+          to="/kiosks/index/uiscan">
+          ยังไม่ Line สหกรณ์
+        </UButton>
+        <UButton size="xl"
+          variant="solid"
+          :trailing="true"
+          to="/kiosks/create/choice">
+          ไม่มีโทรศัพท์ (รับจากตู้คิว)
+        </UButton>
+      </div>
     </BPartPageBody>
+    <!-- <BPartButtonsBand>
+      <UButton class="mr-5"
+        size="xl"
+        variant="outline"
+        to="/kiosks/index/addline">
+        ยังไม่ Line สหกรณ์
+      </UButton>
+      <template #next>
+
+        <UButton size="xl"
+          variant="solid"
+          :trailing="true"
+          to="/kiosks/create/choice">
+          ไม่มีโทรศัพท์ (รับจากตู้คิว)
+        </UButton>
+      </template>
+</BPartButtonsBand> -->
   </BFullPage>
 </template>
 
 <script setup lang="ts">
+import { Vue3Lottie } from 'vue3-lottie'
 const pageDef = useActiveModulePage('each.root');
 
 const { entries } = getEntrySchema(pageDef);
