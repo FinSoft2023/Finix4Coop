@@ -20,7 +20,8 @@
           <canvas v-show="photoTaken"
             ref="canvas"
             style="width: 640px; height: 480px;"></canvas>
-          <div v-if="countdownActive" class="absolute inset-0 flex items-center justify-center bg-black/10">
+          <div v-if="countdownActive"
+            class="absolute inset-0 flex items-center justify-center bg-black/10">
             <div class="countdown-circle">
               <span class="text-6xl font-bold text-white">{{ countdown }}</span>
             </div>
@@ -41,9 +42,10 @@
             variant="solid"
             icon="i-heroicons-arrow-right"
             :trailing="true"
-            to="/kiosks/index/addline">
+            to="/kiosks/create/choice">
             ดำเนินการต่อ
           </UButton>
+          <NuxtLink to="/kiosks/index/infomessenger">></NuxtLink>
         </div>
       </div>
     </div>
@@ -143,10 +145,12 @@ onMounted(() => {
     transform: scale(1);
     border-color: rgba(255, 255, 255, 0.8);
   }
+
   50% {
     transform: scale(1.2);
     border-color: rgba(255, 255, 255, 0.5);
   }
+
   100% {
     transform: scale(1);
     border-color: rgba(255, 255, 255, 0.8);

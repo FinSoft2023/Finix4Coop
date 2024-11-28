@@ -8,15 +8,15 @@
         <p class="mb-4 text-lg tracking-tight text-gray-600 dark:text-gray-300">
           กรุณาทำการตั้งค่าและเตรียมตัวให้พร้อมก่อนที่จะทำการยืนยันตัวตน
         </p>
-        <div class="flex justify-center mb-8">
-          <client-only>
-                <Vue3Lottie
-               animationLink="https://lottie.host/58c8b5de-64d8-4ce4-af3a-aab5dc38896f/BzAMrKZpao.json"
-                 :height="400"
-                  :width="400"
-                 />
-              </client-only>
-        </div>
+        <NuxtLink to="/kiosks/create">
+          <div class="flex justify-center mb-8">
+            <client-only>
+              <Vue3Lottie animationLink="https://lottie.host/58c8b5de-64d8-4ce4-af3a-aab5dc38896f/BzAMrKZpao.json"
+                :height="400"
+                :width="400" />
+            </client-only>
+          </div>
+        </NuxtLink>
         <div class="mt-8">
           <UButton to="/kiosks/create"
             size="xl"

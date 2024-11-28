@@ -2,21 +2,7 @@
   <BFullPage>
     <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
     <BPartPageBody>
-      <FKioskQRCode></FKioskQRCode>
-      <div class="flex justify-center">
-        <UButton class="mr-5"
-          size="xl"
-          variant="outline"
-          to="/kiosks/index/uiscan">
-          ยังไม่ Line สหกรณ์
-        </UButton>
-        <UButton size="xl"
-          variant="solid"
-          :trailing="true"
-          to="/kiosks/create/choice">
-          ไม่มีโทรศัพท์ (รับจากตู้คิว)
-        </UButton>
-      </div>
+      <FKioskQRCode></FKioskQRCode>      
     </BPartPageBody>
     <!-- <BPartButtonsBand>
       <UButton class="mr-5"
