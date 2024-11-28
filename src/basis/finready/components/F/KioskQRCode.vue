@@ -9,6 +9,10 @@
       <h1 class="mb-4 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
         กรุณาเปิด QR จากไลน์ แล้วแสดงกับกล้อง kiosk ด้านล่าง
       </h1>
+      <h1 class="mb-4 text-center items-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
+        วิธีเปิด QR <UIcon name="i-mdi-alert-circle" 
+        class="text-gray-500" />
+      </h1>
       <!-- <h1 class="mt-8 text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
         เข้าไลน์ SAVING SSFH COOP เลือกเมนู QR Code รับคิว
       </h1> -->
@@ -20,6 +24,7 @@
             alt="photo1" />
         </div>       
       </div>
+      
       <!-- เวลาแบบนับถอยหลัง -->
       <!-- <div class="flex justify-center items-center gap-2">
         <UIcon name="i-mdi-refresh"
@@ -78,6 +83,7 @@
     </div>
   </section> -->
 </template>
+
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
