@@ -575,3 +575,67 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+export const membership = defineEntity({
+  name: 'สมัครสมาชิก',
+  root: [   
+    {
+      model: 'Amount',
+      label: 'ค้นหาคิว',
+      spec: z.number().gt(0).lte(20000),
+      component: 'number',
+    },
+    {
+      model: 'fname',
+      label: 'ชื่อ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lname',
+      label: 'สกุล',
+      spec: {},
+      component: 'text',
+
+    },
+    {
+      model: 'date',
+      label: 'วันเดือนปีเกิด',
+      spec: {},
+      component: 'text',
+    },  
+   
+  ], 
+  sub: [
+    {
+      name: 'account',
+      component: 'entry',
+      fields: [
+        {
+          model: 'fname',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุลสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'fname',
+          label: 'ชื่อ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุล',
+          spec: {},
+          component: 'text',
+    
+        },        
+      ],
+    },
+  ]
+})
