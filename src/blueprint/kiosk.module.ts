@@ -16,14 +16,17 @@ export const moduleBlueprint = defineModule('kiosks', 'คู้คิว', {
     takephoto: { // หน้าถ่ายรูปยืนยันตัวตน
       entity: kiosk,
       post: true,
+      subName: 'takephoto',
     },
     numpad: { // หน้ากรอกเลขสมาชิก
       entity: kiosk,
       post: true,
+      subName: 'memberdata',
     },
     transaction: { // หน้าเลือกธุรกรรม
       entity: kiosk,
       post: true,
+      subName: 'transaction',
     },
   },
   each: {
