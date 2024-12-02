@@ -31,7 +31,7 @@
           >
           <template #next>
             <UButton
-            @click="navigateTo('/registermember/create/beneficiary')"
+            @click="navigateTo('/registermember/create/memberFamily')"
           >บันทึกข้อมูล</UButton>
           </template>
         </BPartButtonsBand>
