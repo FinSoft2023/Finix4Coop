@@ -1,21 +1,22 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
-      <UForm
-        @submit="handleSubmit"
+      <!-- <UForm @submit="handleSubmit"
         :state="data"
         :schema="schema"
         :pending="pending"
-        class="space-y-4"
-      >
+        class="space-y-4">
         <UCard>
-          <DEntitySection v-model="data" :entries="entries" :pending />
+          <DEntitySection v-model="data"
+            :entries="entries"
+            :pending />
         </UCard>
 
         <UButton type="submit">Save</UButton>
-      </UForm>
+      </UForm> -->
+      <FNumpad />
     </BPartPageBody>
   </BFullPage>
 </template>

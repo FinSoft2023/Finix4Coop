@@ -16,7 +16,7 @@
       <FTableOfTxs @selection-changed="selectItem"
         :data
         :pending /> -->
-        <FChoiceContinue />
+        <FKioskQRCode />
     </BPartPageBody>
   </BFullPage>
 </template>
