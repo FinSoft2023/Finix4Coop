@@ -33,13 +33,13 @@
         <UButton class="mr-5"
           size="xl"
           variant="outline"
-          to="/kiosks/index/uiscan">
+          to="/kiosks/addline">
           ยังไม่ Line สหกรณ์
         </UButton>
         <UButton size="xl"
           variant="solid"
           :trailing="true"
-          to="/kiosks/create/choice">
+          to="/kiosks/create/numpad">
           ไม่มีโทรศัพท์ (รับจากตู้คิว)
         </UButton>
       </div>

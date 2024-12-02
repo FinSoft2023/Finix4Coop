@@ -25,6 +25,7 @@
 
   <!-- แสดงข้อมูลของการ์ดที่ถูกเลือก -->
   <!-- <pre>{{ selectedModules }}</pre> -->
+  
 </template>
 
 <script setup lang="ts">

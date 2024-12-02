@@ -38,6 +38,24 @@
       </div>
     </div>
   </section>
+  <BPartButtonsBand>
+    <UButton class="mr-5"
+      size="xl"
+      variant="outline"
+      icon="i-heroicons-chevron-left-16-solid"
+      to="/kiosks/scanqr">
+      ย้อนกลับ
+    </UButton>
+    <template #next>
+      <UButton size="xl"
+        variant="solid"
+        icon="i-heroicons-chevron-right-16-solid"
+        :trailing="true"
+        to="/kiosks/create/">
+        ถัดไป
+      </UButton>
+    </template>
+  </BPartButtonsBand>
 </template>
 <script setup lang="ts">
 const membershipNumber = ref('');

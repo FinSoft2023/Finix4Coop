@@ -19,9 +19,9 @@
       </div>
 
       <div class="mt-8 flex flex-col justify-center text-center items-center gap-8">
-        <!-- <img class="w-[300px] h-auto"
-          src="../../../../apps/facingweb/public/images/photo1.jpg" -->
-          <!-- alt="photo1" /> -->
+        <img class="w-[300px] h-auto"
+          src="../../../../apps/facingweb/public/images/photo1.jpg"
+          alt="photo1" />
         <div class="mt-8 justify-center text-center items-center gap-8">
           <!-- ปุ่มที่เมื่อคลิกแล้วจะทำให้รูปแสดงและปุ่มหายไป -->
           <UButton v-if="!isQRCodeVisible"
@@ -40,18 +40,10 @@
         size="xl"
         variant="outline"
         icon="i-heroicons-chevron-left-16-solid"
-        to="/kiosks/index/addline">
+        to="/kiosks/scanqr">
         ย้อนกลับ
       </UButton>
-      <template #next>
-        <UButton size="xl"
-          variant="solid"
-          icon="i-heroicons-chevron-right-16-solid"
-          :trailing="true"
-          to="/kiosks/index/selsel">
-          ถัดไป
-        </UButton>
-      </template>
+      
     </BPartButtonsBand>
      <div v-if="isVisible" class="mt-8">
       <h1 class="text-center text-2xl tracking-tight font-light lg:text-2xl text-gray-900 dark:text-white">
@@ -59,9 +51,9 @@
       </h1>
       <div class="grid grid-cols-1">
         <div class="flex justify-center text-center items-center gap-8">
-          <!-- <img class="w-[700px] h-auto"
+          <img class="w-[700px] h-auto"
             src="../../../../apps/facingweb/public/images/App.jpg"
-            alt="photo1" /> -->
+            alt="photo1" />
         </div>
       </div>
     </div>

@@ -42,10 +42,10 @@
             variant="solid"
             icon="i-heroicons-arrow-right"
             :trailing="true"
-            to="/kiosks/create/choice">
+            to="/kiosks/create/transaction">
             ดำเนินการต่อ
           </UButton>
-          <NuxtLink to="/kiosks/index/infomessenger">></NuxtLink>
+          <!-- <NuxtLink to="/kiosks/index/infomessenger">></NuxtLink> -->
         </div>
       </div>
     </div>

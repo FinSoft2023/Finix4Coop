@@ -10,15 +10,15 @@
         </p>
         <NuxtLink to="/kiosks/create">
           <div class="flex justify-center mb-8">
-            <client-only>
+            <!-- <client-only>
               <Vue3Lottie animationLink="https://lottie.host/58c8b5de-64d8-4ce4-af3a-aab5dc38896f/BzAMrKZpao.json"
                 :height="400"
                 :width="400" />
-            </client-only>
+            </client-only> -->
           </div>
         </NuxtLink>
         <div class="mt-8">
-          <UButton to="/kiosks/create"
+          <UButton to="/kiosks/create/takephoto"
             size="xl"
             variant="solid">
             เริ่มถ่ายภาพ
@@ -31,7 +31,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { Vue3Lottie } from 'vue3-lottie';
+// import { Vue3Lottie } from 'vue3-lottie';
 import { useRouter } from 'vue-router';
 
 const countdown = ref(3);  // 3 วินาที
