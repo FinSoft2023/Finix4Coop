@@ -636,3 +636,59 @@ export const kiosk = defineEntity({
     },
   ],
 })
+export const generalloan = defineEntity({
+  name: 'รับเรื่องสามัญทั่วไป',
+  root: [   
+    {
+      model: 'queue',
+      label: 'เลขคิว',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'searchmembers',
+      label: 'ค้นหาสมาชิก',
+      spec: {},
+      component: 'number',
+    },   
+  ], 
+  sub: [
+    {
+      name: 'generalloan',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})

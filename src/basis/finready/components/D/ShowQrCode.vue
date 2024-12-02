@@ -57,7 +57,6 @@
         <a href="">
           <div class="flex justify-center"></div>
         </a>
-
       </div>
     </div>
   </section>
