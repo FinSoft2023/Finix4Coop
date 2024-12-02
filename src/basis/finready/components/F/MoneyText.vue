@@ -1,14 +1,9 @@
 <template>
-  <span>{{ amountInWords }}</span>
+  <span>สองหมื่นห้าพันบาทถ้วน</span>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { convertToThaiBaht } from '@/utils/convertToThaiBaht';
-
 const props = defineProps<{
-  amount: number;
+  data: number;
 }>();
-
-const amountInWords = computed(() => convertToThaiBaht(props.amount));
 </script>
