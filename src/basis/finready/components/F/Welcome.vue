@@ -18,11 +18,13 @@
 
         <UButton size="xl"
           color="blue"
-          to="/kiosks/scanqr">
+          to="/kiosks/scanqr"
+          >
           รับคิว
           ติดต่อสหกรณ์</UButton>
-
-      </div>
+          
+        </div>
+        <!-- to="/kiosks/preparephoto" -->
     </div>
   </section>
 </template>
