@@ -8,8 +8,8 @@ const pageDef = useActiveModulePage('each.root');
 useComponentResolver(defaultViewResolvers);
 useSubLinks(
   [
-    { label: 'Info', to: '/' },
-    { label: 'Edit', to: '/edit' },
+    { label: 'ขอกู้หุ้น', to: '/loan' },
+    // { label: 'ปริ้นเอกสารขอกู้หุ้น', to: '/print' },
   ],
   pageDef,
 );
