@@ -1,12 +1,11 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
-      <BPartButtonsBand>
-        <UButton to="/kiosks/create" icon="i-heroicons-plus-circle"
-          >New</UButton
-        >
+      <!-- <BPartButtonsBand>
+        <UButton to="/kiosks/create"
+          icon="i-heroicons-plus-circle">New</UButton>
         <template #next>
           <DSmartTabs />
         </template>
@@ -14,7 +13,10 @@
 
       <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
 
-      <FTableOfTxs @selection-changed="selectItem" :data :pending />
+      <FTableOfTxs @selection-changed="selectItem"
+        :data
+        :pending /> -->
+        <FWelcome />
     </BPartPageBody>
   </BFullPage>
 </template>
