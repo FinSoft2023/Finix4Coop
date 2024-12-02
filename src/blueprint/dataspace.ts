@@ -575,3 +575,297 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
+
+
+
+export const prefix = defineChoicesList('prefix-channels', {
+  option1: 'นาย',
+  option2: 'นาง',
+  option3: 'นางสาว',
+  option4: 'เด็กชาย',
+  option5: 'เด็กหญิง',
+  option6: 'ดอกเตอร์',
+  option7: 'แพทย์ชาย',
+  option8: 'แพทย์หญิง',
+});
+
+export const relationship = defineChoicesList('relationship-channels', {
+  option1: 'บุตร',
+  option2: 'บิดา',
+  option3: 'มารดา',
+  option4: 'คู่สมรส',
+});
+
+
+
+
+export const registermember = defineEntity({
+  name: 'สมัครสมาชิก',
+  root: [   
+    {
+      model: 'prefix',
+      label: 'คำนำหน้าชื่อ',
+      spec: {},
+      component: 'select',
+      choices: prefix,
+    },
+    {
+      model: 'fname',
+      label: 'ชื่อ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lname',
+      label: 'สกุล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'bornOn',
+      label: 'เกิดวันที่',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'birthMonth',
+      label: 'เกิดเดือน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'birthYear',
+      label: 'พ.ศ.',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'age',
+      label: 'อายุ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'idCard',
+      label: 'เลขบัตรประชาชน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'bankAccount',
+      label: 'เลขบัญชีธนาคารกรุงไทย',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'phoneNumber',
+      label: 'เบอร์โทร',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'zipCode',
+      label: 'รหัสไปรษณีย์',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'province',
+      label: 'จังหวัด',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'district',
+      label: 'อำเภอ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'parish',
+      label: 'ตำบล',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'road',
+      label: 'ถนน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'village',
+      label: 'หมู่ที่',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'jobPosition',
+      label: 'ตําแหน่งงาน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'department',
+      label: 'แผนก',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'salary',
+      label: 'เงินเดือน',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'stockValue',
+      label: 'ส่งเงินค่าหุ้นรายเดือนละ',
+      spec: {},
+      component: 'number',
+    },
+  ], 
+  sub: [
+    {
+      name: 'beneficiary',
+      component: 'entry',
+      fields: [
+        {
+          model: 'prefix',
+          label: 'คำนำหน้าชื่อ',
+          spec: {},
+          component: 'select',
+          choices: prefix,
+        },
+        {
+          model: 'fname',
+          label: 'ชื่อ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุล',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'phoneNumber',
+          label: 'เบอร์โทร',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'relationship',
+          label: 'ความสัมพันธ์กับสมาชิก',
+          spec: {},
+          component: 'select',
+          choices: relationship,
+        },
+      ],
+    },
+    {
+      name: 'memberFamily',
+      component: 'entry',
+      fields: [
+        {
+          model: 'prefix',
+          label: 'คำนำหน้าชื่อ',
+          spec: {},
+          component: 'select',
+          choices: prefix,
+        },
+        {
+          model: 'fname',
+          label: 'ชื่อ',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุล',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'phoneNumber',
+          label: 'เบอร์โทร (มือถือ)',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'homeNumber',
+          label: 'เบอร์โทร (บ้าน)',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'email',
+          label: 'Email Address',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'relationship',
+          label: 'ความสัมพันธ์กับสมาชิก',
+          spec: {},
+          component: 'select',
+          choices: relationship,
+        },
+        {
+          model: 'bithday',
+          label: 'วันเกิด',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'address',
+          label: 'บ้านเลขที่',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'zipCode',
+          label: 'รหัสไปรษณีย์',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'alley',
+          label: 'ตรอก / ซอย',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'province',
+          label: 'จังหวัด',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'district',
+          label: 'อำเภอ / เขต',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'parish',
+          label: 'ตำบล /แขวง',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'road',
+          label: 'ถนน',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'village',
+          label: 'หมู่ที่',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ]
+})
