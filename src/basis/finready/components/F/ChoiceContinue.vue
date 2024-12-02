@@ -19,9 +19,9 @@
       </div>
 
       <div class="mt-8 flex flex-col justify-center text-center items-center gap-8">
-        <img class="w-[300px] h-auto"
-          src="../../../../apps/facingweb/public/images/photo1.jpg"
-          alt="photo1" />
+        <!-- <img class="w-[300px] h-auto"
+          src="../../../../apps/facingweb/public/images/photo1.jpg" -->
+          <!-- alt="photo1" /> -->
         <div class="mt-8 justify-center text-center items-center gap-8">
           <!-- ปุ่มที่เมื่อคลิกแล้วจะทำให้รูปแสดงและปุ่มหายไป -->
           <UButton v-if="!isQRCodeVisible"
@@ -59,9 +59,9 @@
       </h1>
       <div class="grid grid-cols-1">
         <div class="flex justify-center text-center items-center gap-8">
-          <img class="w-[700px] h-auto"
+          <!-- <img class="w-[700px] h-auto"
             src="../../../../apps/facingweb/public/images/App.jpg"
-            alt="photo1" />
+            alt="photo1" /> -->
         </div>
       </div>
     </div>

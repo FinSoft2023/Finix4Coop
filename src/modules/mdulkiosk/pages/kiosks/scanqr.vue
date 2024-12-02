@@ -1,9 +1,9 @@
 <template>
   <BFullPage>
-    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
 
     <BPartPageBody>
-      <BPartButtonsBand>
+      <!-- <BPartButtonsBand>
         <UButton to="/kiosks/create"
           icon="i-heroicons-plus-circle">New</UButton>
         <template #next>
@@ -15,7 +15,8 @@
 
       <FTableOfTxs @selection-changed="selectItem"
         :data
-        :pending />
+        :pending /> -->
+        <FChoiceContinue />
     </BPartPageBody>
   </BFullPage>
 </template>
