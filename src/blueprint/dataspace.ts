@@ -405,7 +405,7 @@ export const installments = defineChoicesList('installments', {
 
 export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Agency',
       label: 'หน่วยงาน',
@@ -450,7 +450,7 @@ export const checkloanfast = defineEntity({
       spec: {},
       component: 'text',
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -494,7 +494,7 @@ export const checkloanfast = defineEntity({
 
 export const loanfastmember = defineEntity({
   name: 'ขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
@@ -534,7 +534,7 @@ export const loanfastmember = defineEntity({
       component: 'radio',
       choices: transferChannels,
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -574,4 +574,65 @@ export const loanfastmember = defineEntity({
       ],
     },
   ]
+})
+
+export const kiosk = defineEntity({
+  name: 'ตู้คิว',
+  root: [
+    {
+      model: 'queue',
+      label: 'คิว',
+      spec: {},
+      component: 'text',
+    },],
+  sub: [
+    {
+      name: 'takephoto',
+      component: 'entry',
+      fields: [
+        {
+          model: 'takephoto',
+          label: 'ถ่ายรูป',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+    {
+      name: 'searchmember',
+      component: 'entry',
+      fields: [
+        {
+          model: 'searchmember',
+          label: 'ค้นหาสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+    {
+      name: 'memberdata',
+      component: 'entry',
+      fields: [
+        {
+          model: 'memberdata',
+          label: 'ข้อมูลสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+    {
+      name: 'transaction',
+      component: 'entry',
+      fields: [
+        {
+          model: 'transaction',
+          label: 'ธุรกรรม',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ],
 })
