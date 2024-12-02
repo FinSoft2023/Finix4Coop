@@ -575,70 +575,9 @@ export const loanfastmember = defineEntity({
     },
   ]
 })
-
-export const kiosk = defineEntity({
-  name: 'ตู้คิว',
-  root: [
-    {
-      model: 'queue',
-      label: 'คิว',
-      spec: {},
-      component: 'text',
-    },],
-  sub: [
-    {
-      name: 'takephoto',
-      component: 'entry',
-      fields: [
-        {
-          model: 'takephoto',
-          label: 'ถ่ายรูป',
-          spec: {},
-          component: 'text',
-        },
-      ],
-    },
-    {
-      name: 'searchmember',
-      component: 'entry',
-      fields: [
-        {
-          model: 'searchmember',
-          label: 'ค้นหาสมาชิก',
-          spec: {},
-          component: 'text',
-        },
-      ],
-    },
-    {
-      name: 'memberdata',
-      component: 'entry',
-      fields: [
-        {
-          model: 'memberdata',
-          label: 'ข้อมูลสมาชิก',
-          spec: {},
-          component: 'text',
-        },
-      ],
-    },
-    {
-      name: 'transaction',
-      component: 'entry',
-      fields: [
-        {
-          model: 'transaction',
-          label: 'ธุรกรรม',
-          spec: {},
-          component: 'text',
-        },
-      ],
-    },
-  ],
-})
 export const generalloan = defineEntity({
   name: 'รับเรื่องสามัญทั่วไป',
-  root: [   
+  root: [
     {
       model: 'queue',
       label: 'เลขคิว',
@@ -650,8 +589,8 @@ export const generalloan = defineEntity({
       label: 'ค้นหาสมาชิก',
       spec: {},
       component: 'number',
-    },   
-  ], 
+    },
+  ],
   sub: [
     {
       name: 'generalloan',
@@ -687,6 +626,75 @@ export const generalloan = defineEntity({
           label: 'จำนวนเงินในบัญชี',
           spec: {},
           component: 'number',
+        },
+      ],
+    },
+  ]
+})
+
+export const membershipcounter = defineEntity({
+  name: 'สมัครสมาชิก',
+  root: [
+    {
+      model: 'queue',
+      label: 'เลขคิว',
+      spec: {},
+      component: 'number',
+    },   
+    {
+      model: 'fname',
+      label: 'ชื่อ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lname',
+      label: 'สกุล',
+      spec: {},
+      component: 'text',
+
+    },
+    {
+      model: 'salary',
+      label: 'เงินเดือน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'position',
+      label: 'ตำแหน่ง',
+      spec: {},
+      component: 'text',
+    },
+  ],
+  sub: [
+    {
+      name: 'membershipcounter',
+      component: 'entry',
+      fields: [
+        {
+          model: 'fname',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุลสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'salary',
+          label: 'เงินเดือน',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'position',
+          label: 'ตำแหน่ง',
+          spec: {},
+          component: 'text',
         },
       ],
     },
