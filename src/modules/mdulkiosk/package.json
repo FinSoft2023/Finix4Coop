@@ -14,6 +14,7 @@
     "finready": "workspace:^",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vue3-lottie": "^3.3.1"
   }
 }

@@ -10,5 +10,11 @@ export default defineNuxtConfig({
     '../../modules/mdulregmember',
     '../../modules/mdulque',
     '../../modules/mdulofficer',
+    '../../modules/mdulverifyidentity',
+    '../../modules/mdulgeneralloan',
+    '../../modules/mdulregistermember',
+    '../../modules/mdulloangeneralmember',
+    '../../modules/mdulqueue',
+    '../../modules/mdulmembershipcounter',
   ],
 });
