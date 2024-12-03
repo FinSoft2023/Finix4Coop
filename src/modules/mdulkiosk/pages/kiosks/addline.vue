@@ -1,0 +1,34 @@
+<template>
+  <BFullPage>
+    <!-- <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle> -->
+
+    <BPartPageBody>
+      <!-- <BPartButtonsBand>
+        <UButton to="/kiosks/create"
+          icon="i-heroicons-plus-circle">New</UButton>
+        <template #next>
+          <DSmartTabs />
+        </template>
+      </BPartButtonsBand>
+
+      <BPartSectionTitle>{{ pageDef.label }}</BPartSectionTitle>
+
+      <FTableOfTxs @selection-changed="selectItem"
+        :data
+        :pending /> -->
+        <FChoiceContinue></FChoiceContinue>
+    </BPartPageBody>
+  </BFullPage>
+</template>
+
+<script setup lang="ts">
+const pageDef = useActiveModulePage('list.addline');
+useBreadcrumb('List');
+
+const { apiGet } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
+
+function selectItem(item: any) {
+  navigateTo(`/kiosks/${item.id}`);
+}
+</script>

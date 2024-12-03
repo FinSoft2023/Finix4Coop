@@ -405,7 +405,7 @@ export const installments = defineChoicesList('installments', {
 
 export const checkloanfast = defineEntity({
   name: 'ตรวจสอบขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Agency',
       label: 'หน่วยงาน',
@@ -450,7 +450,7 @@ export const checkloanfast = defineEntity({
       spec: {},
       component: 'text',
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -494,7 +494,7 @@ export const checkloanfast = defineEntity({
 
 export const loanfastmember = defineEntity({
   name: 'ขอกู้ฉุกเฉิน',
-  root: [   
+  root: [
     {
       model: 'Amount',
       label: 'ยอดที่ต้องการกู้ (บาท)',
@@ -534,7 +534,7 @@ export const loanfastmember = defineEntity({
       component: 'radio',
       choices: transferChannels,
     },
-  ], 
+  ],
   sub: [
     {
       name: 'account',
@@ -570,6 +570,127 @@ export const loanfastmember = defineEntity({
           label: 'จำนวนเงินในบัญชี',
           spec: {},
           component: 'number',
+        },
+      ],
+    },
+  ]
+})
+export const generalloan = defineEntity({
+  name: 'รับเรื่องสามัญทั่วไป',
+  root: [
+    {
+      model: 'queue',
+      label: 'เลขคิว',
+      spec: {},
+      component: 'number',
+    },
+    {
+      model: 'searchmembers',
+      label: 'ค้นหาสมาชิก',
+      spec: {},
+      component: 'number',
+    },
+  ],
+  sub: [
+    {
+      name: 'generalloan',
+      component: 'entry',
+      fields: [
+        {
+          model: 'name',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'memcode',
+          label: 'รหัสสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'accType',
+          label: 'บัญชี',
+          spec: {},
+          component: 'select',
+          choices: accountTypes,
+        },
+        {
+          model: 'accNo',
+          label: 'เลขบัญชี',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'balance',
+          label: 'จำนวนเงินในบัญชี',
+          spec: {},
+          component: 'number',
+        },
+      ],
+    },
+  ]
+})
+export const loangeneralmember = defineEntity({
+  name: 'ขอกู้สามัญ',
+  root: [   
+    // {
+    //   model: 'Amount',
+    //   label: 'ยอดที่ต้องการกู้ (บาท)',
+    //   spec: z.number().gt(0).lte(30000),
+    //   component: 'number',
+    // },
+    {
+      model: 'installments',
+      label: 'เลือกจำนวนงวด',
+      spec: {},
+      component: 'select',
+      choices: installments,
+    },
+    {
+      model: 'Amountsent',
+      label: 'งวดละ',
+      spec: {},
+      component: 'number',
+    },
+  ], 
+  sub: [
+    {
+      name: 'loanshare',
+      component: 'entry',
+      fields: [
+        {
+          model: 'Amount',
+          label: 'ยอดที่ต้องการกู้ (บาท)',
+          spec: z.number().gt(0).lte(30000),
+          component: 'number',
+        },
+        {
+          model: 'installments',
+          label: 'เลือกจำนวนงวด',
+          spec: {},
+          component: 'select',
+          choices: installments,
+        },
+        {
+          model: 'Amountsent',
+          label: 'งวดละ',
+          spec: {},
+          component: 'number',
+        },
+        {
+          model: 'purpose',
+          label: 'เพื่อวัตถุประสงค์',
+          spec: {},
+          component: 'select',
+          choices: purpose,
+        },
+        {
+          model: 'bankAccount',
+          label: 'เลือกบัญชีธนาคาร',
+          spec: {},
+          component: 'radio',
+          choices: transferChannels,
         },
       ],
     },
@@ -862,6 +983,75 @@ export const registermember = defineEntity({
         {
           model: 'village',
           label: 'หมู่ที่',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+  ]
+})
+
+export const membershipcounter = defineEntity({
+  name: 'สมัครสมาชิก',
+  root: [
+    {
+      model: 'queue',
+      label: 'เลขคิว',
+      spec: {},
+      component: 'number',
+    },   
+    {
+      model: 'fname',
+      label: 'ชื่อ',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'lname',
+      label: 'สกุล',
+      spec: {},
+      component: 'text',
+
+    },
+    {
+      model: 'salary',
+      label: 'เงินเดือน',
+      spec: {},
+      component: 'text',
+    },
+    {
+      model: 'position',
+      label: 'ตำแหน่ง',
+      spec: {},
+      component: 'text',
+    },
+  ],
+  sub: [
+    {
+      name: 'membershipcounter',
+      component: 'entry',
+      fields: [
+        {
+          model: 'fname',
+          label: 'ชื่อสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'lname',
+          label: 'สกุลสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'salary',
+          label: 'เงินเดือน',
+          spec: {},
+          component: 'text',
+        },
+        {
+          model: 'position',
+          label: 'ตำแหน่ง',
           spec: {},
           component: 'text',
         },
