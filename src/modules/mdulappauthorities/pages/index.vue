@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>(Appauthorities) Index Page</h1>
-    <NuxtLink to="/appauthorities">appauthorities</NuxtLink>
+    <h1></h1>
+    <!-- <NuxtLink to="/appauthorities">appauthorities</NuxtLink> -->
+    <UButton to="/appauthorities">Scan</UButton>
   </div>
 </template>
 

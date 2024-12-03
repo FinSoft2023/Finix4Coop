@@ -12,15 +12,15 @@
       v-if="qrCode">
       <p>ผลลัพธ์: {{ qrCode }}</p>
     </div>
-    <div class="flex justify-center mt-4 gap-4">
-      <UButton @click="stopScan"
-        :disabled="!scanning">หยุดสแกน</UButton>
-    </div>
+    <!-- <div class="flex justify-center mt-4 gap-4">
+      <UButton @click="handleStopScan">หยุดสแกน</UButton>
+    </div> -->
   </div>
 </template>
 
 <script lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 // import jsQR from "jsqr";
 
 export default {
@@ -32,6 +32,7 @@ export default {
     const qrCode = ref<string | null>(null);
     let stream: MediaStream | null = null;
     let animationFrame: number;
+    const router = useRouter();
 
     const startScan = async () => {
       qrCode.value = null;
@@ -48,6 +49,10 @@ export default {
         }
 
         scanFrame();
+
+        setTimeout(() => {
+          handleStopScan();
+        }, 3000); // Stop scan after 3 seconds
       } catch (error) {
         console.error("Error accessing camera: ", error);
         scanning.value = false;
@@ -63,6 +68,13 @@ export default {
       }
 
       cancelAnimationFrame(animationFrame);
+    };
+
+    const handleStopScan = () => {
+      stopScan();
+      // router.push('/appauthorities/[id]');
+      router.push('/appauthorities/b8eosmsizcj6efr11c52');
+
     };
 
     const scanFrame = () => {
@@ -103,6 +115,7 @@ export default {
       qrCode,
       startScan,
       stopScan,
+      handleStopScan,
     };
   },
 };
