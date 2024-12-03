@@ -1,0 +1,47 @@
+<template>
+  <BFullPage>
+    <BPartPageTitle>{{ pageDef.label }}</BPartPageTitle>
+
+    <BPartPageBody>
+      <UForm
+        @submit="handleSubmit"
+        :state="data"
+        :schema="schema"
+        :pending="pending"
+        class="space-y-4"
+      >
+        <UCard>
+          <DQrCodeBindAccount :qr-data="qrLink" />
+        </UCard>
+
+        <!-- <UButton type="submit">Save</UButton> -->
+      </UForm>
+    </BPartPageBody>
+
+    <template #side>
+      <DSubLinks />
+    </template>
+  </BFullPage>
+</template>
+
+<script setup lang="ts">
+// import type { z } from 'zod';
+
+const pageDef = useActiveModulePage('each.verifyIdentityQR');
+useBreadcrumb('Edit');
+
+const { entries, schema } = getEntrySchema(pageDef);
+// type TSchema = z.output<typeof schema>;
+
+const { apiGet, apiPost } = useHostApi(pageDef);
+const { data, error, pending } = apiGet();
+const { executePost } = apiPost();
+
+useComponentResolver(defaultEditResolvers);
+
+const handleSubmit = async () => {
+  await executePost(data.value);
+  navigateTo('./');
+};
+const qrLink = computed(() => JSON.stringify({ memcode: data.value?.memcode, balance: data.value?.balance, accNo: data.value?.accNo }));
+</script>
