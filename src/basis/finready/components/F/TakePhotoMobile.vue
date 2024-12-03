@@ -90,7 +90,7 @@ export default defineComponent({
 });
 </script> -->
 
-<style scoped>
+<!-- <style scoped>
 .camera-capture {
   display: flex;
   flex-direction: column;
@@ -130,8 +130,8 @@ button {
   background-color: #f44336;
   color: #fff;
 }
-</style>
-<!-- <template>
+</style> -->
+<template>
   <div class="camera-capture">
     <div v-if="!isCaptured">
       <video ref="video"
@@ -260,4 +260,4 @@ button {
   background-color: #f44336;
   color: #fff;
 }
-</style> -->
+</style>
