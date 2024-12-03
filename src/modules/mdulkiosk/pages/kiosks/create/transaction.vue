@@ -51,7 +51,7 @@ const { data, error, pending } = apiGet();
 const { postResult, executePost } = apiPost();
 
 const handleSubmit = async () => {
-  await executePost(data.value);
+  // await executePost(data.value);
   const redirectPath = postResult.value?.id ? `/${postResult.value.id}` : '';
   navigateTo(`/kiosks${redirectPath}`);
 };
