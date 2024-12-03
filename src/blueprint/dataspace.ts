@@ -1085,12 +1085,24 @@ export const kiosk = defineEntity({
       ],
     },
     {
+      name: 'searchmember',
+      component: 'entry',
+      fields: [
+        {
+          model: 'searchmember',
+          label: 'ค้นหาสมาชิก',
+          spec: {},
+          component: 'text',
+        },
+      ],
+    },
+    {
       name: 'memberdata',
       component: 'entry',
       fields: [
         {
-          model: 'name',
-          label: 'ชื่อสมาชิก',
+          model: 'memberdata',
+          label: 'ข้อมูลสมาชิก',
           spec: {},
           component: 'text',
         },
