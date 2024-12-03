@@ -36,6 +36,12 @@
     description="ท่านเดินทางไปติดต่อเจ้าหน้าที่ที่สหกรณ์ได้ เพื่อดำเนินการต่อไป."
     actionText="เสร็จสิ้น"
     @action="navigateTo(`/withdrawals/${route.params.id}/print`)" />
+  <BOnPageNotification v-else
+    id="next"
+    label="ถ่ายรูปสมาชิก"
+    description="กรุณาถ่ายรูปสมาชิกเพื่อเก็บเป็นหลักฐาน"
+    actionText="ถ่ายรูป"
+    @action="navigateTo(`/appauthorities/${route.params.id}/takePhoto`)" />
 </template>
 
 <script setup lang="ts">
