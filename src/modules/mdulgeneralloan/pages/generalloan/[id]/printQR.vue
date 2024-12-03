@@ -4,10 +4,10 @@
       <DocPrintContainer title="Printing Sample Page">
         <DocPaper>
             <div class="flex justify-start items-end h-full">
-            <img :src="qrCode"
+            <img src="https://qrcg-free-editor.qr-code-generator.com/1.3.2/assets/images/websiteQRCode_noFrame.png"
               alt="QR Code"
               class="max-w-full shadow-md rounded-lg"
-              style="width: 150px; height: 150px" />
+              style="width: 120px; height: 120px" />
           </div>
         </DocPaper>
       </DocPrintContainer>
