@@ -6,7 +6,7 @@
             <div class="flex justify-start items-end h-full">
             <img src="https://qrcg-free-editor.qr-code-generator.com/1.3.2/assets/images/websiteQRCode_noFrame.png"
               alt="QR Code"
-              class="max-w-full shadow-md rounded-lg"
+              class="max-w-full"
               style="width: 120px; height: 120px" />
           </div>
         </DocPaper>
