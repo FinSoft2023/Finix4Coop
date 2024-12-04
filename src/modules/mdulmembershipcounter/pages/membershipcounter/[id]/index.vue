@@ -15,12 +15,12 @@
           <UCard class="mb-4">
             <img :src="img"
               alt="img"
-              class="max-w-full shadow-md rounded-lg w-500 h-auto" />
+              class="max-w-full w-500 h-auto" />
           </UCard>
           <UCard>
             <img :src="signature"
               alt="imgsignature"
-              class="max-w-full shadow-md rounded-lg w-500 h-auto" />
+              class="max-w-full w-500 h-auto" />
           </UCard>
         </div>
         </DItemGrid>
